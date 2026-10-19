@@ -1,0 +1,69 @@
+url_slug,side,team,pts,first_downs,rush_att,rush_yds,pass_cmp,pass_att,pass_yds,pass_td,pass_int,sacks_taken,sack_yds,total_yds,fumbles_lost,penalties,pen_yds,third_made,third_att,fourth_made,fourth_att,top
+new-york-jets-vs-baltimore-ravens-2025112306,away,New York Jets,10,15,26,78,17,28,204,1,1,3,18,282,1,6,81,4,11,0,2,28:13
+new-york-jets-vs-baltimore-ravens-2025112306,home,Baltimore Ravens,23,16,34,98,13,23,143,0,0,1,10,241,0,5,30,2,11,2,2,31:47
+new-york-giants-vs-detroit-lions-2025112307,away,New York Giants,27,25,39,122,19,37,395,3,1,1,4,517,0,7,59,8,16,1,3,37:11
+new-york-giants-vs-detroit-lions-2025112307,home,Detroit Lions,34,23,20,237,28,42,257,2,1,3,22,494,0,9,81,5,12,0,0,28:30
+cleveland-browns-vs-las-vegas-raiders-2025112308,away,Cleveland Browns,24,11,27,64,11,20,206,1,1,1,3,270,1,8,77,3,12,0,0,23:34
+cleveland-browns-vs-las-vegas-raiders-2025112308,home,Las Vegas Raiders,10,19,21,60,30,44,208,1,0,10,77,268,1,13,109,4,17,1,3,36:26
+jacksonville-jaguars-vs-arizona-cardinals-2025112309,away,Jacksonville Jaguars,27,18,28,134,18,30,237,3,3,3,19,371,1,7,60,3,11,0,1,28:33
+jacksonville-jaguars-vs-arizona-cardinals-2025112309,home,Arizona Cardinals,24,25,20,55,34,50,271,1,0,6,44,326,0,7,53,5,16,1,3,37:26
+atlanta-falcons-vs-new-orleans-saints-2025112310,away,Atlanta Falcons,24,13,29,121,16,23,181,2,1,3,18,302,0,9,82,3,12,1,1,27:09
+atlanta-falcons-vs-new-orleans-saints-2025112310,home,New Orleans Saints,10,21,28,79,30,45,214,0,1,5,29,293,1,4,36,5,16,2,5,32:51
+philadelphia-eagles-vs-dallas-cowboys-2025112311,away,Philadelphia Eagles,21,19,18,63,27,39,276,1,0,1,13,339,2,14,96,5,12,0,0,30:58
+philadelphia-eagles-vs-dallas-cowboys-2025112311,home,Dallas Cowboys,24,25,31,125,23,36,348,2,1,1,6,473,1,8,69,5,12,0,2,29:02
+tampa-bay-buccaneers-vs-los-angeles-rams-2025112312,away,Tampa Bay Buccaneers,7,14,29,123,17,34,70,1,2,4,33,193,0,2,10,7,17,1,5,31:48
+tampa-bay-buccaneers-vs-los-angeles-rams-2025112312,home,Los Angeles Rams,34,20,19,70,25,35,263,3,0,1,10,333,0,4,32,4,10,0,1,28:12
+carolina-panthers-vs-san-francisco-49ers-2025112401,away,Carolina Panthers,9,12,13,69,18,29,161,1,2,1,8,230,0,4,30,1,7,0,0,22:18
+carolina-panthers-vs-san-francisco-49ers-2025112401,home,San Francisco 49ers,20,23,38,147,23,32,193,1,3,0,0,340,0,2,6,7,13,2,2,37:42
+green-bay-packers-vs-detroit-lions-2025112701,away,Green Bay Packers,31,18,30,125,18,30,234,4,0,0,0,359,0,3,20,6,12,3,3,28:54
+green-bay-packers-vs-detroit-lions-2025112701,home,Detroit Lions,24,20,30,119,20,27,233,2,0,3,23,352,0,5,22,8,13,0,2,31:06
+kansas-city-chiefs-vs-dallas-cowboys-2025112702,away,Kansas City Chiefs,28,19,23,119,23,34,243,4,0,3,18,362,0,10,119,5,13,3,3,29:06
+kansas-city-chiefs-vs-dallas-cowboys-2025112702,home,Dallas Cowboys,31,23,26,137,27,39,320,2,1,0,0,457,0,7,50,9,16,1,1,30:54
+cincinnati-bengals-vs-baltimore-ravens-2025112703,away,Cincinnati Bengals,32,22,33,128,24,46,254,2,0,1,7,382,1,6,35,8,19,1,2,38:46
+cincinnati-bengals-vs-baltimore-ravens-2025112703,home,Baltimore Ravens,14,16,22,123,17,32,223,0,1,3,23,346,4,7,53,3,10,1,2,21:14
+chicago-bears-vs-philadelphia-eagles-2025112801,away,Chicago Bears,24,28,47,281,17,36,144,1,1,2,10,425,0,4,35,10,17,1,3,39:18
+chicago-bears-vs-philadelphia-eagles-2025112801,home,Philadelphia Eagles,15,14,17,87,19,34,230,2,1,0,0,317,1,7,44,4,12,0,0,20:42
+jacksonville-jaguars-vs-tennessee-titans-2025113001,away,Jacksonville Jaguars,25,20,27,70,16,27,202,2,0,3,27,272,0,13,98,3,13,1,1,31:26
+jacksonville-jaguars-vs-tennessee-titans-2025113001,home,Tennessee Titans,3,11,14,67,24,38,121,0,0,3,20,188,2,10,86,2,12,1,4,28:34
+houston-texans-vs-indianapolis-colts-2025113002,away,Houston Texans,20,24,34,108,22,35,256,0,1,2,20,364,0,9,85,6,13,0,2,34:58
+houston-texans-vs-indianapolis-colts-2025113002,home,Indianapolis Colts,16,17,23,86,14,27,195,2,0,1,6,281,0,5,33,3,10,0,2,25:02
+new-orleans-saints-vs-miami-dolphins-2025113003,away,New Orleans Saints,17,20,27,81,26,38,213,2,1,4,26,294,1,6,45,4,12,0,1,29:52
+new-orleans-saints-vs-miami-dolphins-2025113003,home,Miami Dolphins,21,16,32,164,12,23,134,0,1,4,23,298,0,3,15,4,12,0,1,30:08
+atlanta-falcons-vs-new-york-jets-2025113004,away,Atlanta Falcons,24,25,32,167,21,33,222,1,0,2,12,389,1,1,27,4,12,0,0,32:55
+atlanta-falcons-vs-new-york-jets-2025113004,home,New York Jets,27,16,28,110,19,33,159,1,0,2,13,269,0,9,59,7,16,1,1,27:05
+arizona-cardinals-vs-tampa-bay-buccaneers-2025113005,away,Arizona Cardinals,17,22,19,95,29,40,291,2,1,2,10,386,1,4,33,3,8,0,2,29:34
+arizona-cardinals-vs-tampa-bay-buccaneers-2025113005,home,Tampa Bay Buccaneers,20,13,27,95,18,28,184,1,0,2,10,279,0,5,40,7,16,1,1,30:26
+los-angeles-rams-vs-carolina-panthers-2025113006,away,Los Angeles Rams,28,22,21,152,18,28,227,2,2,2,16,379,1,1,5,2,5,0,0,24:44
+los-angeles-rams-vs-carolina-panthers-2025113006,home,Carolina Panthers,31,17,40,164,15,20,194,3,0,2,12,358,0,7,70,7,15,3,3,35:16
+san-francisco-49ers-vs-cleveland-browns-2025113007,away,San Francisco 49ers,26,19,33,91,16,30,161,1,0,1,7,252,0,3,11,11,17,0,0,30:10
+san-francisco-49ers-vs-cleveland-browns-2025113007,home,Cleveland Browns,8,15,31,138,17,26,115,1,0,3,34,253,2,4,25,3,11,0,4,29:50
+minnesota-vikings-vs-seattle-seahawks-2025113008,away,Minnesota Vikings,0,11,16,66,19,30,96,0,4,4,30,162,1,10,80,2,10,0,2,25:39
+minnesota-vikings-vs-seattle-seahawks-2025113008,home,Seattle Seahawks,26,17,32,125,14,26,94,0,0,4,34,219,2,4,25,6,15,1,1,34:21
+las-vegas-raiders-vs-los-angeles-chargers-2025113009,away,Las Vegas Raiders,14,12,18,31,18,23,125,2,1,5,40,156,0,4,50,2,8,0,2,24:12
+las-vegas-raiders-vs-los-angeles-chargers-2025113009,home,Los Angeles Chargers,31,22,43,192,16,21,149,2,1,3,11,341,0,4,27,12,17,0,1,35:48
+buffalo-bills-vs-pittsburgh-steelers-2025113010,away,Buffalo Bills,26,26,51,249,15,23,123,1,1,0,0,372,1,7,45,8,15,2,2,41:59
+buffalo-bills-vs-pittsburgh-steelers-2025113010,home,Pittsburgh Steelers,7,10,18,58,10,24,108,0,1,1,9,166,1,5,67,3,9,0,1,18:01
+denver-broncos-vs-washington-commanders-2025113011,away,Denver Broncos,27,23,23,87,29,45,315,1,1,1,6,402,0,5,33,7,15,1,1,32:13
+denver-broncos-vs-washington-commanders-2025113011,home,Washington Commanders,26,30,33,143,28,50,276,2,1,2,18,419,0,5,35,8,17,3,3,35:00
+new-york-giants-vs-new-england-patriots-2025120101,away,New York Giants,15,14,27,111,17,24,128,1,0,2,11,239,1,4,30,4,11,0,3,26:34
+new-york-giants-vs-new-england-patriots-2025120101,home,New England Patriots,33,21,29,119,24,31,276,2,0,3,6,395,0,3,30,6,13,1,1,33:26
+dallas-cowboys-vs-detroit-lions-2025120401,away,Dallas Cowboys,30,25,24,91,31,47,326,1,2,5,50,417,1,7,76,6,15,2,2,31:23
+dallas-cowboys-vs-detroit-lions-2025120401,home,Detroit Lions,44,20,22,109,25,34,299,1,0,1,10,408,0,8,50,3,8,0,0,28:37
+washington-commanders-vs-minnesota-vikings-2025120702,away,Washington Commanders,0,12,23,107,11,24,99,0,2,2,9,206,1,4,34,3,10,1,3,25:08
+washington-commanders-vs-minnesota-vikings-2025120702,home,Minnesota Vikings,31,25,34,162,16,23,151,3,0,4,12,313,0,3,24,6,11,2,2,34:52
+miami-dolphins-vs-new-york-jets-2025120703,away,Miami Dolphins,34,23,41,239,13,21,119,1,0,1,8,358,0,5,54,2,10,0,0,36:07
+miami-dolphins-vs-new-york-jets-2025120703,home,New York Jets,10,12,17,65,15,34,142,0,3,6,27,207,0,6,50,1,12,1,2,23:53
+seattle-seahawks-vs-atlanta-falcons-2025120704,away,Seattle Seahawks,37,20,26,129,20,30,236,3,1,2,13,365,0,6,60,6,13,0,0,31:20
+seattle-seahawks-vs-atlanta-falcons-2025120704,home,Atlanta Falcons,9,15,31,120,15,30,154,0,2,1,8,274,1,8,56,1,13,1,2,28:40
+pittsburgh-steelers-vs-baltimore-ravens-2025120705,away,Pittsburgh Steelers,27,13,17,34,23,34,284,1,0,0,0,318,0,7,33,6,14,1,1,26:16
+pittsburgh-steelers-vs-baltimore-ravens-2025120705,home,Baltimore Ravens,22,22,40,217,19,35,203,1,1,2,16,420,0,5,39,7,18,3,4,33:44
+new-orleans-saints-vs-tampa-bay-buccaneers-2025120706,away,New Orleans Saints,24,16,32,139,13,20,121,0,1,3,23,260,0,10,82,5,11,0,1,27:48
+new-orleans-saints-vs-tampa-bay-buccaneers-2025120706,home,Tampa Bay Buccaneers,20,19,39,179,14,30,122,1,1,0,0,301,0,7,49,3,13,2,7,32:12
+indianapolis-colts-vs-jacksonville-jaguars-2025120707,away,Indianapolis Colts,19,20,26,89,23,36,196,0,2,1,9,285,1,5,45,6,11,0,1,29:55
+indianapolis-colts-vs-jacksonville-jaguars-2025120707,home,Jacksonville Jaguars,36,18,32,103,18,31,247,2,0,0,0,350,1,8,64,7,15,1,2,30:05
+tennessee-titans-vs-cleveland-browns-2025120708,away,Tennessee Titans,31,13,35,184,14,28,108,2,1,1,9,292,0,11,85,6,17,0,0,31:56
+tennessee-titans-vs-cleveland-browns-2025120708,home,Cleveland Browns,29,22,20,61,23,42,351,3,1,2,13,412,1,7,50,6,14,0,0,28:04
+cincinnati-bengals-vs-buffalo-bills-2025120711,away,Cincinnati Bengals,34,25,19,62,25,36,276,4,2,1,8,338,0,4,30,10,12,0,0,28:12
+cincinnati-bengals-vs-buffalo-bills-2025120711,home,Buffalo Bills,39,22,29,183,22,28,233,3,0,3,18,416,1,6,68,6,11,3,4,31:48
+denver-broncos-vs-las-vegas-raiders-2025120709,away,Denver Broncos,24,27,31,152,31,38,204,0,0,3,8,356,0,8,50,7,12,1,3,39:03
+denver-broncos-vs-las-vegas-raiders-2025120709,home,Las Vegas Raiders,17,16,12,40,21,32,189,2,0,4,24,229,0,3,25,3,9,1,3,20:57

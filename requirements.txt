@@ -1,0 +1,2 @@
+numpy
+playwright  # only for tiktok.py

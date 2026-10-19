@@ -1,0 +1,77 @@
+{
+ "k": 8,
+ "carry": 0.6,
+ "hfa": 2.0,
+ "slope": 1.003,
+ "sigma": 12.8,
+ "tuned_on": [
+  2022,
+  2023,
+  2024
+ ],
+ "tested": {
+  "2025 from week 1": {
+   "games": 272,
+   "model_acc": 0.62,
+   "model_mse": 168.4,
+   "home_acc": 0.539,
+   "line_acc": 0.653,
+   "line_mse": 151.0,
+   "brier": 0.2249,
+   "logloss": 0.6398
+  },
+  "2025 from week 4": {
+   "games": 224,
+   "model_acc": 0.596,
+   "model_mse": 170.4,
+   "home_acc": 0.529,
+   "line_acc": 0.632,
+   "line_mse": 150.7,
+   "brier": 0.2306,
+   "logloss": 0.6515
+  },
+  "2026 from week 1": {
+   "games": 92,
+   "model_acc": 0.604,
+   "model_mse": 151.4,
+   "home_acc": 0.505,
+   "line_acc": 0.626,
+   "line_mse": 143.1,
+   "brier": 0.2359,
+   "logloss": 0.6636
+  },
+  "2026 from week 4": {
+   "games": 44,
+   "model_acc": 0.581,
+   "model_mse": 109.5,
+   "home_acc": 0.419,
+   "line_acc": 0.581,
+   "line_mse": 110.5,
+   "brier": 0.2378,
+   "logloss": 0.6673
+  }
+ },
+ "confidence_tiers": [
+  {
+   "top_share": 1.0,
+   "games": 298,
+   "acc": 0.607
+  },
+  {
+   "top_share": 0.5,
+   "games": 149,
+   "acc": 0.711
+  },
+  {
+   "top_share": 0.25,
+   "games": 74,
+   "acc": 0.73
+  },
+  {
+   "top_share": 0.1,
+   "games": 30,
+   "acc": 0.7
+  }
+ ],
+ "made": "2026-10-19"
+}

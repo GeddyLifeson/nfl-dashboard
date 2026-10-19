@@ -1,0 +1,16 @@
+{"table": "games", "source": "https://github.com/nflverse/nfldata/raw/master/data/games.csv", "fetched": "2026-10-19", "sha256": "01ad05c0f399b10f", "rows": 1631, "played": 1451}
+{"table": "tot_off", "source": "footballdb", "logged": "2026-10-19", "sha256": "fbdc823870ff8cc5", "teams_behind": []}
+{"table": "tot_def", "source": "footballdb", "logged": "2026-10-19", "sha256": "bfb347a01190e066", "teams_behind": []}
+{"table": "pass_off", "source": "footballdb", "logged": "2026-10-19", "sha256": "392b0ddba7af94dc", "teams_behind": []}
+{"table": "pass_def", "source": "footballdb", "logged": "2026-10-19", "sha256": "7d116aa98ba20e98", "teams_behind": ["ARI", "ATL", "BAL", "BUF", "CAR", "CHI", "CLE", "DAL", "GB", "IND", "KC", "LA", "LAC", "LV", "NE", "NO", "NYG", "NYJ", "PHI", "PIT", "TB", "TEN"]}
+{"table": "rush_off", "source": "footballdb", "logged": "2026-10-19", "sha256": "c84abe3058c1dd9f", "teams_behind": ["DAL", "GB"]}
+{"table": "rush_def", "source": "footballdb", "logged": "2026-10-19", "sha256": "13b4be1571df07b2", "teams_behind": ["BUF", "DAL", "GB", "KC", "LAC", "LV"]}
+{"table": "downs_off", "source": "footballdb", "logged": "2026-10-19", "sha256": "9b3600751e9b93d3", "teams_behind": []}
+{"table": "downs_def", "source": "footballdb", "logged": "2026-10-19", "sha256": "0b52e18d3acbd8e3", "teams_behind": []}
+{"table": "score_off", "source": "footballdb", "logged": "2026-10-19", "sha256": "9075ee9a092fc81e", "teams_behind": []}
+{"table": "score_def", "source": "footballdb", "logged": "2026-10-19", "sha256": "570b956e3ddcb93b", "teams_behind": []}
+{"table": "to", "source": "footballdb", "logged": "2026-10-19", "sha256": "3e49551c7d2dd3b3", "teams_behind": []}
+{"table": "pen", "source": "footballdb", "logged": "2026-10-19", "sha256": "4308a21d3961e3ac", "teams_behind": []}
+{"table": "qb", "source": "footballdb", "logged": "2026-10-19", "sha256": "3d043e8605551359", "teams_behind": []}
+{"table": "honors_2025", "source": "pro-football-reference", "logged": "2026-10-19", "sha256": "745e700c4c01d296", "teams_behind": []}
+{"table": "games", "source": "https://github.com/nflverse/nfldata/raw/master/data/games.csv", "fetched": "2026-10-19", "sha256": "01ad05c0f399b10f", "rows": 1631, "played": 1451}

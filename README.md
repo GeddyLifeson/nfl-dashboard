@@ -33,7 +33,13 @@ Settings were tuned on 2022 to 2024 and then frozen. Every prediction below uses
 
 Strong leans are more reliable: across 2025 and 2026 from week 3, the half of games where the model leaned hardest went 71.1%, against 60.7% overall.
 
-The betting line is still better. `edge.py` tests ideas the line might miss, learning each from 2021 to 2024 and grading it on 2025 and 2026 against the spread. Nothing has passed so far: rest, starting QB changes, body clock trips, wind, division and Thursday underdogs, big favorites, and the model's own disagreements with the line all fall short of the bar for real (52.4% to beat the bookmaker's cut, after allowing for testing many ideas at once). Results are in `edge.json`.
+## Against the sportsbooks
+
+The closing line is still better than the model: 64.6% of winners and a mean squared error of 149 on the 2025-26 test games, against the model's 61.6% and 164. Adding play-by-play EPA (opponent-adjusted, pass, rush and special teams) did not close the gap: it scored 168 out of sample, and mixing any share of it into the line made the line worse.
+
+`edge.py` tests 18 betting rules on spreads, totals and moneylines, graded by real profit at the recorded odds, so the bookmaker's cut is included. Which side to bet is learned on 2021 to 2024 and graded on 2025 and 2026. None has passed the bar (profit with p < 0.05 / 18). Betting every rule that made money in training lost 5.8% on 654 test bets, and the best-looking training rules reversed (under in high wind: +21.4% in training, -0.2% in test). Results are in `edge.json`.
+
+Public data that arrives before kickoff is already in the closing line. The realistic ways to beat it are price, not rating: betting early numbers before they move to where the line closes, and taking the best price across several books. Both need odds from many books captured over time, which nflverse does not have.
 
 ## Files
 
@@ -41,11 +47,11 @@ The betting line is still better. `edge.py` tests ideas the line might miss, lea
 - `fetch.py`, `data/games.csv`: nflverse schedule from 2021 on. `data/ledger.jsonl` logs each download and stat table with its hash.
 - `model.py`: the rating engine. `backtest.py` tunes and tests it, and `params.json` holds the frozen settings and test results.
 - `build.py`, `stats.py`: weekly output. `gen_md.py` and `tiktok.py` turn it into the document and the image.
-- `edge.py`: search for factors the betting line misses.
+- `edge.py`: betting rules graded by profit against the sportsbooks.
 - `design/Main.dc.html`: hand-made design export for the Oct 18 graphic. It has its content baked in and is not updated by the scripts.
 
 The earlier 145-stat composite and its experiments are in the first commit (`cd0d14a`).
 
 ## Sources
 
-Scores, schedule, betting lines, rest days, weather and starting QBs: [nflverse](https://github.com/nflverse/nfldata). Season stat tables: FootballDB. 2025 honors: Pro Football Reference. Logos: ESPN, unless a `logos.json` is provided.
+Scores, schedule, closing spreads, totals, moneylines and their odds, rest days, weather and starting QBs: [nflverse](https://github.com/nflverse/nfldata). Season stat tables: FootballDB. 2025 honors: Pro Football Reference. Logos: ESPN, unless a `logos.json` is provided.

@@ -1,6 +1,4 @@
 {
- "break_even": 0.5238095238095238,
- "p_bar": 0.005555555555555556,
  "train": [
   2021,
   2022,
@@ -11,96 +9,282 @@
   2025,
   2026
  ],
+ "p_bar": 0.002777777777777778,
  "results": [
   {
-   "factor": "model disagrees with line by 3+",
-   "direction": "against",
-   "train_ats": 0.525,
-   "train_bets": 385,
-   "test_ats": 0.538,
-   "test_bets": 93,
-   "p": 0.3948,
+   "rule": "spread: model disagrees with line by 3+",
+   "bet": "opposite side",
+   "train": {
+    "bets": 394,
+    "roi": 0.017,
+    "p": 0.3633
+   },
+   "test": {
+    "bets": 97,
+    "roi": 0.023,
+    "p": 0.4034
+   },
    "edge": false
   },
   {
-   "factor": "rest advantage (days)",
-   "direction": "against",
-   "train_ats": 0.52,
-   "train_bets": 375,
-   "test_ats": 0.448,
-   "test_bets": 125,
-   "p": 0.9552,
+   "rule": "spread: rest edge of 3+ days",
+   "bet": "as named",
+   "train": {
+    "bets": 233,
+    "roi": 0.011,
+    "p": 0.4276
+   },
+   "test": {
+    "bets": 72,
+    "roi": -0.0,
+    "p": 0.5004
+   },
    "edge": false
   },
   {
-   "factor": "starting QB changed since last game",
-   "direction": "with",
-   "train_ats": 0.502,
-   "train_bets": 203,
-   "test_ats": 0.595,
-   "test_bets": 74,
-   "p": 0.1114,
+   "rule": "spread: team with a new starting QB",
+   "bet": "as named",
+   "train": {
+    "bets": 208,
+    "roi": -0.029,
+    "p": 0.6714
+   },
+   "test": {
+    "bets": 76,
+    "roi": 0.136,
+    "p": 0.1023
+   },
    "edge": false
   },
   {
-   "factor": "west team at east 1pm (body clock)",
-   "direction": "against",
-   "train_ats": 0.565,
-   "train_bets": 92,
-   "test_ats": 0.571,
-   "test_bets": 35,
-   "p": 0.2864,
+   "rule": "spread: home team vs west team at 1pm east",
+   "bet": "opposite side",
+   "train": {
+    "bets": 67,
+    "roi": 0.181,
+    "p": 0.0591
+   },
+   "test": {
+    "bets": 27,
+    "roi": -0.078,
+    "p": 0.6604
+   },
    "edge": false
   },
   {
-   "factor": "home underdog",
-   "direction": "with",
-   "train_ats": 0.5,
-   "train_bets": 418,
-   "test_ats": 0.514,
-   "test_bets": 148,
-   "p": 0.599,
+   "rule": "spread: division underdog",
+   "bet": "as named",
+   "train": {
+    "bets": 384,
+    "roi": 0.022,
+    "p": 0.3234
+   },
+   "test": {
+    "bets": 124,
+    "roi": 0.101,
+    "p": 0.1193
+   },
    "edge": false
   },
   {
-   "factor": "big favorite (7+)",
-   "direction": "against",
-   "train_ats": 0.519,
-   "train_bets": 287,
-   "test_ats": 0.559,
-   "test_bets": 102,
-   "p": 0.2395,
+   "rule": "spread: Thursday underdog",
+   "bet": "opposite side",
+   "train": {
+    "bets": 75,
+    "roi": 0.011,
+    "p": 0.4597
+   },
+   "test": {
+    "bets": 27,
+    "roi": -0.508,
+    "p": 0.9991
+   },
    "edge": false
   },
   {
-   "factor": "division game, underdog",
-   "direction": "with",
-   "train_ats": 0.531,
-   "train_bets": 375,
-   "test_ats": 0.573,
-   "test_bets": 124,
-   "p": 0.1384,
+   "rule": "spread: favorite of 7+",
+   "bet": "opposite side",
+   "train": {
+    "bets": 296,
+    "roi": -0.007,
+    "p": 0.5497
+   },
+   "test": {
+    "bets": 105,
+    "roi": 0.068,
+    "p": 0.2293
+   },
    "edge": false
   },
   {
-   "factor": "wind 15+ mph, underdog",
-   "direction": "against",
-   "train_ats": 0.574,
-   "train_bets": 68,
-   "test_ats": 0.579,
-   "test_bets": 19,
-   "p": 0.3152,
+   "rule": "spread: fade team that covered by 14+ last week",
+   "bet": "as named",
+   "train": {
+    "bets": 233,
+    "roi": 0.075,
+    "p": 0.1161
+   },
+   "test": {
+    "bets": 90,
+    "roi": -0.111,
+    "p": 0.867
+   },
    "edge": false
   },
   {
-   "factor": "Thursday game, underdog",
-   "direction": "against",
-   "train_ats": 0.529,
-   "train_bets": 70,
-   "test_ats": 0.259,
-   "test_bets": 27,
-   "p": 0.997,
+   "rule": "spread: home underdog",
+   "bet": "opposite side",
+   "train": {
+    "bets": 431,
+    "roi": -0.036,
+    "p": 0.7825
+   },
+   "test": {
+    "bets": 151,
+    "roi": -0.07,
+    "p": 0.8171
+   },
+   "edge": false
+  },
+  {
+   "rule": "total: under in wind 15+ mph",
+   "bet": "as named",
+   "train": {
+    "bets": 69,
+    "roi": 0.214,
+    "p": 0.0277
+   },
+   "test": {
+    "bets": 19,
+    "roi": -0.002,
+    "p": 0.5042
+   },
+   "edge": false
+  },
+  {
+   "rule": "total: under at 32F or colder",
+   "bet": "as named",
+   "train": {
+    "bets": 41,
+    "roi": 0.009,
+    "p": 0.4764
+   },
+   "test": {
+    "bets": 15,
+    "roi": -0.498,
+    "p": 0.9873
+   },
+   "edge": false
+  },
+  {
+   "rule": "total: over in a dome",
+   "bet": "as named",
+   "train": {
+    "bets": 338,
+    "roi": -0.017,
+    "p": 0.6283
+   },
+   "test": {
+    "bets": 119,
+    "roi": -0.037,
+    "p": 0.6649
+   },
+   "edge": false
+  },
+  {
+   "rule": "total: under in division games",
+   "bet": "as named",
+   "train": {
+    "bets": 384,
+    "roi": -0.018,
+    "p": 0.6452
+   },
+   "test": {
+    "bets": 124,
+    "roi": -0.028,
+    "p": 0.6281
+   },
+   "edge": false
+  },
+  {
+   "rule": "total: under when total is 50+",
+   "bet": "as named",
+   "train": {
+    "bets": 114,
+    "roi": 0.096,
+    "p": 0.144
+   },
+   "test": {
+    "bets": 42,
+    "roi": -0.227,
+    "p": 0.9399
+   },
+   "edge": false
+  },
+  {
+   "rule": "total: over when total is 40 or less",
+   "bet": "as named",
+   "train": {
+    "bets": 176,
+    "roi": -0.009,
+    "p": 0.5488
+   },
+   "test": {
+    "bets": 42,
+    "roi": -0.18,
+    "p": 0.8877
+   },
+   "edge": false
+  },
+  {
+   "rule": "moneyline: underdog at +250 or longer",
+   "bet": "opposite side",
+   "train": {
+    "bets": 297,
+    "roi": -0.029,
+    "p": 0.8452
+   },
+   "test": {
+    "bets": 111,
+    "roi": -0.073,
+    "p": 0.9342
+   },
+   "edge": false
+  },
+  {
+   "rule": "moneyline: favorite at -300 or shorter",
+   "bet": "as named",
+   "train": {
+    "bets": 296,
+    "roi": -0.034,
+    "p": 0.8792
+   },
+   "test": {
+    "bets": 113,
+    "roi": -0.066,
+    "p": 0.9158
+   },
+   "edge": false
+  },
+  {
+   "rule": "moneyline: home underdog",
+   "bet": "opposite side",
+   "train": {
+    "bets": 405,
+    "roi": 0.008,
+    "p": 0.412
+   },
+   "test": {
+    "bets": 141,
+    "roi": -0.069,
+    "p": 0.8716
+   },
    "edge": false
   }
- ]
+ ],
+ "portfolio": {
+  "bets": 654,
+  "roi": -0.058,
+  "p": 0.9489
+ }
 }

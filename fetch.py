@@ -5,7 +5,8 @@ from teams import TEAMS
 URL = 'https://github.com/nflverse/nfldata/raw/master/data/games.csv'
 FIRST_SEASON = 2021
 KEEP = ['game_id', 'season', 'week', 'gameday', 'weekday', 'gametime', 'away_team', 'away_score', 'home_team', 'home_score',
-        'location', 'spread_line', 'away_rest', 'home_rest', 'div_game', 'roof', 'temp', 'wind', 'away_qb_id', 'home_qb_id']
+        'location', 'spread_line', 'away_spread_odds', 'home_spread_odds', 'total_line', 'under_odds', 'over_odds',
+        'away_moneyline', 'home_moneyline', 'away_rest', 'home_rest', 'div_game', 'roof', 'temp', 'wind', 'away_qb_id', 'home_qb_id']
 
 
 def check(rows):

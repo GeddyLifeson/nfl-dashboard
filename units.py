@@ -6,7 +6,7 @@ time (win probability under 5% or over 95%) is left out. Quarterbacks: EPA per d
 scrambles and sacks, with completion % over expected; minimum 100 dropbacks.
 Run: python units.py   (writes units.json)
 """
-import csv, gzip, io, json, urllib.request
+import csv, gzip, io, json, os, time, urllib.request
 import numpy as np
 from teams import ABBRS, IDX, display_abbr, name
 
@@ -16,7 +16,15 @@ MIN_DROPBACKS = 100
 
 
 def plays(season):
-    raw = urllib.request.urlopen(URL.format(season), timeout=120).read()
+    # nflverse refreshes play-by-play about daily; reuse a download for 6 hours
+    path = f'cache/pbp_{season}.csv.gz'
+    if not os.path.exists(path) or time.time() - os.path.getmtime(path) > 6 * 3600:
+        os.makedirs('cache', exist_ok=True)
+        data = urllib.request.urlopen(URL.format(season), timeout=60).read()
+        with open(path + '.tmp', 'wb') as f:
+            f.write(data)
+        os.replace(path + '.tmp', path)
+    raw = open(path, 'rb').read()
     for r in csv.DictReader(io.TextIOWrapper(gzip.GzipFile(fileobj=io.BytesIO(raw)), encoding='utf-8')):
         if r['season_type'] == 'REG' and r['play_type'] in ('pass', 'run') and r['epa'] not in ('', 'NA'):
             yield r

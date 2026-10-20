@@ -15,3 +15,4 @@
 {"table": "honors_2025", "source": "pro-football-reference", "logged": "2026-10-19", "sha256": "745e700c4c01d296", "teams_behind": []}
 {"table": "games", "source": "https://github.com/nflverse/nfldata/raw/master/data/games.csv", "fetched": "2026-10-19", "sha256": "01ad05c0f399b10f", "rows": 1631, "played": 1451}
 {"table": "games", "source": "https://github.com/nflverse/nfldata/raw/master/data/games.csv", "fetched": "2026-10-19", "sha256": "f6783cc8b363d434", "rows": 1631, "played": 1451}
+{"table": "games", "source": "https://github.com/nflverse/nfldata/raw/master/data/games.csv", "fetched": "2026-10-20", "sha256": "dd9151a87a5711c3", "rows": 1631, "played": 1452}

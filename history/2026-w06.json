@@ -2,8 +2,8 @@
  "season": 2026,
  "week": 6,
  "ranks": {
-  "SF": 1,
-  "JAX": 2,
+  "JAX": 1,
+  "SF": 2,
   "SEA": 3,
   "KC": 4,
   "BUF": 5,
@@ -12,8 +12,8 @@
   "DET": 8,
   "LAR": 9,
   "CHI": 10,
-  "DEN": 11,
-  "HOU": 12,
+  "HOU": 11,
+  "DEN": 12,
   "BAL": 13,
   "GB": 14,
   "PIT": 15,
@@ -36,37 +36,37 @@
   "TEN": 32
  },
  "ratings": {
-  "SF": 5.48,
   "JAX": 5.35,
-  "SEA": 4.53,
+  "SF": 5.11,
+  "SEA": 4.52,
   "KC": 4.16,
   "BUF": 3.86,
   "MIN": 3.68,
   "NE": 3.44,
   "DET": 2.71,
-  "LAR": 2.44,
+  "LAR": 2.41,
   "CHI": 2.32,
-  "DEN": 1.68,
-  "HOU": 1.68,
+  "HOU": 1.69,
+  "DEN": 1.66,
   "BAL": 1.64,
   "GB": 0.77,
   "PIT": 0.76,
   "CIN": 0.69,
   "CAR": 0.26,
-  "IND": -1.03,
-  "PHI": -1.19,
+  "IND": -1.0,
+  "PHI": -1.16,
   "ATL": -1.52,
   "TB": -1.63,
-  "DAL": -1.69,
+  "DAL": -1.66,
   "CLE": -2.79,
   "LV": -2.85,
-  "NYG": -2.93,
+  "NYG": -2.9,
   "NO": -3.22,
   "LAC": -3.38,
   "NYJ": -3.46,
-  "WAS": -4.04,
-  "ARI": -4.23,
-  "MIA": -5.22,
+  "WAS": -3.67,
+  "ARI": -4.26,
+  "MIA": -5.25,
   "TEN": -6.3
  },
  "upcoming": [
@@ -89,7 +89,7 @@
    "home": "CHI",
    "neutral": false,
    "home_margin": 0.9,
-   "home_win": 0.527,
+   "home_win": 0.528,
    "line": 3.0
   },
   {
@@ -101,7 +101,7 @@
    "neutral": true,
    "home_margin": -4.0,
    "home_win": 0.378,
-   "line": -3.0
+   "line": -3.5
   },
   {
    "id": "2026_07_SF_ATL",
@@ -110,9 +110,9 @@
    "away": "SF",
    "home": "ATL",
    "neutral": false,
-   "home_margin": -5.0,
-   "home_win": 0.348,
-   "line": -4.5
+   "home_margin": -4.6,
+   "home_win": 0.359,
+   "line": -3.0
   },
   {
    "id": "2026_07_CIN_BAL",
@@ -121,9 +121,9 @@
    "away": "CIN",
    "home": "BAL",
    "neutral": false,
-   "home_margin": 2.9,
+   "home_margin": 3.0,
    "home_win": 0.591,
-   "line": 3.0
+   "line": 2.5
   },
   {
    "id": "2026_07_TB_CAR",
@@ -134,7 +134,7 @@
    "neutral": false,
    "home_margin": 3.9,
    "home_win": 0.619,
-   "line": 3.0
+   "line": 3.5
   },
   {
    "id": "2026_07_NYG_HOU",
@@ -155,8 +155,8 @@
    "home": "MIN",
    "neutral": false,
    "home_margin": 6.7,
-   "home_win": 0.7,
-   "line": 5.5
+   "home_win": 0.699,
+   "line": 6.5
   },
   {
    "id": "2026_07_MIA_NYJ",
@@ -166,7 +166,7 @@
    "home": "NYJ",
    "neutral": false,
    "home_margin": 3.8,
-   "home_win": 0.615,
+   "home_win": 0.616,
    "line": 4.5
   },
   {
@@ -210,8 +210,8 @@
    "home": "LV",
    "neutral": false,
    "home_margin": -3.3,
-   "home_win": 0.399,
-   "line": -5.5
+   "home_win": 0.4,
+   "line": -4.5
   },
   {
    "id": "2026_07_KC_SEA",
@@ -232,7 +232,7 @@
    "home": "PHI",
    "neutral": false,
    "home_margin": 2.5,
-   "home_win": 0.578,
+   "home_win": 0.577,
    "line": -4.5
   }
  ]

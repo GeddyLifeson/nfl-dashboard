@@ -10,6 +10,7 @@ python fetch.py       # scores, schedule and betting lines from nflverse -> data
 python build.py       # rankings, movement, next week's picks -> league_data.json, history/
 python gen_md.py head # markdown overview and picks (python gen_md.py 0 8 for team pages)
 python tiktok.py      # 1080x1920 image -> tiktok/
+python units.py       # offense, defense and QB rankings (opponent-adjusted EPA per play) -> units.json
 ```
 
 Run `python backtest.py` to re-tune the settings (writes `params.json`), `python test_model.py` to check the model, and `python edge.py` to test ideas against the betting line.

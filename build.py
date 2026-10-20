@@ -89,9 +89,13 @@ def main():
                model={k: p[k] for k in ('k', 'carry', 'hfa', 'slope', 'sigma', 'tuned_on', 'tested', 'confidence_tiers')},
                teams=teams, upcoming=upcoming)
     os.makedirs('history', exist_ok=True)
+    path = f'history/{season}-w{week:02d}.json'
+    # Rebuilding mid-week must not drop picks archived earlier (e.g. Monday night's), or they never get graded.
+    archived = json.load(open(path)).get('upcoming', []) if os.path.exists(path) else []
+    keep = [p for p in archived if p['id'] not in {u['id'] for u in upcoming}]
     json.dump(dict(season=season, week=week, ranks={x['abbr']: x['pos'] for x in teams},
-                   ratings={x['abbr']: x['rating'] for x in teams}, upcoming=upcoming),
-              open(f'history/{season}-w{week:02d}.json', 'w'), indent=1)
+                   ratings={x['abbr']: x['rating'] for x in teams}, upcoming=keep + upcoming),
+              open(path, 'w'), indent=1)
     out['pick_record'] = grade_history(games)
     json.dump(out, open('league_data.json', 'w'), indent=1)
 

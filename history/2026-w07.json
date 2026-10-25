@@ -1,0 +1,923 @@
+{
+ "season": 2026,
+ "week": 7,
+ "ranks": {
+  "JAX": 1,
+  "SF": 2,
+  "SEA": 3,
+  "KC": 4,
+  "BUF": 5,
+  "MIN": 6,
+  "NE": 7,
+  "DET": 8,
+  "CHI": 9,
+  "LAR": 10,
+  "HOU": 11,
+  "DEN": 12,
+  "BAL": 13,
+  "GB": 14,
+  "PIT": 15,
+  "CIN": 16,
+  "CAR": 17,
+  "IND": 18,
+  "PHI": 19,
+  "ATL": 20,
+  "TB": 21,
+  "DAL": 22,
+  "CLE": 23,
+  "LV": 24,
+  "NYG": 25,
+  "NO": 26,
+  "LAC": 27,
+  "NYJ": 28,
+  "WAS": 29,
+  "ARI": 30,
+  "MIA": 31,
+  "TEN": 32
+ },
+ "ratings": {
+  "JAX": 5.33,
+  "SF": 5.11,
+  "SEA": 4.5,
+  "KC": 4.16,
+  "BUF": 3.84,
+  "MIN": 3.71,
+  "NE": 3.11,
+  "DET": 2.71,
+  "CHI": 2.65,
+  "LAR": 2.41,
+  "HOU": 1.68,
+  "DEN": 1.65,
+  "BAL": 1.65,
+  "GB": 0.8,
+  "PIT": 0.74,
+  "CIN": 0.69,
+  "CAR": 0.29,
+  "IND": -1.0,
+  "PHI": -1.14,
+  "ATL": -1.49,
+  "TB": -1.62,
+  "DAL": -1.66,
+  "CLE": -2.79,
+  "LV": -2.87,
+  "NYG": -2.9,
+  "NO": -3.21,
+  "LAC": -3.39,
+  "NYJ": -3.46,
+  "WAS": -3.67,
+  "ARI": -4.26,
+  "MIA": -5.25,
+  "TEN": -6.3
+ },
+ "upcoming": [
+  {
+   "id": "2026_07_PIT_NO",
+   "week": 7,
+   "day": "2026-10-25",
+   "away": "PIT",
+   "home": "NO",
+   "neutral": true,
+   "home_margin": -4.0,
+   "home_win": 0.379,
+   "line": -3.0,
+   "results_margin": -4.0,
+   "lineup": {
+    "NO": {
+     "points": -0.2,
+     "qb": 0.0,
+     "injuries": -0.2,
+     "notes": [
+      "Cesar Ruiz (G, Questionable)",
+      "Nathan Shepherd (DL, Questionable)"
+     ]
+    },
+    "PIT": {
+     "points": -0.2,
+     "qb": 0.0,
+     "injuries": -0.2,
+     "notes": [
+      "Rayshawn Jenkins (S, off depth chart)",
+      "Rico Dowdle (RB, Questionable)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_07_SF_ATL",
+   "week": 7,
+   "day": "2026-10-25",
+   "away": "SF",
+   "home": "ATL",
+   "neutral": false,
+   "home_margin": -4.9,
+   "home_win": 0.351,
+   "line": -2.5,
+   "results_margin": -4.6,
+   "lineup": {
+    "ATL": {
+     "points": -1.4,
+     "qb": 0.0,
+     "injuries": -1.4,
+     "notes": [
+      "Divine Deablo (LB, Out)",
+      "Billy Bowman (CB, Out)",
+      "Brian Robinson Jr. (RB, Out)",
+      "Michael Jerrell (OL, Out)",
+      "Samson Ebukam (DE, Questionable)"
+     ]
+    },
+    "SF": {
+     "points": -1.1,
+     "qb": 0.0,
+     "injuries": -1.1,
+     "notes": [
+      "Mike Evans (WR, Out)",
+      "Deebo Samuel (WR, Out)",
+      "Marques Sigle (S, Out)",
+      "Nick Bosa (DL, Out)",
+      "Upton Stout (CB, Questionable)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_07_CIN_BAL",
+   "week": 7,
+   "day": "2026-10-25",
+   "away": "CIN",
+   "home": "BAL",
+   "neutral": false,
+   "home_margin": 2.3,
+   "home_win": 0.57,
+   "line": -3.0,
+   "results_margin": 3.0,
+   "lineup": {
+    "BAL": {
+     "points": -0.7,
+     "qb": 0.0,
+     "injuries": -0.7,
+     "notes": [
+      "Jaylinn Hawkins (S, Out)",
+      "Tavius Robinson (LB, Out)",
+      "Broderick Washington Jr. (DL, Questionable)"
+     ]
+    },
+    "CIN": {}
+   }
+  },
+  {
+   "id": "2026_07_TB_CAR",
+   "week": 7,
+   "day": "2026-10-25",
+   "away": "TB",
+   "home": "CAR",
+   "neutral": false,
+   "home_margin": 5.2,
+   "home_win": 0.658,
+   "line": 3.0,
+   "results_margin": 3.9,
+   "lineup": {
+    "CAR": {
+     "points": -0.4,
+     "qb": 0.0,
+     "injuries": -0.4,
+     "notes": [
+      "Jaelan Phillips (LB, Out)",
+      "Monroe Freeling (T, Questionable)"
+     ]
+    },
+    "TB": {
+     "points": -1.7,
+     "qb": 0.0,
+     "injuries": -1.7,
+     "notes": [
+      "Luke Goedeke (T, Out)",
+      "Emeka Egbuka (WR, Out)",
+      "Antoine Winfield Jr. (S, Out)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_07_NYG_HOU",
+   "week": 7,
+   "day": "2026-10-25",
+   "away": "NYG",
+   "home": "HOU",
+   "neutral": false,
+   "home_margin": 11.0,
+   "home_win": 0.805,
+   "line": 10.5,
+   "results_margin": 6.6,
+   "lineup": {
+    "HOU": {
+     "points": -1.1,
+     "qb": 0.0,
+     "injuries": -1.1,
+     "notes": [
+      "Jalen Pitre (S, Out)",
+      "Reed Blankenship (S, Out)",
+      "David Montgomery (RB, Out)"
+     ]
+    },
+    "NYG": {
+     "points": -5.5,
+     "qb": -3.1,
+     "injuries": -2.4,
+     "notes": [
+      "J.J. McCarthy starting (20 dropbacks this season), not the team's main passer",
+      "Greg Newsome II (CB, Out)",
+      "Andru Phillips (CB, off depth chart)",
+      "Jevon Holland (S, Out)",
+      "Tremaine Edmunds (LB, Out)",
+      "Theo Johnson (TE, Doubtful)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_07_IND_MIN",
+   "week": 7,
+   "day": "2026-10-25",
+   "away": "IND",
+   "home": "MIN",
+   "neutral": false,
+   "home_margin": 8.0,
+   "home_win": 0.734,
+   "line": 7.0,
+   "results_margin": 6.7,
+   "lineup": {
+    "MIN": {
+     "points": 0.0,
+     "qb": 0.0,
+     "injuries": -0.0,
+     "notes": [
+      "Jordan Mason (RB, Questionable)"
+     ]
+    },
+    "IND": {
+     "points": -1.3,
+     "qb": 0.0,
+     "injuries": -1.3,
+     "notes": [
+      "Sauce Gardner (CB, Out)",
+      "Tyler Warren (TE, Out)",
+      "Justin Walley (CB, Questionable)",
+      "Bryce Boettcher (LB, Questionable)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_07_MIA_NYJ",
+   "week": 7,
+   "day": "2026-10-25",
+   "away": "MIA",
+   "home": "NYJ",
+   "neutral": false,
+   "home_margin": 3.6,
+   "home_win": 0.61,
+   "line": 3.5,
+   "results_margin": 3.8,
+   "lineup": {
+    "NYJ": {
+     "points": -0.3,
+     "qb": 0.0,
+     "injuries": -0.3,
+     "notes": [
+      "Joseph Ossai (DE, Out)",
+      "Dylan Parham (OL, Questionable)",
+      "Breece Hall (RB, Questionable)"
+     ]
+    },
+    "MIA": {
+     "points": -0.1,
+     "qb": 0.0,
+     "injuries": -0.1,
+     "notes": [
+      "Willie Gay Jr. (LB, Questionable)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_07_CLE_TEN",
+   "week": 7,
+   "day": "2026-10-25",
+   "away": "CLE",
+   "home": "TEN",
+   "neutral": false,
+   "home_margin": -1.4,
+   "home_win": 0.456,
+   "line": -2.5,
+   "results_margin": -1.5,
+   "lineup": {
+    "TEN": {
+     "points": -0.2,
+     "qb": 0.0,
+     "injuries": -0.2,
+     "notes": [
+      "Calvin Ridley (WR, Questionable)",
+      "Kevin Winston (S, Questionable)",
+      "Tyjae Spears (RB, Questionable)",
+      "Tony Adams (S, Questionable)"
+     ]
+    },
+    "CLE": {
+     "points": -0.3,
+     "qb": 0.0,
+     "injuries": -0.3,
+     "notes": [
+      "Denzel Ward (CB, Questionable)",
+      "Quincy Williams (LB, Questionable)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_07_DEN_ARI",
+   "week": 7,
+   "day": "2026-10-25",
+   "away": "DEN",
+   "home": "ARI",
+   "neutral": false,
+   "home_margin": -4.7,
+   "home_win": 0.356,
+   "line": -4.5,
+   "results_margin": -3.9,
+   "lineup": {
+    "ARI": {
+     "points": -1.6,
+     "qb": 0.0,
+     "injuries": -1.6,
+     "notes": [
+      "Walter Nolen (DL, Out)",
+      "Jon Gaines (OL, Out)",
+      "Marvin Harrison Jr. (WR, off depth chart)",
+      "Andrew Wingard (S, Out)",
+      "Jeremiyah Love (RB, Out)"
+     ]
+    },
+    "DEN": {
+     "points": -0.8,
+     "qb": 0.0,
+     "injuries": -0.8,
+     "notes": [
+      "Talanoa Hufanga (S, Out)",
+      "Jonah Elliss (LB, Out)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_07_GB_DET",
+   "week": 7,
+   "day": "2026-10-25",
+   "away": "GB",
+   "home": "DET",
+   "neutral": false,
+   "home_margin": 4.4,
+   "home_win": 0.635,
+   "line": 3.5,
+   "results_margin": 3.9,
+   "lineup": {
+    "DET": {},
+    "GB": {
+     "points": -0.5,
+     "qb": 0.0,
+     "injuries": -0.5,
+     "notes": [
+      "Zaire Franklin (LB, Out)",
+      "Bo Melton (WR, Questionable)",
+      "Aaron Banks (G, Questionable)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_07_LA_LV",
+   "week": 7,
+   "day": "2026-10-25",
+   "away": "LAR",
+   "home": "LV",
+   "neutral": false,
+   "home_margin": -3.1,
+   "home_win": 0.405,
+   "line": -3.5,
+   "results_margin": -3.3,
+   "lineup": {
+    "LV": {
+     "points": -0.1,
+     "qb": 0.0,
+     "injuries": -0.1,
+     "notes": [
+      "Quay Walker (LB, Questionable)"
+     ]
+    },
+    "LAR": {
+     "points": -0.3,
+     "qb": 0.0,
+     "injuries": -0.3,
+     "notes": [
+      "Puka Nacua (WR, Questionable)",
+      "Trent McDuffie (CB, Questionable)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_07_KC_SEA",
+   "week": 7,
+   "day": "2026-10-25",
+   "away": "KC",
+   "home": "SEA",
+   "neutral": false,
+   "home_margin": 2.6,
+   "home_win": 0.582,
+   "line": 3.0,
+   "results_margin": 2.3,
+   "lineup": {
+    "SEA": {
+     "points": -0.6,
+     "qb": 0.0,
+     "injuries": -0.6,
+     "notes": [
+      "Drake Thomas (LB, Out)",
+      "DeMarcus Lawrence (LB, Questionable)",
+      "AJ Finley (S, off depth chart)",
+      "Uchenna Nwosu (LB, Questionable)",
+      "Nick Emmanwori (S, Questionable)"
+     ]
+    },
+    "KC": {
+     "points": -0.9,
+     "qb": 0.0,
+     "injuries": -0.9,
+     "notes": [
+      "Jaylon Moore (OL, Out)",
+      "Rashee Rice (WR, Out)",
+      "L'Jarius Sneed (CB, Questionable)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_07_DAL_PHI",
+   "week": 7,
+   "day": "2026-10-26",
+   "away": "DAL",
+   "home": "PHI",
+   "neutral": false,
+   "home_margin": 0.7,
+   "home_win": 0.522,
+   "line": -4.5,
+   "results_margin": 2.5,
+   "lineup": {
+    "PHI": {
+     "points": -2.1,
+     "qb": -0.3,
+     "injuries": -1.8,
+     "notes": [
+      "Tanner McKee starting (48 dropbacks this season), not the team's main passer",
+      "Dontayvion Wicks (WR, Out)",
+      "Cam Jurgens (C, off depth chart)",
+      "DeVonta Smith (WR, Out)",
+      "Nolan Smith (LB, Out)",
+      "Michael Carter II (DB, Out)"
+     ]
+    },
+    "DAL": {
+     "points": -0.3,
+     "qb": 0.0,
+     "injuries": -0.3,
+     "notes": [
+      "Dee Winters (LB, Out)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_08_CAR_GB",
+   "week": 8,
+   "day": "2026-10-29",
+   "away": "CAR",
+   "home": "GB",
+   "neutral": false,
+   "home_margin": 2.4,
+   "home_win": 0.575,
+   "line": 3.0,
+   "results_margin": 2.5,
+   "lineup": {
+    "GB": {
+     "points": -0.5,
+     "qb": 0.0,
+     "injuries": -0.5,
+     "notes": [
+      "Zaire Franklin (LB, Out)",
+      "Bo Melton (WR, Questionable)",
+      "Aaron Banks (G, Questionable)"
+     ]
+    },
+    "CAR": {
+     "points": -0.4,
+     "qb": 0.0,
+     "injuries": -0.4,
+     "notes": [
+      "Jaelan Phillips (LB, Out)",
+      "Monroe Freeling (T, Questionable)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_08_BAL_BUF",
+   "week": 8,
+   "day": "2026-11-01",
+   "away": "BAL",
+   "home": "BUF",
+   "neutral": false,
+   "home_margin": 4.9,
+   "home_win": 0.649,
+   "line": 3.0,
+   "results_margin": 4.2,
+   "lineup": {
+    "BUF": {},
+    "BAL": {
+     "points": -0.7,
+     "qb": 0.0,
+     "injuries": -0.7,
+     "notes": [
+      "Jaylinn Hawkins (S, Out)",
+      "Tavius Robinson (LB, Out)",
+      "Broderick Washington Jr. (DL, Questionable)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_08_TEN_CIN",
+   "week": 8,
+   "day": "2026-11-01",
+   "away": "TEN",
+   "home": "CIN",
+   "neutral": false,
+   "home_margin": 9.2,
+   "home_win": 0.763,
+   "line": 10.0,
+   "results_margin": 9.0,
+   "lineup": {
+    "CIN": {},
+    "TEN": {
+     "points": -0.2,
+     "qb": 0.0,
+     "injuries": -0.2,
+     "notes": [
+      "Calvin Ridley (WR, Questionable)",
+      "Kevin Winston (S, Questionable)",
+      "Tyjae Spears (RB, Questionable)",
+      "Tony Adams (S, Questionable)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_08_ARI_DAL",
+   "week": 8,
+   "day": "2026-11-01",
+   "away": "ARI",
+   "home": "DAL",
+   "neutral": false,
+   "home_margin": 5.9,
+   "home_win": 0.678,
+   "line": 6.5,
+   "results_margin": 4.6,
+   "lineup": {
+    "DAL": {
+     "points": -0.3,
+     "qb": 0.0,
+     "injuries": -0.3,
+     "notes": [
+      "Dee Winters (LB, Out)"
+     ]
+    },
+    "ARI": {
+     "points": -1.6,
+     "qb": 0.0,
+     "injuries": -1.6,
+     "notes": [
+      "Walter Nolen (DL, Out)",
+      "Jon Gaines (OL, Out)",
+      "Marvin Harrison Jr. (WR, off depth chart)",
+      "Andrew Wingard (S, Out)",
+      "Jeremiyah Love (RB, Out)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_08_MIN_DET",
+   "week": 8,
+   "day": "2026-11-01",
+   "away": "MIN",
+   "home": "DET",
+   "neutral": false,
+   "home_margin": 1.0,
+   "home_win": 0.531,
+   "line": 2.5,
+   "results_margin": 1.0,
+   "lineup": {
+    "DET": {},
+    "MIN": {
+     "points": 0.0,
+     "qb": 0.0,
+     "injuries": -0.0,
+     "notes": [
+      "Jordan Mason (RB, Questionable)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_08_IND_JAX",
+   "week": 8,
+   "day": "2026-11-01",
+   "away": "IND",
+   "home": "JAX",
+   "neutral": false,
+   "home_margin": 9.6,
+   "home_win": 0.774,
+   "line": 7.5,
+   "results_margin": 8.3,
+   "lineup": {
+    "JAX": {},
+    "IND": {
+     "points": -1.3,
+     "qb": 0.0,
+     "injuries": -1.3,
+     "notes": [
+      "Sauce Gardner (CB, Out)",
+      "Tyler Warren (TE, Out)",
+      "Justin Walley (CB, Questionable)",
+      "Bryce Boettcher (LB, Questionable)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_08_LV_NYJ",
+   "week": 8,
+   "day": "2026-11-01",
+   "away": "LV",
+   "home": "NYJ",
+   "neutral": false,
+   "home_margin": 1.2,
+   "home_win": 0.538,
+   "line": -1.5,
+   "results_margin": 1.4,
+   "lineup": {
+    "NYJ": {
+     "points": -0.3,
+     "qb": 0.0,
+     "injuries": -0.3,
+     "notes": [
+      "Joseph Ossai (DE, Out)",
+      "Dylan Parham (OL, Questionable)",
+      "Breece Hall (RB, Questionable)"
+     ]
+    },
+    "LV": {
+     "points": -0.1,
+     "qb": 0.0,
+     "injuries": -0.1,
+     "notes": [
+      "Quay Walker (LB, Questionable)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_08_CLE_PIT",
+   "week": 8,
+   "day": "2026-11-01",
+   "away": "CLE",
+   "home": "PIT",
+   "neutral": false,
+   "home_margin": 5.6,
+   "home_win": 0.67,
+   "line": null,
+   "results_margin": 5.5,
+   "lineup": {
+    "PIT": {
+     "points": -0.2,
+     "qb": 0.0,
+     "injuries": -0.2,
+     "notes": [
+      "Rayshawn Jenkins (S, off depth chart)",
+      "Rico Dowdle (RB, Questionable)"
+     ]
+    },
+    "CLE": {
+     "points": -0.3,
+     "qb": 0.0,
+     "injuries": -0.3,
+     "notes": [
+      "Denzel Ward (CB, Questionable)",
+      "Quincy Williams (LB, Questionable)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_08_ATL_TB",
+   "week": 8,
+   "day": "2026-11-01",
+   "away": "ATL",
+   "home": "TB",
+   "neutral": false,
+   "home_margin": 1.6,
+   "home_win": 0.549,
+   "line": 1.5,
+   "results_margin": 1.9,
+   "lineup": {
+    "TB": {
+     "points": -1.7,
+     "qb": 0.0,
+     "injuries": -1.7,
+     "notes": [
+      "Luke Goedeke (T, Out)",
+      "Emeka Egbuka (WR, Out)",
+      "Antoine Winfield Jr. (S, Out)"
+     ]
+    },
+    "ATL": {
+     "points": -1.4,
+     "qb": 0.0,
+     "injuries": -1.4,
+     "notes": [
+      "Divine Deablo (LB, Out)",
+      "Billy Bowman (CB, Out)",
+      "Brian Robinson Jr. (RB, Out)",
+      "Michael Jerrell (OL, Out)",
+      "Samson Ebukam (DE, Questionable)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_08_LAC_LA",
+   "week": 8,
+   "day": "2026-11-01",
+   "away": "LAC",
+   "home": "LAR",
+   "neutral": false,
+   "home_margin": 7.5,
+   "home_win": 0.721,
+   "line": 7.0,
+   "results_margin": 7.8,
+   "lineup": {
+    "LAR": {
+     "points": -0.3,
+     "qb": 0.0,
+     "injuries": -0.3,
+     "notes": [
+      "Puka Nacua (WR, Questionable)",
+      "Trent McDuffie (CB, Questionable)"
+     ]
+    },
+    "LAC": {}
+   }
+  },
+  {
+   "id": "2026_08_KC_DEN",
+   "week": 8,
+   "day": "2026-11-01",
+   "away": "KC",
+   "home": "DEN",
+   "neutral": false,
+   "home_margin": -0.4,
+   "home_win": 0.487,
+   "line": -1.5,
+   "results_margin": -0.5,
+   "lineup": {
+    "DEN": {
+     "points": -0.8,
+     "qb": 0.0,
+     "injuries": -0.8,
+     "notes": [
+      "Talanoa Hufanga (S, Out)",
+      "Jonah Elliss (LB, Out)"
+     ]
+    },
+    "KC": {
+     "points": -0.9,
+     "qb": 0.0,
+     "injuries": -0.9,
+     "notes": [
+      "Jaylon Moore (OL, Out)",
+      "Rashee Rice (WR, Out)",
+      "L'Jarius Sneed (CB, Questionable)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_08_NE_MIA",
+   "week": 8,
+   "day": "2026-11-01",
+   "away": "NE",
+   "home": "MIA",
+   "neutral": false,
+   "home_margin": -4.9,
+   "home_win": 0.352,
+   "line": -8.5,
+   "results_margin": -6.4,
+   "lineup": {
+    "MIA": {
+     "points": -0.1,
+     "qb": 0.0,
+     "injuries": -0.1,
+     "notes": [
+      "Willie Gay Jr. (LB, Questionable)"
+     ]
+    },
+    "NE": {
+     "points": -1.6,
+     "qb": 0.0,
+     "injuries": -1.6,
+     "notes": [
+      "Alijah Vera-Tucker (G, Out)",
+      "Carlton Davis (CB, Out)",
+      "Ben Brown (C, Out)",
+      "Kevin Byard (S, Questionable)",
+      "Morgan Moses (T, Questionable)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_08_PHI_WAS",
+   "week": 8,
+   "day": "2026-11-01",
+   "away": "PHI",
+   "home": "WAS",
+   "neutral": false,
+   "home_margin": 1.6,
+   "home_win": 0.549,
+   "line": 3.5,
+   "results_margin": -0.5,
+   "lineup": {
+    "WAS": {},
+    "PHI": {
+     "points": -2.1,
+     "qb": -0.3,
+     "injuries": -1.8,
+     "notes": [
+      "Tanner McKee starting (48 dropbacks this season), not the team's main passer",
+      "Dontayvion Wicks (WR, Out)",
+      "Cam Jurgens (C, off depth chart)",
+      "DeVonta Smith (WR, Out)",
+      "Nolan Smith (LB, Out)",
+      "Michael Carter II (DB, Out)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_08_CHI_SEA",
+   "week": 8,
+   "day": "2026-11-02",
+   "away": "CHI",
+   "home": "SEA",
+   "neutral": false,
+   "home_margin": 3.7,
+   "home_win": 0.615,
+   "line": 3.0,
+   "results_margin": 3.8,
+   "lineup": {
+    "SEA": {
+     "points": -0.6,
+     "qb": 0.0,
+     "injuries": -0.6,
+     "notes": [
+      "Drake Thomas (LB, Out)",
+      "DeMarcus Lawrence (LB, Questionable)",
+      "AJ Finley (S, off depth chart)",
+      "Uchenna Nwosu (LB, Questionable)",
+      "Nick Emmanwori (S, Questionable)"
+     ]
+    },
+    "CHI": {
+     "points": -0.5,
+     "qb": 0.0,
+     "injuries": -0.5,
+     "notes": [
+      "T.J. Edwards (LB, Doubtful)",
+      "Xavier Woods (DB, off depth chart)",
+      "Kyle Monangai (RB, Out)",
+      "Tyrique Stevenson (DB, Questionable)"
+     ]
+    }
+   }
+  }
+ ]
+}

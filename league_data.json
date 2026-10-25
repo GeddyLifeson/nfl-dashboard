@@ -1,8 +1,22 @@
 {
  "season": 2026,
- "week": 6,
- "through": "Oct 19",
- "not_yet_played": [],
+ "week": 7,
+ "through": "Oct 22",
+ "not_yet_played": [
+  "Pittsburgh Steelers at New Orleans Saints",
+  "San Francisco 49ers at Atlanta Falcons",
+  "Cincinnati Bengals at Baltimore Ravens",
+  "Tampa Bay Buccaneers at Carolina Panthers",
+  "New York Giants at Houston Texans",
+  "Indianapolis Colts at Minnesota Vikings",
+  "Miami Dolphins at New York Jets",
+  "Cleveland Browns at Tennessee Titans",
+  "Denver Broncos at Arizona Cardinals",
+  "Green Bay Packers at Detroit Lions",
+  "Los Angeles Rams at Las Vegas Raiders",
+  "Kansas City Chiefs at Seattle Seahawks",
+  "Dallas Cowboys at Philadelphia Eagles"
+ ],
  "model": {
   "k": 8,
   "carry": 0.6,
@@ -88,9 +102,9 @@
    "move": 0,
    "record": "4-2",
    "gp": 6,
-   "rating": 5.35,
+   "rating": 5.33,
    "margin": 8.3,
-   "sos": 0.6,
+   "sos": 0.5,
    "sos_rank": 7,
    "off_avg": 13.3,
    "def_avg": 10.5,
@@ -696,10 +710,10 @@
    "move": 0,
    "record": "3-3",
    "gp": 6,
-   "rating": 4.52,
+   "rating": 4.5,
    "margin": 4.3,
    "sos": -0.2,
-   "sos_rank": 20,
+   "sos_rank": 21,
    "off_avg": 18.5,
    "def_avg": 8.9,
    "stats": [
@@ -996,8 +1010,8 @@
    "team": "Kansas City Chiefs",
    "abbr": "KC",
    "pos": 4,
-   "prev_pos": 5,
-   "move": 1,
+   "prev_pos": 4,
+   "move": 0,
    "record": "5-0",
    "gp": 5,
    "rating": 4.16,
@@ -1300,13 +1314,13 @@
    "team": "Buffalo Bills",
    "abbr": "BUF",
    "pos": 5,
-   "prev_pos": 4,
-   "move": -1,
+   "prev_pos": 5,
+   "move": 0,
    "record": "5-1",
    "gp": 6,
-   "rating": 3.86,
+   "rating": 3.84,
    "margin": 4.3,
-   "sos": 0.7,
+   "sos": 0.6,
    "sos_rank": 6,
    "off_avg": 9.9,
    "def_avg": 24.5,
@@ -1604,14 +1618,14 @@
    "team": "Minnesota Vikings",
    "abbr": "MIN",
    "pos": 6,
-   "prev_pos": 7,
-   "move": 1,
+   "prev_pos": 6,
+   "move": 0,
    "record": "5-0",
    "gp": 5,
-   "rating": 3.68,
+   "rating": 3.71,
    "margin": 9.0,
-   "sos": -1.4,
-   "sos_rank": 29,
+   "sos": -1.3,
+   "sos_rank": 28,
    "off_avg": 17.2,
    "def_avg": 3.0,
    "stats": [
@@ -1908,14 +1922,14 @@
    "team": "New England Patriots",
    "abbr": "NE",
    "pos": 7,
-   "prev_pos": 6,
-   "move": -1,
-   "record": "4-2",
-   "gp": 6,
-   "rating": 3.44,
-   "margin": 3.8,
-   "sos": 1.4,
-   "sos_rank": 4,
+   "prev_pos": 7,
+   "move": 0,
+   "record": "4-3",
+   "gp": 7,
+   "rating": 3.11,
+   "margin": 2.4,
+   "sos": 1.5,
+   "sos_rank": 3,
    "off_avg": 13.6,
    "def_avg": 10.5,
    "stats": [
@@ -1926,7 +1940,7 @@
      "unit": "",
      "value": "22.7",
      "rank": 19,
-     "behind": false
+     "behind": true
     },
     {
      "slug": "yards-per-game",
@@ -1935,7 +1949,7 @@
      "unit": "",
      "value": "374.2",
      "rank": 7,
-     "behind": false
+     "behind": true
     },
     {
      "slug": "points-per-play",
@@ -1944,7 +1958,7 @@
      "unit": "",
      "value": "0.352",
      "rank": 20,
-     "behind": false
+     "behind": true
     },
     {
      "slug": "touchdowns-per-game",
@@ -1953,7 +1967,7 @@
      "unit": "",
      "value": "2.2",
      "rank": 16,
-     "behind": false
+     "behind": true
     },
     {
      "slug": "rush-attempts-per-game",
@@ -1962,7 +1976,7 @@
      "unit": "",
      "value": "31.2",
      "rank": 2,
-     "behind": false
+     "behind": true
     },
     {
      "slug": "rush-yards-per-game",
@@ -1971,7 +1985,7 @@
      "unit": "",
      "value": "130.7",
      "rank": 7,
-     "behind": false
+     "behind": true
     },
     {
      "slug": "rush-touchdowns-per-game",
@@ -1980,7 +1994,7 @@
      "unit": "",
      "value": "0.7",
      "rank": 19,
-     "behind": false
+     "behind": true
     },
     {
      "slug": "pass-attempts-per-game",
@@ -1989,7 +2003,7 @@
      "unit": "",
      "value": "31.5",
      "rank": 20,
-     "behind": false
+     "behind": true
     },
     {
      "slug": "net-pass-yards-per-game",
@@ -1998,7 +2012,7 @@
      "unit": "",
      "value": "243.5",
      "rank": 10,
-     "behind": false
+     "behind": true
     },
     {
      "slug": "third-down-pct",
@@ -2007,7 +2021,7 @@
      "unit": "%",
      "value": "40.5",
      "rank": 13,
-     "behind": false
+     "behind": true
     },
     {
      "slug": "fourth-down-pct",
@@ -2016,7 +2030,7 @@
      "unit": "%",
      "value": "80.0",
      "rank": 2,
-     "behind": false
+     "behind": true
     },
     {
      "slug": "first-downs-per-game",
@@ -2025,7 +2039,7 @@
      "unit": "",
      "value": "21.3",
      "rank": 7,
-     "behind": false
+     "behind": true
     },
     {
      "slug": "giveaways-per-game",
@@ -2034,7 +2048,7 @@
      "unit": "",
      "value": "2.2",
      "rank": 31,
-     "behind": false
+     "behind": true
     },
     {
      "slug": "penalties-per-game",
@@ -2043,7 +2057,7 @@
      "unit": "",
      "value": "7.5",
      "rank": 15,
-     "behind": false
+     "behind": true
     },
     {
      "slug": "penalty-yards-per-game",
@@ -2052,7 +2066,7 @@
      "unit": "",
      "value": "59.5",
      "rank": 16,
-     "behind": false
+     "behind": true
     },
     {
      "slug": "opp-points-per-game",
@@ -2061,7 +2075,7 @@
      "unit": "",
      "value": "18.8",
      "rank": 5,
-     "behind": false
+     "behind": true
     },
     {
      "slug": "opp-yards-per-game",
@@ -2070,7 +2084,7 @@
      "unit": "",
      "value": "300.8",
      "rank": 6,
-     "behind": false
+     "behind": true
     },
     {
      "slug": "opp-points-per-play",
@@ -2088,7 +2102,7 @@
      "unit": "",
      "value": "1.8",
      "rank": 8,
-     "behind": false
+     "behind": true
     },
     {
      "slug": "opp-rush-attempts-per-game",
@@ -2097,7 +2111,7 @@
      "unit": "",
      "value": "23.3",
      "rank": 6,
-     "behind": false
+     "behind": true
     },
     {
      "slug": "opp-rush-yards-per-game",
@@ -2106,7 +2120,7 @@
      "unit": "",
      "value": "91.8",
      "rank": 8,
-     "behind": false
+     "behind": true
     },
     {
      "slug": "opp-rush-touchdowns-per-game",
@@ -2115,7 +2129,7 @@
      "unit": "",
      "value": "0.8",
      "rank": 13,
-     "behind": false
+     "behind": true
     },
     {
      "slug": "opp-pass-attempts-per-game",
@@ -2133,7 +2147,7 @@
      "unit": "",
      "value": "209.0",
      "rank": 12,
-     "behind": false
+     "behind": true
     },
     {
      "slug": "opp-third-down-pct",
@@ -2142,7 +2156,7 @@
      "unit": "%",
      "value": "37.1",
      "rank": 11,
-     "behind": false
+     "behind": true
     },
     {
      "slug": "opp-fourth-down-pct",
@@ -2151,7 +2165,7 @@
      "unit": "%",
      "value": "42.9",
      "rank": 13,
-     "behind": false
+     "behind": true
     },
     {
      "slug": "opp-first-downs-per-game",
@@ -2160,7 +2174,7 @@
      "unit": "",
      "value": "18.0",
      "rank": 6,
-     "behind": false
+     "behind": true
     },
     {
      "slug": "takeaways-per-game",
@@ -2169,7 +2183,7 @@
      "unit": "",
      "value": "1.2",
      "rank": 20,
-     "behind": false
+     "behind": true
     },
     {
      "slug": "sacks-per-game",
@@ -2187,7 +2201,7 @@
      "unit": "",
      "value": "0.7",
      "rank": 12,
-     "behind": false
+     "behind": true
     },
     {
      "slug": "turnover-margin-per-game",
@@ -2196,7 +2210,7 @@
      "unit": "",
      "value": "-1.0",
      "rank": 30,
-     "behind": false
+     "behind": true
     }
    ],
    "player": {
@@ -2212,14 +2226,14 @@
    "team": "Detroit Lions",
    "abbr": "DET",
    "pos": 8,
-   "prev_pos": 9,
-   "move": 1,
+   "prev_pos": 8,
+   "move": 0,
    "record": "3-2",
    "gp": 5,
    "rating": 2.71,
    "margin": 3.2,
    "sos": -1.4,
-   "sos_rank": 28,
+   "sos_rank": 29,
    "off_avg": 6.8,
    "def_avg": 24.3,
    "stats": [
@@ -2513,10 +2527,314 @@
    }
   },
   {
+   "team": "Chicago Bears",
+   "abbr": "CHI",
+   "pos": 9,
+   "prev_pos": 10,
+   "move": 1,
+   "record": "5-2",
+   "gp": 7,
+   "rating": 2.65,
+   "margin": 5.3,
+   "sos": 0.3,
+   "sos_rank": 12,
+   "off_avg": 10.7,
+   "def_avg": 8.8,
+   "stats": [
+    {
+     "slug": "points-per-game",
+     "label": "Points per game",
+     "side": "O",
+     "unit": "",
+     "value": "25.0",
+     "rank": 12,
+     "behind": true
+    },
+    {
+     "slug": "yards-per-game",
+     "label": "Yards per game",
+     "side": "O",
+     "unit": "",
+     "value": "388.3",
+     "rank": 5,
+     "behind": true
+    },
+    {
+     "slug": "points-per-play",
+     "label": "Points per play",
+     "side": "O",
+     "unit": "",
+     "value": "0.342",
+     "rank": 22,
+     "behind": true
+    },
+    {
+     "slug": "touchdowns-per-game",
+     "label": "Touchdowns per game",
+     "side": "O",
+     "unit": "",
+     "value": "2.3",
+     "rank": 13,
+     "behind": true
+    },
+    {
+     "slug": "rush-attempts-per-game",
+     "label": "Rushes per game",
+     "side": "O",
+     "unit": "",
+     "value": "36.0",
+     "rank": 1,
+     "behind": true
+    },
+    {
+     "slug": "rush-yards-per-game",
+     "label": "Rush yards per game",
+     "side": "O",
+     "unit": "",
+     "value": "160.7",
+     "rank": 1,
+     "behind": true
+    },
+    {
+     "slug": "rush-touchdowns-per-game",
+     "label": "Rush TDs per game",
+     "side": "O",
+     "unit": "",
+     "value": "2.2",
+     "rank": 2,
+     "behind": true
+    },
+    {
+     "slug": "pass-attempts-per-game",
+     "label": "Pass attempts per game",
+     "side": "O",
+     "unit": "",
+     "value": "34.7",
+     "rank": 14,
+     "behind": true
+    },
+    {
+     "slug": "net-pass-yards-per-game",
+     "label": "Net pass yards per game",
+     "side": "O",
+     "unit": "",
+     "value": "227.7",
+     "rank": 15,
+     "behind": true
+    },
+    {
+     "slug": "third-down-pct",
+     "label": "3rd-down conversion %",
+     "side": "O",
+     "unit": "%",
+     "value": "45.5",
+     "rank": 6,
+     "behind": true
+    },
+    {
+     "slug": "fourth-down-pct",
+     "label": "4th-down conversion %",
+     "side": "O",
+     "unit": "%",
+     "value": "53.3",
+     "rank": 14,
+     "behind": true
+    },
+    {
+     "slug": "first-downs-per-game",
+     "label": "First downs per game",
+     "side": "O",
+     "unit": "",
+     "value": "23.0",
+     "rank": 6,
+     "behind": true
+    },
+    {
+     "slug": "giveaways-per-game",
+     "label": "Giveaways per game",
+     "side": "O",
+     "unit": "",
+     "value": "1.8",
+     "rank": 24,
+     "behind": true
+    },
+    {
+     "slug": "penalties-per-game",
+     "label": "Penalties per game",
+     "side": "O",
+     "unit": "",
+     "value": "7.3",
+     "rank": 12,
+     "behind": true
+    },
+    {
+     "slug": "penalty-yards-per-game",
+     "label": "Penalty yards per game",
+     "side": "O",
+     "unit": "",
+     "value": "57.0",
+     "rank": 14,
+     "behind": true
+    },
+    {
+     "slug": "opp-points-per-game",
+     "label": "Points allowed per game",
+     "side": "D",
+     "unit": "",
+     "value": "19.8",
+     "rank": 6,
+     "behind": true
+    },
+    {
+     "slug": "opp-yards-per-game",
+     "label": "Yards allowed per game",
+     "side": "D",
+     "unit": "",
+     "value": "302.3",
+     "rank": 7,
+     "behind": true
+    },
+    {
+     "slug": "opp-points-per-play",
+     "label": "Points allowed per play",
+     "side": "D",
+     "unit": "",
+     "value": "0.408",
+     "rank": 24,
+     "behind": true
+    },
+    {
+     "slug": "opp-touchdowns-per-game",
+     "label": "TDs allowed per game",
+     "side": "D",
+     "unit": "",
+     "value": "1.8",
+     "rank": 8,
+     "behind": true
+    },
+    {
+     "slug": "opp-rush-attempts-per-game",
+     "label": "Opponent rushes per game",
+     "side": "D",
+     "unit": "",
+     "value": "20.2",
+     "rank": 1,
+     "behind": true
+    },
+    {
+     "slug": "opp-rush-yards-per-game",
+     "label": "Rush yards allowed per game",
+     "side": "D",
+     "unit": "",
+     "value": "90.5",
+     "rank": 7,
+     "behind": true
+    },
+    {
+     "slug": "opp-rush-touchdowns-per-game",
+     "label": "Rush TDs allowed per game",
+     "side": "D",
+     "unit": "",
+     "value": "0.8",
+     "rank": 13,
+     "behind": true
+    },
+    {
+     "slug": "opp-pass-attempts-per-game",
+     "label": "Opponent pass attempts per game",
+     "side": "D",
+     "unit": "",
+     "value": "26.0",
+     "rank": 1,
+     "behind": true
+    },
+    {
+     "slug": "opp-net-pass-yards-per-game",
+     "label": "Net pass yards allowed per game",
+     "side": "D",
+     "unit": "",
+     "value": "211.8",
+     "rank": 14,
+     "behind": true
+    },
+    {
+     "slug": "opp-third-down-pct",
+     "label": "Opponent 3rd-down %",
+     "side": "D",
+     "unit": "%",
+     "value": "25.8",
+     "rank": 2,
+     "behind": true
+    },
+    {
+     "slug": "opp-fourth-down-pct",
+     "label": "Opponent 4th-down %",
+     "side": "D",
+     "unit": "%",
+     "value": "25.0",
+     "rank": 3,
+     "behind": true
+    },
+    {
+     "slug": "opp-first-downs-per-game",
+     "label": "First downs allowed per game",
+     "side": "D",
+     "unit": "",
+     "value": "14.5",
+     "rank": 2,
+     "behind": true
+    },
+    {
+     "slug": "takeaways-per-game",
+     "label": "Takeaways per game",
+     "side": "D",
+     "unit": "",
+     "value": "1.5",
+     "rank": 10,
+     "behind": true
+    },
+    {
+     "slug": "sacks-per-game",
+     "label": "Sacks per game (defense)",
+     "side": "D",
+     "unit": "",
+     "value": "2.4",
+     "rank": 11,
+     "behind": true
+    },
+    {
+     "slug": "takeaway-interceptions-per-game",
+     "label": "Interceptions per game",
+     "side": "D",
+     "unit": "",
+     "value": "0.5",
+     "rank": 23,
+     "behind": true
+    },
+    {
+     "slug": "turnover-margin-per-game",
+     "label": "Turnover margin per game",
+     "side": "T",
+     "unit": "",
+     "value": "-0.3",
+     "rank": 19,
+     "behind": true
+    }
+   ],
+   "player": {
+    "qb1": "Caleb Williams",
+    "qb1rate": 101.5,
+    "qb1ypa": 7.8,
+    "qbrate": 101.5,
+    "qbsack": 9.0,
+    "hon": 10
+   }
+  },
+  {
    "team": "Los Angeles Rams",
    "abbr": "LAR",
-   "pos": 9,
-   "prev_pos": 8,
+   "pos": 10,
+   "prev_pos": 9,
    "move": -1,
    "record": "2-4",
    "gp": 6,
@@ -2817,321 +3135,17 @@
    }
   },
   {
-   "team": "Chicago Bears",
-   "abbr": "CHI",
-   "pos": 10,
-   "prev_pos": 11,
-   "move": 1,
-   "record": "4-2",
-   "gp": 6,
-   "rating": 2.32,
-   "margin": 5.2,
-   "sos": -0.2,
-   "sos_rank": 21,
-   "off_avg": 10.7,
-   "def_avg": 8.8,
-   "stats": [
-    {
-     "slug": "points-per-game",
-     "label": "Points per game",
-     "side": "O",
-     "unit": "",
-     "value": "25.0",
-     "rank": 12,
-     "behind": false
-    },
-    {
-     "slug": "yards-per-game",
-     "label": "Yards per game",
-     "side": "O",
-     "unit": "",
-     "value": "388.3",
-     "rank": 5,
-     "behind": false
-    },
-    {
-     "slug": "points-per-play",
-     "label": "Points per play",
-     "side": "O",
-     "unit": "",
-     "value": "0.342",
-     "rank": 22,
-     "behind": false
-    },
-    {
-     "slug": "touchdowns-per-game",
-     "label": "Touchdowns per game",
-     "side": "O",
-     "unit": "",
-     "value": "2.3",
-     "rank": 13,
-     "behind": false
-    },
-    {
-     "slug": "rush-attempts-per-game",
-     "label": "Rushes per game",
-     "side": "O",
-     "unit": "",
-     "value": "36.0",
-     "rank": 1,
-     "behind": false
-    },
-    {
-     "slug": "rush-yards-per-game",
-     "label": "Rush yards per game",
-     "side": "O",
-     "unit": "",
-     "value": "160.7",
-     "rank": 1,
-     "behind": false
-    },
-    {
-     "slug": "rush-touchdowns-per-game",
-     "label": "Rush TDs per game",
-     "side": "O",
-     "unit": "",
-     "value": "2.2",
-     "rank": 2,
-     "behind": false
-    },
-    {
-     "slug": "pass-attempts-per-game",
-     "label": "Pass attempts per game",
-     "side": "O",
-     "unit": "",
-     "value": "34.7",
-     "rank": 14,
-     "behind": false
-    },
-    {
-     "slug": "net-pass-yards-per-game",
-     "label": "Net pass yards per game",
-     "side": "O",
-     "unit": "",
-     "value": "227.7",
-     "rank": 15,
-     "behind": false
-    },
-    {
-     "slug": "third-down-pct",
-     "label": "3rd-down conversion %",
-     "side": "O",
-     "unit": "%",
-     "value": "45.5",
-     "rank": 6,
-     "behind": false
-    },
-    {
-     "slug": "fourth-down-pct",
-     "label": "4th-down conversion %",
-     "side": "O",
-     "unit": "%",
-     "value": "53.3",
-     "rank": 14,
-     "behind": false
-    },
-    {
-     "slug": "first-downs-per-game",
-     "label": "First downs per game",
-     "side": "O",
-     "unit": "",
-     "value": "23.0",
-     "rank": 6,
-     "behind": false
-    },
-    {
-     "slug": "giveaways-per-game",
-     "label": "Giveaways per game",
-     "side": "O",
-     "unit": "",
-     "value": "1.8",
-     "rank": 24,
-     "behind": false
-    },
-    {
-     "slug": "penalties-per-game",
-     "label": "Penalties per game",
-     "side": "O",
-     "unit": "",
-     "value": "7.3",
-     "rank": 12,
-     "behind": false
-    },
-    {
-     "slug": "penalty-yards-per-game",
-     "label": "Penalty yards per game",
-     "side": "O",
-     "unit": "",
-     "value": "57.0",
-     "rank": 14,
-     "behind": false
-    },
-    {
-     "slug": "opp-points-per-game",
-     "label": "Points allowed per game",
-     "side": "D",
-     "unit": "",
-     "value": "19.8",
-     "rank": 6,
-     "behind": false
-    },
-    {
-     "slug": "opp-yards-per-game",
-     "label": "Yards allowed per game",
-     "side": "D",
-     "unit": "",
-     "value": "302.3",
-     "rank": 7,
-     "behind": false
-    },
-    {
-     "slug": "opp-points-per-play",
-     "label": "Points allowed per play",
-     "side": "D",
-     "unit": "",
-     "value": "0.408",
-     "rank": 24,
-     "behind": true
-    },
-    {
-     "slug": "opp-touchdowns-per-game",
-     "label": "TDs allowed per game",
-     "side": "D",
-     "unit": "",
-     "value": "1.8",
-     "rank": 8,
-     "behind": false
-    },
-    {
-     "slug": "opp-rush-attempts-per-game",
-     "label": "Opponent rushes per game",
-     "side": "D",
-     "unit": "",
-     "value": "20.2",
-     "rank": 1,
-     "behind": false
-    },
-    {
-     "slug": "opp-rush-yards-per-game",
-     "label": "Rush yards allowed per game",
-     "side": "D",
-     "unit": "",
-     "value": "90.5",
-     "rank": 7,
-     "behind": false
-    },
-    {
-     "slug": "opp-rush-touchdowns-per-game",
-     "label": "Rush TDs allowed per game",
-     "side": "D",
-     "unit": "",
-     "value": "0.8",
-     "rank": 13,
-     "behind": false
-    },
-    {
-     "slug": "opp-pass-attempts-per-game",
-     "label": "Opponent pass attempts per game",
-     "side": "D",
-     "unit": "",
-     "value": "26.0",
-     "rank": 1,
-     "behind": true
-    },
-    {
-     "slug": "opp-net-pass-yards-per-game",
-     "label": "Net pass yards allowed per game",
-     "side": "D",
-     "unit": "",
-     "value": "211.8",
-     "rank": 14,
-     "behind": false
-    },
-    {
-     "slug": "opp-third-down-pct",
-     "label": "Opponent 3rd-down %",
-     "side": "D",
-     "unit": "%",
-     "value": "25.8",
-     "rank": 2,
-     "behind": false
-    },
-    {
-     "slug": "opp-fourth-down-pct",
-     "label": "Opponent 4th-down %",
-     "side": "D",
-     "unit": "%",
-     "value": "25.0",
-     "rank": 3,
-     "behind": false
-    },
-    {
-     "slug": "opp-first-downs-per-game",
-     "label": "First downs allowed per game",
-     "side": "D",
-     "unit": "",
-     "value": "14.5",
-     "rank": 2,
-     "behind": false
-    },
-    {
-     "slug": "takeaways-per-game",
-     "label": "Takeaways per game",
-     "side": "D",
-     "unit": "",
-     "value": "1.5",
-     "rank": 10,
-     "behind": false
-    },
-    {
-     "slug": "sacks-per-game",
-     "label": "Sacks per game (defense)",
-     "side": "D",
-     "unit": "",
-     "value": "2.4",
-     "rank": 11,
-     "behind": true
-    },
-    {
-     "slug": "takeaway-interceptions-per-game",
-     "label": "Interceptions per game",
-     "side": "D",
-     "unit": "",
-     "value": "0.5",
-     "rank": 23,
-     "behind": false
-    },
-    {
-     "slug": "turnover-margin-per-game",
-     "label": "Turnover margin per game",
-     "side": "T",
-     "unit": "",
-     "value": "-0.3",
-     "rank": 19,
-     "behind": false
-    }
-   ],
-   "player": {
-    "qb1": "Caleb Williams",
-    "qb1rate": 101.5,
-    "qb1ypa": 7.8,
-    "qbrate": 101.5,
-    "qbsack": 9.0,
-    "hon": 10
-   }
-  },
-  {
    "team": "Houston Texans",
    "abbr": "HOU",
    "pos": 11,
-   "prev_pos": 13,
-   "move": 2,
+   "prev_pos": 11,
+   "move": 0,
    "record": "2-4",
    "gp": 6,
-   "rating": 1.69,
+   "rating": 1.68,
    "margin": 0.2,
-   "sos": 0.2,
-   "sos_rank": 14,
+   "sos": 0.1,
+   "sos_rank": 15,
    "off_avg": 16.4,
    "def_avg": 15.5,
    "stats": [
@@ -3432,7 +3446,7 @@
    "move": 0,
    "record": "4-2",
    "gp": 6,
-   "rating": 1.66,
+   "rating": 1.65,
    "margin": -1.8,
    "sos": 3.0,
    "sos_rank": 1,
@@ -3732,11 +3746,11 @@
    "team": "Baltimore Ravens",
    "abbr": "BAL",
    "pos": 13,
-   "prev_pos": 10,
-   "move": -3,
+   "prev_pos": 13,
+   "move": 0,
    "record": "4-2",
    "gp": 6,
-   "rating": 1.64,
+   "rating": 1.65,
    "margin": 4.0,
    "sos": -2.7,
    "sos_rank": 31,
@@ -4036,13 +4050,13 @@
    "team": "Green Bay Packers",
    "abbr": "GB",
    "pos": 14,
-   "prev_pos": 15,
-   "move": 1,
+   "prev_pos": 14,
+   "move": 0,
    "record": "4-2",
    "gp": 6,
-   "rating": 0.77,
+   "rating": 0.8,
    "margin": 0.3,
-   "sos": -0.4,
+   "sos": -0.3,
    "sos_rank": 23,
    "off_avg": 19.3,
    "def_avg": 14.3,
@@ -4340,11 +4354,11 @@
    "team": "Pittsburgh Steelers",
    "abbr": "PIT",
    "pos": 15,
-   "prev_pos": 16,
-   "move": 1,
+   "prev_pos": 15,
+   "move": 0,
    "record": "4-2",
    "gp": 6,
-   "rating": 0.76,
+   "rating": 0.74,
    "margin": 1.5,
    "sos": -0.5,
    "sos_rank": 24,
@@ -4644,14 +4658,14 @@
    "team": "Cincinnati Bengals",
    "abbr": "CIN",
    "pos": 16,
-   "prev_pos": 14,
-   "move": -2,
+   "prev_pos": 16,
+   "move": 0,
    "record": "3-2",
    "gp": 5,
    "rating": 0.69,
    "margin": 3.8,
    "sos": 0.2,
-   "sos_rank": 13,
+   "sos_rank": 14,
    "off_avg": 14.4,
    "def_avg": 15.5,
    "stats": [
@@ -4948,13 +4962,13 @@
    "team": "Carolina Panthers",
    "abbr": "CAR",
    "pos": 17,
-   "prev_pos": 19,
-   "move": 2,
+   "prev_pos": 17,
+   "move": 0,
    "record": "3-2",
    "gp": 5,
-   "rating": 0.26,
+   "rating": 0.29,
    "margin": 4.6,
-   "sos": -0.1,
+   "sos": -0.0,
    "sos_rank": 19,
    "off_avg": 12.2,
    "def_avg": 20.4,
@@ -5252,8 +5266,8 @@
    "team": "Indianapolis Colts",
    "abbr": "IND",
    "pos": 18,
-   "prev_pos": 17,
-   "move": -1,
+   "prev_pos": 18,
+   "move": 0,
    "record": "2-4",
    "gp": 6,
    "rating": -1.0,
@@ -5556,14 +5570,14 @@
    "team": "Philadelphia Eagles",
    "abbr": "PHI",
    "pos": 19,
-   "prev_pos": 18,
-   "move": -1,
+   "prev_pos": 19,
+   "move": 0,
    "record": "2-4",
    "gp": 6,
-   "rating": -1.16,
+   "rating": -1.14,
    "margin": -5.2,
    "sos": 0.1,
-   "sos_rank": 16,
+   "sos_rank": 17,
    "off_avg": 23.3,
    "def_avg": 22.7,
    "stats": [
@@ -5860,14 +5874,14 @@
    "team": "Atlanta Falcons",
    "abbr": "ATL",
    "pos": 20,
-   "prev_pos": 22,
-   "move": 2,
+   "prev_pos": 20,
+   "move": 0,
    "record": "2-4",
    "gp": 6,
-   "rating": -1.52,
+   "rating": -1.49,
    "margin": -1.8,
-   "sos": 0.4,
-   "sos_rank": 10,
+   "sos": 0.5,
+   "sos_rank": 9,
    "off_avg": 16.9,
    "def_avg": 19.0,
    "stats": [
@@ -6168,10 +6182,10 @@
    "move": 0,
    "record": "1-5",
    "gp": 6,
-   "rating": -1.63,
+   "rating": -1.62,
    "margin": -3.2,
    "sos": 0.2,
-   "sos_rank": 12,
+   "sos_rank": 13,
    "off_avg": 20.7,
    "def_avg": 12.2,
    "stats": [
@@ -6468,8 +6482,8 @@
    "team": "Dallas Cowboys",
    "abbr": "DAL",
    "pos": 22,
-   "prev_pos": 20,
-   "move": -2,
+   "prev_pos": 22,
+   "move": 0,
    "record": "2-4",
    "gp": 6,
    "rating": -1.66,
@@ -6772,8 +6786,8 @@
    "team": "Cleveland Browns",
    "abbr": "CLE",
    "pos": 23,
-   "prev_pos": 26,
-   "move": 3,
+   "prev_pos": 23,
+   "move": 0,
    "record": "4-2",
    "gp": 6,
    "rating": -2.79,
@@ -7076,14 +7090,14 @@
    "team": "Las Vegas Raiders",
    "abbr": "LV",
    "pos": 24,
-   "prev_pos": 25,
-   "move": 1,
+   "prev_pos": 24,
+   "move": 0,
    "record": "3-3",
    "gp": 6,
-   "rating": -2.85,
+   "rating": -2.87,
    "margin": 0.0,
    "sos": -0.1,
-   "sos_rank": 18,
+   "sos_rank": 20,
    "off_avg": 12.7,
    "def_avg": 20.3,
    "stats": [
@@ -7380,8 +7394,8 @@
    "team": "New York Giants",
    "abbr": "NYG",
    "pos": 25,
-   "prev_pos": 23,
-   "move": -2,
+   "prev_pos": 25,
+   "move": 0,
    "record": "3-2-1",
    "gp": 6,
    "rating": -2.9,
@@ -7684,14 +7698,14 @@
    "team": "New Orleans Saints",
    "abbr": "NO",
    "pos": 26,
-   "prev_pos": 29,
-   "move": 3,
+   "prev_pos": 26,
+   "move": 0,
    "record": "2-4",
    "gp": 6,
-   "rating": -3.22,
+   "rating": -3.21,
    "margin": -4.3,
    "sos": 0.1,
-   "sos_rank": 15,
+   "sos_rank": 16,
    "off_avg": 12.7,
    "def_avg": 23.3,
    "stats": [
@@ -7988,11 +8002,11 @@
    "team": "Los Angeles Chargers",
    "abbr": "LAC",
    "pos": 27,
-   "prev_pos": 24,
-   "move": -3,
+   "prev_pos": 27,
+   "move": 0,
    "record": "0-6",
    "gp": 6,
-   "rating": -3.38,
+   "rating": -3.39,
    "margin": -10.2,
    "sos": 1.2,
    "sos_rank": 5,
@@ -8299,7 +8313,7 @@
    "rating": -3.46,
    "margin": -1.7,
    "sos": 0.0,
-   "sos_rank": 17,
+   "sos_rank": 18,
    "off_avg": 22.4,
    "def_avg": 12.5,
    "stats": [
@@ -8596,14 +8610,14 @@
    "team": "Washington Commanders",
    "abbr": "WAS",
    "pos": 29,
-   "prev_pos": 27,
-   "move": -2,
+   "prev_pos": 29,
+   "move": 0,
    "record": "1-4-1",
    "gp": 6,
    "rating": -3.67,
    "margin": -6.7,
    "sos": 0.5,
-   "sos_rank": 9,
+   "sos_rank": 10,
    "off_avg": 15.5,
    "def_avg": 21.7,
    "stats": [
@@ -8907,7 +8921,7 @@
    "rating": -4.26,
    "margin": -8.7,
    "sos": 1.4,
-   "sos_rank": 3,
+   "sos_rank": 4,
    "off_avg": 17.4,
    "def_avg": 20.2,
    "stats": [
@@ -9811,17 +9825,6 @@
  ],
  "upcoming": [
   {
-   "id": "2026_07_NE_CHI",
-   "week": 7,
-   "day": "2026-10-22",
-   "away": "NE",
-   "home": "CHI",
-   "neutral": false,
-   "home_margin": 0.9,
-   "home_win": 0.528,
-   "line": 3.0
-  },
-  {
    "id": "2026_07_PIT_NO",
    "week": 7,
    "day": "2026-10-25",
@@ -9829,8 +9832,29 @@
    "home": "NO",
    "neutral": true,
    "home_margin": -4.0,
-   "home_win": 0.378,
-   "line": -3.5
+   "home_win": 0.379,
+   "line": -3.0,
+   "results_margin": -4.0,
+   "lineup": {
+    "NO": {
+     "points": -0.2,
+     "qb": 0.0,
+     "injuries": -0.2,
+     "notes": [
+      "Cesar Ruiz (G, Questionable)",
+      "Nathan Shepherd (DL, Questionable)"
+     ]
+    },
+    "PIT": {
+     "points": -0.2,
+     "qb": 0.0,
+     "injuries": -0.2,
+     "notes": [
+      "Rayshawn Jenkins (S, off depth chart)",
+      "Rico Dowdle (RB, Questionable)"
+     ]
+    }
+   }
   },
   {
    "id": "2026_07_SF_ATL",
@@ -9839,9 +9863,36 @@
    "away": "SF",
    "home": "ATL",
    "neutral": false,
-   "home_margin": -4.6,
-   "home_win": 0.359,
-   "line": -3.0
+   "home_margin": -4.9,
+   "home_win": 0.351,
+   "line": -2.5,
+   "results_margin": -4.6,
+   "lineup": {
+    "ATL": {
+     "points": -1.4,
+     "qb": 0.0,
+     "injuries": -1.4,
+     "notes": [
+      "Divine Deablo (LB, Out)",
+      "Billy Bowman (CB, Out)",
+      "Brian Robinson Jr. (RB, Out)",
+      "Michael Jerrell (OL, Out)",
+      "Samson Ebukam (DE, Questionable)"
+     ]
+    },
+    "SF": {
+     "points": -1.1,
+     "qb": 0.0,
+     "injuries": -1.1,
+     "notes": [
+      "Mike Evans (WR, Out)",
+      "Deebo Samuel (WR, Out)",
+      "Marques Sigle (S, Out)",
+      "Nick Bosa (DL, Out)",
+      "Upton Stout (CB, Questionable)"
+     ]
+    }
+   }
   },
   {
    "id": "2026_07_CIN_BAL",
@@ -9850,9 +9901,23 @@
    "away": "CIN",
    "home": "BAL",
    "neutral": false,
-   "home_margin": 3.0,
-   "home_win": 0.591,
-   "line": 2.5
+   "home_margin": 2.3,
+   "home_win": 0.57,
+   "line": -3.0,
+   "results_margin": 3.0,
+   "lineup": {
+    "BAL": {
+     "points": -0.7,
+     "qb": 0.0,
+     "injuries": -0.7,
+     "notes": [
+      "Jaylinn Hawkins (S, Out)",
+      "Tavius Robinson (LB, Out)",
+      "Broderick Washington Jr. (DL, Questionable)"
+     ]
+    },
+    "CIN": {}
+   }
   },
   {
    "id": "2026_07_TB_CAR",
@@ -9861,9 +9926,31 @@
    "away": "TB",
    "home": "CAR",
    "neutral": false,
-   "home_margin": 3.9,
-   "home_win": 0.619,
-   "line": 3.5
+   "home_margin": 5.2,
+   "home_win": 0.658,
+   "line": 3.0,
+   "results_margin": 3.9,
+   "lineup": {
+    "CAR": {
+     "points": -0.4,
+     "qb": 0.0,
+     "injuries": -0.4,
+     "notes": [
+      "Jaelan Phillips (LB, Out)",
+      "Monroe Freeling (T, Questionable)"
+     ]
+    },
+    "TB": {
+     "points": -1.7,
+     "qb": 0.0,
+     "injuries": -1.7,
+     "notes": [
+      "Luke Goedeke (T, Out)",
+      "Emeka Egbuka (WR, Out)",
+      "Antoine Winfield Jr. (S, Out)"
+     ]
+    }
+   }
   },
   {
    "id": "2026_07_NYG_HOU",
@@ -9872,9 +9959,35 @@
    "away": "NYG",
    "home": "HOU",
    "neutral": false,
-   "home_margin": 6.6,
-   "home_win": 0.697,
-   "line": 10.0
+   "home_margin": 11.0,
+   "home_win": 0.805,
+   "line": 10.5,
+   "results_margin": 6.6,
+   "lineup": {
+    "HOU": {
+     "points": -1.1,
+     "qb": 0.0,
+     "injuries": -1.1,
+     "notes": [
+      "Jalen Pitre (S, Out)",
+      "Reed Blankenship (S, Out)",
+      "David Montgomery (RB, Out)"
+     ]
+    },
+    "NYG": {
+     "points": -5.5,
+     "qb": -3.1,
+     "injuries": -2.4,
+     "notes": [
+      "J.J. McCarthy starting (20 dropbacks this season), not the team's main passer",
+      "Greg Newsome II (CB, Out)",
+      "Andru Phillips (CB, off depth chart)",
+      "Jevon Holland (S, Out)",
+      "Tremaine Edmunds (LB, Out)",
+      "Theo Johnson (TE, Doubtful)"
+     ]
+    }
+   }
   },
   {
    "id": "2026_07_IND_MIN",
@@ -9883,9 +9996,31 @@
    "away": "IND",
    "home": "MIN",
    "neutral": false,
-   "home_margin": 6.7,
-   "home_win": 0.699,
-   "line": 6.5
+   "home_margin": 8.0,
+   "home_win": 0.734,
+   "line": 7.0,
+   "results_margin": 6.7,
+   "lineup": {
+    "MIN": {
+     "points": 0.0,
+     "qb": 0.0,
+     "injuries": -0.0,
+     "notes": [
+      "Jordan Mason (RB, Questionable)"
+     ]
+    },
+    "IND": {
+     "points": -1.3,
+     "qb": 0.0,
+     "injuries": -1.3,
+     "notes": [
+      "Sauce Gardner (CB, Out)",
+      "Tyler Warren (TE, Out)",
+      "Justin Walley (CB, Questionable)",
+      "Bryce Boettcher (LB, Questionable)"
+     ]
+    }
+   }
   },
   {
    "id": "2026_07_MIA_NYJ",
@@ -9894,9 +10029,30 @@
    "away": "MIA",
    "home": "NYJ",
    "neutral": false,
-   "home_margin": 3.8,
-   "home_win": 0.616,
-   "line": 4.5
+   "home_margin": 3.6,
+   "home_win": 0.61,
+   "line": 3.5,
+   "results_margin": 3.8,
+   "lineup": {
+    "NYJ": {
+     "points": -0.3,
+     "qb": 0.0,
+     "injuries": -0.3,
+     "notes": [
+      "Joseph Ossai (DE, Out)",
+      "Dylan Parham (OL, Questionable)",
+      "Breece Hall (RB, Questionable)"
+     ]
+    },
+    "MIA": {
+     "points": -0.1,
+     "qb": 0.0,
+     "injuries": -0.1,
+     "notes": [
+      "Willie Gay Jr. (LB, Questionable)"
+     ]
+    }
+   }
   },
   {
    "id": "2026_07_CLE_TEN",
@@ -9905,9 +10061,32 @@
    "away": "CLE",
    "home": "TEN",
    "neutral": false,
-   "home_margin": -1.5,
-   "home_win": 0.453,
-   "line": -1.5
+   "home_margin": -1.4,
+   "home_win": 0.456,
+   "line": -2.5,
+   "results_margin": -1.5,
+   "lineup": {
+    "TEN": {
+     "points": -0.2,
+     "qb": 0.0,
+     "injuries": -0.2,
+     "notes": [
+      "Calvin Ridley (WR, Questionable)",
+      "Kevin Winston (S, Questionable)",
+      "Tyjae Spears (RB, Questionable)",
+      "Tony Adams (S, Questionable)"
+     ]
+    },
+    "CLE": {
+     "points": -0.3,
+     "qb": 0.0,
+     "injuries": -0.3,
+     "notes": [
+      "Denzel Ward (CB, Questionable)",
+      "Quincy Williams (LB, Questionable)"
+     ]
+    }
+   }
   },
   {
    "id": "2026_07_DEN_ARI",
@@ -9916,9 +10095,33 @@
    "away": "DEN",
    "home": "ARI",
    "neutral": false,
-   "home_margin": -3.9,
-   "home_win": 0.38,
-   "line": -4.5
+   "home_margin": -4.7,
+   "home_win": 0.356,
+   "line": -4.5,
+   "results_margin": -3.9,
+   "lineup": {
+    "ARI": {
+     "points": -1.6,
+     "qb": 0.0,
+     "injuries": -1.6,
+     "notes": [
+      "Walter Nolen (DL, Out)",
+      "Jon Gaines (OL, Out)",
+      "Marvin Harrison Jr. (WR, off depth chart)",
+      "Andrew Wingard (S, Out)",
+      "Jeremiyah Love (RB, Out)"
+     ]
+    },
+    "DEN": {
+     "points": -0.8,
+     "qb": 0.0,
+     "injuries": -0.8,
+     "notes": [
+      "Talanoa Hufanga (S, Out)",
+      "Jonah Elliss (LB, Out)"
+     ]
+    }
+   }
   },
   {
    "id": "2026_07_GB_DET",
@@ -9927,9 +10130,23 @@
    "away": "GB",
    "home": "DET",
    "neutral": false,
-   "home_margin": 3.9,
-   "home_win": 0.621,
-   "line": 3.0
+   "home_margin": 4.4,
+   "home_win": 0.635,
+   "line": 3.5,
+   "results_margin": 3.9,
+   "lineup": {
+    "DET": {},
+    "GB": {
+     "points": -0.5,
+     "qb": 0.0,
+     "injuries": -0.5,
+     "notes": [
+      "Zaire Franklin (LB, Out)",
+      "Bo Melton (WR, Questionable)",
+      "Aaron Banks (G, Questionable)"
+     ]
+    }
+   }
   },
   {
    "id": "2026_07_LA_LV",
@@ -9938,9 +10155,29 @@
    "away": "LAR",
    "home": "LV",
    "neutral": false,
-   "home_margin": -3.3,
-   "home_win": 0.4,
-   "line": -4.5
+   "home_margin": -3.1,
+   "home_win": 0.405,
+   "line": -3.5,
+   "results_margin": -3.3,
+   "lineup": {
+    "LV": {
+     "points": -0.1,
+     "qb": 0.0,
+     "injuries": -0.1,
+     "notes": [
+      "Quay Walker (LB, Questionable)"
+     ]
+    },
+    "LAR": {
+     "points": -0.3,
+     "qb": 0.0,
+     "injuries": -0.3,
+     "notes": [
+      "Puka Nacua (WR, Questionable)",
+      "Trent McDuffie (CB, Questionable)"
+     ]
+    }
+   }
   },
   {
    "id": "2026_07_KC_SEA",
@@ -9949,9 +10186,34 @@
    "away": "KC",
    "home": "SEA",
    "neutral": false,
-   "home_margin": 2.4,
-   "home_win": 0.573,
-   "line": 2.5
+   "home_margin": 2.6,
+   "home_win": 0.582,
+   "line": 3.0,
+   "results_margin": 2.3,
+   "lineup": {
+    "SEA": {
+     "points": -0.6,
+     "qb": 0.0,
+     "injuries": -0.6,
+     "notes": [
+      "Drake Thomas (LB, Out)",
+      "DeMarcus Lawrence (LB, Questionable)",
+      "AJ Finley (S, off depth chart)",
+      "Uchenna Nwosu (LB, Questionable)",
+      "Nick Emmanwori (S, Questionable)"
+     ]
+    },
+    "KC": {
+     "points": -0.9,
+     "qb": 0.0,
+     "injuries": -0.9,
+     "notes": [
+      "Jaylon Moore (OL, Out)",
+      "Rashee Rice (WR, Out)",
+      "L'Jarius Sneed (CB, Questionable)"
+     ]
+    }
+   }
   },
   {
    "id": "2026_07_DAL_PHI",
@@ -9960,13 +10222,460 @@
    "away": "DAL",
    "home": "PHI",
    "neutral": false,
-   "home_margin": 2.5,
-   "home_win": 0.577,
-   "line": -4.5
+   "home_margin": 0.7,
+   "home_win": 0.522,
+   "line": -4.5,
+   "results_margin": 2.5,
+   "lineup": {
+    "PHI": {
+     "points": -2.1,
+     "qb": -0.3,
+     "injuries": -1.8,
+     "notes": [
+      "Tanner McKee starting (48 dropbacks this season), not the team's main passer",
+      "Dontayvion Wicks (WR, Out)",
+      "Cam Jurgens (C, off depth chart)",
+      "DeVonta Smith (WR, Out)",
+      "Nolan Smith (LB, Out)",
+      "Michael Carter II (DB, Out)"
+     ]
+    },
+    "DAL": {
+     "points": -0.3,
+     "qb": 0.0,
+     "injuries": -0.3,
+     "notes": [
+      "Dee Winters (LB, Out)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_08_CAR_GB",
+   "week": 8,
+   "day": "2026-10-29",
+   "away": "CAR",
+   "home": "GB",
+   "neutral": false,
+   "home_margin": 2.4,
+   "home_win": 0.575,
+   "line": 3.0,
+   "results_margin": 2.5,
+   "lineup": {
+    "GB": {
+     "points": -0.5,
+     "qb": 0.0,
+     "injuries": -0.5,
+     "notes": [
+      "Zaire Franklin (LB, Out)",
+      "Bo Melton (WR, Questionable)",
+      "Aaron Banks (G, Questionable)"
+     ]
+    },
+    "CAR": {
+     "points": -0.4,
+     "qb": 0.0,
+     "injuries": -0.4,
+     "notes": [
+      "Jaelan Phillips (LB, Out)",
+      "Monroe Freeling (T, Questionable)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_08_BAL_BUF",
+   "week": 8,
+   "day": "2026-11-01",
+   "away": "BAL",
+   "home": "BUF",
+   "neutral": false,
+   "home_margin": 4.9,
+   "home_win": 0.649,
+   "line": 3.0,
+   "results_margin": 4.2,
+   "lineup": {
+    "BUF": {},
+    "BAL": {
+     "points": -0.7,
+     "qb": 0.0,
+     "injuries": -0.7,
+     "notes": [
+      "Jaylinn Hawkins (S, Out)",
+      "Tavius Robinson (LB, Out)",
+      "Broderick Washington Jr. (DL, Questionable)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_08_TEN_CIN",
+   "week": 8,
+   "day": "2026-11-01",
+   "away": "TEN",
+   "home": "CIN",
+   "neutral": false,
+   "home_margin": 9.2,
+   "home_win": 0.763,
+   "line": 10.0,
+   "results_margin": 9.0,
+   "lineup": {
+    "CIN": {},
+    "TEN": {
+     "points": -0.2,
+     "qb": 0.0,
+     "injuries": -0.2,
+     "notes": [
+      "Calvin Ridley (WR, Questionable)",
+      "Kevin Winston (S, Questionable)",
+      "Tyjae Spears (RB, Questionable)",
+      "Tony Adams (S, Questionable)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_08_ARI_DAL",
+   "week": 8,
+   "day": "2026-11-01",
+   "away": "ARI",
+   "home": "DAL",
+   "neutral": false,
+   "home_margin": 5.9,
+   "home_win": 0.678,
+   "line": 6.5,
+   "results_margin": 4.6,
+   "lineup": {
+    "DAL": {
+     "points": -0.3,
+     "qb": 0.0,
+     "injuries": -0.3,
+     "notes": [
+      "Dee Winters (LB, Out)"
+     ]
+    },
+    "ARI": {
+     "points": -1.6,
+     "qb": 0.0,
+     "injuries": -1.6,
+     "notes": [
+      "Walter Nolen (DL, Out)",
+      "Jon Gaines (OL, Out)",
+      "Marvin Harrison Jr. (WR, off depth chart)",
+      "Andrew Wingard (S, Out)",
+      "Jeremiyah Love (RB, Out)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_08_MIN_DET",
+   "week": 8,
+   "day": "2026-11-01",
+   "away": "MIN",
+   "home": "DET",
+   "neutral": false,
+   "home_margin": 1.0,
+   "home_win": 0.531,
+   "line": 2.5,
+   "results_margin": 1.0,
+   "lineup": {
+    "DET": {},
+    "MIN": {
+     "points": 0.0,
+     "qb": 0.0,
+     "injuries": -0.0,
+     "notes": [
+      "Jordan Mason (RB, Questionable)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_08_IND_JAX",
+   "week": 8,
+   "day": "2026-11-01",
+   "away": "IND",
+   "home": "JAX",
+   "neutral": false,
+   "home_margin": 9.6,
+   "home_win": 0.774,
+   "line": 7.5,
+   "results_margin": 8.3,
+   "lineup": {
+    "JAX": {},
+    "IND": {
+     "points": -1.3,
+     "qb": 0.0,
+     "injuries": -1.3,
+     "notes": [
+      "Sauce Gardner (CB, Out)",
+      "Tyler Warren (TE, Out)",
+      "Justin Walley (CB, Questionable)",
+      "Bryce Boettcher (LB, Questionable)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_08_LV_NYJ",
+   "week": 8,
+   "day": "2026-11-01",
+   "away": "LV",
+   "home": "NYJ",
+   "neutral": false,
+   "home_margin": 1.2,
+   "home_win": 0.538,
+   "line": -1.5,
+   "results_margin": 1.4,
+   "lineup": {
+    "NYJ": {
+     "points": -0.3,
+     "qb": 0.0,
+     "injuries": -0.3,
+     "notes": [
+      "Joseph Ossai (DE, Out)",
+      "Dylan Parham (OL, Questionable)",
+      "Breece Hall (RB, Questionable)"
+     ]
+    },
+    "LV": {
+     "points": -0.1,
+     "qb": 0.0,
+     "injuries": -0.1,
+     "notes": [
+      "Quay Walker (LB, Questionable)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_08_CLE_PIT",
+   "week": 8,
+   "day": "2026-11-01",
+   "away": "CLE",
+   "home": "PIT",
+   "neutral": false,
+   "home_margin": 5.6,
+   "home_win": 0.67,
+   "line": null,
+   "results_margin": 5.5,
+   "lineup": {
+    "PIT": {
+     "points": -0.2,
+     "qb": 0.0,
+     "injuries": -0.2,
+     "notes": [
+      "Rayshawn Jenkins (S, off depth chart)",
+      "Rico Dowdle (RB, Questionable)"
+     ]
+    },
+    "CLE": {
+     "points": -0.3,
+     "qb": 0.0,
+     "injuries": -0.3,
+     "notes": [
+      "Denzel Ward (CB, Questionable)",
+      "Quincy Williams (LB, Questionable)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_08_ATL_TB",
+   "week": 8,
+   "day": "2026-11-01",
+   "away": "ATL",
+   "home": "TB",
+   "neutral": false,
+   "home_margin": 1.6,
+   "home_win": 0.549,
+   "line": 1.5,
+   "results_margin": 1.9,
+   "lineup": {
+    "TB": {
+     "points": -1.7,
+     "qb": 0.0,
+     "injuries": -1.7,
+     "notes": [
+      "Luke Goedeke (T, Out)",
+      "Emeka Egbuka (WR, Out)",
+      "Antoine Winfield Jr. (S, Out)"
+     ]
+    },
+    "ATL": {
+     "points": -1.4,
+     "qb": 0.0,
+     "injuries": -1.4,
+     "notes": [
+      "Divine Deablo (LB, Out)",
+      "Billy Bowman (CB, Out)",
+      "Brian Robinson Jr. (RB, Out)",
+      "Michael Jerrell (OL, Out)",
+      "Samson Ebukam (DE, Questionable)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_08_LAC_LA",
+   "week": 8,
+   "day": "2026-11-01",
+   "away": "LAC",
+   "home": "LAR",
+   "neutral": false,
+   "home_margin": 7.5,
+   "home_win": 0.721,
+   "line": 7.0,
+   "results_margin": 7.8,
+   "lineup": {
+    "LAR": {
+     "points": -0.3,
+     "qb": 0.0,
+     "injuries": -0.3,
+     "notes": [
+      "Puka Nacua (WR, Questionable)",
+      "Trent McDuffie (CB, Questionable)"
+     ]
+    },
+    "LAC": {}
+   }
+  },
+  {
+   "id": "2026_08_KC_DEN",
+   "week": 8,
+   "day": "2026-11-01",
+   "away": "KC",
+   "home": "DEN",
+   "neutral": false,
+   "home_margin": -0.4,
+   "home_win": 0.487,
+   "line": -1.5,
+   "results_margin": -0.5,
+   "lineup": {
+    "DEN": {
+     "points": -0.8,
+     "qb": 0.0,
+     "injuries": -0.8,
+     "notes": [
+      "Talanoa Hufanga (S, Out)",
+      "Jonah Elliss (LB, Out)"
+     ]
+    },
+    "KC": {
+     "points": -0.9,
+     "qb": 0.0,
+     "injuries": -0.9,
+     "notes": [
+      "Jaylon Moore (OL, Out)",
+      "Rashee Rice (WR, Out)",
+      "L'Jarius Sneed (CB, Questionable)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_08_NE_MIA",
+   "week": 8,
+   "day": "2026-11-01",
+   "away": "NE",
+   "home": "MIA",
+   "neutral": false,
+   "home_margin": -4.9,
+   "home_win": 0.352,
+   "line": -8.5,
+   "results_margin": -6.4,
+   "lineup": {
+    "MIA": {
+     "points": -0.1,
+     "qb": 0.0,
+     "injuries": -0.1,
+     "notes": [
+      "Willie Gay Jr. (LB, Questionable)"
+     ]
+    },
+    "NE": {
+     "points": -1.6,
+     "qb": 0.0,
+     "injuries": -1.6,
+     "notes": [
+      "Alijah Vera-Tucker (G, Out)",
+      "Carlton Davis (CB, Out)",
+      "Ben Brown (C, Out)",
+      "Kevin Byard (S, Questionable)",
+      "Morgan Moses (T, Questionable)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_08_PHI_WAS",
+   "week": 8,
+   "day": "2026-11-01",
+   "away": "PHI",
+   "home": "WAS",
+   "neutral": false,
+   "home_margin": 1.6,
+   "home_win": 0.549,
+   "line": 3.5,
+   "results_margin": -0.5,
+   "lineup": {
+    "WAS": {},
+    "PHI": {
+     "points": -2.1,
+     "qb": -0.3,
+     "injuries": -1.8,
+     "notes": [
+      "Tanner McKee starting (48 dropbacks this season), not the team's main passer",
+      "Dontayvion Wicks (WR, Out)",
+      "Cam Jurgens (C, off depth chart)",
+      "DeVonta Smith (WR, Out)",
+      "Nolan Smith (LB, Out)",
+      "Michael Carter II (DB, Out)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_08_CHI_SEA",
+   "week": 8,
+   "day": "2026-11-02",
+   "away": "CHI",
+   "home": "SEA",
+   "neutral": false,
+   "home_margin": 3.7,
+   "home_win": 0.615,
+   "line": 3.0,
+   "results_margin": 3.8,
+   "lineup": {
+    "SEA": {
+     "points": -0.6,
+     "qb": 0.0,
+     "injuries": -0.6,
+     "notes": [
+      "Drake Thomas (LB, Out)",
+      "DeMarcus Lawrence (LB, Questionable)",
+      "AJ Finley (S, off depth chart)",
+      "Uchenna Nwosu (LB, Questionable)",
+      "Nick Emmanwori (S, Questionable)"
+     ]
+    },
+    "CHI": {
+     "points": -0.5,
+     "qb": 0.0,
+     "injuries": -0.5,
+     "notes": [
+      "T.J. Edwards (LB, Doubtful)",
+      "Xavier Woods (DB, off depth chart)",
+      "Kyle Monangai (RB, Out)",
+      "Tyrique Stevenson (DB, Questionable)"
+     ]
+    }
+   }
   }
  ],
  "pick_record": {
-  "right": 1,
+  "right": 2,
   "wrong": 0
  }
 }

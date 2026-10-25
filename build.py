@@ -7,6 +7,25 @@ from stats import log_tables, players, team_stats
 from teams import ABBRS, IDX, display_abbr, name
 
 
+def lineup_adjustments(season):
+    """{team: dict(points, notes)}: starting-QB changes plus injuries, in points per game (negative =
+    weaker than the results-based rating assumes). Empty if the injury feeds can't be reached."""
+    import injuries, qb_adjust
+    out = {}
+    try:
+        qb = qb_adjust.adjustments(season)
+        inj = injuries.adjustments(season)
+    except Exception as e:                       # predictions still work from results alone
+        print(f"(lineup adjustments skipped: {e})")
+        return out
+    for t in set(qb) | set(inj):
+        notes = [qb[t]['note']] if t in qb else []
+        notes += [f"{n} ({pos}, {st})" for n, pos, st, _ in inj.get(t, {}).get('players', [])[:5]]
+        out[t] = dict(points=round(qb.get(t, {}).get('points', 0.0) + inj.get(t, {}).get('points', 0.0), 1),
+                      qb=qb.get(t, {}).get('points', 0.0), injuries=inj.get(t, {}).get('points', 0.0), notes=notes)
+    return out
+
+
 def short_date(iso):
     d = datetime.date.fromisoformat(iso)
     return f"{d:%b} {d.day}"
@@ -75,13 +94,17 @@ def main():
             off_avg=round(float(np.mean(o)), 1), def_avg=round(float(np.mean(d)), 1),
             stats=stats[t], player=qb[t]))
 
+    lineup = lineup_adjustments(season)
     upcoming = []
     for g in games:
         if g['season'] == season and g['margin'] is None and g['week'] <= week + 1:
-            m = predict(raw, g, p)
+            base = predict(raw, g, p)
+            ah, aa = lineup.get(g['home'], {}), lineup.get(g['away'], {})
+            m = base + ah.get('points', 0.0) - aa.get('points', 0.0)
             upcoming.append(dict(id=g['id'], week=g['week'], day=g['day'], away=display_abbr(g['away']), home=display_abbr(g['home']),
                                  neutral=g['neutral'], home_margin=round(m, 1), home_win=round(win_prob(m, p['sigma']), 3),
-                                 line=g['spread']))
+                                 line=g['spread'], results_margin=round(base, 1),
+                                 lineup={display_abbr(g['home']): ah, display_abbr(g['away']): aa}))
 
     out = dict(season=season, week=week, through=short_date(max(g['day'] for g in played)),
                not_yet_played=[f"{name(g['away'])} at {name(g['home'])}" for g in games

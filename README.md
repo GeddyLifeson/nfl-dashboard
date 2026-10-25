@@ -19,6 +19,14 @@ Run `python backtest.py` to re-tune the settings (writes `params.json`), `python
 
 A team's rating is how many points per game better it is than an average team on a neutral field. It comes from every score this season, adjusted for the opponent and for home field (2 points; none at neutral sites such as London), with each team starting from 60% of last season's final rating. That head start counts as 8 games, so it fades as the season goes on. The gap between two ratings, plus home field, is the predicted margin.
 
+Predictions also adjust for the current lineup (`build.py` -> `lineup_adjustments`). Starting quarterbacks come from
+today's nflverse depth chart (`qb_adjust.py`): when QB1 is not the passer behind the team's results, the margin moves by
+the difference in EPA per dropback times dropbacks per game, with little-used QBs treated as backups. Every other
+position comes from the official injury report plus regulars who have dropped off the depth chart (`injuries.py`):
+each absence costs position weight x snap share x a 2025 All-Pro/Pro Bowl bonus x chance he sits x share of games
+he has played. The position weights are judgment, not fitted, and these adjustments are not walk-forward tested;
+`results_margin` in league_data.json keeps the pure results prediction.
+
 Movement arrows compare this week's ranking with the ranking the same model gave through last week. Each build saves the rankings and picks to `history/`, and later builds grade those picks once the games are played.
 
 The stat tables in `stats/` (FootballDB, collected by hand) are shown for context only. Earlier walk-forward tests found box score stats added nothing beyond game results. A stat is marked when its source table is missing a game the team has played.

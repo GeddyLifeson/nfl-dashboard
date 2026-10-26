@@ -8,22 +8,32 @@ from teams import ABBRS, IDX, display_abbr, name
 
 
 def lineup_adjustments(season):
-    """{team: dict(points, notes)}: starting-QB changes plus injuries, in points per game (negative =
-    weaker than the results-based rating assumes). Empty if the injury feeds can't be reached."""
-    import injuries, qb_adjust
-    out = {}
+    """Function (team, week) -> dict(points, qb, injuries, notes): the backtested lineup correction
+    (lineup_weights.json, fitted 2022-24, tested 2025-26) for the current starting QB from today's
+    depth chart and the latest injury report. Returns None-adjustments if the feeds can't be reached."""
+    import lineup, qb_adjust
     try:
-        qb = qb_adjust.adjustments(season)
-        inj = injuries.adjustments(season)
+        w = json.load(open('lineup_weights.json'))
+        if not w.get('use'):
+            return lambda team, week: {}
+        ss = lineup.Season(season)
+        qb1 = qb_adjust.starters(season)
     except Exception as e:                       # predictions still work from results alone
         print(f"(lineup adjustments skipped: {e})")
-        return out
-    for t in set(qb) | set(inj):
-        notes = [qb[t]['note']] if t in qb else []
-        notes += [f"{n} ({pos}, {st})" for n, pos, st, _ in inj.get(t, {}).get('players', [])[:5]]
-        out[t] = dict(points=round(qb.get(t, {}).get('points', 0.0) + inj.get(t, {}).get('points', 0.0), 1),
-                      qb=qb.get(t, {}).get('points', 0.0), injuries=inj.get(t, {}).get('points', 0.0), notes=notes)
-    return out
+        return lambda team, week: {}
+    weights = w['weights']
+
+    def adj(team, week):
+        name, gid, _ = qb1.get(team, (None, None, None))
+        qb_pts = weights['qb'] * ss.qb(team, gid, week)
+        miss = ss.missing(team, week)
+        inj_pts = sum(weights[g] * v for g, v in miss.items())
+        notes = []
+        if abs(qb_pts) >= 0.1 and name:
+            notes.append(f"{name} starting instead of the usual QB ({qb_pts:+.1f})")
+        notes += [f"{n} ({pos}, {why})" for n, pos, why, _ in ss.missing_players(team, week)[:5]]
+        return dict(points=round(qb_pts + inj_pts, 1), qb=round(qb_pts, 1), injuries=round(inj_pts, 1), notes=notes)
+    return adj
 
 
 def short_date(iso):
@@ -99,7 +109,7 @@ def main():
     for g in games:
         if g['season'] == season and g['margin'] is None and g['week'] <= week + 1:
             base = predict(raw, g, p)
-            ah, aa = lineup.get(g['home'], {}), lineup.get(g['away'], {})
+            ah, aa = lineup(g['home'], g['week']), lineup(g['away'], g['week'])
             m = base + ah.get('points', 0.0) - aa.get('points', 0.0)
             upcoming.append(dict(id=g['id'], week=g['week'], day=g['day'], away=display_abbr(g['away']), home=display_abbr(g['home']),
                                  neutral=g['neutral'], home_margin=round(m, 1), home_win=round(win_prob(m, p['sigma']), 3),

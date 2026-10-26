@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NFL Dashboard</title>
+<style>
+:root {
+  --bg: #0e1217; --surface: #161b22; --raised: #1d242d; --line: #2a323d;
+  --text: #e6edf3; --muted: #9aa7b4; --accent: #f26b1d; --good: #4cc38a; --bad: #f07178;
+  --head: Bahnschrift, "Segoe UI Semibold", system-ui, sans-serif;
+  --body: "Segoe UI", system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 14px/1.45 var(--body); }
+header { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; padding: 16px 24px; border-bottom: 1px solid var(--line); background: var(--surface); }
+header h1 { margin: 0; font: 600 22px var(--head); letter-spacing: .5px; }
+header .meta { color: var(--muted); }
+header .spacer { flex: 1; }
+nav { display: flex; flex-wrap: wrap; gap: 4px; padding: 8px 24px; border-bottom: 1px solid var(--line); background: var(--surface); }
+button { font: 600 13px var(--body); color: var(--text); background: var(--raised); border: 1px solid var(--line); border-radius: 6px; padding: 6px 12px; cursor: pointer; }
+button:hover { background: #26303b; }
+button.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+button:disabled { cursor: wait; color: var(--muted); }
+main { padding: 16px 24px 48px; max-width: 1400px; }
+h2 { font: 600 18px var(--head); margin: 24px 0 8px; }
+h2:first-child { margin-top: 8px; }
+p.note { color: var(--muted); margin: 4px 0 12px; max-width: 900px; }
+.bar { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 8px 0 12px; }
+select, input { font: 14px var(--body); color: var(--text); background: var(--raised); border: 1px solid var(--line); border-radius: 6px; padding: 6px 8px; }
+.wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 8px; }
+table { border-collapse: collapse; width: 100%; background: var(--surface); }
+th, td { padding: 6px 10px; text-align: left; white-space: nowrap; border-bottom: 1px solid var(--line); }
+th { position: sticky; top: 0; background: var(--raised); color: var(--muted); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: .4px; cursor: pointer; user-select: none; }
+td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+tr:hover td { background: #1a2029; }
+.good { color: var(--good); } .bad { color: var(--bad); } .muted { color: var(--muted); }
+.out td { color: var(--muted); }
+.tag { display: inline-block; padding: 1px 6px; border-radius: 4px; font-size: 12px; font-weight: 600; background: var(--raised); border: 1px solid var(--line); }
+.tag.warn { color: var(--bad); border-color: var(--bad); }
+.meter { display: inline-block; width: 70px; height: 6px; border-radius: 3px; background: var(--line); vertical-align: middle; margin-left: 8px; }
+.meter i { display: block; height: 100%; border-radius: 3px; background: var(--accent); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 16px; }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 12px 16px; }
+.card .big { font: 600 28px var(--head); }
+.status { color: var(--muted); font-size: 13px; }
+.err { color: var(--bad); }
+@media (max-width: 640px) { header, nav, main { padding-left: 12px; padding-right: 12px; } .grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>NFL Dashboard</h1>
+  <span class="meta" id="meta">Loading...</span>
+  <span class="spacer"></span>
+  <span class="status" id="status"></span>
+  <button id="refresh">Refresh data</button>
+</header>
+<nav id="tabs"></nav>
+<main id="view"></main>
+<script>
+const TABS = [['rankings', 'Rankings'], ['teams', 'Teams'], ['games', 'Games'], ['players', 'Player rankings'], ['projections', 'Player projections'], ['model', 'Model accuracy']];
+const POS_ORDER = ['QB', 'RB', 'WR', 'TE', 'EDGE', 'DL', 'LB', 'CB', 'S', 'K'];
+const LABEL = {
+  cmp: 'Cmp/Att', pass_yds: 'Pass yds', td: 'TD', int: 'INT', epa_play: 'EPA/play', cpoe: 'CPOE', rush_yds: 'Rush yds', car: 'Carries',
+  ypc: 'Yds/carry', rec: 'Rec', rec_yds: 'Rec yds', tgt: 'Targets', yds: 'Yards', yds_g: 'Yds/game', epa_tgt: 'EPA/target',
+  sacks: 'Sacks', qb_hits: 'QB hits', tfl: 'TFL', ff: 'FF', tackles: 'Tackles', pd: 'PD', fg: 'FG', fg_pct: 'FG%', long: 'Long',
+  fifty_plus: '50+', pat: 'PAT', passing_yards: 'Pass yds', passing_tds: 'Pass TD', passing_interceptions: 'INT',
+  rushing_yards: 'Rush yds', rushing_tds: 'Rush TD', receptions: 'Rec', receiving_yards: 'Rec yds', receiving_tds: 'Rec TD'
+};
+let D = null, tab = localStorage.getItem('tab') || 'rankings';
+const state = { rankBy: 'pos', team: null, pos: 'QB', projPos: 'All', projTeam: 'All', projSearch: '' };
+
+function el(tag, props, ...kids) {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(props || {})) {
+    if (k === 'class') n.className = v; else if (k.startsWith('on')) n.addEventListener(k.slice(2), v); else n.setAttribute(k, v);
+  }
+  for (const k of kids.flat()) if (k !== null && k !== undefined) n.append(k instanceof Node ? k : String(k));
+  return n;
+}
+const fmt = (v, d = 1) => (v === null || v === undefined || v === '') ? '' : (typeof v === 'number' ? v.toFixed(d) : v);
+const signed = (v, d = 1) => (v > 0 ? '+' : '') + Number(v).toFixed(d);
+const pct = v => Math.round(v * 100) + '%';
+function rankCell(r, total = 32) {
+  const cls = r <= total / 4 ? 'good' : r > total * 3 / 4 ? 'bad' : '';
+  return el('td', { class: 'num ' + cls }, r);
+}
+
+// Sortable table: cols = [{key, label, num, render(row) -> td|text, sort(row) -> value}]
+function table(cols, rows, initial) {
+  let sortKey = initial ? initial.key : null, asc = initial ? initial.asc : true;
+  const box = el('div', { class: 'wrap' });
+  function draw() {
+    const col = cols.find(c => c.key === sortKey);
+    const data = col ? [...rows].sort((a, b) => {
+      const x = col.sort ? col.sort(a) : a[col.key], y = col.sort ? col.sort(b) : b[col.key];
+      return (x > y ? 1 : x < y ? -1 : 0) * (asc ? 1 : -1);
+    }) : rows;
+    const head = el('tr', {}, cols.map(c => el('th', {
+      class: c.num ? 'num' : '', title: 'Sort', onclick: () => { asc = sortKey === c.key ? !asc : !!c.ascFirst; sortKey = c.key; draw(); }
+    }, c.label + (c.key === sortKey ? (asc ? ' ▲' : ' ▼') : ''))));
+    const body = data.map(r => el('tr', { class: r._cls || '' }, cols.map(c => {
+      const v = c.render ? c.render(r) : r[c.key];
+      return v instanceof Node && v.tagName === 'TD' ? v : el('td', { class: c.num ? 'num' : '' }, v);
+    })));
+    box.replaceChildren(el('table', {}, el('thead', {}, head), el('tbody', {}, body)));
+  }
+  draw();
+  return box;
+}
+
+function rankings() {
+  const by = state.rankBy;
+  const bar = el('div', { class: 'bar' }, [['pos', 'Overall'], ['off_rank', 'Offense'], ['def_rank', 'Defense']].map(([k, l]) =>
+    el('button', { class: by === k ? 'on' : '', onclick: () => { state.rankBy = k; render(); } }, l)));
+  const t = table([
+    { key: 'pos', label: 'Power', num: true, ascFirst: true },
+    { key: 'team', label: 'Team', ascFirst: true },
+    { key: 'record', label: 'Record', ascFirst: true },
+    { key: 'rating', label: 'Rating', num: true, render: r => signed(r.rating) },
+    { key: 'move', label: 'Move', num: true, render: r => el('td', { class: 'num ' + (r.move > 0 ? 'good' : r.move < 0 ? 'bad' : 'muted') }, r.move > 0 ? '▲' + r.move : r.move < 0 ? '▼' + (-r.move) : '=') },
+    { key: 'off_rank', label: 'Offense', num: true, ascFirst: true, render: r => rankCell(r.off_rank) },
+    { key: 'off_epa', label: 'Off EPA/play', num: true, render: r => signed(r.off_epa, 3) },
+    { key: 'def_rank', label: 'Defense', num: true, ascFirst: true, render: r => rankCell(r.def_rank) },
+    { key: 'def_epa', label: 'Def EPA allowed', num: true, ascFirst: true, render: r => signed(r.def_epa, 3) },
+    { key: 'margin', label: 'Avg margin', num: true, render: r => signed(r.margin) },
+    { key: 'sos_rank', label: 'Schedule rank', num: true, ascFirst: true },
+  ], D.power, { key: by, asc: true });
+  return [el('h2', {}, 'Power rankings'),
+    el('p', { class: 'note' }, 'Rating = points per game better than an average team on a neutral field, from every score this season plus part of last season. Offense and defense rank by EPA per play (expected points added), adjusted for opponents, garbage time left out. Click any column to sort.'),
+    bar, t];
+}
+
+function teams() {
+  const list = [...D.power].sort((a, b) => a.team.localeCompare(b.team));
+  state.team = state.team || list[0].abbr;
+  const t = D.power.find(x => x.abbr === state.team);
+  const pick = el('select', { onchange: e => { state.team = e.target.value; render(); } },
+    list.map(x => { const o = el('option', { value: x.abbr }, x.team); if (x.abbr === state.team) o.selected = true; return o; }));
+  const g = D.games.find(x => x.home === t.abbr || x.away === t.abbr);
+  const stats = D.team_stats[t.abbr] || [];
+  const side = s => table([{ key: 'label', label: 'Stat' }, { key: 'value', label: 'Value', num: true }, { key: 'rank', label: 'Rank', num: true, ascFirst: true, render: r => rankCell(r.rank) }], stats.filter(x => x.side === s));
+  const cards = el('div', { class: 'grid' },
+    el('div', { class: 'card' }, el('div', { class: 'muted' }, 'Power rank'), el('div', { class: 'big' }, '#' + t.pos + '  ', el('span', { class: 'muted' }, t.record)),
+      el('div', {}, 'Rating ' + signed(t.rating) + ' · Offense #' + t.off_rank + ' · Defense #' + t.def_rank + ' · Schedule #' + t.sos_rank)),
+    g ? gameCard(g) : el('div', { class: 'card' }, 'No game scheduled in the next week.'));
+  return [el('h2', {}, 'Team'), el('div', { class: 'bar' }, pick), cards,
+    el('div', { class: 'grid' }, el('div', {}, el('h2', {}, 'Offense'), side('O')), el('div', {}, el('h2', {}, 'Defense'), side('D'), el('h2', {}, 'Turnovers'), side('T')))];
+}
+
+function gameCard(g) {
+  const homeFav = g.home_margin > 0;
+  const fav = homeFav ? g.home : g.away, prob = homeFav ? g.home_win : 1 - g.home_win;
+  const lineFav = g.line === null ? null : (g.line > 0 ? g.home : g.away);
+  const notes = Object.entries(g.lineup || {}).filter(([, a]) => a && a.notes && a.notes.length);
+  return el('div', { class: 'card' },
+    el('div', { class: 'muted' }, 'Week ' + g.week + ' · ' + g.day + (g.neutral ? ' · neutral site' : '')),
+    el('div', { class: 'big' }, g.away + ' @ ' + g.home),
+    el('div', {}, 'Pick: ', el('b', {}, fav + ' by ' + Math.abs(g.home_margin).toFixed(1)), ' · ' + pct(prob) + ' to win'),
+    el('div', { class: 'muted' }, g.line === null ? 'No market line yet' : 'Market: ' + g.home + ' ' + signed(-g.line, 1) + (lineFav && lineFav !== fav ? ' (picks the other side)' : '')),
+    notes.map(([team, a]) => el('div', { class: 'muted' }, team + ' lineup ' + signed(a.points) + ': ' + a.notes.join('; '))));
+}
+
+function games() {
+  const weeks = [...new Set(D.games.map(g => g.week))];
+  const out = [el('h2', {}, 'Predictions'),
+    el('p', { class: 'note' }, 'Margin and win chance come from the results model plus the lineup correction (starting QB from today\'s depth chart, injuries from the latest report), both tested on seasons the model never saw. Where the model and the market pick different winners, the market has historically been right more often.')];
+  for (const w of weeks) {
+    const rows = D.games.filter(g => g.week === w).map(g => {
+      const homeFav = g.home_margin > 0;
+      const fav = homeFav ? g.home : g.away;
+      const lineFav = g.line === null ? null : (g.line > 0 ? g.home : g.away);
+      const adj = Object.entries(g.lineup || {}).filter(([, a]) => a && Math.abs(a.points) >= 0.1).map(([t, a]) => t + ' ' + signed(a.points)).join(', ');
+      return { day: g.day, game: g.away + ' @ ' + g.home, pick: fav, by: Math.abs(g.home_margin), prob: homeFav ? g.home_win : 1 - g.home_win,
+        line: g.line === null ? '' : g.home + ' ' + signed(-g.line, 1), disagree: lineFav && lineFav !== fav, adj,
+        notes: Object.values(g.lineup || {}).flatMap(a => (a && a.notes) || []).join('; ') };
+    });
+    out.push(el('h2', {}, 'Week ' + w), table([
+      { key: 'day', label: 'Date', ascFirst: true }, { key: 'game', label: 'Game', ascFirst: true },
+      { key: 'pick', label: 'Pick', render: r => el('td', {}, el('b', {}, r.pick), ' by ' + r.by.toFixed(1)) },
+      { key: 'prob', label: 'Win chance', num: true, render: r => pct(r.prob) },
+      { key: 'line', label: 'Market', render: r => el('td', {}, r.line, r.disagree ? el('span', { class: 'tag warn', title: 'Market picks the other team' }, ' differs') : '') },
+      { key: 'adj', label: 'Lineup', title: 'Points from QB changes and injuries' },
+      { key: 'notes', label: 'Who is missing', render: r => el('td', { class: 'muted', title: r.notes }, r.notes.length > 90 ? r.notes.slice(0, 90) + '...' : r.notes) },
+    ], rows));
+  }
+  if (D.results.length) {
+    const right = D.results.filter(r => r.right === true).length, wrong = D.results.filter(r => r.right === false).length;
+    out.push(el('h2', {}, 'Week ' + D.results[0].week + ' results: picks ' + right + '-' + wrong),
+      table([{ key: 'game', label: 'Game', render: r => r.away + ' @ ' + r.home }, { key: 'score', label: 'Score', render: r => r.away_score + '-' + r.home_score },
+        { key: 'pick_margin', label: 'Model pick', render: r => r.pick_margin === null ? '' : (r.pick_margin > 0 ? r.home : r.away) + ' by ' + Math.abs(r.pick_margin).toFixed(1) },
+        { key: 'right', label: 'Result', render: r => el('td', { class: r.right ? 'good' : r.right === false ? 'bad' : 'muted' }, r.right === null ? '' : r.right ? 'Right' : 'Wrong') }], D.results));
+  }
+  return out;
+}
+
+function players() {
+  const pos = state.pos;
+  const bar = el('div', { class: 'bar' }, POS_ORDER.filter(p => D.players[p]).map(p => el('button', { class: p === pos ? 'on' : '', onclick: () => { state.pos = p; render(); } }, p)));
+  const rows = D.players[pos] || [];
+  const extra = rows.length ? Object.keys(rows[0]).filter(k => !['rank', 'name', 'team', 'games', 'rating'].includes(k)) : [];
+  const cols = [{ key: 'rank', label: 'Rank', num: true, ascFirst: true }, { key: 'name', label: 'Player', ascFirst: true }, { key: 'team', label: 'Team', ascFirst: true },
+    { key: 'rating', label: 'Rating', num: true, render: r => el('td', { class: 'num' }, r.rating, el('span', { class: 'meter' }, el('i', { style: 'width:' + r.rating + '%' }))) },
+    { key: 'games', label: 'Games', num: true }].concat(extra.map(k => ({ key: k, label: LABEL[k] || k, num: true })));
+  const how = {
+    QB: 'EPA per play (passing and rushing) 60%, completion % over expected 20%, total yards per game 20%. Minimum 100 plays.',
+    RB: 'EPA per touch 45%, scrimmage yards per game 40%, touchdowns per game 15%. Minimum 40 touches.',
+    WR: 'EPA per target 40%, receiving yards per game 40%, share of team targets 20%. Minimum 20 targets.',
+    TE: 'EPA per target 40%, receiving yards per game 40%, share of team targets 20%. Minimum 15 targets.',
+    EDGE: 'Sacks, half of QB hits and tackles for loss per game 80%, forced fumbles 20%.',
+    DL: 'Sacks, half of QB hits and tackles for loss per game 80%, forced fumbles 20%.',
+    LB: 'Tackles per game 40%, tackles for loss, sacks and QB hits 35%, interceptions, passes defended and forced fumbles 25%.',
+    CB: 'Interceptions (x3) and passes defended per game 75%, solo tackles 25%. Box-score based: public data has no coverage grades.',
+    S: 'Interceptions (x3) and passes defended per game 60%, tackles 40%.',
+    K: 'Field-goal % (lightly shrunk for small samples) 60%, field goals per game 20%, 50+ yard makes 20%.'
+  }[pos];
+  return [el('h2', {}, 'Player power rankings'), bar, el('p', { class: 'note' }, 'Rating 100 = best at the position this season. ' + how), table(cols, rows)];
+}
+
+function projections() {
+  const all = D.projections;
+  const teams = ['All', ...new Set(all.map(p => p.team))].sort();
+  const bar = el('div', { class: 'bar' },
+    ['All', 'QB', 'RB', 'WR', 'TE'].map(p => el('button', { class: p === state.projPos ? 'on' : '', onclick: () => { state.projPos = p; render(); } }, p)),
+    el('select', { onchange: e => { state.projTeam = e.target.value; render(); } }, teams.map(t => { const o = el('option', { value: t }, t === 'All' ? 'All teams' : t); if (t === state.projTeam) o.selected = true; return o; })),
+    el('input', { placeholder: 'Search player', value: state.projSearch, oninput: e => { state.projSearch = e.target.value; clearTimeout(window._s); window._s = setTimeout(render, 250); } }));
+  const rows = all.filter(p => (state.projPos === 'All' || p.pos === state.projPos) && (state.projTeam === 'All' || p.team === state.projTeam)
+    && (!state.projSearch || p.name.toLowerCase().includes(state.projSearch.toLowerCase()))).map(p => ({ ...p, _cls: p.out ? 'out' : '' }));
+  const keys = ['passing_yards', 'passing_tds', 'passing_interceptions', 'rushing_yards', 'rushing_tds', 'receptions', 'receiving_yards', 'receiving_tds']
+    .filter(k => rows.some(r => r[k] !== undefined));
+  const cols = [{ key: 'name', label: 'Player', ascFirst: true, render: r => el('td', {}, r.name, r.out ? el('span', { class: 'tag warn' }, ' out') : '') },
+    { key: 'pos', label: 'Pos', ascFirst: true }, { key: 'team', label: 'Team', ascFirst: true }, { key: 'opp', label: 'Opponent', ascFirst: true }, { key: 'day', label: 'Date', ascFirst: true }]
+    .concat(keys.map(k => ({ key: k, label: LABEL[k], num: true, render: r => r[k] === undefined ? '' : fmt(r[k], /tds|interceptions|receptions/.test(k) ? 1 : 0), sort: r => r[k] === undefined ? -1 : r[k] })));
+  return [el('h2', {}, 'Next-game projections'),
+    el('p', { class: 'note' }, 'Recent games weighted most, blended with last season, adjusted for what the opponent allows to the position. Players ruled out or who missed their last game are marked. Only the current starting QB gets a passing projection. Accuracy is on the Model accuracy tab.'),
+    bar, table(cols, rows)];
+}
+
+function model() {
+  const m = D.model;
+  const gameRows = Object.entries(m.game || {}).map(([k, v]) => ({ k, ...v }));
+  const lw = m.lineup || {};
+  const proj = Object.entries(m.projections || {}).map(([k, v]) => ({ k, ...v }));
+  return [el('h2', {}, 'Game predictions'),
+    el('p', { class: 'note' }, 'Settings tuned on 2022-2024, then frozen and tested week by week on later seasons, using only games before each prediction. Error is mean squared error of the predicted margin (lower is better).'),
+    table([{ key: 'k', label: 'Test' }, { key: 'games', label: 'Games', num: true }, { key: 'model_acc', label: 'Model picks winner', num: true, render: r => pct(r.model_acc) },
+      { key: 'home_acc', label: 'Always home team', num: true, render: r => pct(r.home_acc) }, { key: 'line_acc', label: 'Market line', num: true, render: r => pct(r.line_acc) },
+      { key: 'model_mse', label: 'Model error', num: true }, { key: 'line_mse', label: 'Market error', num: true }], gameRows),
+    el('h2', {}, 'Lineup correction (QB and injuries)'),
+    el('p', { class: 'note' }, 'Fitted on 2022-2024, tested on ' + '2025-2026. Weights are points per fully missing starter-equivalent at each position.'),
+    lw.test ? table([{ key: 'k', label: 'Test seasons' }, { key: 'games', label: 'Games', num: true }, { key: 'acc', label: 'Picks winner', num: true, render: r => pct(r.acc) }, { key: 'mse', label: 'Error', num: true }],
+      [{ k: 'Results only', ...lw.test.results_only }, { k: 'With lineup correction', ...lw.test.with_lineup }]) : el('p', { class: 'muted' }, 'Run lineup_backtest.py to fit the lineup correction.'),
+    lw.weights ? el('p', { class: 'note' }, Object.entries(lw.weights).map(([k, v]) => k + ' ' + signed(v, 2)).join(' · ')) : '',
+    el('h2', {}, 'Player projections'),
+    el('p', { class: 'note' }, 'Average miss per player-game on 2025, frozen settings tuned on 2023-2024, compared with a plain season-to-date average.'),
+    table([{ key: 'k', label: 'Stat' }, { key: 'n', label: 'Player-games', num: true }, { key: 'model_mae', label: 'Projection miss', num: true }, { key: 'season_avg_mae', label: 'Season-average miss', num: true },
+      { key: 'better', label: 'Better?', render: r => el('td', { class: r.better ? 'good' : 'bad' }, r.better ? 'Yes' : 'No') }], proj),
+    m.pick_record ? el('h2', {}, 'Published picks so far: ' + m.pick_record.right + '-' + m.pick_record.wrong) : ''];
+}
+
+function render() {
+  document.getElementById('tabs').replaceChildren(...TABS.map(([k, l]) => el('button', { class: tab === k ? 'on' : '', onclick: () => { tab = k; localStorage.setItem('tab', k); render(); } }, l)));
+  const view = { rankings, teams, games, players, projections, model }[tab] || rankings;
+  document.getElementById('view').replaceChildren(...view().flat());
+}
+
+async function load() {
+  const r = await fetch('data.json?' + Date.now());
+  if (!r.ok) { document.getElementById('meta').textContent = 'No data yet: press Refresh data.'; return; }
+  D = await r.json();
+  document.getElementById('meta').textContent = D.season + ' season · games through ' + D.through + ' · updated ' + D.updated;
+  if (D.errors && D.errors.length) document.getElementById('status').replaceChildren(el('span', { class: 'err' }, 'Some data failed to update: ' + D.errors.join('; ')));
+  render();
+}
+
+async function poll() {
+  const res = await fetch('api/status').catch(() => null);
+  if (!res || !res.ok) {                      // hosted copy: no server, GitHub refreshes it on a schedule
+    document.getElementById('refresh').remove();
+    document.getElementById('status').textContent = 'Updates automatically several times a day';
+    return;
+  }
+  const s = await res.json();
+  const btn = document.getElementById('refresh');
+  btn.disabled = s.running;
+  btn.textContent = s.running ? 'Refreshing...' : 'Refresh data';
+  if (s.running) { setTimeout(poll, 3000); return; }
+  if (s.ok === false) document.getElementById('status').replaceChildren(el('span', { class: 'err' }, 'Refresh failed: ' + s.message));
+  else if (s.finished) { document.getElementById('status').textContent = ''; load(); }
+}
+document.getElementById('refresh').addEventListener('click', async () => { await fetch('api/refresh', { method: 'POST' }); poll(); });
+load().then(poll);
+</script>
+</body>
+</html>

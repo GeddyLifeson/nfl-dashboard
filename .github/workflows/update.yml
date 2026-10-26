@@ -1,0 +1,53 @@
+# Refreshes the NFL data on GitHub's servers and publishes the dashboard with GitHub Pages.
+# More often on game days; "Run workflow" on the Actions tab refreshes it by hand.
+name: Update dashboard
+
+on:
+  schedule:
+    - cron: "0 */6 * * 2-6"          # Tue-Sat every 6 hours (UTC)
+    - cron: "0 */2 * * 0,1"          # Sun-Mon every 2 hours, through game nights
+    - cron: "30 4,6 * * 2"           # early Tuesday UTC, after Monday Night Football
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: dashboard
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install numpy
+      - name: Restore downloaded nflverse files
+        uses: actions/cache@v4
+        with:
+          path: cache
+          key: nflverse-${{ github.run_id }}
+          restore-keys: nflverse-
+      - name: Refresh data
+        run: python pipeline.py
+      - name: Save picks history and scores
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898699+github-actions[bot]@users.noreply.github.com"
+          git add history data league_data.json units.json site/data.json
+          git diff --cached --quiet || git commit -m "Data update $(date -u +'%Y-%m-%d %H:%M') UTC"
+          git push
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deploy
+        uses: actions/deploy-pages@v4

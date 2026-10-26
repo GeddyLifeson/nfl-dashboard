@@ -6,26 +6,19 @@ time (win probability under 5% or over 95%) is left out. Quarterbacks: EPA per d
 scrambles and sacks, with completion % over expected; minimum 100 dropbacks.
 Run: python units.py   (writes units.json)
 """
-import csv, gzip, io, json, os, time, urllib.request
+import csv, gzip, json
 import numpy as np
+import nflv
 from teams import ABBRS, IDX, display_abbr, name
 
-URL = 'https://github.com/nflverse/nflverse-data/releases/download/pbp/play_by_play_{}.csv.gz'
 SHRINK_PLAYS = 60    # one game's worth of plays pulls each team toward average
 MIN_DROPBACKS = 100
 
 
 def plays(season):
-    # nflverse refreshes play-by-play about daily; reuse a download for 6 hours
-    path = f'cache/pbp_{season}.csv.gz'
-    if not os.path.exists(path) or time.time() - os.path.getmtime(path) > 6 * 3600:
-        os.makedirs('cache', exist_ok=True)
-        data = urllib.request.urlopen(URL.format(season), timeout=60).read()
-        with open(path + '.tmp', 'wb') as f:
-            f.write(data)
-        os.replace(path + '.tmp', path)
-    raw = open(path, 'rb').read()
-    for r in csv.DictReader(io.TextIOWrapper(gzip.GzipFile(fileobj=io.BytesIO(raw)), encoding='utf-8')):
+    with gzip.open(nflv.get('pbp', season), 'rt', encoding='utf-8') as f:
+        rows = list(csv.DictReader(f))
+    for r in rows:
         if r['season_type'] == 'REG' and r['play_type'] in ('pass', 'run') and r['epa'] not in ('', 'NA'):
             yield r
 
@@ -66,7 +59,8 @@ def quarterbacks(rows):
     return sorted(out, key=lambda q: -q['epa_per_db'])
 
 
-def main(season=2026):
+def main(season=None):
+    season = season or nflv.current_season()
     rows = [r for r in plays(season) if r['wp'] not in ('', 'NA') and 0.05 <= float(r['wp']) <= 0.95]
     off, de = adjusted(rows)
     offense = sorted(ABBRS, key=lambda t: -off[IDX[t]])

@@ -1,0 +1,166 @@
+{
+ "made": "2026-10-26",
+ "tuned_on": [
+  2023,
+  2024
+ ],
+ "tested_on": 2025,
+ "params": {
+  "QB passing_yards": [
+   0.85,
+   0.0,
+   0.5
+  ],
+  "QB passing_tds": [
+   0.85,
+   0.0,
+   0.0
+  ],
+  "QB passing_interceptions": [
+   0.85,
+   2.0,
+   0.5
+  ],
+  "QB rushing_yards": [
+   1.0,
+   2.0,
+   0.0
+  ],
+  "WR receptions": [
+   0.85,
+   2.0,
+   0.0
+  ],
+  "WR receiving_yards": [
+   1.0,
+   2.0,
+   0.0
+  ],
+  "WR receiving_tds": [
+   1.0,
+   0.0,
+   0.0
+  ],
+  "TE receptions": [
+   0.85,
+   2.0,
+   0.0
+  ],
+  "TE receiving_yards": [
+   1.0,
+   2.0,
+   0.0
+  ],
+  "TE receiving_tds": [
+   1.0,
+   0.0,
+   0.0
+  ],
+  "RB rushing_yards": [
+   0.85,
+   2.0,
+   0.5
+  ],
+  "RB rushing_tds": [
+   0.7,
+   0.0,
+   0.0
+  ],
+  "RB receptions": [
+   1.0,
+   2.0,
+   0.5
+  ],
+  "RB receiving_yards": [
+   1.0,
+   2.0,
+   0.5
+  ]
+ },
+ "test": {
+  "QB passing_yards": {
+   "n": 481,
+   "model_mae": 66.17,
+   "season_avg_mae": 67.85,
+   "better": true
+  },
+  "QB passing_tds": {
+   "n": 481,
+   "model_mae": 0.97,
+   "season_avg_mae": 0.96,
+   "better": false
+  },
+  "QB passing_interceptions": {
+   "n": 481,
+   "model_mae": 0.65,
+   "season_avg_mae": 0.66,
+   "better": true
+  },
+  "QB rushing_yards": {
+   "n": 481,
+   "model_mae": 11.67,
+   "season_avg_mae": 11.81,
+   "better": true
+  },
+  "RB rushing_yards": {
+   "n": 1264,
+   "model_mae": 18.85,
+   "season_avg_mae": 18.64,
+   "better": false
+  },
+  "RB rushing_tds": {
+   "n": 1264,
+   "model_mae": 0.34,
+   "season_avg_mae": 0.33,
+   "better": false
+  },
+  "RB receptions": {
+   "n": 1264,
+   "model_mae": 1.01,
+   "season_avg_mae": 1.01,
+   "better": true
+  },
+  "RB receiving_yards": {
+   "n": 1264,
+   "model_mae": 9.59,
+   "season_avg_mae": 9.68,
+   "better": true
+  },
+  "WR receptions": {
+   "n": 1919,
+   "model_mae": 1.33,
+   "season_avg_mae": 1.34,
+   "better": true
+  },
+  "WR receiving_yards": {
+   "n": 1919,
+   "model_mae": 20.41,
+   "season_avg_mae": 20.6,
+   "better": true
+  },
+  "WR receiving_tds": {
+   "n": 1919,
+   "model_mae": 0.29,
+   "season_avg_mae": 0.29,
+   "better": true
+  },
+  "TE receptions": {
+   "n": 976,
+   "model_mae": 1.22,
+   "season_avg_mae": 1.24,
+   "better": true
+  },
+  "TE receiving_yards": {
+   "n": 976,
+   "model_mae": 15.06,
+   "season_avg_mae": 15.2,
+   "better": true
+  },
+  "TE receiving_tds": {
+   "n": 976,
+   "model_mae": 0.29,
+   "season_avg_mae": 0.29,
+   "better": true
+  }
+ }
+}

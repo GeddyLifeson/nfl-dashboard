@@ -1,31 +1,50 @@
-# NFL Power Rankings
+# NFL Dashboard
 
-GeddyLifeson's Power Rankings for the 2026 NFL season: the data, the model, and the weekly method.
+GeddyLifeson's NFL power rankings, game predictions, team and player stats with league ranks, player
+power rankings by position and next-game player projections, all rebuilt automatically from free
+nflverse data.
 
-## Weekly routine
+**Online:** https://geddylifeson.github.io/nfl-dashboard/ refreshes itself on GitHub several times a day
+(every 2 hours on Sundays and Mondays). "Run workflow" on the repo's Actions tab refreshes it by hand.
+
+**On your PC:** `pip install -r requirements.txt`, then `python app.py` opens the same dashboard at
+http://127.0.0.1:8030 with a Refresh button. Data older than 6 hours refreshes when it starts.
+
+## What it shows
+
+- **Rankings:** power rating (points better than an average team), plus offense and defense ranks by
+  opponent-adjusted EPA per play. Sort by any column.
+- **Teams:** 27 offense, defense and turnover stats from play-by-play, each with its league rank, and the next game.
+- **Games:** next week's picks with win chance, the market line, and who is missing; last week's picks graded.
+- **Player rankings:** QB, RB, WR, TE, EDGE, DL, LB, CB, S and K, rated 0-100 within each position.
+- **Player projections:** next-game passing, rushing and receiving stats for QBs, RBs, WRs and TEs.
+- **Model accuracy:** every backtest below, so each number can be checked.
+
+## Scripts
 
 ```
-pip install -r requirements.txt
-python fetch.py       # scores, schedule and betting lines from nflverse -> data/games.csv
-python build.py       # rankings, movement, next week's picks -> league_data.json, history/
-python gen_md.py head # markdown overview and picks (python gen_md.py 0 8 for team pages)
-python tiktok.py      # 1080x1920 image -> tiktok/
-python units.py       # offense, defense and QB rankings (opponent-adjusted EPA per play) -> units.json
+python pipeline.py          # everything below, then site/data.json for the app
+python fetch.py             # scores, schedule and betting lines -> data/games.csv
+python build.py             # ratings, picks with lineup correction -> league_data.json, history/
+python units.py             # offense, defense, QB EPA rankings -> units.json
+python teamstats.py         # team stats with ranks from play-by-play
+python backtest.py          # re-tune the game model (params.json)
+python lineup_backtest.py   # re-fit the QB and injury correction (lineup_weights.json)
+python players.py           # re-tune player projections (projection_params.json)
+python test_model.py        # model checks
+python gen_md.py head       # markdown overview; python tiktok.py makes the 1080x1920 image
 ```
 
-Run `python backtest.py` to re-tune the settings (writes `params.json`), `python test_model.py` to check the model, and `python edge.py` to test ideas against the betting line.
+Downloads are cached in `cache/` (finished seasons once, the current season every 6 hours).
 
 ## How the rating works
 
 A team's rating is how many points per game better it is than an average team on a neutral field. It comes from every score this season, adjusted for the opponent and for home field (2 points; none at neutral sites such as London), with each team starting from 60% of last season's final rating. That head start counts as 8 games, so it fades as the season goes on. The gap between two ratings, plus home field, is the predicted margin.
 
-Predictions also adjust for the current lineup (`build.py` -> `lineup_adjustments`). Starting quarterbacks come from
-today's nflverse depth chart (`qb_adjust.py`): when QB1 is not the passer behind the team's results, the margin moves by
-the difference in EPA per dropback times dropbacks per game, with little-used QBs treated as backups. Every other
-position comes from the official injury report plus regulars who have dropped off the depth chart (`injuries.py`):
-each absence costs position weight x snap share x a 2025 All-Pro/Pro Bowl bonus x chance he sits x share of games
-he has played. The position weights are judgment, not fitted, and these adjustments are not walk-forward tested;
-`results_margin` in league_data.json keeps the pure results prediction.
+Predictions also adjust for the current lineup (`build.py` -> `lineup_adjustments`, features in `lineup.py`):
+the starting quarterback from today's nflverse depth chart (`qb_adjust.py`) and missing players from the injury
+report, with weights fitted and tested as described under "Lineup correction" below. `results_margin` in
+league_data.json keeps the pure results prediction.
 
 Movement arrows compare this week's ranking with the ranking the same model gave through last week. Each build saves the rankings and picks to `history/`, and later builds grade those picks once the games are played.
 
@@ -41,6 +60,20 @@ Settings were tuned on 2022 to 2024 and then frozen. Every prediction below uses
 | 2026 (weeks 1-6) | 92 | 60.4% | 50.5% | 62.6% |
 
 Strong leans are more reliable: across 2025 and 2026 from week 3, the half of games where the model leaned hardest went 71.1%, against 60.7% overall.
+
+## Lineup correction and player projections
+
+Fitted on 2022-2024 and tested, frozen, on 2025-2026 (`lineup_backtest.py`): adding the starting QB and
+injuries to the results model cut the error from 165.1 to 161.0 and raised winners picked from 61.7% to
+62.8%. Most of it is the quarterback: when the depth chart's QB1 is not the team's usual passer, the
+margin moves by the gap in EPA per dropback (both shrunk toward backup level) times 35 dropbacks,
+scaled by the fitted weight. Missing corners, edge rushers, linebackers, receivers and linemen also
+count; tight ends, interior linemen and safeties showed no measurable effect. Absences come from the
+official injury report and from regulars who missed the previous game.
+
+Player projections (`players.py`) blend recent games, last season and the opponent's allowance to the
+position, with per-stat settings tuned on 2023-2024. On 2025 they beat a plain season average on 11 of
+14 stats, by small margins: single-game player stats are noisy.
 
 ## Against the sportsbooks
 

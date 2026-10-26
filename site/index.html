@@ -36,6 +36,7 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 tr:hover td { background: #1a2029; }
 .good { color: var(--good); } .bad { color: var(--bad); } .muted { color: var(--muted); }
 .out td { color: var(--muted); }
+tr.best td { font-weight: 600; }
 .tag { display: inline-block; padding: 1px 6px; border-radius: 4px; font-size: 12px; font-weight: 600; background: var(--raised); border: 1px solid var(--line); }
 .tag.warn { color: var(--bad); border-color: var(--bad); }
 .meter { display: inline-block; width: 70px; height: 6px; border-radius: 3px; background: var(--line); vertical-align: middle; margin-left: 8px; }
@@ -45,7 +46,26 @@ tr:hover td { background: #1a2029; }
 .card .big { font: 600 28px var(--head); }
 .status { color: var(--muted); font-size: 13px; }
 .err { color: var(--bad); }
-@media (max-width: 640px) { header, nav, main { padding-left: 12px; padding-right: 12px; } .grid { grid-template-columns: 1fr; } }
+.builder { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 16px; align-items: start; }
+.builder .slip { position: sticky; top: 8px; }
+.game { margin-bottom: 12px; }
+.game h3 { margin: 0 0 8px; font: 600 15px var(--head); }
+.lines { display: grid; grid-template-columns: 90px 1fr 1fr; gap: 6px; align-items: center; }
+.lines .lbl { color: var(--muted); font-size: 12px; }
+.pick { display: flex; justify-content: space-between; gap: 8px; text-align: left; font-weight: 400; }
+.pick b { font-variant-numeric: tabular-nums; }
+.pick small { color: var(--muted); }
+.pick.on small { color: #fff; }
+.leg { display: flex; justify-content: space-between; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--line); }
+.leg button { padding: 0 8px; }
+.ticketbar { display: none; }
+@media (max-width: 900px) {
+  .builder { grid-template-columns: 1fr; } .builder .slip { position: static; }
+  .ticketbar { display: flex; justify-content: space-between; gap: 12px; position: fixed; left: 0; right: 0; bottom: 0; padding: 12px 16px;
+    background: var(--accent); color: #fff; font-weight: 600; text-decoration: none; z-index: 5; }
+  main.has-bar { padding-bottom: 72px; }
+}
+@media (max-width: 640px) { header, nav, main { padding-left: 12px; padding-right: 12px; } .grid { grid-template-columns: 1fr; } .lines { grid-template-columns: 70px 1fr 1fr; } }
 </style>
 </head>
 <body>
@@ -59,7 +79,7 @@ tr:hover td { background: #1a2029; }
 <nav id="tabs"></nav>
 <main id="view"></main>
 <script>
-const TABS = [['rankings', 'Rankings'], ['teams', 'Teams'], ['games', 'Games'], ['players', 'Player rankings'], ['projections', 'Player projections'], ['model', 'Model accuracy']];
+const TABS = [['rankings', 'Rankings'], ['teams', 'Teams'], ['games', 'Games'], ['players', 'Player rankings'], ['projections', 'Player projections'], ['parlay', 'Parlay builder'], ['model', 'Model accuracy']];
 const POS_ORDER = ['QB', 'RB', 'WR', 'TE', 'EDGE', 'DL', 'LB', 'CB', 'S', 'K'];
 const LABEL = {
   cmp: 'Cmp/Att', pass_yds: 'Pass yds', td: 'TD', int: 'INT', epa_play: 'EPA/play', cpoe: 'CPOE', rush_yds: 'Rush yds', car: 'Carries',
@@ -273,9 +293,94 @@ function model() {
     m.pick_record ? el('h2', {}, 'Published picks so far: ' + m.pick_record.right + '-' + m.pick_record.wrong) : ''];
 }
 
+// ---- Parlay builder: odds.json holds each US book's price and the sharp (Pinnacle, vig removed) chance per leg.
+let O = null, slip = [];
+try { slip = JSON.parse(localStorage.getItem('slip') || '[]'); } catch (e) { slip = []; }
+const american = d => d >= 2 ? '+' + Math.round((d - 1) * 100) : String(Math.round(-100 / (d - 1)));
+const bestPrice = l => Object.entries(l.books).sort((a, b) => b[1] - a[1])[0];
+
+function mainLines(g, market) {
+  // the line the most books post, as its two sides
+  const groups = {};
+  for (const l of g.legs.filter(l => l.market === market)) {
+    const k = market === 'spread' ? Math.abs(l.line) : market === 'total' ? l.line : 'ml';
+    (groups[k] = groups[k] || []).push(l);
+  }
+  const best = Object.values(groups).filter(s => s.length === 2)
+    .sort((a, b) => Object.keys(b[0].books).length + Object.keys(b[1].books).length - Object.keys(a[0].books).length - Object.keys(a[1].books).length)[0];
+  if (!best) return null;
+  if (market === 'total') return best.sort((a, b) => a.side === 'Over' ? -1 : 1);
+  return best.sort((a, b) => a.side === g.away ? -1 : 1);
+}
+
+function toggleLeg(g, l, sameMarket) {
+  const has = slip.includes(l.key);
+  slip = slip.filter(k => !sameMarket.includes(k));          // one side of a market per game
+  if (!has) slip.push(l.key);
+  try { localStorage.setItem('slip', JSON.stringify(slip)); } catch (e) {}
+  render();
+}
+
+function parlay() {
+  if (!O) {
+    fetch('odds.json?' + Date.now()).then(r => r.ok ? r.json() : { games: [] }).catch(() => ({ games: [] }))
+      .then(d => { O = d; render(); });
+    return [el('p', { class: 'muted' }, 'Loading odds...')];
+  }
+  if (!O.games.length) return [el('h2', {}, 'Parlay builder'), el('p', { class: 'note' }, 'No odds yet. They appear once the odds feed has run (it needs the ODDS_API_KEY secret on GitHub).')];
+  const byKey = {};
+  O.games.forEach(g => g.legs.forEach(l => { byKey[l.key] = { ...l, game: g }; }));
+  slip = slip.filter(k => byKey[k]);
+  const legs = slip.map(k => byKey[k]);
+  const hit = legs.reduce((p, l) => p * l.fair, 1);
+  document.getElementById('view').classList.toggle('has-bar', legs.length > 0);
+  const bar = legs.length ? el('a', { class: 'ticketbar', href: '#ticket' }, el('span', {}, legs.length + ' leg' + (legs.length > 1 ? 's' : '')),
+    el('span', {}, 'Fair ' + american(1 / hit) + ' · view ticket')) : '';
+  const cards = O.games.map(g => {
+    const rows = [['Moneyline', 'ML'], ['Spread', 'spread'], ['Total', 'total']].map(([lbl, m]) => {
+      const pair = mainLines(g, m);
+      if (!pair) return [];
+      const keys = g.legs.filter(l => l.market === m).map(l => l.key);
+      return [el('span', { class: 'lbl' }, lbl), ...pair.map(l => {
+        const [book, dec] = bestPrice(l);
+        const name = m === 'total' ? l.label : l.label.replace(g.home, g.home.split(' ').pop()).replace(g.away, g.away.split(' ').pop());
+        return el('button', { class: 'pick' + (slip.includes(l.key) ? ' on' : ''), title: 'Fair ' + (l.fair * 100).toFixed(1) + '% (' + l.src + ')',
+          onclick: () => toggleLeg(g, l, keys) }, el('span', {}, name, el('br'), el('small', {}, book)), el('b', {}, american(dec)));
+      })];
+    });
+    const when = new Date(g.start).toLocaleString([], { weekday: 'short', hour: 'numeric', minute: '2-digit' });
+    return el('div', { class: 'card game' }, el('h3', {}, g.away + ' at ' + g.home, el('span', { class: 'muted' }, ' · ' + when)), el('div', { class: 'lines' }, rows.flat()));
+  });
+  return [el('h2', {}, 'Parlay builder'),
+    el('p', { class: 'note' }, 'Pick legs to see the fair price of the whole ticket and what every book pays for it. Buttons show the best price for that leg across books. ' +
+      'Fair chances are Pinnacle\'s line with the vig removed (a median across books where Pinnacle has no matching line). Odds as of ' + new Date(O.updated).toLocaleString() + '.'),
+    el('div', { class: 'builder' }, el('div', {}, cards), slipView(legs)), bar];
+}
+
+function slipView(legs) {
+  const box = el('div', { class: 'card slip', id: 'ticket' }, el('h3', {}, 'Your ticket' + (legs.length ? ' (' + legs.length + ' legs)' : '')));
+  if (!legs.length) { box.append(el('p', { class: 'muted' }, 'Tap a price to add a leg.')); return box; }
+  legs.forEach(l => box.append(el('div', { class: 'leg' }, el('span', {}, l.label, el('br'), el('small', { class: 'muted' }, l.game.away + ' at ' + l.game.home)),
+    el('button', { title: 'Remove', onclick: () => { slip = slip.filter(k => k !== l.key); try { localStorage.setItem('slip', JSON.stringify(slip)); } catch (e) {} render(); } }, '×'))));
+  const hit = legs.reduce((p, l) => p * l.fair, 1);
+  box.append(el('p', {}, 'Fair chance to hit: ', el('b', {}, (hit * 100).toFixed(1) + '%'), ' · fair odds ', el('b', {}, american(1 / hit))));
+  const books = Object.keys(legs[0].books).filter(b => legs.every(l => b in l.books))
+    .map(b => { const pay = legs.reduce((p, l) => p * l.books[b], 1); return { b, pay, edge: hit * pay - 1 }; })
+    .sort((a, b) => b.pay - a.pay);
+  if (!books.length) box.append(el('p', { class: 'muted' }, 'No single book prices every leg; a parlay has to be placed at one book.'));
+  else box.append(table([{ key: 'b', label: 'Book' }, { key: 'pay', label: 'Pays', num: true, render: r => el('td', { class: 'num' }, american(r.pay)) },
+    { key: 'edge', label: 'vs fair', num: true, render: r => el('td', { class: 'num ' + (r.edge > 0 ? 'good' : 'bad') }, signed(r.edge * 100, 1) + '%') }],
+    books.map((r, i) => ({ ...r, _cls: i === 0 ? 'best' : '' }))));
+  if (new Set(legs.map(l => l.game.id)).size < legs.length)
+    box.append(el('p', { class: 'note' }, 'Two legs share a game: books reprice same-game parlays, so check the payout in the app.'));
+  box.append(el('p', { class: 'note' }, '"vs fair" above 0 means that book pays more than the sharp line says the ticket is worth.'));
+  return box;
+}
+
 function render() {
   document.getElementById('tabs').replaceChildren(...TABS.map(([k, l]) => el('button', { class: tab === k ? 'on' : '', onclick: () => { tab = k; localStorage.setItem('tab', k); render(); } }, l)));
-  const view = { rankings, teams, games, players, projections, model }[tab] || rankings;
+  const view = { rankings, teams, games, players, projections, parlay, model }[tab] || rankings;
+  document.getElementById('view').classList.remove('has-bar');
   document.getElementById('view').replaceChildren(...view().flat());
 }
 

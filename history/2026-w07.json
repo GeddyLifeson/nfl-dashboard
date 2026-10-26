@@ -780,7 +780,7 @@
    "neutral": false,
    "home_margin": 2.6,
    "home_win": 0.582,
-   "line": 1.5,
+   "line": 2.5,
    "results_margin": 3.5,
    "lineup": {
     "TB": {
@@ -813,7 +813,7 @@
    "neutral": false,
    "home_margin": 6.7,
    "home_win": 0.7,
-   "line": 7.0,
+   "line": 6.5,
    "results_margin": 8.5,
    "lineup": {
     "LAR": {

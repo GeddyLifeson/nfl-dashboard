@@ -1,197 +1,91 @@
 {
  "made": "2026-10-26",
- "method": "walk-forward: each season fitted on all earlier seasons",
- "first": 2012,
- "select": [
-  2015,
-  2020
- ],
- "holdout": [
+ "trained_on": [
   2021,
+  2022,
+  2023,
+  2024
+ ],
+ "tested_on": [
+  2025,
   2026
  ],
- "features": [
-  "pass_mismatch_x",
-  "turnover_luck",
-  "big_fav",
-  "primetime_dog"
- ],
- "ridge": 300,
- "lean": 2.0,
- "periods": {
-  "2015-2020": {
-   "games": 1249,
-   "market": {
-    "mse": 163.08,
-    "winners": 0.668
-   },
-   "our_model_alone": {
-    "mse": 172.29,
-    "winners": 0.6488
-   },
-   "blend": {
-    "mse": 162.08,
-    "winners": 0.6664
-   },
-   "ats": {
-    "lean": 2.0,
-    "bets": 90,
-    "won": 49,
-    "rate": 0.5444,
-    "p": 0.3475
-   },
-   "moneyline": {
-    "games": 1246,
-    "market": {
-     "log_loss": 0.6093,
-     "brier": 0.2106
-    },
-    "blend": {
-     "log_loss": 0.6071,
-     "brier": 0.2096
-    },
-    "bets": {
-     "count": 435,
-     "won": 244,
-     "units": 24.65,
-     "roi": 0.0567,
-     "p": 0.0604
-    }
-   }
-  },
-  "2021-2026": {
-   "games": 1177,
-   "market": {
-    "mse": 154.55,
-    "winners": 0.6752
-   },
-   "our_model_alone": {
-    "mse": 167.82,
-    "winners": 0.6309
-   },
-   "blend": {
-    "mse": 155.58,
-    "winners": 0.6752
-   },
-   "ats": {
-    "lean": 2.0,
-    "bets": 20,
-    "won": 9,
-    "rate": 0.45,
-    "p": 0.7457
-   },
-   "moneyline": {
-    "games": 1173,
-    "market": {
-     "log_loss": 0.6054,
-     "brier": 0.2092
-    },
-    "blend": {
-     "log_loss": 0.6083,
-     "brier": 0.2102
-    },
-    "bets": {
-     "count": 136,
-     "won": 60,
-     "units": -18.79,
-     "roi": -0.1382,
-     "p": 0.8586
-    }
-   }
-  }
- },
- "by_season": {
-  "2015": {
-   "games": 208,
-   "market": 0.6346,
-   "blend": 0.6442,
-   "ats": "1-4",
-   "ml_units": 13.5
-  },
-  "2016": {
-   "games": 208,
-   "market": 0.6699,
-   "blend": 0.665,
-   "ats": "5-2",
-   "ml_units": 13.63
-  },
-  "2017": {
-   "games": 209,
-   "market": 0.7177,
-   "blend": 0.7177,
-   "ats": "13-7",
-   "ml_units": -0.26
-  },
-  "2018": {
-   "games": 208,
-   "market": 0.6731,
-   "blend": 0.6635,
-   "ats": "9-7",
-   "ml_units": 6.15
-  },
-  "2019": {
-   "games": 208,
-   "market": 0.6442,
-   "blend": 0.6346,
-   "ats": "15-9",
-   "ml_units": 6.07
-  },
-  "2020": {
-   "games": 208,
-   "market": 0.6683,
-   "blend": 0.6731,
-   "ats": "6-12",
-   "ml_units": -14.43
-  },
-  "2021": {
-   "games": 224,
-   "market": 0.6368,
-   "blend": 0.6413,
-   "ats": "5-4",
-   "ml_units": -0.76
-  },
-  "2022": {
-   "games": 223,
-   "market": 0.6847,
-   "blend": 0.6802,
-   "ats": "1-3",
-   "ml_units": -7.83
-  },
-  "2023": {
-   "games": 224,
-   "market": 0.6964,
-   "blend": 0.6964,
-   "ats": "2-4",
-   "ml_units": -4.24
-  },
-  "2024": {
-   "games": 224,
-   "market": 0.7411,
-   "blend": 0.7411,
-   "ats": "0-0",
-   "ml_units": -3.18
-  },
-  "2025": {
-   "games": 224,
-   "market": 0.6323,
-   "blend": 0.6323,
-   "ats": "1-0",
-   "ml_units": -5.49
-  },
-  "2026": {
-   "games": 58,
-   "market": 0.614,
-   "blend": 0.614,
-   "ats": "0-0",
-   "ml_units": 2.7
-  }
- },
- "use_ml": false,
- "use": false,
  "weights": {
-  "pass_mismatch_x": -12.7807,
-  "turnover_luck": 0.4309,
-  "big_fav": 0.4879,
-  "primetime_dog": -0.3892
- }
+  "results_gap": -0.0225,
+  "lineup": 0.5187,
+  "division_dog": 0.4012
+ },
+ "test": {
+  "games": 282,
+  "market": {
+   "mse": 144.42,
+   "winners": 0.6286
+  },
+  "blend": {
+   "mse": 143.11,
+   "winners": 0.6393
+  },
+  "ats": {
+   "bets": 75,
+   "won": 39,
+   "rate": 0.52,
+   "p": 0.5263
+  },
+  "our_model_alone": {
+   "mse": 157.67,
+   "winners": 0.6071
+  },
+  "moneyline": {
+   "games": 280,
+   "market": {
+    "log_loss": 0.6269,
+    "brier": 0.2198
+   },
+   "blend": {
+    "log_loss": 0.6245,
+    "brier": 0.2185
+   },
+   "bets": {
+    "count": 52,
+    "won": 28,
+    "units": 15.52,
+    "roi": 0.2985,
+    "p": 0.0354
+   }
+  }
+ },
+ "train_moneyline": {
+  "games": 893,
+  "market": {
+   "log_loss": 0.5987,
+   "brier": 0.2058
+  },
+  "blend": {
+   "log_loss": 0.5959,
+   "brier": 0.2048
+  },
+  "bets": {
+   "count": 260,
+   "won": 129,
+   "units": 3.18,
+   "roi": 0.0122,
+   "p": 0.2711
+  }
+ },
+ "pieces": {
+  "results_gap": {
+   "mse": 144.27,
+   "winners": 0.6286
+  },
+  "lineup": {
+   "mse": 143.66,
+   "winners": 0.6357
+  },
+  "division_dog": {
+   "mse": 144.06,
+   "winners": 0.6286
+  }
+ },
+ "use": false,
+ "use_ml": true
 }

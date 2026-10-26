@@ -293,9 +293,66 @@ function model() {
     m.pick_record ? el('h2', {}, 'Published picks so far: ' + m.pick_record.right + '-' + m.pick_record.wrong) : ''];
 }
 
-// ---- Parlay builder: odds.json holds each US book's price and the sharp (Pinnacle, vig removed) chance per leg.
-let O = null, slip = [];
-try { slip = JSON.parse(localStorage.getItem('slip') || '[]'); } catch (e) { slip = []; }
+// ---- Parlay builder: odds.json holds each US book's price and the sharp (Pinnacle, vig removed) chance per leg;
+// correlations.json holds how same-game results move together and how often favorites win by each margin.
+let O = null, C = null, slip = [];
+const opts = { boost: 0, bonus: false, bank: 0 };
+try { slip = JSON.parse(localStorage.getItem('slip') || '[]'); Object.assign(opts, JSON.parse(localStorage.getItem('slipOpts') || '{}')); } catch (e) { slip = []; }
+const saveOpts = () => { try { localStorage.setItem('slipOpts', JSON.stringify(opts)); } catch (e) {} };
+
+// Same-game legs: how a leg relates to the game's favorite and the over, for the correlation table.
+function legRole(l) {
+  const g = l.game, favHome = g.favHome;
+  if (l.market === 'total') return { kind: 'over', sign: l.side === 'Over' ? 1 : -1 };
+  const isFav = (l.side === g.home) === favHome;
+  return { kind: l.market === 'ML' ? 'win' : 'cover', sign: isFav ? 1 : -1 };
+}
+function pairPhi(a, b) {
+  if (!C) return 0;
+  const ra = legRole(a), rb = legRole(b), k = [ra.kind, rb.kind].sort().join('-');
+  const base = { 'over-win': C.phi.fav_win_over, 'cover-over': C.phi.fav_cover_over, 'cover-win': C.phi.fav_win_cover }[k];
+  return base === undefined ? 0 : base * ra.sign * rb.sign;
+}
+function ticketChance(legs) {
+  // independent across games; within a game, pairwise correlation from history
+  let p = legs.reduce((x, l) => x * l.fair, 1);
+  for (let i = 0; i < legs.length; i++) for (let j = i + 1; j < legs.length; j++) {
+    const a = legs[i], b = legs[j];
+    if (a.game.id !== b.game.id) continue;
+    const joint = a.fair * b.fair + pairPhi(a, b) * Math.sqrt(a.fair * (1 - a.fair) * b.fair * (1 - b.fair));
+    p *= Math.max(Math.min(joint, Math.min(a.fair, b.fair)), 0) / (a.fair * b.fair);
+  }
+  return p;
+}
+// what a ticket returns per 1 staked when it wins, after a profit boost; a bonus bet keeps only the profit
+const ticketReturn = pay => opts.bonus ? (pay - 1) * (1 + opts.boost / 100) : 1 + (pay - 1) * (1 + opts.boost / 100);
+const ticketEdge = (hit, pay) => opts.bonus ? hit * ticketReturn(pay) - 0 : hit * ticketReturn(pay) - 1;
+// quarter Kelly stake for a cash bet with this edge
+const kelly = (hit, pay) => { const b = ticketReturn(pay) - 1, f = (hit * b - (1 - hit)) / b; return Math.max(f / 4, 0); };
+
+function middles() {
+  // the same game's spread at two books far enough apart that both bets can win
+  if (!C) return [];
+  const out = [];
+  for (const g of O.games) {
+    const sp = g.legs.filter(l => l.market === 'spread');
+    const favSide = g.favHome ? g.home : g.away;
+    for (const f of sp.filter(l => l.side === favSide && l.line < 0)) for (const d of sp.filter(l => l.side !== favSide && l.line > 0)) {
+      const a = -f.line, b = d.line;                      // favorite wins its bet above a, underdog's below b
+      if (b - a < 0.5) continue;
+      const [fb, fd] = bestPrice(f), [db, dd] = bestPrice(d);
+      if (fb === db) continue;
+      const tbl = C.margins[String(Math.min(Math.round((a + b) / 2 * 2) / 2, 14))] || {};
+      let ev = 0, pMid = 0;
+      for (const [m, p] of Object.entries(tbl)) {
+        const k = +m, favR = k > a ? fd - 1 : k === a ? 0 : -1, dogR = k < b ? dd - 1 : k === b ? 0 : -1;
+        ev += p * (favR + dogR); if (favR > 0 && dogR > 0) pMid += p;
+      }
+      if (pMid > 0) out.push({ game: g.away + ' at ' + g.home, fav: f.label + ' ' + american(fd) + ' ' + fb, dog: d.label + ' ' + american(dd) + ' ' + db, pMid, ev: ev / 2 });
+    }
+  }
+  return out.sort((x, y) => y.ev - x.ev);
+}
 const american = d => d >= 2 ? '+' + Math.round((d - 1) * 100) : String(Math.round(-100 / (d - 1)));
 const bestPrice = l => Object.entries(l.books).sort((a, b) => b[1] - a[1])[0];
 
@@ -323,8 +380,16 @@ function toggleLeg(g, l, sameMarket) {
 
 function parlay() {
   if (!O) {
-    fetch('odds.json?' + Date.now()).then(r => r.ok ? r.json() : { games: [] }).catch(() => ({ games: [] }))
-      .then(d => { O = d; render(); });
+    const get = f => fetch(f + '?' + Date.now()).then(r => r.ok ? r.json() : null).catch(() => null);
+    Promise.all([get('odds.json'), get('correlations.json')]).then(([d, c]) => {
+      O = d || { games: [] }; C = c;
+      O.games.forEach(g => {                     // the favorite is the side with the higher sharp moneyline chance
+        const ml = g.legs.filter(l => l.market === 'ML');
+        const h = ml.find(l => l.side === g.home);
+        g.favHome = h ? h.fair >= 0.5 : true;
+      });
+      render();
+    });
     return [el('p', { class: 'muted' }, 'Loading odds...')];
   }
   if (!O.games.length) return [el('h2', {}, 'Parlay builder'), el('p', { class: 'note' }, 'No odds yet. They appear once the odds feed has run (it needs the ODDS_API_KEY secret on GitHub).')];
@@ -332,7 +397,7 @@ function parlay() {
   O.games.forEach(g => g.legs.forEach(l => { byKey[l.key] = { ...l, game: g }; }));
   slip = slip.filter(k => byKey[k]);
   const legs = slip.map(k => byKey[k]);
-  const hit = legs.reduce((p, l) => p * l.fair, 1);
+  const hit = ticketChance(legs);
   document.getElementById('view').classList.toggle('has-bar', legs.length > 0);
   const bar = legs.length ? el('a', { class: 'ticketbar', href: '#ticket' }, el('span', {}, legs.length + ' leg' + (legs.length > 1 ? 's' : '')),
     el('span', {}, 'Fair ' + american(1 / hit) + ' · view ticket')) : '';
@@ -354,7 +419,18 @@ function parlay() {
   return [el('h2', {}, 'Parlay builder'),
     el('p', { class: 'note' }, 'Pick legs to see the fair price of the whole ticket and what every book pays for it. Buttons show the best price for that leg across books. ' +
       'Fair chances are Pinnacle\'s line with the vig removed (a median across books where Pinnacle has no matching line). Odds as of ' + new Date(O.updated).toLocaleString() + '.'),
-    el('div', { class: 'builder' }, el('div', {}, cards), slipView(legs)), bar];
+    el('div', { class: 'builder' }, el('div', {}, cards), slipView(legs)), middleView(), bar];
+}
+
+function middleView() {
+  const ms = middles().slice(0, 10);
+  if (!ms.length) return '';
+  return [el('h2', {}, 'Middles'),
+    el('p', { class: 'note' }, 'The same game\'s spread at two books far enough apart that both bets win when the favorite wins by a number in between. ' +
+      'Chances come from how often NFL favorites at this spread won by each margin since 2012. Expected return is per unit staked on each side.'),
+    table([{ key: 'game', label: 'Game' }, { key: 'fav', label: 'Favorite side' }, { key: 'dog', label: 'Underdog side' },
+      { key: 'pMid', label: 'Both win', num: true, render: r => el('td', { class: 'num' }, (r.pMid * 100).toFixed(1) + '%') },
+      { key: 'ev', label: 'Expected return', num: true, render: r => el('td', { class: 'num ' + (r.ev > 0 ? 'good' : 'bad') }, signed(r.ev * 100, 1) + '%') }], ms)];
 }
 
 function slipView(legs) {
@@ -362,18 +438,29 @@ function slipView(legs) {
   if (!legs.length) { box.append(el('p', { class: 'muted' }, 'Tap a price to add a leg.')); return box; }
   legs.forEach(l => box.append(el('div', { class: 'leg' }, el('span', {}, l.label, el('br'), el('small', { class: 'muted' }, l.game.away + ' at ' + l.game.home)),
     el('button', { title: 'Remove', onclick: () => { slip = slip.filter(k => k !== l.key); try { localStorage.setItem('slip', JSON.stringify(slip)); } catch (e) {} render(); } }, '×'))));
-  const hit = legs.reduce((p, l) => p * l.fair, 1);
-  box.append(el('p', {}, 'Fair chance to hit: ', el('b', {}, (hit * 100).toFixed(1) + '%'), ' · fair odds ', el('b', {}, american(1 / hit))));
+  const hit = ticketChance(legs);
+  const sameGame = new Set(legs.map(l => l.game.id)).size < legs.length;
+  box.append(el('p', {}, 'Fair chance to hit: ', el('b', {}, (hit * 100).toFixed(1) + '%'), ' · fair odds ', el('b', {}, american(1 / hit)),
+    sameGame ? el('small', { class: 'muted' }, ' (same-game legs adjusted for how they move together)') : ''));
+  const num = (label, key, width) => el('label', {}, label + ' ', el('input', { type: 'number', min: '0', step: 'any', value: opts[key] || '', style: 'width:' + width,
+    onchange: e => { opts[key] = Math.max(+e.target.value || 0, 0); saveOpts(); render(); } }));
+  const bonus = el('input', { type: 'checkbox', onchange: e => { opts.bonus = e.target.checked; saveOpts(); render(); } });
+  bonus.checked = opts.bonus;
+  box.append(el('div', { class: 'bar' }, num('Profit boost %', 'boost', '64px'), el('label', {}, bonus, ' Bonus bet'), num('Bankroll $', 'bank', '84px')));
   const books = Object.keys(legs[0].books).filter(b => legs.every(l => b in l.books))
-    .map(b => { const pay = legs.reduce((p, l) => p * l.books[b], 1); return { b, pay, edge: hit * pay - 1 }; })
+    .map(b => { const pay = legs.reduce((p, l) => p * l.books[b], 1); return { b, pay, edge: ticketEdge(hit, pay), stake: kelly(hit, pay) * opts.bank }; })
     .sort((a, b) => b.pay - a.pay);
+  const exch = new Set(O.exchanges || []);
+  const cols = [{ key: 'b', label: 'Book', render: r => el('td', {}, r.b, exch.has(r.b) ? el('small', { class: 'muted' }, ' exchange') : '') },
+    { key: 'pay', label: 'Pays', num: true, render: r => el('td', { class: 'num' }, american(1 + (ticketReturn(r.pay) - (opts.bonus ? 0 : 1)))) },
+    { key: 'edge', label: 'vs fair', num: true, render: r => el('td', { class: 'num ' + (r.edge > 0 ? 'good' : 'bad') }, signed(r.edge * 100, 1) + '%') }];
+  if (opts.bank && !opts.bonus) cols.push({ key: 'stake', label: 'Stake', num: true, render: r => el('td', { class: 'num' }, r.stake >= 1 ? '$' + r.stake.toFixed(0) : 'skip') });
   if (!books.length) box.append(el('p', { class: 'muted' }, 'No single book prices every leg; a parlay has to be placed at one book.'));
-  else box.append(table([{ key: 'b', label: 'Book' }, { key: 'pay', label: 'Pays', num: true, render: r => el('td', { class: 'num' }, american(r.pay)) },
-    { key: 'edge', label: 'vs fair', num: true, render: r => el('td', { class: 'num ' + (r.edge > 0 ? 'good' : 'bad') }, signed(r.edge * 100, 1) + '%') }],
-    books.map((r, i) => ({ ...r, _cls: i === 0 ? 'best' : '' }))));
-  if (new Set(legs.map(l => l.game.id)).size < legs.length)
-    box.append(el('p', { class: 'note' }, 'Two legs share a game: books reprice same-game parlays, so check the payout in the app.'));
-  box.append(el('p', { class: 'note' }, '"vs fair" above 0 means that book pays more than the sharp line says the ticket is worth.'));
+  else box.append(table(cols, books.map((r, i) => ({ ...r, _cls: i === 0 ? 'best' : '' }))));
+  if (sameGame) box.append(el('p', { class: 'note' }, 'Books reprice same-game parlays with their own correlation, so confirm the payout in the app.'));
+  box.append(el('p', { class: 'note' }, '"vs fair" above 0 means the ticket pays more than the sharp line says it is worth' +
+    (opts.boost ? ', after the ' + opts.boost + '% profit boost' : '') + (opts.bonus ? '; a bonus bet returns only the profit' : '') +
+    '. Stake is a quarter-Kelly share of your bankroll, only when the edge is positive. Exchanges charge fees not shown here and may not offer every parlay.'));
   return box;
 }
 

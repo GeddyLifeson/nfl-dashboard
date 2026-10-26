@@ -44,7 +44,7 @@ class Season:
         self.prev_qb = defaultdict(lambda: [0, 0.0])         # passer -> last season's dropbacks, epa
         self.prev_passing_by_team = defaultdict(lambda: [0, 0.0])
         self._load_passing(season, self.passing)
-        if season - 1 >= 2021:
+        if season - 1 >= 2011:                              # play-by-play goes back further, snap counts start 2012
             self._load_passing(season - 1, self.prev_passing_by_team)
             for (_, _, qb), (n, e) in self.prev_passing_by_team.items():
                 self.prev_qb[qb][0] += n; self.prev_qb[qb][1] += e

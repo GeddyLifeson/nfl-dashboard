@@ -3,71 +3,71 @@
  "week": 7,
  "ranks": {
   "JAX": 1,
-  "SF": 2,
-  "SEA": 3,
-  "KC": 4,
+  "SEA": 2,
+  "SF": 3,
+  "MIN": 4,
   "BUF": 5,
-  "MIN": 6,
+  "KC": 6,
   "NE": 7,
-  "DET": 8,
-  "CHI": 9,
-  "LAR": 10,
-  "HOU": 11,
+  "LAR": 8,
+  "CIN": 9,
+  "CHI": 10,
+  "DET": 11,
   "DEN": 12,
-  "BAL": 13,
+  "PIT": 13,
   "GB": 14,
-  "PIT": 15,
-  "CIN": 16,
-  "CAR": 17,
-  "IND": 18,
-  "PHI": 19,
-  "ATL": 20,
-  "TB": 21,
-  "DAL": 22,
-  "CLE": 23,
-  "LV": 24,
-  "NYG": 25,
-  "NO": 26,
-  "LAC": 27,
-  "NYJ": 28,
-  "WAS": 29,
+  "HOU": 15,
+  "TB": 16,
+  "BAL": 17,
+  "ATL": 18,
+  "IND": 19,
+  "PHI": 20,
+  "DAL": 21,
+  "CAR": 22,
+  "NYG": 23,
+  "CLE": 24,
+  "NO": 25,
+  "LAC": 26,
+  "LV": 27,
+  "WAS": 28,
+  "NYJ": 29,
   "ARI": 30,
   "MIA": 31,
   "TEN": 32
  },
  "ratings": {
-  "JAX": 5.33,
-  "SF": 5.11,
-  "SEA": 4.5,
-  "KC": 4.16,
-  "BUF": 3.84,
-  "MIN": 3.71,
+  "JAX": 5.44,
+  "SEA": 5.37,
+  "SF": 4.38,
+  "MIN": 3.83,
+  "BUF": 3.76,
+  "KC": 3.18,
   "NE": 3.11,
-  "DET": 2.71,
-  "CHI": 2.65,
-  "LAR": 2.41,
-  "HOU": 1.68,
-  "DEN": 1.65,
-  "BAL": 1.65,
-  "GB": 0.8,
-  "PIT": 0.74,
-  "CIN": 0.69,
-  "CAR": 0.29,
-  "IND": -1.0,
-  "PHI": -1.14,
-  "ATL": -1.49,
-  "TB": -1.62,
-  "DAL": -1.66,
-  "CLE": -2.79,
-  "LV": -2.87,
-  "NYG": -2.9,
-  "NO": -3.21,
-  "LAC": -3.39,
-  "NYJ": -3.46,
-  "WAS": -3.67,
-  "ARI": -4.26,
-  "MIA": -5.25,
-  "TEN": -6.3
+  "LAR": 3.07,
+  "CIN": 2.55,
+  "CHI": 2.53,
+  "DET": 2.41,
+  "DEN": 2.28,
+  "PIT": 1.17,
+  "GB": 1.01,
+  "HOU": 1.0,
+  "TB": 0.67,
+  "BAL": 0.11,
+  "ATL": -0.86,
+  "IND": -1.14,
+  "PHI": -1.26,
+  "DAL": -1.58,
+  "CAR": -1.97,
+  "NYG": -2.12,
+  "CLE": -2.8,
+  "NO": -3.39,
+  "LAC": -3.45,
+  "LV": -3.61,
+  "WAS": -3.62,
+  "NYJ": -3.92,
+  "ARI": -4.81,
+  "MIA": -4.83,
+  "TEN": -6.54
  },
  "upcoming": [
   {
@@ -468,10 +468,10 @@
    "away": "DAL",
    "home": "PHI",
    "neutral": false,
-   "home_margin": 0.7,
-   "home_win": 0.522,
+   "home_margin": 0.5,
+   "home_win": 0.516,
    "line": -4.5,
-   "results_margin": 2.5,
+   "results_margin": 2.3,
    "lineup": {
     "PHI": {
      "points": -2.1,
@@ -503,19 +503,19 @@
    "away": "CAR",
    "home": "GB",
    "neutral": false,
-   "home_margin": 2.4,
-   "home_win": 0.575,
-   "line": 3.0,
-   "results_margin": 2.5,
+   "home_margin": 5.0,
+   "home_win": 0.651,
+   "line": 3.5,
+   "results_margin": 5.0,
    "lineup": {
     "GB": {
-     "points": -0.5,
+     "points": -0.4,
      "qb": 0.0,
-     "injuries": -0.5,
+     "injuries": -0.4,
      "notes": [
       "Zaire Franklin (LB, Out)",
-      "Bo Melton (WR, Questionable)",
-      "Aaron Banks (G, Questionable)"
+      "Aaron Banks (G, Questionable)",
+      "Jordon Riley (DT, Questionable)"
      ]
     },
     "CAR": {
@@ -536,16 +536,16 @@
    "away": "BAL",
    "home": "BUF",
    "neutral": false,
-   "home_margin": 4.9,
-   "home_win": 0.649,
-   "line": 3.0,
-   "results_margin": 4.2,
+   "home_margin": 6.2,
+   "home_win": 0.687,
+   "line": 3.5,
+   "results_margin": 5.6,
    "lineup": {
     "BUF": {},
     "BAL": {
-     "points": -0.7,
+     "points": -0.6,
      "qb": 0.0,
-     "injuries": -0.7,
+     "injuries": -0.6,
      "notes": [
       "Jaylinn Hawkins (S, Out)",
       "Tavius Robinson (LB, Out)",
@@ -561,10 +561,10 @@
    "away": "TEN",
    "home": "CIN",
    "neutral": false,
-   "home_margin": 9.2,
-   "home_win": 0.763,
-   "line": 10.0,
-   "results_margin": 9.0,
+   "home_margin": 11.3,
+   "home_win": 0.811,
+   "line": 10.5,
+   "results_margin": 11.1,
    "lineup": {
     "CIN": {},
     "TEN": {
@@ -572,10 +572,10 @@
      "qb": 0.0,
      "injuries": -0.2,
      "notes": [
-      "Calvin Ridley (WR, Questionable)",
       "Kevin Winston (S, Questionable)",
-      "Tyjae Spears (RB, Questionable)",
-      "Tony Adams (S, Questionable)"
+      "Calvin Ridley (WR, Questionable)",
+      "Tony Adams (S, Questionable)",
+      "Tyjae Spears (RB, Questionable)"
      ]
     }
    }
@@ -587,10 +587,10 @@
    "away": "ARI",
    "home": "DAL",
    "neutral": false,
-   "home_margin": 5.9,
-   "home_win": 0.678,
+   "home_margin": 6.3,
+   "home_win": 0.69,
    "line": 6.5,
-   "results_margin": 4.6,
+   "results_margin": 5.2,
    "lineup": {
     "DAL": {
      "points": -0.3,
@@ -601,15 +601,15 @@
      ]
     },
     "ARI": {
-     "points": -1.6,
+     "points": -1.4,
      "qb": 0.0,
-     "injuries": -1.6,
+     "injuries": -1.4,
      "notes": [
       "Walter Nolen (DL, Out)",
       "Jon Gaines (OL, Out)",
       "Marvin Harrison Jr. (WR, off depth chart)",
       "Andrew Wingard (S, Out)",
-      "Jeremiyah Love (RB, Out)"
+      "Budda Baker (S, Questionable)"
      ]
     }
    }
@@ -621,12 +621,20 @@
    "away": "MIN",
    "home": "DET",
    "neutral": false,
-   "home_margin": 1.0,
-   "home_win": 0.531,
-   "line": 2.5,
-   "results_margin": 1.0,
+   "home_margin": 0.6,
+   "home_win": 0.518,
+   "line": 3.0,
+   "results_margin": 0.6,
    "lineup": {
-    "DET": {},
+    "DET": {
+     "points": 0.0,
+     "qb": 0.0,
+     "injuries": -0.0,
+     "notes": [
+      "Cade Mays (C, Questionable)",
+      "Brian Branch (DB, Questionable)"
+     ]
+    },
     "MIN": {
      "points": 0.0,
      "qb": 0.0,
@@ -644,16 +652,16 @@
    "away": "IND",
    "home": "JAX",
    "neutral": false,
-   "home_margin": 9.6,
-   "home_win": 0.774,
+   "home_margin": 9.7,
+   "home_win": 0.775,
    "line": 7.5,
-   "results_margin": 8.3,
+   "results_margin": 8.6,
    "lineup": {
     "JAX": {},
     "IND": {
-     "points": -1.3,
+     "points": -1.1,
      "qb": 0.0,
-     "injuries": -1.3,
+     "injuries": -1.1,
      "notes": [
       "Sauce Gardner (CB, Out)",
       "Tyler Warren (TE, Out)",
@@ -670,15 +678,15 @@
    "away": "LV",
    "home": "NYJ",
    "neutral": false,
-   "home_margin": 1.2,
-   "home_win": 0.538,
+   "home_margin": 1.6,
+   "home_win": 0.549,
    "line": -1.5,
-   "results_margin": 1.4,
+   "results_margin": 1.7,
    "lineup": {
     "NYJ": {
-     "points": -0.3,
+     "points": -0.2,
      "qb": 0.0,
-     "injuries": -0.3,
+     "injuries": -0.2,
      "notes": [
       "Joseph Ossai (DE, Out)",
       "Dylan Parham (OL, Questionable)",
@@ -702,10 +710,10 @@
    "away": "CLE",
    "home": "PIT",
    "neutral": false,
-   "home_margin": 5.6,
-   "home_win": 0.67,
-   "line": null,
-   "results_margin": 5.5,
+   "home_margin": 6.1,
+   "home_win": 0.682,
+   "line": 3.5,
+   "results_margin": 6.0,
    "lineup": {
     "PIT": {
      "points": -0.2,
@@ -713,7 +721,8 @@
      "injuries": -0.2,
      "notes": [
       "Rayshawn Jenkins (S, off depth chart)",
-      "Rico Dowdle (RB, Questionable)"
+      "Rico Dowdle (RB, Questionable)",
+      "DeShon Elliott (S, Questionable)"
      ]
     },
     "CLE": {
@@ -734,15 +743,15 @@
    "away": "ATL",
    "home": "TB",
    "neutral": false,
-   "home_margin": 1.6,
-   "home_win": 0.549,
+   "home_margin": 3.3,
+   "home_win": 0.603,
    "line": 1.5,
-   "results_margin": 1.9,
+   "results_margin": 3.5,
    "lineup": {
     "TB": {
-     "points": -1.7,
+     "points": -1.5,
      "qb": 0.0,
-     "injuries": -1.7,
+     "injuries": -1.5,
      "notes": [
       "Luke Goedeke (T, Out)",
       "Emeka Egbuka (WR, Out)",
@@ -750,15 +759,15 @@
      ]
     },
     "ATL": {
-     "points": -1.4,
+     "points": -1.3,
      "qb": 0.0,
-     "injuries": -1.4,
+     "injuries": -1.3,
      "notes": [
       "Divine Deablo (LB, Out)",
       "Billy Bowman (CB, Out)",
+      "C.J. Henderson (CB, Questionable)",
       "Brian Robinson Jr. (RB, Out)",
-      "Michael Jerrell (OL, Out)",
-      "Samson Ebukam (DE, Questionable)"
+      "Michael Jerrell (OL, Out)"
      ]
     }
    }
@@ -770,10 +779,10 @@
    "away": "LAC",
    "home": "LAR",
    "neutral": false,
-   "home_margin": 7.5,
-   "home_win": 0.721,
+   "home_margin": 8.2,
+   "home_win": 0.74,
    "line": 7.0,
-   "results_margin": 7.8,
+   "results_margin": 8.5,
    "lineup": {
     "LAR": {
      "points": -0.3,
@@ -794,24 +803,25 @@
    "away": "KC",
    "home": "DEN",
    "neutral": false,
-   "home_margin": -0.4,
-   "home_win": 0.487,
+   "home_margin": 1.2,
+   "home_win": 0.538,
    "line": -1.5,
-   "results_margin": -0.5,
+   "results_margin": 1.1,
    "lineup": {
     "DEN": {
-     "points": -0.8,
+     "points": -0.7,
      "qb": 0.0,
-     "injuries": -0.8,
+     "injuries": -0.7,
      "notes": [
       "Talanoa Hufanga (S, Out)",
-      "Jonah Elliss (LB, Out)"
+      "Jonah Elliss (LB, Out)",
+      "Jonah Coleman (RB, Questionable)"
      ]
     },
     "KC": {
-     "points": -0.9,
+     "points": -0.8,
      "qb": 0.0,
-     "injuries": -0.9,
+     "injuries": -0.8,
      "notes": [
       "Jaylon Moore (OL, Out)",
       "Rashee Rice (WR, Out)",
@@ -827,15 +837,15 @@
    "away": "NE",
    "home": "MIA",
    "neutral": false,
-   "home_margin": -4.9,
-   "home_win": 0.352,
-   "line": -8.5,
-   "results_margin": -6.4,
+   "home_margin": -4.3,
+   "home_win": 0.367,
+   "line": -7.0,
+   "results_margin": -5.9,
    "lineup": {
     "MIA": {
-     "points": -0.1,
+     "points": 0.0,
      "qb": 0.0,
-     "injuries": -0.1,
+     "injuries": -0.0,
      "notes": [
       "Willie Gay Jr. (LB, Questionable)"
      ]
@@ -861,10 +871,10 @@
    "away": "PHI",
    "home": "WAS",
    "neutral": false,
-   "home_margin": 1.6,
-   "home_win": 0.549,
+   "home_margin": 1.7,
+   "home_win": 0.554,
    "line": 3.5,
-   "results_margin": -0.5,
+   "results_margin": -0.4,
    "lineup": {
     "WAS": {},
     "PHI": {
@@ -889,10 +899,10 @@
    "away": "CHI",
    "home": "SEA",
    "neutral": false,
-   "home_margin": 3.7,
-   "home_win": 0.615,
+   "home_margin": 4.7,
+   "home_win": 0.645,
    "line": 3.0,
-   "results_margin": 3.8,
+   "results_margin": 4.8,
    "lineup": {
     "SEA": {
      "points": -0.6,
@@ -901,9 +911,9 @@
      "notes": [
       "Drake Thomas (LB, Out)",
       "DeMarcus Lawrence (LB, Questionable)",
-      "AJ Finley (S, off depth chart)",
+      "Nick Emmanwori (S, Questionable)",
       "Uchenna Nwosu (LB, Questionable)",
-      "Nick Emmanwori (S, Questionable)"
+      "AJ Finley (S, off depth chart)"
      ]
     },
     "CHI": {

@@ -241,7 +241,7 @@ function model() {
   const m = D.model;
   const gameRows = Object.entries(m.game || {}).map(([k, v]) => ({ k, ...v }));
   const lw = m.lineup || {};
-  const proj = Object.entries(m.projections || {}).map(([k, v]) => ({ k, ...v }));
+  const proj = Object.entries(m.projections || {}).map(([k, v]) => ({ k: k.replace(/_/g, ' ').replace('passing interceptions', 'interceptions'), ...v }));
   return [el('h2', {}, 'Game predictions'),
     el('p', { class: 'note' }, 'Settings tuned on 2022-2024, then frozen and tested week by week on later seasons, using only games before each prediction. Error is mean squared error of the predicted margin (lower is better).'),
     table([{ key: 'k', label: 'Test' }, { key: 'games', label: 'Games', num: true }, { key: 'model_acc', label: 'Model picks winner', num: true, render: r => pct(r.model_acc) },
@@ -255,7 +255,8 @@ function model() {
     el('h2', {}, 'Player projections'),
     el('p', { class: 'note' }, 'Average miss per player-game on 2025, frozen settings tuned on 2023-2024, compared with a plain season-to-date average.'),
     table([{ key: 'k', label: 'Stat' }, { key: 'n', label: 'Player-games', num: true }, { key: 'model_mae', label: 'Projection miss', num: true }, { key: 'season_avg_mae', label: 'Season-average miss', num: true },
-      { key: 'better', label: 'Better?', render: r => el('td', { class: r.better ? 'good' : 'bad' }, r.better ? 'Yes' : 'No') }], proj),
+      { key: 'better', label: 'Better?', render: r => r.model_mae === r.season_avg_mae ? el('td', { class: 'muted' }, 'Tie')
+        : el('td', { class: r.better ? 'good' : 'bad' }, r.better ? 'Yes' : 'No') }], proj),
     m.pick_record ? el('h2', {}, 'Published picks so far: ' + m.pick_record.right + '-' + m.pick_record.wrong) : ''];
 }
 

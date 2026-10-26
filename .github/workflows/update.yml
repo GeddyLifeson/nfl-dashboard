@@ -21,6 +21,8 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
+    env:
+      TZ: America/Chicago          # times shown on the page
     environment:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}

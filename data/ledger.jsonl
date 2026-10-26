@@ -44,3 +44,4 @@
 {"table": "pen", "source": "footballdb", "logged": "2026-10-26", "sha256": "a217ad41a6a9ddb1", "teams_behind": []}
 {"table": "qb", "source": "footballdb", "logged": "2026-10-26", "sha256": "2946ba3863a4fd0e", "teams_behind": []}
 {"table": "honors_2025", "source": "pro-football-reference", "logged": "2026-10-26", "sha256": "5491eae12c935f7b", "teams_behind": []}
+{"table": "games", "source": "https://github.com/nflverse/nfldata/raw/master/data/games.csv", "fetched": "2026-10-26", "sha256": "e2f4a14cccd61bdf", "rows": 1631, "played": 1465}

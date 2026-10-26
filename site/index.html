@@ -242,7 +242,21 @@ function model() {
   const gameRows = Object.entries(m.game || {}).map(([k, v]) => ({ k, ...v }));
   const lw = m.lineup || {};
   const proj = Object.entries(m.projections || {}).map(([k, v]) => ({ k: k.replace(/_/g, ' ').replace('passing interceptions', 'interceptions'), ...v }));
-  return [el('h2', {}, 'Game predictions'),
+  const bl = m.blend;
+  const blendRows = bl ? [
+    { k: 'Market line alone', winners: bl.test.market.winners, mse: bl.test.market.mse, ll: bl.test.moneyline.market.log_loss },
+    { k: 'Our model alone', winners: bl.test.our_model_alone.winners, mse: bl.test.our_model_alone.mse, ll: null },
+    { k: 'SAM blend', winners: bl.test.blend.winners, mse: bl.test.blend.mse, ll: bl.test.moneyline.blend.log_loss }] : [];
+  const mb = bl ? bl.test.moneyline.bets : null;
+  const blendPart = bl ? [el('h2', {}, 'SAM blend (market line + our model)'),
+    el('p', { class: 'note' }, 'The market line plus our model, the lineup correction and the division-underdog spot, weighted on ' + bl.trained_on[0] + '-' + bl.trained_on[bl.trained_on.length - 1] +
+      ' and tested frozen on ' + bl.test.games + ' games in ' + bl.tested_on.join('-') + '. Win-chance error is log loss (lower is better).'),
+    table([{ key: 'k', label: 'Test' }, { key: 'winners', label: 'Picks winner', num: true, render: r => (r.winners * 100).toFixed(1) + '%' }, { key: 'mse', label: 'Margin error', num: true },
+      { key: 'll', label: 'Win-chance error', num: true, render: r => r.ll == null ? '' : r.ll.toFixed(4) }], blendRows),
+    el('p', { class: 'note' }, 'Moneylines where the blend saw 2%+ value at the closing price: ' + mb.won + '-' + (mb.count - mb.won) + ', ' + signed(mb.units, 1) + ' units' +
+      (mb.roi == null ? '' : ' (' + signed(mb.roi * 100, 1) + '% ROI)') + '. Against the spread when it leans a point or more: ' + bl.test.ats.won + '-' + (bl.test.ats.bets - bl.test.ats.won) + '.'),
+    el('p', { class: 'note' }, 'Moneyline win chances: ' + (bl.use_ml ? 'in use' : 'tracked only') + ' · Spreads: ' + (bl.use ? 'in use' : 'tracked only, not proven against the spread'))] : [];
+  return [...blendPart, el('h2', {}, 'Game predictions'),
     el('p', { class: 'note' }, 'Settings tuned on 2022-2024, then frozen and tested week by week on later seasons, using only games before each prediction. Error is mean squared error of the predicted margin (lower is better).'),
     table([{ key: 'k', label: 'Test' }, { key: 'games', label: 'Games', num: true }, { key: 'model_acc', label: 'Model picks winner', num: true, render: r => pct(r.model_acc) },
       { key: 'home_acc', label: 'Always home team', num: true, render: r => pct(r.home_acc) }, { key: 'line_acc', label: 'Market line', num: true, render: r => pct(r.line_acc) },

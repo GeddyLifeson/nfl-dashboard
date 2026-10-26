@@ -88,12 +88,13 @@ def main():
     params = json.load(open('params.json'))
     lw = json.load(open('lineup_weights.json')) if os.path.exists('lineup_weights.json') else {}
     pp = json.load(open('projection_params.json')) if os.path.exists('projection_params.json') else {}
+    blend = json.load(open('blend_scorecard.json')) if os.path.exists('blend_scorecard.json') else None   # from SAM's sam_model.py
     data = dict(
         updated=datetime.datetime.now().strftime('%a %b %d, %I:%M %p'), season=season, week=league['week'],
         through=league['through'], power=power, team_stats=stats, games=league['upcoming'], results=recent_results(season),
         quarterbacks=unit['quarterbacks'], players=ranks, projections=proj,
         model=dict(game=params.get('tested', {}), lineup=dict(train=lw.get('train'), test=lw.get('test'), weights=lw.get('weights')),
-                   projections=pp.get('test', {}), pick_record=league.get('pick_record')),
+                   projections=pp.get('test', {}), blend=blend, pick_record=league.get('pick_record')),
         errors=errors)
     os.makedirs('site', exist_ok=True)
     with open('site/data.json.tmp', 'w', encoding='utf-8') as f:

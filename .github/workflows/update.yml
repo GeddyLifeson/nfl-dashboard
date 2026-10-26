@@ -8,6 +8,9 @@ on:
     - cron: "0 */2 * * 0,1"          # Sun-Mon every 2 hours, through game nights
     - cron: "30 4,6 * * 2"           # early Tuesday UTC, after Monday Night Football
   workflow_dispatch:
+  push:                              # code changes publish right away (the bot's own data pushes don't retrigger)
+    branches: [main]
+    paths: ["site/index.html", "*.py", "*.json", ".github/workflows/**"]
 
 permissions:
   contents: write

@@ -10068,7 +10068,7 @@
    "neutral": false,
    "home_margin": 1.8,
    "home_win": 0.556,
-   "line": -1.5,
+   "line": 1.5,
    "results_margin": 1.7,
    "lineup": {
     "NYJ": {

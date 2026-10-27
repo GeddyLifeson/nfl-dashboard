@@ -612,7 +612,7 @@
    "neutral": false,
    "home_margin": 6.9,
    "home_win": 0.706,
-   "line": 6.5,
+   "line": null,
    "results_margin": 5.2,
    "lineup": {
     "DAL": {
@@ -885,7 +885,7 @@
    "neutral": false,
    "home_margin": -4.0,
    "home_win": 0.376,
-   "line": -7.0,
+   "line": -7.5,
    "results_margin": -5.9,
    "lineup": {
     "MIA": {
@@ -920,7 +920,7 @@
    "neutral": false,
    "home_margin": 2.8,
    "home_win": 0.588,
-   "line": 3.5,
+   "line": null,
    "results_margin": -0.4,
    "lineup": {
     "WAS": {

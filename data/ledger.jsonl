@@ -56,3 +56,4 @@
 {"table": "games", "source": "https://github.com/nflverse/nfldata/raw/master/data/games.csv", "fetched": "2026-10-27", "sha256": "7c7a77f342fc4927", "rows": 1631, "played": 1466}
 {"table": "games", "source": "https://github.com/nflverse/nfldata/raw/master/data/games.csv", "fetched": "2026-10-27", "sha256": "7c7a77f342fc4927", "rows": 1631, "played": 1466}
 {"table": "games", "source": "https://github.com/nflverse/nfldata/raw/master/data/games.csv", "fetched": "2026-10-27", "sha256": "ddfdf66869d7fab5", "rows": 1631, "played": 1466}
+{"table": "games", "source": "https://github.com/nflverse/nfldata/raw/master/data/games.csv", "fetched": "2026-10-27", "sha256": "d7a11722fcc65841", "rows": 1631, "played": 1466}

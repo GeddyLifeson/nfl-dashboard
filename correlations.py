@@ -43,8 +43,47 @@ def main():
                         fav_win_cover=round(phi(win_cover), 4)),
                margins={f'{k:g}': {str(m): round(c / sum(cnt.values()), 5) for m, c in sorted(cnt.items()) if -30 <= m <= 40}
                         for k, cnt in sorted(margins.items()) if sum(cnt.values()) >= 20})
+    out['td'] = td_odds_ratios(rows)
     json.dump(out, open('site/correlations.json', 'w'), separators=(',', ':'))
-    print(f"{out['games']} games; phi {out['phi']}; {len(out['margins'])} spread buckets")
+    print(f"{out['games']} games; phi {out['phi']}; {len(out['margins'])} spread buckets; TD odds ratios {out['td']}")
+
+
+def td_odds_ratios(rows):
+    """For a player scoring 1+ / 2+ touchdowns (rushing or receiving), the odds ratio of his team
+    winning and of the game going over, by position. A same-game ticket then uses
+    P(B | A) = oddsB x OR / (1 + oddsB x OR) instead of treating the legs as independent."""
+    import nflv
+    from lineup import FIX
+    games = {}
+    for r in rows:
+        pts, tot, m = int(r['home_score']) + int(r['away_score']), float(r['total_line']), int(r['home_score']) - int(r['away_score'])
+        for team, mm in ((r['home_team'], m), (r['away_team'], -m)):
+            games[(r['season'], r['week'], FIX.get(team, team))] = (mm, pts - tot)
+    count = defaultdict(lambda: defaultdict(lambda: [[0, 0], [0, 0]]))   # pos -> key -> [[a&b, a&!b], [!a&b, !a&!b]]
+    for s in range(FIRST, max(int(r['season']) for r in rows) + 1):
+        try:
+            path = nflv.get('player_week', s)
+        except Exception as e:
+            print('skipping', s, e)
+            continue
+        for r in csv.DictReader(open(path, encoding='utf-8')):
+            pos = r.get('position')
+            if pos not in ('QB', 'RB', 'WR', 'TE') or r.get('season_type', 'REG') != 'REG':
+                continue
+            g = games.get((r['season'], r['week'], FIX.get(r['team'], r['team'])))
+            if not g or g[0] == 0 or g[1] == 0:
+                continue
+            td = float(r['rushing_tds'] or 0) + float(r['receiving_tds'] or 0)
+            for n in (1, 2):
+                a = td >= n
+                for key, b in ((f'win{n}', g[0] > 0), (f'over{n}', g[1] > 0)):
+                    count[pos][key][0 if a else 1][0 if b else 1] += 1
+    out = {}
+    for pos, keys in count.items():
+        out[pos] = {}
+        for key, ((ab, a_nb), (na_b, na_nb)) in keys.items():
+            out[pos][key] = round((ab + .5) * (na_nb + .5) / ((a_nb + .5) * (na_b + .5)), 3)
+    return out
 
 
 if __name__ == '__main__':

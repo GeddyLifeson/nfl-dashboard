@@ -313,16 +313,127 @@ function pairPhi(a, b) {
   const base = { 'over-win': C.phi.fav_win_over, 'cover-over': C.phi.fav_cover_over, 'cover-win': C.phi.fav_win_cover }[k];
   return base === undefined ? 0 : base * ra.sign * rb.sign;
 }
+function pairJoint(a, b) {
+  // P(both) for two legs of one game: team legs by correlation, a player TD prop with a team leg by
+  // the historical odds ratio for his position; other prop pairs as independent
+  const td = [a, b].find(l => l.market === 'prop' && l.tds), other = td && (td === a ? b : a);
+  if (td && other.market !== 'prop' && C && C.td && C.td[td.pos]) {
+    const t = C.td[td.pos], pB = other.fair;
+    let or = other.market === 'total' ? t['over' + td.tds] : t['win' + td.tds];
+    if (other.market === 'total' ? other.side === 'Under' : other.side !== td.team) or = 1 / or;
+    const o = pB / (1 - pB) * or;
+    return td.fair * o / (1 + o);
+  }
+  if (a.market === 'prop' || b.market === 'prop') return a.fair * b.fair;
+  const joint = a.fair * b.fair + pairPhi(a, b) * Math.sqrt(a.fair * (1 - a.fair) * b.fair * (1 - b.fair));
+  return Math.max(Math.min(joint, a.fair, b.fair), 0);
+}
 function ticketChance(legs) {
-  // independent across games; within a game, pairwise correlation from history
+  // independent across games; within a game, pairwise adjustments from history
   let p = legs.reduce((x, l) => x * l.fair, 1);
   for (let i = 0; i < legs.length; i++) for (let j = i + 1; j < legs.length; j++) {
     const a = legs[i], b = legs[j];
-    if (a.game.id !== b.game.id) continue;
-    const joint = a.fair * b.fair + pairPhi(a, b) * Math.sqrt(a.fair * (1 - a.fair) * b.fair * (1 - b.fair));
-    p *= Math.max(Math.min(joint, Math.min(a.fair, b.fair)), 0) / (a.fair * b.fair);
+    if (a.game.id === b.game.id) p *= pairJoint(a, b) / (a.fair * b.fair);
   }
   return p;
+}
+
+// ---- Player props, loaded per game on demand with the viewer's own Odds API key (kept in this browser only).
+const PROP_MARKETS = { player_anytime_td: 'Anytime TD', player_tds_over: '2+ TDs', player_pass_yds: 'Pass yds', player_rush_yds: 'Rush yds',
+  player_reception_yds: 'Rec yds', player_receptions: 'Receptions' };
+const PROP_BOOKS = { pinnacle: 'Pinnacle', draftkings: 'DraftKings', fanduel: 'FanDuel', betmgm: 'BetMGM', williamhill_us: 'Caesars',
+  espnbet: 'ESPN BET', betrivers: 'BetRivers', fanatics: 'Fanatics', hardrockbet: 'Hard Rock', novig: 'Novig' };   // 10 books bill as one region
+const propState = {};                                 // game id -> {status, legs, market}
+const oddsKey = () => { try { return localStorage.getItem('oddsKey') || ''; } catch (e) { return ''; } };
+
+function playerInfo(name) {
+  const norm = s => s.toLowerCase().replace(/[^a-z ]/g, '').replace(/\b(jr|sr|ii|iii|iv)\b/g, '').trim();
+  const p = (D && D.projections || []).find(x => norm(x.name) === norm(name));
+  const full = p && (D.power || []).find(t => t.abbr === p.team || (p.team === 'LA' && t.abbr === 'LAR'));
+  return p ? { pos: p.pos, team: full ? full.team : null } : { pos: null, team: null };
+}
+
+function devig(sides) {
+  // {side: {book: dec}} for two sides -> ({side: chance}, source)
+  const names = Object.keys(sides);
+  if (names.length !== 2) return [null, null];
+  if (names.every(s => sides[s].Pinnacle)) {
+    const inv = names.map(s => 1 / sides[s].Pinnacle), z = inv[0] + inv[1];
+    return [{ [names[0]]: inv[0] / z, [names[1]]: inv[1] / z }, 'pinnacle'];
+  }
+  const both = Object.keys(sides[names[0]]).filter(b => b in sides[names[1]]);
+  if (!both.length) return [null, null];
+  const v = both.map(b => { const x = 1 / sides[names[0]][b], y = 1 / sides[names[1]][b]; return x / (x + y); }).sort((a, b) => a - b);
+  const med = v[Math.floor(v.length / 2)];
+  return [{ [names[0]]: med, [names[1]]: 1 - med }, 'consensus'];
+}
+
+async function loadProps(g) {
+  const key = oddsKey();
+  if (!key) return;
+  propState[g.id] = { status: 'Loading props...' }; render();
+  const url = 'https://api.the-odds-api.com/v4/sports/americanfootball_nfl/events/' + g.id + '/odds?apiKey=' + encodeURIComponent(key) +
+    '&bookmakers=' + Object.keys(PROP_BOOKS).join(',') + '&markets=' + Object.keys(PROP_MARKETS).join(',') + '&oddsFormat=decimal';
+  try {
+    const r = await fetch(url);
+    if (!r.ok) throw new Error((await r.json().catch(() => ({}))).message || 'HTTP ' + r.status);
+    const left = r.headers.get('x-requests-remaining');
+    const ev = await r.json();
+    const groups = {};                                // market|player|point -> {side: {book: dec}}
+    for (const bk of ev.bookmakers || []) for (const m of bk.markets) for (const o of m.outcomes) {
+      const k = m.key + '|' + o.description + '|' + (o.point ?? '');
+      ((groups[k] = groups[k] || {})[o.name] = groups[k][o.name] || {})[PROP_BOOKS[bk.key]] = o.price;
+    }
+    const legs = [];
+    const add = (mk, player, side, line, label, fair, src, books, tds) => {
+      const us = Object.fromEntries(Object.entries(books).filter(([b]) => b !== 'Pinnacle'));
+      if (!Object.keys(us).length || !fair) return;
+      const info = playerInfo(player);
+      legs.push({ key: g.id + '|prop|' + label, market: 'prop', prop: mk, player, side, line, label, fair, src, books: us, tds, pos: info.pos, team: info.team, game: g });
+    };
+    const anytime = {};
+    for (const [k, sides] of Object.entries(groups)) {
+      const [mk, player, pt] = k.split('|');
+      const [f, src] = devig(sides);
+      if (mk === 'player_anytime_td') {
+        if (f && f.Yes) anytime[player] = [f.Yes, src];
+        add(mk, player, 'Yes', null, player + ' anytime TD', f && f.Yes, src, sides.Yes || {}, 1);
+      } else if (mk !== 'player_tds_over' && f) {
+        for (const side of Object.keys(sides)) add(mk, player, side, +pt, player + ' ' + side + ' ' + pt + ' ' + PROP_MARKETS[mk].toLowerCase(), f[side], src, sides[side]);
+      }
+    }
+    for (const [k, sides] of Object.entries(groups)) {   // 2+ TDs: Pinnacle rarely posts it, so derive it from anytime TD
+      const [mk, player, pt] = k.split('|');
+      if (mk !== 'player_tds_over' || +pt !== 1.5 || !sides.Over || !anytime[player]) continue;
+      const lam = -Math.log(1 - anytime[player][0]);
+      add(mk, player, 'Over', 1.5, player + ' 2+ TDs', 1 - Math.exp(-lam) * (1 + lam), anytime[player][1] + ', derived', sides.Over, 2);
+    }
+    g.legs = g.legs.filter(l => l.market !== 'prop').concat(legs);
+    propState[g.id] = { status: legs.length + ' props loaded' + (left ? ' · ' + left + ' credits left' : ''), market: 'player_anytime_td' };
+  } catch (e) {
+    propState[g.id] = { status: 'Props failed: ' + e.message };
+  }
+  render();
+}
+
+function propsView(g) {
+  const st = propState[g.id];
+  if (!oddsKey()) {
+    const inp = el('input', { type: 'password', placeholder: 'Odds API key', style: 'width:180px' });
+    return el('div', { class: 'bar' }, el('small', { class: 'muted' }, 'Player props need your Odds API key (saved only in this browser, about 6 credits a game):'), inp,
+      el('button', { onclick: () => { try { localStorage.setItem('oddsKey', inp.value.trim()); } catch (e) {} render(); } }, 'Save key'));
+  }
+  if (!st || !g.legs.some(l => l.market === 'prop'))
+    return el('div', { class: 'bar' }, el('button', { onclick: () => loadProps(g) }, 'Load player props (≈6 credits)'), st ? el('small', { class: 'muted' }, st.status) : '');
+  const sel = el('select', { onchange: e => { st.market = e.target.value; render(); } },
+    Object.entries(PROP_MARKETS).map(([k, v]) => { const o = el('option', { value: k }, v); if (k === st.market) o.selected = true; return o; }));
+  const legs = g.legs.filter(l => l.market === 'prop' && l.prop === st.market).sort((a, b) => b.fair - a.fair).slice(0, 40);
+  return [el('div', { class: 'bar' }, sel, el('small', { class: 'muted' }, st.status)),
+    el('div', { class: 'lines', style: 'grid-template-columns:1fr 1fr' }, legs.map(l => {
+      const [book, dec] = bestPrice(l);
+      return el('button', { class: 'pick' + (slip.includes(l.key) ? ' on' : ''), title: 'Fair ' + (l.fair * 100).toFixed(1) + '% (' + l.src + ')',
+        onclick: () => toggleLeg(g, l, [l.key]) }, el('span', {}, l.label.replace(new RegExp(' ' + PROP_MARKETS[st.market] + '$', 'i'), ''), el('br'), el('small', {}, book + ' · fair ' + american(1 / l.fair))), el('b', {}, american(dec)));
+    }))];
 }
 // what a ticket returns per 1 staked when it wins, after a profit boost; a bonus bet keeps only the profit
 const ticketReturn = pay => opts.bonus ? (pay - 1) * (1 + opts.boost / 100) : 1 + (pay - 1) * (1 + opts.boost / 100);
@@ -414,7 +525,7 @@ function parlay() {
       })];
     });
     const when = new Date(g.start).toLocaleString([], { weekday: 'short', hour: 'numeric', minute: '2-digit' });
-    return el('div', { class: 'card game' }, el('h3', {}, g.away + ' at ' + g.home, el('span', { class: 'muted' }, ' · ' + when)), el('div', { class: 'lines' }, rows.flat()));
+    return el('div', { class: 'card game' }, el('h3', {}, g.away + ' at ' + g.home, el('span', { class: 'muted' }, ' · ' + when)), el('div', { class: 'lines' }, rows.flat()), propsView(g));
   });
   return [el('h2', {}, 'Parlay builder'),
     el('p', { class: 'note' }, 'Pick legs to see the fair price of the whole ticket and what every book pays for it. Buttons show the best price for that leg across books. ' +

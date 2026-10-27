@@ -717,7 +717,7 @@
    "neutral": false,
    "home_margin": 1.8,
    "home_win": 0.556,
-   "line": 1.5,
+   "line": -1.5,
    "results_margin": 1.7,
    "lineup": {
     "NYJ": {
@@ -750,7 +750,7 @@
    "neutral": false,
    "home_margin": 5.4,
    "home_win": 0.663,
-   "line": 3.5,
+   "line": 3.0,
    "results_margin": 6.0,
    "lineup": {
     "PIT": {
@@ -920,7 +920,7 @@
    "neutral": false,
    "home_margin": 5.4,
    "home_win": 0.663,
-   "line": 4.5,
+   "line": 5.5,
    "results_margin": 0.9,
    "lineup": {
     "WAS": {

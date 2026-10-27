@@ -610,19 +610,19 @@
    "away": "ARI",
    "home": "DAL",
    "neutral": false,
-   "home_margin": 8.2,
-   "home_win": 0.738,
+   "home_margin": 7.9,
+   "home_win": 0.731,
    "line": 6.5,
    "results_margin": 6.5,
    "lineup": {
     "DAL": {
-     "points": -0.8,
+     "points": -1.1,
      "qb": 0.0,
-     "injuries": -0.8,
+     "injuries": -1.1,
      "notes": [
       "T.J. Bass (G, missed last game)",
-      "Jalen Thompson (S, missed last game)",
-      "Cobie Durant (CB, missed last game)"
+      "Dee Winters (LB, missed last game)",
+      "Jalen Thompson (S, missed last game)"
      ]
     },
     "ARI": {
@@ -918,8 +918,8 @@
    "away": "PHI",
    "home": "WAS",
    "neutral": false,
-   "home_margin": 4.1,
-   "home_win": 0.625,
+   "home_margin": 5.4,
+   "home_win": 0.663,
    "line": 4.5,
    "results_margin": 0.9,
    "lineup": {
@@ -930,16 +930,16 @@
      "notes": []
     },
     "PHI": {
-     "points": -3.2,
-     "qb": -1.4,
-     "injuries": -1.8,
+     "points": -4.5,
+     "qb": -1.3,
+     "injuries": -3.1,
      "notes": [
-      "Tanner McKee starting instead of the usual QB (-1.4)",
+      "Tanner McKee starting instead of the usual QB (-1.3)",
+      "Dontayvion Wicks (WR, missed last game)",
       "Cam Jurgens (C, missed last game)",
-      "Jalyx Hunt (LB, missed last game)",
-      "Lane Johnson (T, missed last game)",
-      "Drew Kendall (C, missed last game)",
-      "Marcus Epps (S, missed last game)"
+      "Nolan Smith (LB, missed last game)",
+      "DeVonta Smith (WR, missed last game)",
+      "Lane Johnson (T, missed last game)"
      ]
     }
    }

@@ -9922,7 +9922,7 @@
    "neutral": false,
    "home_margin": 7.9,
    "home_win": 0.731,
-   "line": 6.5,
+   "line": 7.0,
    "results_margin": 6.5,
    "lineup": {
     "DAL": {
@@ -9994,7 +9994,7 @@
    "neutral": false,
    "home_margin": 9.1,
    "home_win": 0.761,
-   "line": 9.5,
+   "line": 10.0,
    "results_margin": 8.5,
    "lineup": {
     "JAX": {
@@ -10230,7 +10230,7 @@
    "neutral": false,
    "home_margin": 5.4,
    "home_win": 0.663,
-   "line": 5.5,
+   "line": 6.0,
    "results_margin": 0.9,
    "lineup": {
     "WAS": {

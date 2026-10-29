@@ -513,25 +513,27 @@
    "results_margin": 5.2,
    "lineup": {
     "GB": {
-     "points": -1.9,
+     "points": -3.5,
      "qb": 0.0,
-     "injuries": -1.9,
+     "injuries": -3.5,
      "notes": [
-      "Zaire Franklin (LB, missed last game)",
+      "Sean Rhyan (C, Out)",
+      "Zaire Franklin (LB, Out)",
+      "Travis Glover (G, Out)",
       "Edgerrin Cooper (LB, missed last game)",
-      "Jager Burton (C, missed last game)",
-      "Zach Bako-Bewele (OL, missed last game)"
+      "Matthew Golden (WR, Questionable)"
      ]
     },
     "CAR": {
-     "points": -2.1,
+     "points": -3.7,
      "qb": 0.0,
-     "injuries": -2.1,
+     "injuries": -3.7,
      "notes": [
-      "Jaelan Phillips (LB, missed last game)",
+      "Damien Lewis (G, Out)",
+      "Akayleb Evans (CB, Out)",
+      "Jaelan Phillips (LB, Out)",
       "Jaycee Horn (CB, missed last game)",
-      "Michael Jackson (CB, missed last game)",
-      "Xavier Legette (WR, missed last game)"
+      "Michael Jackson (CB, missed last game)"
      ]
     }
    }

@@ -587,20 +587,21 @@
    "away": "DEN",
    "home": "CAR",
    "neutral": false,
-   "home_margin": -2.8,
-   "home_win": 0.413,
-   "line": null,
+   "home_margin": -3.8,
+   "home_win": 0.383,
+   "line": -2.5,
    "results_margin": -2.5,
    "lineup": {
     "CAR": {
-     "points": -2.1,
+     "points": -3.1,
      "qb": 0.0,
-     "injuries": -2.1,
+     "injuries": -3.1,
      "notes": [
+      "Damien Lewis (G, missed last game)",
+      "Akayleb Evans (CB, missed last game)",
       "Jaelan Phillips (LB, missed last game)",
       "Jaycee Horn (CB, missed last game)",
-      "Michael Jackson (CB, missed last game)",
-      "Xavier Legette (WR, missed last game)"
+      "Michael Jackson (CB, missed last game)"
      ]
     },
     "DEN": {
@@ -900,9 +901,9 @@
    "away": "GB",
    "home": "NE",
    "neutral": false,
-   "home_margin": 3.2,
-   "home_win": 0.6,
-   "line": null,
+   "home_margin": 4.1,
+   "home_win": 0.627,
+   "line": 2.5,
    "results_margin": 3.8,
    "lineup": {
     "NE": {
@@ -918,14 +919,15 @@
      ]
     },
     "GB": {
-     "points": -1.9,
+     "points": -2.8,
      "qb": 0.0,
-     "injuries": -1.9,
+     "injuries": -2.8,
      "notes": [
+      "Sean Rhyan (C, missed last game)",
       "Zaire Franklin (LB, missed last game)",
+      "Travis Glover (G, missed last game)",
       "Edgerrin Cooper (LB, missed last game)",
-      "Jager Burton (C, missed last game)",
-      "Zach Bako-Bewele (OL, missed last game)"
+      "Jacob Monk (C, missed last game)"
      ]
     }
    }

@@ -10208,7 +10208,7 @@
    "neutral": false,
    "home_margin": 5.4,
    "home_win": 0.663,
-   "line": 6.0,
+   "line": 5.5,
    "results_margin": 0.9,
    "lineup": {
     "WAS": {
@@ -10657,7 +10657,7 @@
    "neutral": false,
    "home_margin": 4.1,
    "home_win": 0.627,
-   "line": 2.5,
+   "line": 3.0,
    "results_margin": 3.8,
    "lineup": {
     "NE": {

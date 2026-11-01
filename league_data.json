@@ -9833,7 +9833,7 @@
    "neutral": false,
    "home_margin": 6.2,
    "home_win": 0.685,
-   "line": 3.0,
+   "line": 3.5,
    "results_margin": 5.6,
    "lineup": {
     "BUF": {
@@ -10244,7 +10244,7 @@
    "neutral": false,
    "home_margin": 7.3,
    "home_win": 0.716,
-   "line": 6.0,
+   "line": 6.5,
    "results_margin": 0.9,
    "lineup": {
     "WAS": {
@@ -10280,26 +10280,27 @@
    "away": "CHI",
    "home": "SEA",
    "neutral": false,
-   "home_margin": 4.5,
-   "home_win": 0.638,
+   "home_margin": 2.7,
+   "home_win": 0.584,
    "line": 3.0,
    "results_margin": 4.9,
    "lineup": {
     "SEA": {
-     "points": -1.1,
+     "points": -3.2,
      "qb": 0.0,
-     "injuries": -1.1,
+     "injuries": -3.2,
      "notes": [
+      "Charles Cross (T, Out)",
       "Drake Thomas (LB, missed last game)",
       "Rodney Thomas II (S, missed last game)",
-      "Christian Haynes (G, missed last game)",
-      "AJ Finley (S, missed last game)"
+      "Rashid Shaheed (WR, Out)",
+      "Uchenna Nwosu (LB, Doubtful)"
      ]
     },
     "CHI": {
-     "points": -0.7,
+     "points": -1.0,
      "qb": 0.0,
-     "injuries": -0.7,
+     "injuries": -1.0,
      "notes": [
       "T.J. Edwards (LB, missed last game)",
       "Montez Sweat (DL, missed last game)",

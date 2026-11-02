@@ -564,17 +564,16 @@
    "away": "JAX",
    "home": "BAL",
    "neutral": false,
-   "home_margin": -6.4,
-   "home_win": 0.308,
+   "home_margin": -7.4,
+   "home_win": 0.281,
    "line": -8.5,
    "results_margin": -6.2,
    "lineup": {
     "BAL": {
-     "points": -0.7,
-     "qb": 1.0,
+     "points": -1.7,
+     "qb": 0.0,
      "injuries": -1.7,
      "notes": [
-      "Lamar Jackson starting instead of the usual QB (+1.0)",
       "Olaivavega Ioane (G, missed last game)",
       "Jaylinn Hawkins (S, missed last game)",
       "Tavius Robinson (LB, missed last game)",
@@ -671,7 +670,7 @@
    "neutral": false,
    "home_margin": -0.6,
    "home_win": 0.481,
-   "line": -5.5,
+   "line": -6.0,
    "results_margin": 0.2,
    "lineup": {
     "IND": {
@@ -706,7 +705,7 @@
    "neutral": false,
    "home_margin": 8.4,
    "home_win": 0.744,
-   "line": 10.0,
+   "line": 9.5,
    "results_margin": 9.3,
    "lineup": {
     "KC": {
@@ -809,7 +808,7 @@
    "neutral": false,
    "home_margin": 0.4,
    "home_win": 0.513,
-   "line": -3.0,
+   "line": -3.5,
    "results_margin": 0.6,
    "lineup": {
     "PHI": {
@@ -885,7 +884,7 @@
    "neutral": false,
    "home_margin": -3.6,
    "home_win": 0.389,
-   "line": -5.5,
+   "line": -4.5,
    "results_margin": -2.8,
    "lineup": {
     "LAC": {
@@ -921,7 +920,7 @@
    "neutral": false,
    "home_margin": 8.2,
    "home_win": 0.739,
-   "line": 9.5,
+   "line": 10.0,
    "results_margin": 9.6,
    "lineup": {
     "SF": {
@@ -1030,7 +1029,7 @@
    "neutral": false,
    "home_margin": 3.3,
    "home_win": 0.601,
-   "line": 5.5,
+   "line": 4.5,
    "results_margin": 2.9,
    "lineup": {
     "CHI": {
@@ -1065,7 +1064,7 @@
    "neutral": false,
    "home_margin": 1.3,
    "home_win": 0.542,
-   "line": -2.5,
+   "line": -3.5,
    "results_margin": 0.4,
    "lineup": {
     "MIN": {

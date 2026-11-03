@@ -1,10 +1,8 @@
 {
  "season": 2026,
  "week": 8,
- "through": "Nov 1",
- "not_yet_played": [
-  "Chicago Bears at Seattle Seahawks"
- ],
+ "through": "Nov 2",
+ "not_yet_played": [],
  "model": {
   "k": 8,
   "carry": 0.6,
@@ -92,8 +90,8 @@
    "gp": 7,
    "rating": 6.94,
    "margin": 12.1,
-   "sos": -0.0,
-   "sos_rank": 14,
+   "sos": -0.1,
+   "sos_rank": 16,
    "off_avg": 13.3,
    "def_avg": 10.5,
    "stats": [
@@ -387,318 +385,14 @@
    }
   },
   {
-   "team": "Seattle Seahawks",
-   "abbr": "SEA",
-   "pos": 2,
-   "prev_pos": 1,
-   "move": -1,
-   "record": "4-3",
-   "gp": 7,
-   "rating": 5.48,
-   "margin": 6.1,
-   "sos": 0.4,
-   "sos_rank": 8,
-   "off_avg": 18.5,
-   "def_avg": 8.9,
-   "stats": [
-    {
-     "slug": "points-per-game",
-     "label": "Points per game",
-     "side": "O",
-     "unit": "",
-     "value": "24.7",
-     "rank": 13,
-     "behind": true
-    },
-    {
-     "slug": "yards-per-game",
-     "label": "Yards per game",
-     "side": "O",
-     "unit": "",
-     "value": "332.2",
-     "rank": 17,
-     "behind": true
-    },
-    {
-     "slug": "points-per-play",
-     "label": "Points per play",
-     "side": "O",
-     "unit": "",
-     "value": "0.391",
-     "rank": 12,
-     "behind": true
-    },
-    {
-     "slug": "touchdowns-per-game",
-     "label": "Touchdowns per game",
-     "side": "O",
-     "unit": "",
-     "value": "2.7",
-     "rank": 8,
-     "behind": true
-    },
-    {
-     "slug": "rush-attempts-per-game",
-     "label": "Rushes per game",
-     "side": "O",
-     "unit": "",
-     "value": "27.5",
-     "rank": 14,
-     "behind": true
-    },
-    {
-     "slug": "rush-yards-per-game",
-     "label": "Rush yards per game",
-     "side": "O",
-     "unit": "",
-     "value": "107.2",
-     "rank": 18,
-     "behind": true
-    },
-    {
-     "slug": "rush-touchdowns-per-game",
-     "label": "Rush TDs per game",
-     "side": "O",
-     "unit": "",
-     "value": "0.8",
-     "rank": 15,
-     "behind": true
-    },
-    {
-     "slug": "pass-attempts-per-game",
-     "label": "Pass attempts per game",
-     "side": "O",
-     "unit": "",
-     "value": "33.0",
-     "rank": 16,
-     "behind": true
-    },
-    {
-     "slug": "net-pass-yards-per-game",
-     "label": "Net pass yards per game",
-     "side": "O",
-     "unit": "",
-     "value": "225.0",
-     "rank": 16,
-     "behind": true
-    },
-    {
-     "slug": "third-down-pct",
-     "label": "3rd-down conversion %",
-     "side": "O",
-     "unit": "%",
-     "value": "32.4",
-     "rank": 29,
-     "behind": true
-    },
-    {
-     "slug": "fourth-down-pct",
-     "label": "4th-down conversion %",
-     "side": "O",
-     "unit": "%",
-     "value": "42.9",
-     "rank": 23,
-     "behind": true
-    },
-    {
-     "slug": "first-downs-per-game",
-     "label": "First downs per game",
-     "side": "O",
-     "unit": "",
-     "value": "20.2",
-     "rank": 16,
-     "behind": true
-    },
-    {
-     "slug": "giveaways-per-game",
-     "label": "Giveaways per game",
-     "side": "O",
-     "unit": "",
-     "value": "2.0",
-     "rank": 28,
-     "behind": true
-    },
-    {
-     "slug": "penalties-per-game",
-     "label": "Penalties per game",
-     "side": "O",
-     "unit": "",
-     "value": "7.8",
-     "rank": 22,
-     "behind": true
-    },
-    {
-     "slug": "penalty-yards-per-game",
-     "label": "Penalty yards per game",
-     "side": "O",
-     "unit": "",
-     "value": "74.7",
-     "rank": 31,
-     "behind": true
-    },
-    {
-     "slug": "opp-points-per-game",
-     "label": "Points allowed per game",
-     "side": "D",
-     "unit": "",
-     "value": "20.3",
-     "rank": 7,
-     "behind": true
-    },
-    {
-     "slug": "opp-yards-per-game",
-     "label": "Yards allowed per game",
-     "side": "D",
-     "unit": "",
-     "value": "237.3",
-     "rank": 1,
-     "behind": true
-    },
-    {
-     "slug": "opp-points-per-play",
-     "label": "Points allowed per play",
-     "side": "D",
-     "unit": "",
-     "value": "0.338",
-     "rank": 10,
-     "behind": true
-    },
-    {
-     "slug": "opp-touchdowns-per-game",
-     "label": "TDs allowed per game",
-     "side": "D",
-     "unit": "",
-     "value": "2.3",
-     "rank": 18,
-     "behind": true
-    },
-    {
-     "slug": "opp-rush-attempts-per-game",
-     "label": "Opponent rushes per game",
-     "side": "D",
-     "unit": "",
-     "value": "27.3",
-     "rank": 20,
-     "behind": true
-    },
-    {
-     "slug": "opp-rush-yards-per-game",
-     "label": "Rush yards allowed per game",
-     "side": "D",
-     "unit": "",
-     "value": "96.0",
-     "rank": 10,
-     "behind": true
-    },
-    {
-     "slug": "opp-rush-touchdowns-per-game",
-     "label": "Rush TDs allowed per game",
-     "side": "D",
-     "unit": "",
-     "value": "0.7",
-     "rank": 6,
-     "behind": true
-    },
-    {
-     "slug": "opp-pass-attempts-per-game",
-     "label": "Opponent pass attempts per game",
-     "side": "D",
-     "unit": "",
-     "value": "30.0",
-     "rank": 8,
-     "behind": true
-    },
-    {
-     "slug": "opp-net-pass-yards-per-game",
-     "label": "Net pass yards allowed per game",
-     "side": "D",
-     "unit": "",
-     "value": "141.3",
-     "rank": 1,
-     "behind": true
-    },
-    {
-     "slug": "opp-third-down-pct",
-     "label": "Opponent 3rd-down %",
-     "side": "D",
-     "unit": "%",
-     "value": "28.0",
-     "rank": 3,
-     "behind": true
-    },
-    {
-     "slug": "opp-fourth-down-pct",
-     "label": "Opponent 4th-down %",
-     "side": "D",
-     "unit": "%",
-     "value": "100.0",
-     "rank": 32,
-     "behind": true
-    },
-    {
-     "slug": "opp-first-downs-per-game",
-     "label": "First downs allowed per game",
-     "side": "D",
-     "unit": "",
-     "value": "15.5",
-     "rank": 3,
-     "behind": true
-    },
-    {
-     "slug": "takeaways-per-game",
-     "label": "Takeaways per game",
-     "side": "D",
-     "unit": "",
-     "value": "1.8",
-     "rank": 2,
-     "behind": true
-    },
-    {
-     "slug": "sacks-per-game",
-     "label": "Sacks per game (defense)",
-     "side": "D",
-     "unit": "",
-     "value": "2.7",
-     "rank": 9,
-     "behind": true
-    },
-    {
-     "slug": "takeaway-interceptions-per-game",
-     "label": "Interceptions per game",
-     "side": "D",
-     "unit": "",
-     "value": "1.2",
-     "rank": 3,
-     "behind": true
-    },
-    {
-     "slug": "turnover-margin-per-game",
-     "label": "Turnover margin per game",
-     "side": "T",
-     "unit": "",
-     "value": "-0.2",
-     "rank": 18,
-     "behind": true
-    }
-   ],
-   "player": {
-    "qb1": "Sam Darnold",
-    "qb1rate": 77.4,
-    "qb1ypa": 6.9,
-    "qbrate": 77.4,
-    "qbsack": 8.6,
-    "hon": 15
-   }
-  },
-  {
    "team": "Buffalo Bills",
    "abbr": "BUF",
-   "pos": 3,
+   "pos": 2,
    "prev_pos": 5,
-   "move": 2,
+   "move": 3,
    "record": "6-1",
    "gp": 7,
-   "rating": 5.11,
+   "rating": 5.1,
    "margin": 7.4,
    "sos": 0.4,
    "sos_rank": 9,
@@ -997,15 +691,15 @@
   {
    "team": "San Francisco 49ers",
    "abbr": "SF",
-   "pos": 4,
+   "pos": 3,
    "prev_pos": 3,
-   "move": -1,
+   "move": 0,
    "record": "6-1",
    "gp": 7,
-   "rating": 4.49,
+   "rating": 4.38,
    "margin": 8.3,
-   "sos": -0.3,
-   "sos_rank": 18,
+   "sos": -0.5,
+   "sos_rank": 22,
    "off_avg": 8.9,
    "def_avg": 10.7,
    "stats": [
@@ -1299,6 +993,310 @@
    }
   },
   {
+   "team": "Seattle Seahawks",
+   "abbr": "SEA",
+   "pos": 4,
+   "prev_pos": 1,
+   "move": -3,
+   "record": "4-4",
+   "gp": 8,
+   "rating": 4.13,
+   "margin": 3.2,
+   "sos": 0.7,
+   "sos_rank": 8,
+   "off_avg": 18.5,
+   "def_avg": 8.9,
+   "stats": [
+    {
+     "slug": "points-per-game",
+     "label": "Points per game",
+     "side": "O",
+     "unit": "",
+     "value": "24.7",
+     "rank": 13,
+     "behind": true
+    },
+    {
+     "slug": "yards-per-game",
+     "label": "Yards per game",
+     "side": "O",
+     "unit": "",
+     "value": "332.2",
+     "rank": 17,
+     "behind": true
+    },
+    {
+     "slug": "points-per-play",
+     "label": "Points per play",
+     "side": "O",
+     "unit": "",
+     "value": "0.391",
+     "rank": 12,
+     "behind": true
+    },
+    {
+     "slug": "touchdowns-per-game",
+     "label": "Touchdowns per game",
+     "side": "O",
+     "unit": "",
+     "value": "2.7",
+     "rank": 8,
+     "behind": true
+    },
+    {
+     "slug": "rush-attempts-per-game",
+     "label": "Rushes per game",
+     "side": "O",
+     "unit": "",
+     "value": "27.5",
+     "rank": 14,
+     "behind": true
+    },
+    {
+     "slug": "rush-yards-per-game",
+     "label": "Rush yards per game",
+     "side": "O",
+     "unit": "",
+     "value": "107.2",
+     "rank": 18,
+     "behind": true
+    },
+    {
+     "slug": "rush-touchdowns-per-game",
+     "label": "Rush TDs per game",
+     "side": "O",
+     "unit": "",
+     "value": "0.8",
+     "rank": 15,
+     "behind": true
+    },
+    {
+     "slug": "pass-attempts-per-game",
+     "label": "Pass attempts per game",
+     "side": "O",
+     "unit": "",
+     "value": "33.0",
+     "rank": 16,
+     "behind": true
+    },
+    {
+     "slug": "net-pass-yards-per-game",
+     "label": "Net pass yards per game",
+     "side": "O",
+     "unit": "",
+     "value": "225.0",
+     "rank": 16,
+     "behind": true
+    },
+    {
+     "slug": "third-down-pct",
+     "label": "3rd-down conversion %",
+     "side": "O",
+     "unit": "%",
+     "value": "32.4",
+     "rank": 29,
+     "behind": true
+    },
+    {
+     "slug": "fourth-down-pct",
+     "label": "4th-down conversion %",
+     "side": "O",
+     "unit": "%",
+     "value": "42.9",
+     "rank": 23,
+     "behind": true
+    },
+    {
+     "slug": "first-downs-per-game",
+     "label": "First downs per game",
+     "side": "O",
+     "unit": "",
+     "value": "20.2",
+     "rank": 16,
+     "behind": true
+    },
+    {
+     "slug": "giveaways-per-game",
+     "label": "Giveaways per game",
+     "side": "O",
+     "unit": "",
+     "value": "2.0",
+     "rank": 28,
+     "behind": true
+    },
+    {
+     "slug": "penalties-per-game",
+     "label": "Penalties per game",
+     "side": "O",
+     "unit": "",
+     "value": "7.8",
+     "rank": 22,
+     "behind": true
+    },
+    {
+     "slug": "penalty-yards-per-game",
+     "label": "Penalty yards per game",
+     "side": "O",
+     "unit": "",
+     "value": "74.7",
+     "rank": 31,
+     "behind": true
+    },
+    {
+     "slug": "opp-points-per-game",
+     "label": "Points allowed per game",
+     "side": "D",
+     "unit": "",
+     "value": "20.3",
+     "rank": 7,
+     "behind": true
+    },
+    {
+     "slug": "opp-yards-per-game",
+     "label": "Yards allowed per game",
+     "side": "D",
+     "unit": "",
+     "value": "237.3",
+     "rank": 1,
+     "behind": true
+    },
+    {
+     "slug": "opp-points-per-play",
+     "label": "Points allowed per play",
+     "side": "D",
+     "unit": "",
+     "value": "0.338",
+     "rank": 10,
+     "behind": true
+    },
+    {
+     "slug": "opp-touchdowns-per-game",
+     "label": "TDs allowed per game",
+     "side": "D",
+     "unit": "",
+     "value": "2.3",
+     "rank": 18,
+     "behind": true
+    },
+    {
+     "slug": "opp-rush-attempts-per-game",
+     "label": "Opponent rushes per game",
+     "side": "D",
+     "unit": "",
+     "value": "27.3",
+     "rank": 20,
+     "behind": true
+    },
+    {
+     "slug": "opp-rush-yards-per-game",
+     "label": "Rush yards allowed per game",
+     "side": "D",
+     "unit": "",
+     "value": "96.0",
+     "rank": 10,
+     "behind": true
+    },
+    {
+     "slug": "opp-rush-touchdowns-per-game",
+     "label": "Rush TDs allowed per game",
+     "side": "D",
+     "unit": "",
+     "value": "0.7",
+     "rank": 6,
+     "behind": true
+    },
+    {
+     "slug": "opp-pass-attempts-per-game",
+     "label": "Opponent pass attempts per game",
+     "side": "D",
+     "unit": "",
+     "value": "30.0",
+     "rank": 8,
+     "behind": true
+    },
+    {
+     "slug": "opp-net-pass-yards-per-game",
+     "label": "Net pass yards allowed per game",
+     "side": "D",
+     "unit": "",
+     "value": "141.3",
+     "rank": 1,
+     "behind": true
+    },
+    {
+     "slug": "opp-third-down-pct",
+     "label": "Opponent 3rd-down %",
+     "side": "D",
+     "unit": "%",
+     "value": "28.0",
+     "rank": 3,
+     "behind": true
+    },
+    {
+     "slug": "opp-fourth-down-pct",
+     "label": "Opponent 4th-down %",
+     "side": "D",
+     "unit": "%",
+     "value": "100.0",
+     "rank": 32,
+     "behind": true
+    },
+    {
+     "slug": "opp-first-downs-per-game",
+     "label": "First downs allowed per game",
+     "side": "D",
+     "unit": "",
+     "value": "15.5",
+     "rank": 3,
+     "behind": true
+    },
+    {
+     "slug": "takeaways-per-game",
+     "label": "Takeaways per game",
+     "side": "D",
+     "unit": "",
+     "value": "1.8",
+     "rank": 2,
+     "behind": true
+    },
+    {
+     "slug": "sacks-per-game",
+     "label": "Sacks per game (defense)",
+     "side": "D",
+     "unit": "",
+     "value": "2.7",
+     "rank": 9,
+     "behind": true
+    },
+    {
+     "slug": "takeaway-interceptions-per-game",
+     "label": "Interceptions per game",
+     "side": "D",
+     "unit": "",
+     "value": "1.2",
+     "rank": 3,
+     "behind": true
+    },
+    {
+     "slug": "turnover-margin-per-game",
+     "label": "Turnover margin per game",
+     "side": "T",
+     "unit": "",
+     "value": "-0.2",
+     "rank": 18,
+     "behind": true
+    }
+   ],
+   "player": {
+    "qb1": "Sam Darnold",
+    "qb1rate": 77.4,
+    "qb1ypa": 6.9,
+    "qbrate": 77.4,
+    "qbsack": 8.6,
+    "hon": 15
+   }
+  },
+  {
    "team": "Minnesota Vikings",
    "abbr": "MIN",
    "pos": 5,
@@ -1306,10 +1304,10 @@
    "move": -1,
    "record": "6-1",
    "gp": 7,
-   "rating": 3.56,
+   "rating": 3.66,
    "margin": 6.7,
-   "sos": -0.5,
-   "sos_rank": 22,
+   "sos": -0.3,
+   "sos_rank": 20,
    "off_avg": 17.2,
    "def_avg": 3.0,
    "stats": [
@@ -1603,17 +1601,321 @@
    }
   },
   {
+   "team": "Chicago Bears",
+   "abbr": "CHI",
+   "pos": 6,
+   "prev_pos": 10,
+   "move": 4,
+   "record": "6-2",
+   "gp": 8,
+   "rating": 3.63,
+   "margin": 6.8,
+   "sos": 0.1,
+   "sos_rank": 12,
+   "off_avg": 10.7,
+   "def_avg": 8.8,
+   "stats": [
+    {
+     "slug": "points-per-game",
+     "label": "Points per game",
+     "side": "O",
+     "unit": "",
+     "value": "25.0",
+     "rank": 12,
+     "behind": true
+    },
+    {
+     "slug": "yards-per-game",
+     "label": "Yards per game",
+     "side": "O",
+     "unit": "",
+     "value": "388.3",
+     "rank": 5,
+     "behind": true
+    },
+    {
+     "slug": "points-per-play",
+     "label": "Points per play",
+     "side": "O",
+     "unit": "",
+     "value": "0.342",
+     "rank": 22,
+     "behind": true
+    },
+    {
+     "slug": "touchdowns-per-game",
+     "label": "Touchdowns per game",
+     "side": "O",
+     "unit": "",
+     "value": "2.3",
+     "rank": 13,
+     "behind": true
+    },
+    {
+     "slug": "rush-attempts-per-game",
+     "label": "Rushes per game",
+     "side": "O",
+     "unit": "",
+     "value": "36.0",
+     "rank": 1,
+     "behind": true
+    },
+    {
+     "slug": "rush-yards-per-game",
+     "label": "Rush yards per game",
+     "side": "O",
+     "unit": "",
+     "value": "160.7",
+     "rank": 1,
+     "behind": true
+    },
+    {
+     "slug": "rush-touchdowns-per-game",
+     "label": "Rush TDs per game",
+     "side": "O",
+     "unit": "",
+     "value": "2.2",
+     "rank": 2,
+     "behind": true
+    },
+    {
+     "slug": "pass-attempts-per-game",
+     "label": "Pass attempts per game",
+     "side": "O",
+     "unit": "",
+     "value": "34.7",
+     "rank": 14,
+     "behind": true
+    },
+    {
+     "slug": "net-pass-yards-per-game",
+     "label": "Net pass yards per game",
+     "side": "O",
+     "unit": "",
+     "value": "227.7",
+     "rank": 15,
+     "behind": true
+    },
+    {
+     "slug": "third-down-pct",
+     "label": "3rd-down conversion %",
+     "side": "O",
+     "unit": "%",
+     "value": "45.5",
+     "rank": 6,
+     "behind": true
+    },
+    {
+     "slug": "fourth-down-pct",
+     "label": "4th-down conversion %",
+     "side": "O",
+     "unit": "%",
+     "value": "53.3",
+     "rank": 14,
+     "behind": true
+    },
+    {
+     "slug": "first-downs-per-game",
+     "label": "First downs per game",
+     "side": "O",
+     "unit": "",
+     "value": "23.0",
+     "rank": 6,
+     "behind": true
+    },
+    {
+     "slug": "giveaways-per-game",
+     "label": "Giveaways per game",
+     "side": "O",
+     "unit": "",
+     "value": "1.8",
+     "rank": 24,
+     "behind": true
+    },
+    {
+     "slug": "penalties-per-game",
+     "label": "Penalties per game",
+     "side": "O",
+     "unit": "",
+     "value": "7.3",
+     "rank": 12,
+     "behind": true
+    },
+    {
+     "slug": "penalty-yards-per-game",
+     "label": "Penalty yards per game",
+     "side": "O",
+     "unit": "",
+     "value": "57.0",
+     "rank": 14,
+     "behind": true
+    },
+    {
+     "slug": "opp-points-per-game",
+     "label": "Points allowed per game",
+     "side": "D",
+     "unit": "",
+     "value": "19.8",
+     "rank": 6,
+     "behind": true
+    },
+    {
+     "slug": "opp-yards-per-game",
+     "label": "Yards allowed per game",
+     "side": "D",
+     "unit": "",
+     "value": "302.3",
+     "rank": 7,
+     "behind": true
+    },
+    {
+     "slug": "opp-points-per-play",
+     "label": "Points allowed per play",
+     "side": "D",
+     "unit": "",
+     "value": "0.408",
+     "rank": 24,
+     "behind": true
+    },
+    {
+     "slug": "opp-touchdowns-per-game",
+     "label": "TDs allowed per game",
+     "side": "D",
+     "unit": "",
+     "value": "1.8",
+     "rank": 8,
+     "behind": true
+    },
+    {
+     "slug": "opp-rush-attempts-per-game",
+     "label": "Opponent rushes per game",
+     "side": "D",
+     "unit": "",
+     "value": "20.2",
+     "rank": 1,
+     "behind": true
+    },
+    {
+     "slug": "opp-rush-yards-per-game",
+     "label": "Rush yards allowed per game",
+     "side": "D",
+     "unit": "",
+     "value": "90.5",
+     "rank": 7,
+     "behind": true
+    },
+    {
+     "slug": "opp-rush-touchdowns-per-game",
+     "label": "Rush TDs allowed per game",
+     "side": "D",
+     "unit": "",
+     "value": "0.8",
+     "rank": 13,
+     "behind": true
+    },
+    {
+     "slug": "opp-pass-attempts-per-game",
+     "label": "Opponent pass attempts per game",
+     "side": "D",
+     "unit": "",
+     "value": "26.0",
+     "rank": 1,
+     "behind": true
+    },
+    {
+     "slug": "opp-net-pass-yards-per-game",
+     "label": "Net pass yards allowed per game",
+     "side": "D",
+     "unit": "",
+     "value": "211.8",
+     "rank": 14,
+     "behind": true
+    },
+    {
+     "slug": "opp-third-down-pct",
+     "label": "Opponent 3rd-down %",
+     "side": "D",
+     "unit": "%",
+     "value": "25.8",
+     "rank": 2,
+     "behind": true
+    },
+    {
+     "slug": "opp-fourth-down-pct",
+     "label": "Opponent 4th-down %",
+     "side": "D",
+     "unit": "%",
+     "value": "25.0",
+     "rank": 3,
+     "behind": true
+    },
+    {
+     "slug": "opp-first-downs-per-game",
+     "label": "First downs allowed per game",
+     "side": "D",
+     "unit": "",
+     "value": "14.5",
+     "rank": 2,
+     "behind": true
+    },
+    {
+     "slug": "takeaways-per-game",
+     "label": "Takeaways per game",
+     "side": "D",
+     "unit": "",
+     "value": "1.5",
+     "rank": 10,
+     "behind": true
+    },
+    {
+     "slug": "sacks-per-game",
+     "label": "Sacks per game (defense)",
+     "side": "D",
+     "unit": "",
+     "value": "2.4",
+     "rank": 11,
+     "behind": true
+    },
+    {
+     "slug": "takeaway-interceptions-per-game",
+     "label": "Interceptions per game",
+     "side": "D",
+     "unit": "",
+     "value": "0.5",
+     "rank": 23,
+     "behind": true
+    },
+    {
+     "slug": "turnover-margin-per-game",
+     "label": "Turnover margin per game",
+     "side": "T",
+     "unit": "",
+     "value": "-0.3",
+     "rank": 19,
+     "behind": true
+    }
+   ],
+   "player": {
+    "qb1": "Caleb Williams",
+    "qb1rate": 101.5,
+    "qb1ypa": 7.8,
+    "qbrate": 101.5,
+    "qbsack": 9.0,
+    "hon": 10
+   }
+  },
+  {
    "team": "Los Angeles Rams",
    "abbr": "LAR",
-   "pos": 6,
+   "pos": 7,
    "prev_pos": 8,
-   "move": 2,
+   "move": 1,
    "record": "4-4",
    "gp": 8,
-   "rating": 3.53,
+   "rating": 3.5,
    "margin": 3.2,
-   "sos": -0.5,
-   "sos_rank": 23,
+   "sos": -0.6,
+   "sos_rank": 24,
    "off_avg": 13.2,
    "def_avg": 13.0,
    "stats": [
@@ -1909,9 +2211,9 @@
   {
    "team": "New England Patriots",
    "abbr": "NE",
-   "pos": 7,
+   "pos": 8,
    "prev_pos": 7,
-   "move": 0,
+   "move": -1,
    "record": "5-3",
    "gp": 8,
    "rating": 3.28,
@@ -2213,15 +2515,15 @@
   {
    "team": "Kansas City Chiefs",
    "abbr": "KC",
-   "pos": 8,
+   "pos": 9,
    "prev_pos": 6,
-   "move": -2,
+   "move": -3,
    "record": "5-2",
    "gp": 7,
-   "rating": 2.95,
+   "rating": 2.83,
    "margin": 5.1,
-   "sos": -0.5,
-   "sos_rank": 24,
+   "sos": -0.8,
+   "sos_rank": 26,
    "off_avg": 9.6,
    "def_avg": 10.3,
    "stats": [
@@ -2517,15 +2819,15 @@
   {
    "team": "Detroit Lions",
    "abbr": "DET",
-   "pos": 9,
+   "pos": 10,
    "prev_pos": 11,
-   "move": 2,
+   "move": 1,
    "record": "5-2",
    "gp": 7,
-   "rating": 2.71,
+   "rating": 2.73,
    "margin": 3.3,
    "sos": -0.6,
-   "sos_rank": 26,
+   "sos_rank": 25,
    "off_avg": 6.8,
    "def_avg": 24.3,
    "stats": [
@@ -2821,14 +3123,14 @@
   {
    "team": "Denver Broncos",
    "abbr": "DEN",
-   "pos": 10,
+   "pos": 11,
    "prev_pos": 12,
-   "move": 2,
+   "move": 1,
    "record": "6-2",
    "gp": 8,
-   "rating": 2.6,
+   "rating": 2.47,
    "margin": 0.9,
-   "sos": 2.3,
+   "sos": 2.1,
    "sos_rank": 1,
    "off_avg": 20.0,
    "def_avg": 16.1,
@@ -3125,15 +3427,15 @@
   {
    "team": "Cincinnati Bengals",
    "abbr": "CIN",
-   "pos": 11,
+   "pos": 12,
    "prev_pos": 9,
-   "move": -2,
+   "move": -3,
    "record": "5-2",
    "gp": 7,
-   "rating": 2.38,
+   "rating": 2.39,
    "margin": 6.9,
    "sos": -0.2,
-   "sos_rank": 17,
+   "sos_rank": 18,
    "off_avg": 14.4,
    "def_avg": 15.5,
    "stats": [
@@ -3427,310 +3729,6 @@
    }
   },
   {
-   "team": "Chicago Bears",
-   "abbr": "CHI",
-   "pos": 12,
-   "prev_pos": 10,
-   "move": -2,
-   "record": "5-2",
-   "gp": 7,
-   "rating": 2.28,
-   "margin": 5.3,
-   "sos": -0.5,
-   "sos_rank": 25,
-   "off_avg": 10.7,
-   "def_avg": 8.8,
-   "stats": [
-    {
-     "slug": "points-per-game",
-     "label": "Points per game",
-     "side": "O",
-     "unit": "",
-     "value": "25.0",
-     "rank": 12,
-     "behind": true
-    },
-    {
-     "slug": "yards-per-game",
-     "label": "Yards per game",
-     "side": "O",
-     "unit": "",
-     "value": "388.3",
-     "rank": 5,
-     "behind": true
-    },
-    {
-     "slug": "points-per-play",
-     "label": "Points per play",
-     "side": "O",
-     "unit": "",
-     "value": "0.342",
-     "rank": 22,
-     "behind": true
-    },
-    {
-     "slug": "touchdowns-per-game",
-     "label": "Touchdowns per game",
-     "side": "O",
-     "unit": "",
-     "value": "2.3",
-     "rank": 13,
-     "behind": true
-    },
-    {
-     "slug": "rush-attempts-per-game",
-     "label": "Rushes per game",
-     "side": "O",
-     "unit": "",
-     "value": "36.0",
-     "rank": 1,
-     "behind": true
-    },
-    {
-     "slug": "rush-yards-per-game",
-     "label": "Rush yards per game",
-     "side": "O",
-     "unit": "",
-     "value": "160.7",
-     "rank": 1,
-     "behind": true
-    },
-    {
-     "slug": "rush-touchdowns-per-game",
-     "label": "Rush TDs per game",
-     "side": "O",
-     "unit": "",
-     "value": "2.2",
-     "rank": 2,
-     "behind": true
-    },
-    {
-     "slug": "pass-attempts-per-game",
-     "label": "Pass attempts per game",
-     "side": "O",
-     "unit": "",
-     "value": "34.7",
-     "rank": 14,
-     "behind": true
-    },
-    {
-     "slug": "net-pass-yards-per-game",
-     "label": "Net pass yards per game",
-     "side": "O",
-     "unit": "",
-     "value": "227.7",
-     "rank": 15,
-     "behind": true
-    },
-    {
-     "slug": "third-down-pct",
-     "label": "3rd-down conversion %",
-     "side": "O",
-     "unit": "%",
-     "value": "45.5",
-     "rank": 6,
-     "behind": true
-    },
-    {
-     "slug": "fourth-down-pct",
-     "label": "4th-down conversion %",
-     "side": "O",
-     "unit": "%",
-     "value": "53.3",
-     "rank": 14,
-     "behind": true
-    },
-    {
-     "slug": "first-downs-per-game",
-     "label": "First downs per game",
-     "side": "O",
-     "unit": "",
-     "value": "23.0",
-     "rank": 6,
-     "behind": true
-    },
-    {
-     "slug": "giveaways-per-game",
-     "label": "Giveaways per game",
-     "side": "O",
-     "unit": "",
-     "value": "1.8",
-     "rank": 24,
-     "behind": true
-    },
-    {
-     "slug": "penalties-per-game",
-     "label": "Penalties per game",
-     "side": "O",
-     "unit": "",
-     "value": "7.3",
-     "rank": 12,
-     "behind": true
-    },
-    {
-     "slug": "penalty-yards-per-game",
-     "label": "Penalty yards per game",
-     "side": "O",
-     "unit": "",
-     "value": "57.0",
-     "rank": 14,
-     "behind": true
-    },
-    {
-     "slug": "opp-points-per-game",
-     "label": "Points allowed per game",
-     "side": "D",
-     "unit": "",
-     "value": "19.8",
-     "rank": 6,
-     "behind": true
-    },
-    {
-     "slug": "opp-yards-per-game",
-     "label": "Yards allowed per game",
-     "side": "D",
-     "unit": "",
-     "value": "302.3",
-     "rank": 7,
-     "behind": true
-    },
-    {
-     "slug": "opp-points-per-play",
-     "label": "Points allowed per play",
-     "side": "D",
-     "unit": "",
-     "value": "0.408",
-     "rank": 24,
-     "behind": true
-    },
-    {
-     "slug": "opp-touchdowns-per-game",
-     "label": "TDs allowed per game",
-     "side": "D",
-     "unit": "",
-     "value": "1.8",
-     "rank": 8,
-     "behind": true
-    },
-    {
-     "slug": "opp-rush-attempts-per-game",
-     "label": "Opponent rushes per game",
-     "side": "D",
-     "unit": "",
-     "value": "20.2",
-     "rank": 1,
-     "behind": true
-    },
-    {
-     "slug": "opp-rush-yards-per-game",
-     "label": "Rush yards allowed per game",
-     "side": "D",
-     "unit": "",
-     "value": "90.5",
-     "rank": 7,
-     "behind": true
-    },
-    {
-     "slug": "opp-rush-touchdowns-per-game",
-     "label": "Rush TDs allowed per game",
-     "side": "D",
-     "unit": "",
-     "value": "0.8",
-     "rank": 13,
-     "behind": true
-    },
-    {
-     "slug": "opp-pass-attempts-per-game",
-     "label": "Opponent pass attempts per game",
-     "side": "D",
-     "unit": "",
-     "value": "26.0",
-     "rank": 1,
-     "behind": true
-    },
-    {
-     "slug": "opp-net-pass-yards-per-game",
-     "label": "Net pass yards allowed per game",
-     "side": "D",
-     "unit": "",
-     "value": "211.8",
-     "rank": 14,
-     "behind": true
-    },
-    {
-     "slug": "opp-third-down-pct",
-     "label": "Opponent 3rd-down %",
-     "side": "D",
-     "unit": "%",
-     "value": "25.8",
-     "rank": 2,
-     "behind": true
-    },
-    {
-     "slug": "opp-fourth-down-pct",
-     "label": "Opponent 4th-down %",
-     "side": "D",
-     "unit": "%",
-     "value": "25.0",
-     "rank": 3,
-     "behind": true
-    },
-    {
-     "slug": "opp-first-downs-per-game",
-     "label": "First downs allowed per game",
-     "side": "D",
-     "unit": "",
-     "value": "14.5",
-     "rank": 2,
-     "behind": true
-    },
-    {
-     "slug": "takeaways-per-game",
-     "label": "Takeaways per game",
-     "side": "D",
-     "unit": "",
-     "value": "1.5",
-     "rank": 10,
-     "behind": true
-    },
-    {
-     "slug": "sacks-per-game",
-     "label": "Sacks per game (defense)",
-     "side": "D",
-     "unit": "",
-     "value": "2.4",
-     "rank": 11,
-     "behind": true
-    },
-    {
-     "slug": "takeaway-interceptions-per-game",
-     "label": "Interceptions per game",
-     "side": "D",
-     "unit": "",
-     "value": "0.5",
-     "rank": 23,
-     "behind": true
-    },
-    {
-     "slug": "turnover-margin-per-game",
-     "label": "Turnover margin per game",
-     "side": "T",
-     "unit": "",
-     "value": "-0.3",
-     "rank": 19,
-     "behind": true
-    }
-   ],
-   "player": {
-    "qb1": "Caleb Williams",
-    "qb1rate": 101.5,
-    "qb1ypa": 7.8,
-    "qbrate": 101.5,
-    "qbsack": 9.0,
-    "hon": 10
-   }
-  },
-  {
    "team": "Pittsburgh Steelers",
    "abbr": "PIT",
    "pos": 13,
@@ -3738,10 +3736,10 @@
    "move": 0,
    "record": "6-2",
    "gp": 8,
-   "rating": 1.9,
+   "rating": 1.91,
    "margin": 4.5,
    "sos": -1.0,
-   "sos_rank": 27,
+   "sos_rank": 28,
    "off_avg": 17.9,
    "def_avg": 10.1,
    "stats": [
@@ -4042,10 +4040,10 @@
    "move": 2,
    "record": "3-5",
    "gp": 8,
-   "rating": 1.39,
+   "rating": 1.42,
    "margin": 3.4,
    "sos": 0.1,
-   "sos_rank": 12,
+   "sos_rank": 13,
    "off_avg": 20.7,
    "def_avg": 12.2,
    "stats": [
@@ -4346,9 +4344,9 @@
    "move": -1,
    "record": "5-3",
    "gp": 8,
-   "rating": 1.17,
+   "rating": 1.28,
    "margin": 0.9,
-   "sos": 0.1,
+   "sos": 0.3,
    "sos_rank": 11,
    "off_avg": 19.3,
    "def_avg": 14.3,
@@ -5258,7 +5256,7 @@
    "move": -1,
    "record": "4-4",
    "gp": 8,
-   "rating": -1.27,
+   "rating": -1.26,
    "margin": -3.0,
    "sos": -1.4,
    "sos_rank": 30,
@@ -5562,10 +5560,10 @@
    "move": 0,
    "record": "3-5",
    "gp": 8,
-   "rating": -1.66,
+   "rating": -1.57,
    "margin": -2.2,
-   "sos": 0.5,
-   "sos_rank": 7,
+   "sos": 0.7,
+   "sos_rank": 6,
    "off_avg": 16.9,
    "def_avg": 19.0,
    "stats": [
@@ -5866,7 +5864,7 @@
    "move": 1,
    "record": "4-2-1",
    "gp": 7,
-   "rating": -1.95,
+   "rating": -1.96,
    "margin": 0.3,
    "sos": -1.9,
    "sos_rank": 32,
@@ -6170,10 +6168,10 @@
    "move": 1,
    "record": "3-4",
    "gp": 7,
-   "rating": -2.36,
+   "rating": -2.24,
    "margin": -2.1,
-   "sos": -0.2,
-   "sos_rank": 15,
+   "sos": 0.1,
+   "sos_rank": 14,
    "off_avg": 12.2,
    "def_avg": 20.4,
    "stats": [
@@ -6477,7 +6475,7 @@
    "rating": -2.73,
    "margin": -7.6,
    "sos": 0.7,
-   "sos_rank": 6,
+   "sos_rank": 7,
    "off_avg": 14.1,
    "def_avg": 19.8,
    "stats": [
@@ -6778,10 +6776,10 @@
    "move": 4,
    "record": "2-4-1",
    "gp": 7,
-   "rating": -2.77,
+   "rating": -2.86,
    "margin": -3.3,
-   "sos": -0.3,
-   "sos_rank": 20,
+   "sos": -0.5,
+   "sos_rank": 23,
    "off_avg": 15.5,
    "def_avg": 21.7,
    "stats": [
@@ -7082,10 +7080,10 @@
    "move": 4,
    "record": "4-4",
    "gp": 8,
-   "rating": -3.12,
+   "rating": -3.13,
    "margin": -1.1,
    "sos": -0.2,
-   "sos_rank": 16,
+   "sos_rank": 19,
    "off_avg": 12.7,
    "def_avg": 20.3,
    "stats": [
@@ -7386,10 +7384,10 @@
    "move": -2,
    "record": "2-6",
    "gp": 8,
-   "rating": -3.34,
+   "rating": -3.26,
    "margin": -8.1,
-   "sos": -0.3,
-   "sos_rank": 21,
+   "sos": -0.2,
+   "sos_rank": 17,
    "off_avg": 23.3,
    "def_avg": 22.7,
    "stats": [
@@ -7690,10 +7688,10 @@
    "move": -1,
    "record": "2-5",
    "gp": 7,
-   "rating": -3.44,
+   "rating": -3.43,
    "margin": -4.6,
-   "sos": 0.0,
-   "sos_rank": 13,
+   "sos": 0.1,
+   "sos_rank": 15,
    "off_avg": 12.7,
    "def_avg": 23.3,
    "stats": [
@@ -7994,10 +7992,10 @@
    "move": -3,
    "record": "5-3",
    "gp": 8,
-   "rating": -3.66,
+   "rating": -3.64,
    "margin": -4.2,
    "sos": -0.3,
-   "sos_rank": 19,
+   "sos_rank": 21,
    "off_avg": 25.3,
    "def_avg": 10.7,
    "stats": [
@@ -8298,9 +8296,9 @@
    "move": -2,
    "record": "0-7",
    "gp": 7,
-   "rating": -3.68,
+   "rating": -3.79,
    "margin": -10.9,
-   "sos": 1.8,
+   "sos": 1.5,
    "sos_rank": 2,
    "off_avg": 25.4,
    "def_avg": 16.5,
@@ -8595,16 +8593,320 @@
    }
   },
   {
+   "team": "New York Jets",
+   "abbr": "NYJ",
+   "pos": 29,
+   "prev_pos": 29,
+   "move": 0,
+   "record": "2-6",
+   "gp": 8,
+   "rating": -4.25,
+   "margin": -2.2,
+   "sos": -0.9,
+   "sos_rank": 27,
+   "off_avg": 22.4,
+   "def_avg": 12.5,
+   "stats": [
+    {
+     "slug": "points-per-game",
+     "label": "Points per game",
+     "side": "O",
+     "unit": "",
+     "value": "18.7",
+     "rank": 27,
+     "behind": true
+    },
+    {
+     "slug": "yards-per-game",
+     "label": "Yards per game",
+     "side": "O",
+     "unit": "",
+     "value": "290.7",
+     "rank": 25,
+     "behind": true
+    },
+    {
+     "slug": "points-per-play",
+     "label": "Points per play",
+     "side": "O",
+     "unit": "",
+     "value": "0.317",
+     "rank": 25,
+     "behind": true
+    },
+    {
+     "slug": "touchdowns-per-game",
+     "label": "Touchdowns per game",
+     "side": "O",
+     "unit": "",
+     "value": "1.7",
+     "rank": 27,
+     "behind": true
+    },
+    {
+     "slug": "rush-attempts-per-game",
+     "label": "Rushes per game",
+     "side": "O",
+     "unit": "",
+     "value": "26.3",
+     "rank": 16,
+     "behind": true
+    },
+    {
+     "slug": "rush-yards-per-game",
+     "label": "Rush yards per game",
+     "side": "O",
+     "unit": "",
+     "value": "94.5",
+     "rank": 23,
+     "behind": true
+    },
+    {
+     "slug": "rush-touchdowns-per-game",
+     "label": "Rush TDs per game",
+     "side": "O",
+     "unit": "",
+     "value": "0.7",
+     "rank": 19,
+     "behind": true
+    },
+    {
+     "slug": "pass-attempts-per-game",
+     "label": "Pass attempts per game",
+     "side": "O",
+     "unit": "",
+     "value": "29.5",
+     "rank": 24,
+     "behind": true
+    },
+    {
+     "slug": "net-pass-yards-per-game",
+     "label": "Net pass yards per game",
+     "side": "O",
+     "unit": "",
+     "value": "196.2",
+     "rank": 22,
+     "behind": true
+    },
+    {
+     "slug": "third-down-pct",
+     "label": "3rd-down conversion %",
+     "side": "O",
+     "unit": "%",
+     "value": "35.1",
+     "rank": 25,
+     "behind": true
+    },
+    {
+     "slug": "fourth-down-pct",
+     "label": "4th-down conversion %",
+     "side": "O",
+     "unit": "%",
+     "value": "50.0",
+     "rank": 15,
+     "behind": true
+    },
+    {
+     "slug": "first-downs-per-game",
+     "label": "First downs per game",
+     "side": "O",
+     "unit": "",
+     "value": "17.3",
+     "rank": 25,
+     "behind": true
+    },
+    {
+     "slug": "giveaways-per-game",
+     "label": "Giveaways per game",
+     "side": "O",
+     "unit": "",
+     "value": "0.7",
+     "rank": 4,
+     "behind": true
+    },
+    {
+     "slug": "penalties-per-game",
+     "label": "Penalties per game",
+     "side": "O",
+     "unit": "",
+     "value": "8.7",
+     "rank": 29,
+     "behind": true
+    },
+    {
+     "slug": "penalty-yards-per-game",
+     "label": "Penalty yards per game",
+     "side": "O",
+     "unit": "",
+     "value": "74.5",
+     "rank": 30,
+     "behind": true
+    },
+    {
+     "slug": "opp-points-per-game",
+     "label": "Points allowed per game",
+     "side": "D",
+     "unit": "",
+     "value": "20.3",
+     "rank": 7,
+     "behind": true
+    },
+    {
+     "slug": "opp-yards-per-game",
+     "label": "Yards allowed per game",
+     "side": "D",
+     "unit": "",
+     "value": "308.0",
+     "rank": 11,
+     "behind": true
+    },
+    {
+     "slug": "opp-points-per-play",
+     "label": "Points allowed per play",
+     "side": "D",
+     "unit": "",
+     "value": "0.314",
+     "rank": 6,
+     "behind": true
+    },
+    {
+     "slug": "opp-touchdowns-per-game",
+     "label": "TDs allowed per game",
+     "side": "D",
+     "unit": "",
+     "value": "1.7",
+     "rank": 5,
+     "behind": true
+    },
+    {
+     "slug": "opp-rush-attempts-per-game",
+     "label": "Opponent rushes per game",
+     "side": "D",
+     "unit": "",
+     "value": "29.3",
+     "rank": 25,
+     "behind": true
+    },
+    {
+     "slug": "opp-rush-yards-per-game",
+     "label": "Rush yards allowed per game",
+     "side": "D",
+     "unit": "",
+     "value": "123.0",
+     "rank": 23,
+     "behind": true
+    },
+    {
+     "slug": "opp-rush-touchdowns-per-game",
+     "label": "Rush TDs allowed per game",
+     "side": "D",
+     "unit": "",
+     "value": "0.7",
+     "rank": 6,
+     "behind": true
+    },
+    {
+     "slug": "opp-pass-attempts-per-game",
+     "label": "Opponent pass attempts per game",
+     "side": "D",
+     "unit": "",
+     "value": "32.0",
+     "rank": 13,
+     "behind": true
+    },
+    {
+     "slug": "opp-net-pass-yards-per-game",
+     "label": "Net pass yards allowed per game",
+     "side": "D",
+     "unit": "",
+     "value": "185.0",
+     "rank": 4,
+     "behind": true
+    },
+    {
+     "slug": "opp-third-down-pct",
+     "label": "Opponent 3rd-down %",
+     "side": "D",
+     "unit": "%",
+     "value": "37.7",
+     "rank": 12,
+     "behind": true
+    },
+    {
+     "slug": "opp-fourth-down-pct",
+     "label": "Opponent 4th-down %",
+     "side": "D",
+     "unit": "%",
+     "value": "40.0",
+     "rank": 9,
+     "behind": true
+    },
+    {
+     "slug": "opp-first-downs-per-game",
+     "label": "First downs allowed per game",
+     "side": "D",
+     "unit": "",
+     "value": "20.0",
+     "rank": 18,
+     "behind": true
+    },
+    {
+     "slug": "takeaways-per-game",
+     "label": "Takeaways per game",
+     "side": "D",
+     "unit": "",
+     "value": "1.3",
+     "rank": 17,
+     "behind": true
+    },
+    {
+     "slug": "sacks-per-game",
+     "label": "Sacks per game (defense)",
+     "side": "D",
+     "unit": "",
+     "value": "3.4",
+     "rank": 2,
+     "behind": true
+    },
+    {
+     "slug": "takeaway-interceptions-per-game",
+     "label": "Interceptions per game",
+     "side": "D",
+     "unit": "",
+     "value": "0.2",
+     "rank": 30,
+     "behind": true
+    },
+    {
+     "slug": "turnover-margin-per-game",
+     "label": "Turnover margin per game",
+     "side": "T",
+     "unit": "",
+     "value": "0.7",
+     "rank": 6,
+     "behind": true
+    }
+   ],
+   "player": {
+    "qb1": "Geno Smith",
+    "qb1rate": 101.8,
+    "qb1ypa": 7.5,
+    "qbrate": 101.8,
+    "qbsack": 9.7,
+    "hon": 3
+   }
+  },
+  {
    "team": "Arizona Cardinals",
    "abbr": "ARI",
-   "pos": 29,
+   "pos": 30,
    "prev_pos": 30,
-   "move": 1,
+   "move": 0,
    "record": "3-5",
    "gp": 8,
-   "rating": -4.18,
+   "rating": -4.28,
    "margin": -7.9,
-   "sos": 1.5,
+   "sos": 1.3,
    "sos_rank": 3,
    "off_avg": 17.4,
    "def_avg": 20.2,
@@ -8896,310 +9198,6 @@
     "qbrate": 83.4,
     "qbsack": 4.9,
     "hon": 4
-   }
-  },
-  {
-   "team": "New York Jets",
-   "abbr": "NYJ",
-   "pos": 30,
-   "prev_pos": 29,
-   "move": -1,
-   "record": "2-6",
-   "gp": 8,
-   "rating": -4.34,
-   "margin": -2.2,
-   "sos": -1.1,
-   "sos_rank": 28,
-   "off_avg": 22.4,
-   "def_avg": 12.5,
-   "stats": [
-    {
-     "slug": "points-per-game",
-     "label": "Points per game",
-     "side": "O",
-     "unit": "",
-     "value": "18.7",
-     "rank": 27,
-     "behind": true
-    },
-    {
-     "slug": "yards-per-game",
-     "label": "Yards per game",
-     "side": "O",
-     "unit": "",
-     "value": "290.7",
-     "rank": 25,
-     "behind": true
-    },
-    {
-     "slug": "points-per-play",
-     "label": "Points per play",
-     "side": "O",
-     "unit": "",
-     "value": "0.317",
-     "rank": 25,
-     "behind": true
-    },
-    {
-     "slug": "touchdowns-per-game",
-     "label": "Touchdowns per game",
-     "side": "O",
-     "unit": "",
-     "value": "1.7",
-     "rank": 27,
-     "behind": true
-    },
-    {
-     "slug": "rush-attempts-per-game",
-     "label": "Rushes per game",
-     "side": "O",
-     "unit": "",
-     "value": "26.3",
-     "rank": 16,
-     "behind": true
-    },
-    {
-     "slug": "rush-yards-per-game",
-     "label": "Rush yards per game",
-     "side": "O",
-     "unit": "",
-     "value": "94.5",
-     "rank": 23,
-     "behind": true
-    },
-    {
-     "slug": "rush-touchdowns-per-game",
-     "label": "Rush TDs per game",
-     "side": "O",
-     "unit": "",
-     "value": "0.7",
-     "rank": 19,
-     "behind": true
-    },
-    {
-     "slug": "pass-attempts-per-game",
-     "label": "Pass attempts per game",
-     "side": "O",
-     "unit": "",
-     "value": "29.5",
-     "rank": 24,
-     "behind": true
-    },
-    {
-     "slug": "net-pass-yards-per-game",
-     "label": "Net pass yards per game",
-     "side": "O",
-     "unit": "",
-     "value": "196.2",
-     "rank": 22,
-     "behind": true
-    },
-    {
-     "slug": "third-down-pct",
-     "label": "3rd-down conversion %",
-     "side": "O",
-     "unit": "%",
-     "value": "35.1",
-     "rank": 25,
-     "behind": true
-    },
-    {
-     "slug": "fourth-down-pct",
-     "label": "4th-down conversion %",
-     "side": "O",
-     "unit": "%",
-     "value": "50.0",
-     "rank": 15,
-     "behind": true
-    },
-    {
-     "slug": "first-downs-per-game",
-     "label": "First downs per game",
-     "side": "O",
-     "unit": "",
-     "value": "17.3",
-     "rank": 25,
-     "behind": true
-    },
-    {
-     "slug": "giveaways-per-game",
-     "label": "Giveaways per game",
-     "side": "O",
-     "unit": "",
-     "value": "0.7",
-     "rank": 4,
-     "behind": true
-    },
-    {
-     "slug": "penalties-per-game",
-     "label": "Penalties per game",
-     "side": "O",
-     "unit": "",
-     "value": "8.7",
-     "rank": 29,
-     "behind": true
-    },
-    {
-     "slug": "penalty-yards-per-game",
-     "label": "Penalty yards per game",
-     "side": "O",
-     "unit": "",
-     "value": "74.5",
-     "rank": 30,
-     "behind": true
-    },
-    {
-     "slug": "opp-points-per-game",
-     "label": "Points allowed per game",
-     "side": "D",
-     "unit": "",
-     "value": "20.3",
-     "rank": 7,
-     "behind": true
-    },
-    {
-     "slug": "opp-yards-per-game",
-     "label": "Yards allowed per game",
-     "side": "D",
-     "unit": "",
-     "value": "308.0",
-     "rank": 11,
-     "behind": true
-    },
-    {
-     "slug": "opp-points-per-play",
-     "label": "Points allowed per play",
-     "side": "D",
-     "unit": "",
-     "value": "0.314",
-     "rank": 6,
-     "behind": true
-    },
-    {
-     "slug": "opp-touchdowns-per-game",
-     "label": "TDs allowed per game",
-     "side": "D",
-     "unit": "",
-     "value": "1.7",
-     "rank": 5,
-     "behind": true
-    },
-    {
-     "slug": "opp-rush-attempts-per-game",
-     "label": "Opponent rushes per game",
-     "side": "D",
-     "unit": "",
-     "value": "29.3",
-     "rank": 25,
-     "behind": true
-    },
-    {
-     "slug": "opp-rush-yards-per-game",
-     "label": "Rush yards allowed per game",
-     "side": "D",
-     "unit": "",
-     "value": "123.0",
-     "rank": 23,
-     "behind": true
-    },
-    {
-     "slug": "opp-rush-touchdowns-per-game",
-     "label": "Rush TDs allowed per game",
-     "side": "D",
-     "unit": "",
-     "value": "0.7",
-     "rank": 6,
-     "behind": true
-    },
-    {
-     "slug": "opp-pass-attempts-per-game",
-     "label": "Opponent pass attempts per game",
-     "side": "D",
-     "unit": "",
-     "value": "32.0",
-     "rank": 13,
-     "behind": true
-    },
-    {
-     "slug": "opp-net-pass-yards-per-game",
-     "label": "Net pass yards allowed per game",
-     "side": "D",
-     "unit": "",
-     "value": "185.0",
-     "rank": 4,
-     "behind": true
-    },
-    {
-     "slug": "opp-third-down-pct",
-     "label": "Opponent 3rd-down %",
-     "side": "D",
-     "unit": "%",
-     "value": "37.7",
-     "rank": 12,
-     "behind": true
-    },
-    {
-     "slug": "opp-fourth-down-pct",
-     "label": "Opponent 4th-down %",
-     "side": "D",
-     "unit": "%",
-     "value": "40.0",
-     "rank": 9,
-     "behind": true
-    },
-    {
-     "slug": "opp-first-downs-per-game",
-     "label": "First downs allowed per game",
-     "side": "D",
-     "unit": "",
-     "value": "20.0",
-     "rank": 18,
-     "behind": true
-    },
-    {
-     "slug": "takeaways-per-game",
-     "label": "Takeaways per game",
-     "side": "D",
-     "unit": "",
-     "value": "1.3",
-     "rank": 17,
-     "behind": true
-    },
-    {
-     "slug": "sacks-per-game",
-     "label": "Sacks per game (defense)",
-     "side": "D",
-     "unit": "",
-     "value": "3.4",
-     "rank": 2,
-     "behind": true
-    },
-    {
-     "slug": "takeaway-interceptions-per-game",
-     "label": "Interceptions per game",
-     "side": "D",
-     "unit": "",
-     "value": "0.2",
-     "rank": 30,
-     "behind": true
-    },
-    {
-     "slug": "turnover-margin-per-game",
-     "label": "Turnover margin per game",
-     "side": "T",
-     "unit": "",
-     "value": "0.7",
-     "rank": 6,
-     "behind": true
-    }
-   ],
-   "player": {
-    "qb1": "Geno Smith",
-    "qb1rate": 101.8,
-    "qb1ypa": 7.5,
-    "qbrate": 101.8,
-    "qbsack": 9.7,
-    "hon": 3
    }
   },
   {
@@ -9514,7 +9512,7 @@
    "move": 0,
    "record": "1-7",
    "gp": 8,
-   "rating": -6.67,
+   "rating": -6.66,
    "margin": -6.9,
    "sos": -1.7,
    "sos_rank": 31,
@@ -9813,44 +9811,6 @@
  ],
  "upcoming": [
   {
-   "id": "2026_08_CHI_SEA",
-   "week": 8,
-   "day": "2026-11-02",
-   "away": "CHI",
-   "home": "SEA",
-   "neutral": false,
-   "home_margin": 3.0,
-   "home_win": 0.593,
-   "line": 3.0,
-   "results_margin": 5.2,
-   "lineup": {
-    "SEA": {
-     "points": -3.2,
-     "qb": 0.0,
-     "injuries": -3.2,
-     "notes": [
-      "Charles Cross (T, Out)",
-      "Drake Thomas (LB, missed last game)",
-      "Rodney Thomas II (S, missed last game)",
-      "Rashid Shaheed (WR, Out)",
-      "Uchenna Nwosu (LB, Doubtful)"
-     ]
-    },
-    "CHI": {
-     "points": -1.0,
-     "qb": 0.0,
-     "injuries": -1.0,
-     "notes": [
-      "T.J. Edwards (LB, missed last game)",
-      "Montez Sweat (DL, missed last game)",
-      "Dayo Odeyingbo (DL, missed last game)",
-      "Xavier Woods (DB, missed last game)",
-      "Braxton Jones (OL, missed last game)"
-     ]
-    }
-   }
-  },
-  {
    "id": "2026_09_JAX_BAL",
    "week": 9,
    "day": "2026-11-05",
@@ -9858,7 +9818,7 @@
    "home": "BAL",
    "neutral": false,
    "home_margin": -7.4,
-   "home_win": 0.281,
+   "home_win": 0.282,
    "line": -8.5,
    "results_margin": -6.2,
    "lineup": {
@@ -9894,7 +9854,7 @@
    "home": "ATL",
    "neutral": true,
    "home_margin": -4.2,
-   "home_win": 0.37,
+   "home_win": 0.373,
    "line": -3.0,
    "results_margin": -4.0,
    "lineup": {
@@ -9924,10 +9884,10 @@
    "away": "DEN",
    "home": "CAR",
    "neutral": false,
-   "home_margin": -4.6,
-   "home_win": 0.361,
+   "home_margin": -4.3,
+   "home_win": 0.368,
    "line": -3.0,
-   "results_margin": -3.0,
+   "results_margin": -2.7,
    "lineup": {
     "CAR": {
      "points": -3.1,
@@ -9996,10 +9956,10 @@
    "away": "NYJ",
    "home": "KC",
    "neutral": false,
-   "home_margin": 8.4,
-   "home_win": 0.744,
+   "home_margin": 8.2,
+   "home_win": 0.739,
    "line": 9.5,
-   "results_margin": 9.3,
+   "results_margin": 9.1,
    "lineup": {
     "KC": {
      "points": -2.5,
@@ -10033,7 +9993,7 @@
    "home": "MIA",
    "neutral": false,
    "home_margin": -5.9,
-   "home_win": 0.323,
+   "home_win": 0.322,
    "line": -7.0,
    "results_margin": -5.5,
    "lineup": {
@@ -10099,10 +10059,10 @@
    "away": "NYG",
    "home": "PHI",
    "neutral": false,
-   "home_margin": 0.4,
-   "home_win": 0.513,
+   "home_margin": 0.5,
+   "home_win": 0.516,
    "line": -3.5,
-   "results_margin": 0.6,
+   "results_margin": 0.7,
    "lineup": {
     "PHI": {
      "points": -4.5,
@@ -10139,10 +10099,10 @@
    "away": "LAR",
    "home": "WAS",
    "neutral": false,
-   "home_margin": -3.4,
-   "home_win": 0.395,
+   "home_margin": -3.5,
+   "home_win": 0.393,
    "line": -5.5,
-   "results_margin": -4.3,
+   "results_margin": -4.4,
    "lineup": {
     "WAS": {
      "points": -0.4,
@@ -10175,10 +10135,10 @@
    "away": "HOU",
    "home": "LAC",
    "neutral": false,
-   "home_margin": -3.6,
-   "home_win": 0.389,
+   "home_margin": -3.7,
+   "home_win": 0.386,
    "line": -4.5,
-   "results_margin": -2.8,
+   "results_margin": -2.9,
    "lineup": {
     "LAC": {
      "points": -1.1,
@@ -10211,10 +10171,10 @@
    "away": "LV",
    "home": "SF",
    "neutral": false,
-   "home_margin": 8.2,
-   "home_win": 0.739,
+   "home_margin": 8.1,
+   "home_win": 0.737,
    "line": 10.0,
-   "results_margin": 9.6,
+   "results_margin": 9.5,
    "lineup": {
     "SF": {
      "points": -1.7,
@@ -10245,10 +10205,10 @@
    "away": "GB",
    "home": "NE",
    "neutral": false,
-   "home_margin": 5.2,
-   "home_win": 0.658,
+   "home_margin": 5.1,
+   "home_win": 0.655,
    "line": 3.0,
-   "results_margin": 4.1,
+   "results_margin": 4.0,
    "lineup": {
     "NE": {
      "points": -1.7,
@@ -10283,10 +10243,10 @@
    "away": "ARI",
    "home": "SEA",
    "neutral": false,
-   "home_margin": 12.0,
-   "home_win": 0.825,
+   "home_margin": 10.7,
+   "home_win": 0.799,
    "line": 11.5,
-   "results_margin": 11.7,
+   "results_margin": 10.4,
    "lineup": {
     "SEA": {
      "points": -1.1,
@@ -10320,10 +10280,10 @@
    "away": "TB",
    "home": "CHI",
    "neutral": false,
-   "home_margin": 3.3,
-   "home_win": 0.601,
-   "line": 4.5,
-   "results_margin": 2.9,
+   "home_margin": 4.6,
+   "home_win": 0.64,
+   "line": 6.0,
+   "results_margin": 4.2,
    "lineup": {
     "CHI": {
      "points": -0.7,
@@ -10355,10 +10315,10 @@
    "away": "BUF",
    "home": "MIN",
    "neutral": false,
-   "home_margin": 1.3,
-   "home_win": 0.542,
+   "home_margin": 1.5,
+   "home_win": 0.545,
    "line": -3.5,
-   "results_margin": 0.4,
+   "results_margin": 0.6,
    "lineup": {
     "MIN": {
      "points": -0.4,
@@ -10386,6 +10346,6 @@
  ],
  "pick_record": {
   "right": 20,
-  "wrong": 8
+  "wrong": 9
  }
 }

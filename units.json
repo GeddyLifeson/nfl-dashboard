@@ -6,13 +6,13 @@
    "rank": 1,
    "team": "San Francisco 49ers",
    "abbr": "SF",
-   "epa_per_play": 0.195
+   "epa_per_play": 0.191
   },
   {
    "rank": 2,
    "team": "Jacksonville Jaguars",
    "abbr": "JAX",
-   "epa_per_play": 0.14
+   "epa_per_play": 0.141
   },
   {
    "rank": 3,
@@ -24,25 +24,25 @@
    "rank": 4,
    "team": "Buffalo Bills",
    "abbr": "BUF",
-   "epa_per_play": 0.133
+   "epa_per_play": 0.132
   },
   {
    "rank": 5,
    "team": "Kansas City Chiefs",
    "abbr": "KC",
-   "epa_per_play": 0.125
+   "epa_per_play": 0.12
   },
   {
    "rank": 6,
    "team": "Chicago Bears",
    "abbr": "CHI",
-   "epa_per_play": 0.089
+   "epa_per_play": 0.116
   },
   {
    "rank": 7,
    "team": "New England Patriots",
    "abbr": "NE",
-   "epa_per_play": 0.078
+   "epa_per_play": 0.075
   },
   {
    "rank": 8,
@@ -52,75 +52,75 @@
   },
   {
    "rank": 9,
-   "team": "Los Angeles Rams",
-   "abbr": "LAR",
-   "epa_per_play": 0.059
+   "team": "Detroit Lions",
+   "abbr": "DET",
+   "epa_per_play": 0.06
   },
   {
    "rank": 10,
-   "team": "Detroit Lions",
-   "abbr": "DET",
+   "team": "Los Angeles Rams",
+   "abbr": "LAR",
    "epa_per_play": 0.057
   },
   {
    "rank": 11,
    "team": "Carolina Panthers",
    "abbr": "CAR",
-   "epa_per_play": 0.032
+   "epa_per_play": 0.034
   },
   {
    "rank": 12,
    "team": "Baltimore Ravens",
    "abbr": "BAL",
-   "epa_per_play": 0.025
+   "epa_per_play": 0.026
   },
   {
    "rank": 13,
    "team": "Denver Broncos",
    "abbr": "DEN",
-   "epa_per_play": 0.024
+   "epa_per_play": 0.019
   },
   {
    "rank": 14,
-   "team": "Las Vegas Raiders",
-   "abbr": "LV",
+   "team": "Pittsburgh Steelers",
+   "abbr": "PIT",
    "epa_per_play": 0.014
   },
   {
    "rank": 15,
-   "team": "Pittsburgh Steelers",
-   "abbr": "PIT",
+   "team": "Las Vegas Raiders",
+   "abbr": "LV",
    "epa_per_play": 0.013
   },
   {
    "rank": 16,
    "team": "Green Bay Packers",
    "abbr": "GB",
-   "epa_per_play": 0.008
+   "epa_per_play": 0.011
   },
   {
    "rank": 17,
    "team": "Houston Texans",
    "abbr": "HOU",
-   "epa_per_play": 0.001
+   "epa_per_play": 0.0
   },
   {
    "rank": 18,
    "team": "New York Jets",
    "abbr": "NYJ",
-   "epa_per_play": -0.002
+   "epa_per_play": -0.0
   },
   {
    "rank": 19,
    "team": "Arizona Cardinals",
    "abbr": "ARI",
-   "epa_per_play": -0.029
+   "epa_per_play": -0.033
   },
   {
    "rank": 20,
    "team": "New Orleans Saints",
    "abbr": "NO",
-   "epa_per_play": -0.038
+   "epa_per_play": -0.037
   },
   {
    "rank": 21,
@@ -130,33 +130,33 @@
   },
   {
    "rank": 22,
-   "team": "Seattle Seahawks",
-   "abbr": "SEA",
-   "epa_per_play": -0.044
+   "team": "Miami Dolphins",
+   "abbr": "MIA",
+   "epa_per_play": -0.045
   },
   {
    "rank": 23,
-   "team": "Miami Dolphins",
-   "abbr": "MIA",
-   "epa_per_play": -0.046
+   "team": "Seattle Seahawks",
+   "abbr": "SEA",
+   "epa_per_play": -0.053
   },
   {
    "rank": 24,
    "team": "Washington Commanders",
    "abbr": "WAS",
-   "epa_per_play": -0.055
+   "epa_per_play": -0.059
   },
   {
    "rank": 25,
    "team": "Cleveland Browns",
    "abbr": "CLE",
-   "epa_per_play": -0.083
+   "epa_per_play": -0.082
   },
   {
    "rank": 26,
    "team": "Tampa Bay Buccaneers",
    "abbr": "TB",
-   "epa_per_play": -0.087
+   "epa_per_play": -0.085
   },
   {
    "rank": 27,
@@ -168,51 +168,51 @@
    "rank": 28,
    "team": "Minnesota Vikings",
    "abbr": "MIN",
-   "epa_per_play": -0.099
+   "epa_per_play": -0.097
   },
   {
    "rank": 29,
    "team": "Atlanta Falcons",
    "abbr": "ATL",
-   "epa_per_play": -0.104
+   "epa_per_play": -0.103
   },
   {
    "rank": 30,
    "team": "Tennessee Titans",
    "abbr": "TEN",
-   "epa_per_play": -0.105
+   "epa_per_play": -0.104
   },
   {
    "rank": 31,
    "team": "Philadelphia Eagles",
    "abbr": "PHI",
-   "epa_per_play": -0.111
+   "epa_per_play": -0.11
   },
   {
    "rank": 32,
    "team": "Los Angeles Chargers",
    "abbr": "LAC",
-   "epa_per_play": -0.266
+   "epa_per_play": -0.27
   }
  ],
  "defense": [
   {
    "rank": 1,
-   "team": "Seattle Seahawks",
-   "abbr": "SEA",
-   "epa_per_play_allowed": -0.166
+   "team": "Tampa Bay Buccaneers",
+   "abbr": "TB",
+   "epa_per_play_allowed": -0.161
   },
   {
    "rank": 2,
-   "team": "Tampa Bay Buccaneers",
-   "abbr": "TB",
-   "epa_per_play_allowed": -0.159
+   "team": "Minnesota Vikings",
+   "abbr": "MIN",
+   "epa_per_play_allowed": -0.146
   },
   {
    "rank": 3,
-   "team": "Minnesota Vikings",
-   "abbr": "MIN",
-   "epa_per_play_allowed": -0.141
+   "team": "Seattle Seahawks",
+   "abbr": "SEA",
+   "epa_per_play_allowed": -0.138
   },
   {
    "rank": 4,
@@ -224,73 +224,73 @@
    "rank": 5,
    "team": "Green Bay Packers",
    "abbr": "GB",
-   "epa_per_play_allowed": -0.087
+   "epa_per_play_allowed": -0.091
   },
   {
    "rank": 6,
-   "team": "Los Angeles Rams",
-   "abbr": "LAR",
-   "epa_per_play_allowed": -0.073
+   "team": "Atlanta Falcons",
+   "abbr": "ATL",
+   "epa_per_play_allowed": -0.072
   },
   {
    "rank": 7,
-   "team": "Atlanta Falcons",
-   "abbr": "ATL",
-   "epa_per_play_allowed": -0.068
+   "team": "Los Angeles Rams",
+   "abbr": "LAR",
+   "epa_per_play_allowed": -0.071
   },
   {
    "rank": 8,
    "team": "Denver Broncos",
    "abbr": "DEN",
-   "epa_per_play_allowed": -0.067
+   "epa_per_play_allowed": -0.063
   },
   {
    "rank": 9,
    "team": "Chicago Bears",
    "abbr": "CHI",
-   "epa_per_play_allowed": -0.047
+   "epa_per_play_allowed": -0.058
   },
   {
    "rank": 10,
    "team": "New England Patriots",
    "abbr": "NE",
-   "epa_per_play_allowed": -0.042
+   "epa_per_play_allowed": -0.045
   },
   {
    "rank": 11,
    "team": "Los Angeles Chargers",
    "abbr": "LAC",
-   "epa_per_play_allowed": -0.035
+   "epa_per_play_allowed": -0.032
   },
   {
    "rank": 12,
    "team": "Cleveland Browns",
    "abbr": "CLE",
-   "epa_per_play_allowed": -0.019
+   "epa_per_play_allowed": -0.021
   },
   {
    "rank": 13,
    "team": "Pittsburgh Steelers",
    "abbr": "PIT",
-   "epa_per_play_allowed": -0.014
+   "epa_per_play_allowed": -0.015
   },
   {
    "rank": 14,
-   "team": "San Francisco 49ers",
-   "abbr": "SF",
-   "epa_per_play_allowed": -0.006
+   "team": "Baltimore Ravens",
+   "abbr": "BAL",
+   "epa_per_play_allowed": -0.004
   },
   {
    "rank": 15,
-   "team": "Baltimore Ravens",
-   "abbr": "BAL",
+   "team": "San Francisco 49ers",
+   "abbr": "SF",
    "epa_per_play_allowed": -0.003
   },
   {
    "rank": 16,
    "team": "New York Jets",
    "abbr": "NYJ",
-   "epa_per_play_allowed": 0.005
+   "epa_per_play_allowed": 0.001
   },
   {
    "rank": 17,
@@ -308,43 +308,43 @@
    "rank": 19,
    "team": "New York Giants",
    "abbr": "NYG",
-   "epa_per_play_allowed": 0.024
+   "epa_per_play_allowed": 0.025
   },
   {
    "rank": 20,
    "team": "Kansas City Chiefs",
    "abbr": "KC",
-   "epa_per_play_allowed": 0.027
+   "epa_per_play_allowed": 0.03
   },
   {
    "rank": 21,
    "team": "Arizona Cardinals",
    "abbr": "ARI",
-   "epa_per_play_allowed": 0.036
+   "epa_per_play_allowed": 0.039
   },
   {
    "rank": 22,
-   "team": "Buffalo Bills",
-   "abbr": "BUF",
+   "team": "Philadelphia Eagles",
+   "abbr": "PHI",
    "epa_per_play_allowed": 0.04
   },
   {
    "rank": 23,
-   "team": "Philadelphia Eagles",
-   "abbr": "PHI",
-   "epa_per_play_allowed": 0.042
+   "team": "Buffalo Bills",
+   "abbr": "BUF",
+   "epa_per_play_allowed": 0.041
   },
   {
    "rank": 24,
    "team": "Washington Commanders",
    "abbr": "WAS",
-   "epa_per_play_allowed": 0.042
+   "epa_per_play_allowed": 0.044
   },
   {
    "rank": 25,
    "team": "Detroit Lions",
    "abbr": "DET",
-   "epa_per_play_allowed": 0.066
+   "epa_per_play_allowed": 0.065
   },
   {
    "rank": 26,
@@ -356,31 +356,31 @@
    "rank": 27,
    "team": "Indianapolis Colts",
    "abbr": "IND",
-   "epa_per_play_allowed": 0.078
+   "epa_per_play_allowed": 0.079
   },
   {
    "rank": 28,
    "team": "Carolina Panthers",
    "abbr": "CAR",
-   "epa_per_play_allowed": 0.087
+   "epa_per_play_allowed": 0.082
   },
   {
    "rank": 29,
    "team": "Tennessee Titans",
    "abbr": "TEN",
-   "epa_per_play_allowed": 0.097
+   "epa_per_play_allowed": 0.096
   },
   {
    "rank": 30,
    "team": "Las Vegas Raiders",
    "abbr": "LV",
-   "epa_per_play_allowed": 0.108
+   "epa_per_play_allowed": 0.109
   },
   {
    "rank": 31,
    "team": "Miami Dolphins",
    "abbr": "MIA",
-   "epa_per_play_allowed": 0.115
+   "epa_per_play_allowed": 0.116
   },
   {
    "rank": 32,
@@ -394,9 +394,9 @@
    "rank": 1,
    "name": "C.Williams",
    "team": "CHI",
-   "dropbacks": 119,
-   "epa_per_db": 0.309,
-   "cpoe": 7.2
+   "dropbacks": 154,
+   "epa_per_db": 0.288,
+   "cpoe": 6.1
   },
   {
    "rank": 2,
@@ -562,9 +562,9 @@
    "rank": 22,
    "name": "S.Darnold",
    "team": "SEA",
-   "dropbacks": 182,
-   "epa_per_db": -0.045,
-   "cpoe": 1.1
+   "dropbacks": 210,
+   "epa_per_db": -0.06,
+   "cpoe": -1.5
   },
   {
    "rank": 23,

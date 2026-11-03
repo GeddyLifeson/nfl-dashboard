@@ -566,7 +566,7 @@
    "neutral": false,
    "home_margin": -7.4,
    "home_win": 0.282,
-   "line": -8.5,
+   "line": -10.0,
    "results_margin": -6.2,
    "lineup": {
     "BAL": {
@@ -633,7 +633,7 @@
    "neutral": false,
    "home_margin": -4.3,
    "home_win": 0.368,
-   "line": -3.0,
+   "line": -2.5,
    "results_margin": -2.7,
    "lineup": {
     "CAR": {
@@ -774,7 +774,7 @@
    "neutral": false,
    "home_margin": 0.8,
    "home_win": 0.525,
-   "line": 2.5,
+   "line": 1.5,
    "results_margin": 2.2,
    "lineup": {
     "NO": {
@@ -992,7 +992,7 @@
    "neutral": false,
    "home_margin": 9.7,
    "home_win": 0.776,
-   "line": 11.5,
+   "line": 10.5,
    "results_margin": 10.4,
    "lineup": {
     "SEA": {

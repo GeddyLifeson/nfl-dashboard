@@ -990,25 +990,26 @@
    "away": "ARI",
    "home": "SEA",
    "neutral": false,
-   "home_margin": 10.7,
-   "home_win": 0.799,
+   "home_margin": 9.7,
+   "home_win": 0.776,
    "line": 11.5,
    "results_margin": 10.4,
    "lineup": {
     "SEA": {
-     "points": -1.1,
+     "points": -2.1,
      "qb": 0.0,
-     "injuries": -1.1,
+     "injuries": -2.1,
      "notes": [
-      "Drake Thomas (LB, missed last game)",
-      "Rodney Thomas II (S, missed last game)",
+      "Charles Cross (T, missed last game)",
+      "Rashid Shaheed (WR, missed last game)",
+      "Uchenna Nwosu (LB, missed last game)",
       "Christian Haynes (G, missed last game)",
-      "AJ Finley (S, missed last game)"
+      "Anthony Bradford (G, missed last game)"
      ]
     },
     "ARI": {
      "points": -1.4,
-     "qb": 0.0,
+     "qb": 0.1,
      "injuries": -1.4,
      "notes": [
       "Paris Johnson (OL, missed last game)",
@@ -1037,11 +1038,11 @@
      "qb": 0.0,
      "injuries": -0.7,
      "notes": [
-      "T.J. Edwards (LB, missed last game)",
-      "Montez Sweat (DL, missed last game)",
+      "Malik Muhammad (DB, missed last game)",
+      "Cole Kmet (TE, missed last game)",
+      "D'Marco Jackson (LB, missed last game)",
       "Dayo Odeyingbo (DL, missed last game)",
-      "Xavier Woods (DB, missed last game)",
-      "Braxton Jones (OL, missed last game)"
+      "Xavier Woods (DB, missed last game)"
      ]
     },
     "TB": {

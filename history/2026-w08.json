@@ -670,7 +670,7 @@
    "neutral": false,
    "home_margin": -0.6,
    "home_win": 0.481,
-   "line": -6.0,
+   "line": -5.5,
    "results_margin": 0.2,
    "lineup": {
     "IND": {
@@ -705,7 +705,7 @@
    "neutral": false,
    "home_margin": 8.2,
    "home_win": 0.739,
-   "line": 9.5,
+   "line": 10.0,
    "results_margin": 9.1,
    "lineup": {
     "KC": {
@@ -774,7 +774,7 @@
    "neutral": false,
    "home_margin": 0.8,
    "home_win": 0.525,
-   "line": 1.5,
+   "line": 3.0,
    "results_margin": 2.2,
    "lineup": {
     "NO": {
@@ -954,7 +954,7 @@
    "neutral": false,
    "home_margin": 5.1,
    "home_win": 0.655,
-   "line": 3.0,
+   "line": 3.5,
    "results_margin": 4.0,
    "lineup": {
     "NE": {
@@ -992,7 +992,7 @@
    "neutral": false,
    "home_margin": 9.7,
    "home_win": 0.776,
-   "line": 12.5,
+   "line": 8.5,
    "results_margin": 10.4,
    "lineup": {
     "SEA": {

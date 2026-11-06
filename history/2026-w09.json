@@ -218,7 +218,7 @@
    "neutral": false,
    "home_margin": -5.9,
    "home_win": 0.322,
-   "line": -7.0,
+   "line": -6.5,
    "results_margin": -5.5,
    "lineup": {
     "MIA": {
@@ -858,8 +858,8 @@
    "away": "JAX",
    "home": "TEN",
    "neutral": false,
-   "home_margin": -12.9,
-   "home_win": 0.157,
+   "home_margin": -13.0,
+   "home_win": 0.156,
    "line": -10.0,
    "results_margin": -12.7,
    "lineup": {
@@ -874,11 +874,10 @@
      ]
     },
     "JAX": {
-     "points": -0.5,
+     "points": -0.4,
      "qb": 0.0,
-     "injuries": -0.5,
+     "injuries": -0.4,
      "notes": [
-      "Antonio Johnson (S, missed last game)",
       "Anton Harrison (OL, missed last game)",
       "Eric Murray (S, missed last game)"
      ]
@@ -1032,18 +1031,18 @@
    "away": "LAC",
    "home": "BAL",
    "neutral": false,
-   "home_margin": 0.8,
-   "home_win": 0.524,
+   "home_margin": 0.1,
+   "home_win": 0.503,
    "line": 1.5,
    "results_margin": 3.6,
    "lineup": {
     "BAL": {
-     "points": -3.9,
+     "points": -4.6,
      "qb": -2.2,
-     "injuries": -1.7,
+     "injuries": -2.4,
      "notes": [
       "Joe Fagnano starting instead of the usual QB (-2.2)",
-      "Olaivavega Ioane (G, missed last game)",
+      "Nate Wiggins (CB, missed last game)",
       "Jaylinn Hawkins (S, missed last game)",
       "Tavius Robinson (LB, missed last game)",
       "Emery Jones (G, missed last game)",

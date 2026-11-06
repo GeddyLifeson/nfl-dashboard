@@ -182,7 +182,7 @@
    "neutral": false,
    "home_margin": 8.2,
    "home_win": 0.739,
-   "line": 10.0,
+   "line": 9.5,
    "results_margin": 9.1,
    "lineup": {
     "KC": {
@@ -251,7 +251,7 @@
    "neutral": false,
    "home_margin": 0.7,
    "home_win": 0.523,
-   "line": 3.0,
+   "line": 3.5,
    "results_margin": 2.1,
    "lineup": {
     "NO": {
@@ -285,7 +285,7 @@
    "neutral": false,
    "home_margin": 1.1,
    "home_win": 0.533,
-   "line": -3.5,
+   "line": -3.0,
    "results_margin": 0.8,
    "lineup": {
     "PHI": {

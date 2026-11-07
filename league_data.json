@@ -9865,7 +9865,7 @@
    "neutral": false,
    "home_margin": -4.4,
    "home_win": 0.366,
-   "line": -2.5,
+   "line": -3.0,
    "results_margin": -2.8,
    "lineup": {
     "CAR": {
@@ -9902,7 +9902,7 @@
    "neutral": false,
    "home_margin": -0.5,
    "home_win": 0.483,
-   "line": -5.5,
+   "line": -4.5,
    "results_margin": 0.3,
    "lineup": {
     "IND": {

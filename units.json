@@ -18,7 +18,7 @@
    "rank": 3,
    "team": "Cincinnati Bengals",
    "abbr": "CIN",
-   "epa_per_play": 0.139
+   "epa_per_play": 0.14
   },
   {
    "rank": 4,
@@ -156,25 +156,25 @@
    "rank": 26,
    "team": "Tampa Bay Buccaneers",
    "abbr": "TB",
-   "epa_per_play": -0.086
+   "epa_per_play": -0.09
   },
   {
    "rank": 27,
    "team": "Indianapolis Colts",
    "abbr": "IND",
-   "epa_per_play": -0.094
+   "epa_per_play": -0.093
   },
   {
    "rank": 28,
    "team": "Minnesota Vikings",
    "abbr": "MIN",
-   "epa_per_play": -0.098
+   "epa_per_play": -0.097
   },
   {
    "rank": 29,
    "team": "Atlanta Falcons",
    "abbr": "ATL",
-   "epa_per_play": -0.103
+   "epa_per_play": -0.102
   },
   {
    "rank": 30,
@@ -224,7 +224,7 @@
    "rank": 5,
    "team": "Green Bay Packers",
    "abbr": "GB",
-   "epa_per_play_allowed": -0.09
+   "epa_per_play_allowed": -0.089
   },
   {
    "rank": 6,
@@ -236,7 +236,7 @@
    "rank": 7,
    "team": "Atlanta Falcons",
    "abbr": "ATL",
-   "epa_per_play_allowed": -0.066
+   "epa_per_play_allowed": -0.065
   },
   {
    "rank": 8,
@@ -264,15 +264,15 @@
   },
   {
    "rank": 12,
-   "team": "Cleveland Browns",
-   "abbr": "CLE",
-   "epa_per_play_allowed": -0.016
+   "team": "Pittsburgh Steelers",
+   "abbr": "PIT",
+   "epa_per_play_allowed": -0.02
   },
   {
    "rank": 13,
-   "team": "Pittsburgh Steelers",
-   "abbr": "PIT",
-   "epa_per_play_allowed": -0.016
+   "team": "Cleveland Browns",
+   "abbr": "CLE",
+   "epa_per_play_allowed": -0.015
   },
   {
    "rank": 14,
@@ -302,7 +302,7 @@
    "rank": 18,
    "team": "Cincinnati Bengals",
    "abbr": "CIN",
-   "epa_per_play_allowed": 0.022
+   "epa_per_play_allowed": 0.023
   },
   {
    "rank": 19,
@@ -362,7 +362,7 @@
    "rank": 28,
    "team": "Carolina Panthers",
    "abbr": "CAR",
-   "epa_per_play_allowed": 0.082
+   "epa_per_play_allowed": 0.083
   },
   {
    "rank": 29,

@@ -9870,7 +9870,7 @@
    "neutral": false,
    "home_margin": -7.3,
    "home_win": 0.285,
-   "line": -3.0,
+   "line": -2.5,
    "results_margin": -2.8,
    "lineup": {
     "CAR": {
@@ -10021,7 +10021,7 @@
    "neutral": false,
    "home_margin": 0.3,
    "home_win": 0.511,
-   "line": 3.5,
+   "line": 3.0,
    "results_margin": 2.1,
    "lineup": {
     "NO": {

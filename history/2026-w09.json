@@ -10,19 +10,19 @@
   "CHI": 6,
   "LAR": 7,
   "NE": 8,
-  "KC": 9,
-  "DET": 10,
-  "DEN": 11,
-  "CIN": 12,
+  "CIN": 9,
+  "KC": 10,
+  "DET": 11,
+  "DEN": 12,
   "PIT": 13,
   "TB": 14,
-  "GB": 15,
-  "HOU": 16,
+  "HOU": 15,
+  "GB": 16,
   "DAL": 17,
-  "ATL": 18,
-  "NYG": 19,
-  "BAL": 20,
-  "CAR": 21,
+  "NYG": 18,
+  "BAL": 19,
+  "CAR": 20,
+  "ATL": 21,
   "IND": 22,
   "WAS": 23,
   "LV": 24,
@@ -36,38 +36,38 @@
   "TEN": 32
  },
  "ratings": {
-  "JAX": 7.95,
+  "JAX": 8.0,
   "BUF": 5.05,
-  "SF": 4.38,
-  "SEA": 4.14,
-  "MIN": 3.66,
-  "CHI": 3.63,
-  "LAR": 3.51,
+  "SF": 4.33,
+  "SEA": 4.13,
+  "MIN": 3.65,
+  "CHI": 3.58,
+  "LAR": 3.5,
   "NE": 3.34,
+  "CIN": 3.17,
   "KC": 2.84,
-  "DET": 2.72,
+  "DET": 2.71,
   "DEN": 2.54,
-  "CIN": 2.39,
   "PIT": 1.91,
   "TB": 1.41,
-  "GB": 1.28,
-  "HOU": 1.18,
+  "HOU": 1.24,
+  "GB": 1.22,
   "DAL": -0.98,
-  "ATL": -1.63,
   "NYG": -1.97,
-  "BAL": -2.21,
-  "CAR": -2.25,
-  "IND": -2.73,
-  "WAS": -2.85,
+  "BAL": -2.2,
+  "CAR": -2.3,
+  "ATL": -2.37,
+  "IND": -2.72,
+  "WAS": -2.86,
   "LV": -3.13,
-  "PHI": -3.2,
-  "NO": -3.5,
+  "PHI": -3.21,
+  "NO": -3.55,
   "CLE": -3.64,
   "LAC": -3.79,
   "NYJ": -4.25,
-  "ARI": -4.28,
-  "MIA": -4.78,
-  "TEN": -6.71
+  "ARI": -4.29,
+  "MIA": -4.74,
+  "TEN": -6.66
  },
  "upcoming": [
   {
@@ -114,8 +114,8 @@
    "home": "CAR",
    "neutral": false,
    "home_margin": -7.3,
-   "home_win": 0.285,
-   "line": -2.5,
+   "home_win": 0.283,
+   "line": -3.0,
    "results_margin": -2.8,
    "lineup": {
     "CAR": {
@@ -153,7 +153,7 @@
    "neutral": false,
    "home_margin": -1.0,
    "home_win": 0.468,
-   "line": -5.5,
+   "line": -4.5,
    "results_margin": 0.3,
    "lineup": {
     "IND": {
@@ -227,10 +227,10 @@
    "away": "DET",
    "home": "MIA",
    "neutral": false,
-   "home_margin": -1.8,
-   "home_win": 0.444,
+   "home_margin": -1.7,
+   "home_win": 0.446,
    "line": -6.5,
-   "results_margin": -5.5,
+   "results_margin": -5.4,
    "lineup": {
     "MIA": {
      "points": -0.7,
@@ -265,8 +265,8 @@
    "home": "NO",
    "neutral": false,
    "home_margin": 0.3,
-   "home_win": 0.511,
-   "line": 3.0,
+   "home_win": 0.509,
+   "line": 4.5,
    "results_margin": 2.1,
    "lineup": {
     "NO": {
@@ -378,8 +378,8 @@
    "home": "LAC",
    "neutral": false,
    "home_margin": -3.7,
-   "home_win": 0.387,
-   "line": -6.0,
+   "home_win": 0.385,
+   "line": -5.5,
    "results_margin": -3.0,
    "lineup": {
     "LAC": {
@@ -415,8 +415,8 @@
    "home": "SF",
    "neutral": false,
    "home_margin": 8.4,
-   "home_win": 0.744,
-   "line": 9.5,
+   "home_win": 0.743,
+   "line": 8.5,
    "results_margin": 9.5,
    "lineup": {
     "SF": {
@@ -451,7 +451,7 @@
    "home": "NE",
    "neutral": false,
    "home_margin": 5.5,
-   "home_win": 0.665,
+   "home_win": 0.667,
    "line": 3.0,
    "results_margin": 4.1,
    "lineup": {
@@ -527,7 +527,7 @@
    "home": "CHI",
    "neutral": false,
    "home_margin": 4.8,
-   "home_win": 0.647,
+   "home_win": 0.645,
    "line": 6.0,
    "results_margin": 4.2,
    "lineup": {
@@ -563,7 +563,7 @@
    "home": "MIN",
    "neutral": false,
    "home_margin": 1.4,
-   "home_win": 0.544,
+   "home_win": 0.543,
    "line": -3.0,
    "results_margin": 0.6,
    "lineup": {
@@ -601,8 +601,8 @@
    "home": "NYG",
    "neutral": false,
    "home_margin": -1.0,
-   "home_win": 0.468,
-   "line": 1.5,
+   "home_win": 0.469,
+   "line": null,
    "results_margin": 2.9,
    "lineup": {
     "NYG": {
@@ -640,7 +640,7 @@
    "neutral": true,
    "home_margin": 0.9,
    "home_win": 0.527,
-   "line": -1.5,
+   "line": null,
    "results_margin": -0.6,
    "lineup": {
     "DET": {
@@ -674,10 +674,10 @@
    "away": "KC",
    "home": "ATL",
    "neutral": false,
-   "home_margin": -0.8,
-   "home_win": 0.476,
-   "line": -3.0,
-   "results_margin": -2.5,
+   "home_margin": -1.5,
+   "home_win": 0.453,
+   "line": null,
+   "results_margin": -3.2,
    "lineup": {
     "ATL": {
      "points": -0.8,
@@ -707,10 +707,10 @@
    "away": "HOU",
    "home": "CLE",
    "neutral": false,
-   "home_margin": -2.4,
-   "home_win": 0.425,
-   "line": -4.5,
-   "results_margin": -2.8,
+   "home_margin": -2.5,
+   "home_win": 0.423,
+   "line": null,
+   "results_margin": -2.9,
    "lineup": {
     "CLE": {
      "points": 0.1,
@@ -740,8 +740,8 @@
    "home": "GB",
    "neutral": false,
    "home_margin": -2.8,
-   "home_win": 0.414,
-   "line": 3.0,
+   "home_win": 0.413,
+   "line": null,
    "results_margin": -0.4,
    "lineup": {
     "GB": {
@@ -775,10 +775,10 @@
    "away": "MIA",
    "home": "IND",
    "neutral": false,
-   "home_margin": 3.0,
-   "home_win": 0.591,
-   "line": 2.5,
-   "results_margin": 4.1,
+   "home_margin": 2.9,
+   "home_win": 0.59,
+   "line": null,
+   "results_margin": 4.0,
    "lineup": {
     "IND": {
      "points": -1.7,
@@ -809,10 +809,10 @@
    "away": "CAR",
    "home": "NO",
    "neutral": false,
-   "home_margin": 2.5,
+   "home_margin": 2.6,
    "home_win": 0.579,
-   "line": -1.5,
-   "results_margin": 0.7,
+   "line": null,
+   "results_margin": 0.8,
    "lineup": {
     "NO": {
      "points": -1.3,
@@ -849,7 +849,7 @@
    "neutral": false,
    "home_margin": -7.6,
    "home_win": 0.276,
-   "line": -7.5,
+   "line": null,
    "results_margin": -7.3,
    "lineup": {
     "NYJ": {
@@ -885,7 +885,7 @@
    "neutral": false,
    "home_margin": -13.0,
    "home_win": 0.156,
-   "line": -10.0,
+   "line": null,
    "results_margin": -12.7,
    "lineup": {
     "TEN": {
@@ -918,7 +918,7 @@
    "neutral": false,
    "home_margin": -5.9,
    "home_win": 0.323,
-   "line": -8.5,
+   "line": null,
    "results_margin": -5.8,
    "lineup": {
     "ARI": {
@@ -987,10 +987,10 @@
    "away": "SF",
    "home": "DAL",
    "neutral": false,
-   "home_margin": -2.6,
-   "home_win": 0.421,
-   "line": -3.5,
-   "results_margin": -3.4,
+   "home_margin": -2.5,
+   "home_win": 0.422,
+   "line": null,
+   "results_margin": -3.3,
    "lineup": {
     "DAL": {
      "points": -0.9,
@@ -1023,10 +1023,10 @@
    "away": "PIT",
    "home": "CIN",
    "neutral": false,
-   "home_margin": 2.4,
-   "home_win": 0.574,
-   "line": 3.5,
-   "results_margin": 2.5,
+   "home_margin": 3.2,
+   "home_win": 0.598,
+   "line": null,
+   "results_margin": 3.3,
    "lineup": {
     "CIN": {
      "points": -0.6,
@@ -1058,7 +1058,7 @@
    "neutral": false,
    "home_margin": 2.1,
    "home_win": 0.565,
-   "line": 1.5,
+   "line": null,
    "results_margin": 3.6,
    "lineup": {
     "BAL": {

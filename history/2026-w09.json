@@ -564,7 +564,7 @@
    "neutral": false,
    "home_margin": 1.6,
    "home_win": 0.549,
-   "line": -3.0,
+   "line": -3.5,
    "results_margin": 0.8,
    "lineup": {
     "MIN": {
@@ -641,7 +641,7 @@
    "neutral": true,
    "home_margin": -1.5,
    "home_win": 0.453,
-   "line": 3.0,
+   "line": 2.5,
    "results_margin": 1.0,
    "lineup": {
     "DET": {
@@ -913,7 +913,7 @@
    "neutral": false,
    "home_margin": -5.0,
    "home_win": 0.348,
-   "line": -7.0,
+   "line": -8.5,
    "results_margin": -6.0,
    "lineup": {
     "ARI": {
@@ -952,7 +952,7 @@
    "neutral": false,
    "home_margin": -5.0,
    "home_win": 0.348,
-   "line": -3.5,
+   "line": -3.0,
    "results_margin": -6.2,
    "lineup": {
     "LV": {
@@ -987,7 +987,7 @@
    "neutral": false,
    "home_margin": -4.5,
    "home_win": 0.363,
-   "line": -3.5,
+   "line": -4.5,
    "results_margin": -3.6,
    "lineup": {
     "DAL": {

@@ -9859,7 +9859,7 @@
    "neutral": false,
    "home_margin": 1.1,
    "home_win": 0.535,
-   "line": 1.5,
+   "line": 2.5,
    "results_margin": 3.6,
    "lineup": {
     "NYG": {
@@ -10137,7 +10137,7 @@
    "neutral": false,
    "home_margin": -12.9,
    "home_win": 0.157,
-   "line": -9.5,
+   "line": -10.0,
    "results_margin": -12.6,
    "lineup": {
     "TEN": {
@@ -10170,7 +10170,7 @@
    "neutral": false,
    "home_margin": -5.0,
    "home_win": 0.348,
-   "line": -8.5,
+   "line": -9.5,
    "results_margin": -6.0,
    "lineup": {
     "ARI": {
@@ -10244,7 +10244,7 @@
    "neutral": false,
    "home_margin": -4.5,
    "home_win": 0.363,
-   "line": -4.5,
+   "line": -3.5,
    "results_margin": -3.6,
    "lineup": {
     "DAL": {

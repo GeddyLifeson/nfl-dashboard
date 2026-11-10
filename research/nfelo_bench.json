@@ -1,0 +1,37 @@
+{
+ "sam": {
+  "games": 408,
+  "winners": 0.6256,
+  "mse": 159.9,
+  "mae": 10.15,
+  "log_loss": 0.6407
+ },
+ "scores_only": {
+  "games": 408,
+  "winners": 0.6256,
+  "mse": 165.0,
+  "mae": 10.16,
+  "log_loss": 0.6393
+ },
+ "nfelo_model": {
+  "games": 408,
+  "winners": 0.6355,
+  "mse": 154.0,
+  "mae": 9.85,
+  "log_loss": 0.6246
+ },
+ "nfelo_blend": {
+  "games": 408,
+  "winners": 0.6502,
+  "mse": 148.6,
+  "mae": 9.7,
+  "log_loss": 0.6177
+ },
+ "close": {
+  "games": 408,
+  "winners": 0.665,
+  "mse": 148.7,
+  "mae": 9.64,
+  "log_loss": 0.6143
+ }
+}

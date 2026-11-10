@@ -1,5 +1,6 @@
 """SAM's multi-factor model: the scores rating plus play-by-play efficiency, the starting QB, missing starters,
-rest, travel, wind and coaching changes, combined by a ridge regression fitted on 2014-2024 and tested, frozen,
+rest, travel, wind, coaching changes, a 538-style QB value, nfelo's weighted EPA and a win-total preseason prior
+(extras.py), combined by a ridge regression fitted on 2014-2024 and tested, frozen,
 on 2025-2026 (research/mf_backtest.py, research/mf_tests.py). Every feature uses only what was known before kickoff.
 
   python multifactor.py fit    # rebuild features since 2013 and refit -> sam_params.json (a few minutes)
@@ -12,6 +13,7 @@ import nflv
 from model import Engine, load_games, load_params, predict
 from teams import ABBRS, IDX
 from lineup import FIX, GROUPS, Season
+import extras
 
 N = len(ABBRS)
 TZ = dict(ARI=-7, ATL=-5, BAL=-5, BUF=-5, CAR=-5, CHI=-6, CIN=-5, CLE=-5, DAL=-6, DEN=-7, DET=-5, GB=-6, HOU=-6,
@@ -22,8 +24,8 @@ EFF = ['off_epa', 'def_epa', 'off_pass_epa', 'def_pass_epa', 'off_rush_epa', 'de
 LINEUP = ['qb'] + ['miss_' + g for g in GROUPS]
 SITU = ['home', 'rest', 'bye', 'tz_shift', 'west_early', 'wind_x_pass']
 COACH = ['new_coach', 'mid_change']
-NAMES = ['base'] + EFF + LINEUP + SITU + COACH
-TEAM_LEVEL = ['base'] + EFF + COACH          # features that describe the team itself (for the power rating)
+NAMES = ['base'] + EFF + LINEUP + SITU + COACH + extras.NAMES
+TEAM_LEVEL = ['base'] + EFF + COACH + ['qb538_level', 'wepa', 'wt', 'wt_early']   # features that describe the team itself (power rating)
 PRIOR_PLAYS, CARRY, SHRINK = 200.0, 0.6, 60.0
 TRAIN, TEST = tuple(range(2014, 2025)), (2025, 2026)
 PARAMS = 'sam_params.json'
@@ -101,10 +103,11 @@ class Context:
         v['mid_change'] = float(t in self.first_coach and self.cur_coach.get(t) != self.first_coach.get(t))
         return v
 
-    def features(self, g, r, home_qb=None, away_qb=None):
+    def features(self, g, r, home_qb=None, away_qb=None, extra=None):
         h, a, w = g['home'], g['away'], self.week
         th, ta = self.team(h), self.team(a)
-        f = {k: th[k] - ta[k] for k in TEAM_LEVEL}
+        f = {k: th[k] - ta[k] for k in TEAM_LEVEL if k in th}
+        f.update({k: (extra or {}).get(k, 0.0) for k in extras.NAMES})
         f['base'] = predict(self.r_scores, g, self.p)
         f['home'] = 0.0 if g['neutral'] else 1.0
         f['qb'] = self.ss.qb(h, home_qb or r.get('home_qb_id'), w) - self.ss.qb(a, away_qb or r.get('away_qb_id'), w)
@@ -129,13 +132,14 @@ def build_rows(seasons, games_path):
     eng = Engine(games, p)
     info = {r['game_id']: r for r in csv.DictReader(open(games_path))}
     rows, prev_tg = [], team_games(min(seasons) - 1)
+    ex, _ = extras.compute(games_path, first=min(seasons) - 1)
     for s in seasons:
         tg, ss = team_games(s), Season(s)
         for w in sorted({g['week'] for g in games if g['season'] == s and g['margin'] is not None}):
             ctx = Context(s, w, tg, prev_tg, eng, p, ss)
             for g in games:
                 if g['season'] == s and g['week'] == w and g['margin'] is not None:
-                    rows.append(dict(season=s, week=w, id=g['id'], margin=g['margin'], spread=g['spread'], f=ctx.features(g, info[g['id']])))
+                    rows.append(dict(season=s, week=w, id=g['id'], margin=g['margin'], spread=g['spread'], f=ctx.features(g, info[g['id']], extra=ex.get(g['id']))))
         prev_tg = tg
     return rows
 
@@ -190,11 +194,24 @@ def fit():
             best = (lam, float(np.mean(err)))
     m = _fit(train, best[0])
     sigma = float(np.std([margin(m, r['f']) - r['margin'] for r in train]))
+    # SAM + market: weight on SAM vs the closing line, fitted on out-of-fold training predictions
+    oof = []
+    for s in TRAIN:
+        mf = _fit([r for r in train if r['season'] != s], best[0])
+        oof += [(margin(mf, r['f']), r['spread'], r['margin']) for r in train if r['season'] == s and r['spread'] is not None]
+    P, L, Y = map(np.array, zip(*oof))
+    ws = np.linspace(0, 1, 101)
+    wsam = float(ws[np.argmin([np.mean((w * P + (1 - w) * L - Y) ** 2) for w in ws])])
+    sig_blend = float(np.std(wsam * P + (1 - wsam) * L - Y))
     test = [r for r in rows if r['season'] in TEST and r['spread'] is not None]
     line = np.array([r['spread'] for r in test]); y = np.array([r['margin'] for r in test], float); nt = y != 0
+    blend_rows = [dict(r, f=dict(r['f'], _b=wsam * margin(m, r['f']) + (1 - wsam) * r['spread'])) for r in test]
+    blend = score(dict(names=['_b'], mu=[0.0], sd=[1.0], b=[1.0], intercept=0.0), blend_rows, sig_blend)
     out = dict(made=str(pd.Timestamp.today().date()), trained_on=[TRAIN[0], TRAIN[-1]], tested_on=list(TEST), model=m, sigma=round(sigma, 2),
+               blend=dict(weight_on_sam=wsam, sigma=round(sig_blend, 2)),
                test=dict(sam=score(m, test, sigma), closing_line=dict(games=len(test), winners=round(float(np.mean((line[nt] > 0) == (y[nt] > 0))), 4),
                                                                      mse=round(float(np.mean((line - y) ** 2)), 1)),
+                         sam_plus_market=blend,
                          scores_only=score(dict(names=['base'], mu=[0.0], sd=[1.0], b=[1.0], intercept=0.0), test, load_params()['sigma'])))
     json.dump(out, open(PARAMS, 'w'), indent=1)
     print(json.dumps(out['test']), 'lambda', best[0], 'sigma', out['sigma'])
@@ -209,19 +226,25 @@ def live_context(season, week, games, p):
     return Context(season, week, team_games(season), team_games(season - 1), eng, p, Season(season))
 
 
-def predict_upcoming(ctx, sp, g, r, home_qb=None, away_qb=None):
+def predict_upcoming(ctx, sp, g, r, home_qb=None, away_qb=None, extra=None):
     """(home margin, home win chance, features) for an unplayed game."""
-    f = ctx.features(g, r, home_qb, away_qb)
+    f = ctx.features(g, r, home_qb, away_qb, extra)
     x = margin(sp['model'], f)
     return x, win_prob(x, sp['sigma']), f
 
 
-def team_ratings(ctx, sp):
+def team_ratings(ctx, sp, team_now=None):
     """Points better than an average team on a neutral field, nobody missing: the team-level part of the model."""
     m = sp['model']
     coef = {n: b / sd for n, b, sd in zip(m['names'], m['b'], m['sd'])}
-    vals = {t: ctx.team(t) for t in ABBRS}
-    raw = {t: sum(coef[k] * v[k] for k in TEAM_LEVEL) for t, v in vals.items()}
+    fade = max(0.0, 1 - (ctx.week - 1) / 8)
+    vals = {}
+    for t in ABBRS:
+        v = ctx.team(t)
+        now = (team_now or {}).get(t, {})
+        v.update(qb538_level=now.get('qb538_level', 0.0), wepa=now.get('wepa', 0.0), wt=now.get('wt', 0.0), wt_early=now.get('wt', 0.0) * fade)
+        vals[t] = v
+    raw = {t: sum(coef.get(k, 0.0) * v[k] for k in TEAM_LEVEL) for t, v in vals.items()}
     mean = sum(raw.values()) / len(raw)
     return {t: x - mean for t, x in raw.items()}
 

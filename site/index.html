@@ -341,7 +341,7 @@ function gameCard(g) {
 function games() {
   const weeks = [...new Set(D.games.map(g => g.week))];
   const out = [el('h2', {}, 'Predictions'),
-    el('p', { class: 'note' }, 'SAM\'s pick comes from its multi-factor model: scores, efficiency per play, the starting QB from today\'s depth chart, missing starters from the latest injury report, rest, travel, wind and coaching changes. Fitted on 2014-2024 and tested on 2025-2026 without refitting. "Scores model" is the old pick from final scores plus the QB and injury correction. The market line is shown for comparison; where SAM and the market disagree, the market has been right more often so far.')];
+    el('p', { class: 'note' }, 'SAM\'s pick comes from its multi-factor model: scores, efficiency per play (including nfelo-style weighted EPA), a 538-style QB value with today\'s starter swapped in, missing starters from the latest injury report, a preseason prior from betting win totals, rest, travel, wind and coaching changes. "SAM + market" mixes SAM with the market line (weight fitted on past seasons) and is shown only as a second number. Fitted on 2014-2024 and tested on 2025-2026 without refitting. "Scores model" is the old pick from final scores plus the QB and injury correction. The market line is shown for comparison; where SAM and the market disagree, the market has been right more often so far.')];
   for (const w of weeks) {
     const rows = D.games.filter(g => g.week === w).map(g => {
       const homeFav = g.home_margin > 0;
@@ -351,6 +351,7 @@ function games() {
       const om = g.lineup_margin === undefined ? null : g.lineup_margin;
       return { day: g.day, game: g.away + ' @ ' + g.home, pick: fav, by: Math.abs(g.home_margin), prob: homeFav ? g.home_win : 1 - g.home_win,
         old: om === null ? '' : (om > 0 ? g.home : g.away) + ' by ' + Math.abs(om).toFixed(1),
+        mkt: g.sam_market ? (g.sam_market.margin > 0 ? g.home : g.away) + ' by ' + Math.abs(g.sam_market.margin).toFixed(1) : '',
         line: g.line === null ? '' : g.home + ' ' + signed(-g.line, 1), disagree: lineFav && lineFav !== fav, adj,
         notes: Object.values(g.lineup || {}).flatMap(a => (a && a.notes) || []).join('; ') };
     });
@@ -359,6 +360,7 @@ function games() {
       { key: 'pick', label: 'Pick', render: r => el('td', {}, el('b', {}, r.pick), ' by ' + r.by.toFixed(1)) },
       { key: 'prob', label: 'Win chance', num: true, render: r => pct(r.prob) },
       { key: 'old', label: 'Scores model', render: r => r.old },
+      { key: 'mkt', label: 'SAM + market', render: r => r.mkt },
       { key: 'line', label: 'Market', render: r => el('td', {}, r.line, r.disagree ? el('span', { class: 'tag warn', title: 'Market picks the other team' }, ' differs') : '') },
       { key: 'adj', label: 'Lineup', title: 'Points from QB changes and injuries' },
       { key: 'notes', label: 'Who is missing', render: r => el('td', { class: 'muted', title: r.notes }, r.notes.length > 90 ? r.notes.slice(0, 90) + '...' : r.notes) },
@@ -458,7 +460,11 @@ function model() {
     el('p', { class: 'note' }, 'Fitted on ' + sm.trained_on.join('-') + ', then frozen and tested on every ' + sm.tested_on.join('-') + ' game with a closing line, using only information from before each game. Margin error is mean squared error (lower is better); win-chance error is log loss.'),
     table([{ key: 'k', label: 'Test' }, { key: 'games', label: 'Games', num: true }, { key: 'winners', label: 'Picks winner', num: true, render: r => (r.winners * 100).toFixed(1) + '%' },
       { key: 'mse', label: 'Margin error', num: true }, { key: 'log_loss', label: 'Win-chance error', num: true, render: r => r.log_loss === undefined ? '' : r.log_loss.toFixed(4) }],
-      [{ k: 'SAM multi-factor', ...sm.test.sam }, ...(sm.test.scores_only ? [{ k: 'Scores only (old model)', ...sm.test.scores_only }] : []), { k: 'Closing market line', ...sm.test.closing_line }])] : [];
+      [{ k: 'SAM multi-factor (headline)', ...sm.test.sam }, ...(sm.test.scores_only ? [{ k: 'Scores only (old model)', ...sm.test.scores_only }] : []),
+       ...(sm.nfelo && sm.nfelo.nfelo_model ? [{ k: 'nfelo, its own number (benchmark)', ...sm.nfelo.nfelo_model }] : []),
+       ...(sm.test.sam_plus_market ? [{ k: 'SAM + market (second number)', ...sm.test.sam_plus_market }] : []),
+       ...(sm.nfelo && sm.nfelo.nfelo_blend ? [{ k: 'nfelo + market (benchmark)', ...sm.nfelo.nfelo_blend }] : []),
+       { k: 'Closing market line', ...sm.test.closing_line }])] : [];
   return [...samPart, ...blendPart, el('h2', {}, 'Game predictions'),
     el('p', { class: 'note' }, 'Settings tuned on 2022-2024, then frozen and tested week by week on later seasons, using only games before each prediction. Error is mean squared error of the predicted margin (lower is better).'),
     table([{ key: 'k', label: 'Test' }, { key: 'games', label: 'Games', num: true }, { key: 'model_acc', label: 'Model picks winner', num: true, render: r => pct(r.model_acc) },

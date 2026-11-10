@@ -47,17 +47,20 @@ def sam_model(season, week, games, p):
         e = Engine(games, p)
         tg, prev_tg, ss = multifactor.team_games(season), multifactor.team_games(season - 1), multifactor.Season(season)
         ctx = multifactor.Context(season, week + 1, tg, prev_tg, e, p, ss)
-        prev = multifactor.team_ratings(multifactor.Context(season, week, tg, prev_tg, e, p, ss), sp) if week > 1 else None
+        prev = None   # moved below, once the extra features are loaded
         info = {r['game_id']: r for r in csv.DictReader(open('data/games.csv'))}
         qb1 = {t: gid for t, (_, gid, _) in qb_adjust.starters(season).items()}
+        import extras
+        ex, team_now = extras.compute('data/games.csv', first=min(g['season'] for g in games), qb_override=qb1)
+        prev = multifactor.team_ratings(multifactor.Context(season, week, tg, prev_tg, e, p, ss), sp, team_now) if week > 1 else None
     except Exception as ex:
         print(f"(SAM model skipped: {ex})")
         return None
 
     def pred(g):
-        x, w, f = multifactor.predict_upcoming(ctx, sp, g, info.get(g['id'], {}), qb1.get(g['home']), qb1.get(g['away']))
+        x, w, f = multifactor.predict_upcoming(ctx, sp, g, info.get(g['id'], {}), qb1.get(g['home']), qb1.get(g['away']), ex.get(g['id']))
         return x, w, {k: round(float(v), 3) for k, v in f.items()}
-    return dict(ratings=multifactor.team_ratings(ctx, sp), prev=prev, predict=pred)
+    return dict(ratings=multifactor.team_ratings(ctx, sp, team_now), prev=prev, predict=pred, blend=sp.get('blend'))
 
 
 def short_date(iso):
@@ -146,10 +149,15 @@ def main():
                     m, win, factors = sam['predict'](g)
                 except Exception as ex:
                     print(f"(SAM model skipped for {g['id']}: {ex})")
+            mkt = None
+            if factors and g['spread'] is not None and sam.get('blend'):
+                bw = sam['blend']
+                bm = bw['weight_on_sam'] * m + (1 - bw['weight_on_sam']) * g['spread']
+                mkt = dict(margin=round(bm, 1), win=round(win_prob(bm, bw['sigma']), 3), weight_on_sam=bw['weight_on_sam'])
             upcoming.append(dict(id=g['id'], week=g['week'], day=g['day'], away=display_abbr(g['away']), home=display_abbr(g['home']),
                                  neutral=g['neutral'], home_margin=round(m, 1), home_win=round(win, 3),
                                  line=g['spread'], results_margin=round(base, 1), lineup_margin=round(old_m, 1),
-                                 model='SAM multi-factor' if factors else 'scores + lineup', factors=factors,
+                                 model='SAM multi-factor' if factors else 'scores + lineup', factors=factors, sam_market=mkt,
                                  lineup={display_abbr(g['home']): ah, display_abbr(g['away']): aa}))
 
     out = dict(season=season, week=week, through=short_date(max(g['day'] for g in played)),

@@ -9956,7 +9956,7 @@
    "neutral": false,
    "home_margin": 0.4,
    "home_win": 0.513,
-   "line": 4.5,
+   "line": 5.5,
    "results_margin": 1.7,
    "lineup": {
     "GB": {
@@ -10171,7 +10171,7 @@
    "neutral": false,
    "home_margin": -5.0,
    "home_win": 0.349,
-   "line": -3.5,
+   "line": -4.5,
    "results_margin": -6.2,
    "lineup": {
     "LV": {
@@ -10206,7 +10206,7 @@
    "neutral": false,
    "home_margin": -4.5,
    "home_win": 0.362,
-   "line": -3.5,
+   "line": -4.5,
    "results_margin": -3.6,
    "lineup": {
     "DAL": {

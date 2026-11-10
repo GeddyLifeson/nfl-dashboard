@@ -1,0 +1,13 @@
+3215 games with a referee, 35 referees, seasons 2014-2026
+
+== Do crews differ beyond chance? (2014-24, permutation test; p < 0.05 means real differences)
+  flags per game                     p = 0.000   crew range (80+ games): +10.88 to +14.85
+  penalty-yard edge to home team     p = 0.143   crew range (80+ games): -2.40 to +10.56
+  home margin minus spread           p = 0.584   crew range (80+ games): -2.30 to +1.90
+  total points minus the total line  p = 0.500   crew range (80+ games): -1.37 to +2.45
+
+== Out of sample: crew effect from 2014-24 (shrunk to 0 by k games), applied to 2025-26
+  flags                test games 316, correlation with what happened +0.097
+  home penalty edge    test games 316, correlation with what happened -0.075
+  home vs spread       test games 316, correlation with what happened -0.047 | betting the crew lean (|effect| >= 0.5 pts): 75-81 (0.481)
+  points vs total      test games 316, correlation with what happened -0.124 | betting the crew lean (|effect| >= 0.5 pts): 70-90 (0.438)

@@ -1,2 +1,3 @@
 numpy
+pandas
 playwright  # only for tiktok.py

@@ -1,0 +1,38 @@
+{
+ "E all factors (current best)": {
+  "games": 408,
+  "winners": 0.6256,
+  "mse": 159.9,
+  "log_loss": 0.6407
+ },
+ "E + qb_level": {
+  "games": 408,
+  "winners": 0.6305,
+  "mse": 161.2,
+  "log_loss": 0.6422
+ },
+ "E + team_hfa": {
+  "games": 408,
+  "winners": 0.6379,
+  "mse": 160.1,
+  "log_loss": 0.6411
+ },
+ "E with 0.9/week decay": {
+  "games": 408,
+  "winners": 0.6256,
+  "mse": 160.3,
+  "log_loss": 0.6411
+ },
+ "E with 0.8/week decay": {
+  "games": 408,
+  "winners": 0.6256,
+  "mse": 160.8,
+  "log_loss": 0.6418
+ },
+ "E + both base and 0.9 decay": {
+  "games": 408,
+  "winners": 0.6207,
+  "mse": 160.2,
+  "log_loss": 0.6402
+ }
+}

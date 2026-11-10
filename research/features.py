@@ -63,6 +63,20 @@ def adjusted(tg, metric, prior_off=None, prior_def=None, prior_plays=0.0, shrink
     return x[:N], x[N:]
 
 
+def rate_decay(games, k, hfa, base, carry, week, decay):
+    """Like model.rate, but each game weighted decay**(weeks ago); the prior keeps weight k."""
+    from model import N as NT
+    prior = np.zeros(NT) if base is None else carry * base
+    M = np.diag(np.full(NT, float(k))); b = k * prior
+    for g in games:
+        h, a = IDX[g['home']], IDX[g['away']]
+        w = decay ** (week - g['week'] - 1)
+        m = g['margin'] - (0.0 if g['neutral'] else hfa)
+        M[h, h] += w; M[a, a] += w; M[h, a] -= w; M[a, h] -= w
+        b[h] += w * m; b[a] -= w * m
+    return np.linalg.solve(M, b)
+
+
 def build(seasons, prior_plays=200.0, carry=0.6, games_path='cache/games_2012.csv'):
     games, p = load_games(games_path), load_params()
     eng = Engine(games, p)
@@ -84,6 +98,8 @@ def build(seasons, prior_plays=200.0, carry=0.6, games_path='cache/games_2012.cs
             cur_coach = past.sort_values('week').groupby('posteam').coach.last().to_dict()
             first_coach = past.sort_values('week').groupby('posteam').coach.first().to_dict()
             r_scores = eng.ratings(s, w)
+            prevbase = None if s <= eng.first else eng._end(s - 1)
+            decay_r = {dn: rate_decay(eng.played(s, w), p['k'], p['hfa'], prevbase, p['carry'], w, d) for dn, d in (('base_d90', 0.9), ('base_d80', 0.8))}
             for g in games:
                 if g['season'] != s or g['week'] != w or g['margin'] is None:
                     continue
@@ -99,6 +115,11 @@ def build(seasons, prior_plays=200.0, carry=0.6, games_path='cache/games_2012.cs
                 f['to_margin'] = (to.get(h, 0.0) if ng.get(h, 0) else 0.0) - (to.get(a, 0.0) if ng.get(a, 0) else 0.0)
                 hq, aq = r.get('home_qb_id'), r.get('away_qb_id')
                 f['qb'] = ss.qb(h, hq, w) - ss.qb(a, aq, w)
+                hs_, as_ = hq or ss.main_qb(h, w), aq or ss.main_qb(a, w)
+                f['qb_level'] = ((ss._est(hs_, w) if hs_ else -0.1) - (ss._est(as_, w) if as_ else -0.1)) * 35.0
+                for dname, d in (('base_d90', 0.9), ('base_d80', 0.8)):
+                    rd = decay_r[dname]
+                    f[dname] = p['slope'] * (rd[i] - rd[j]) + (0.0 if g['neutral'] else p['hfa'])
                 mh, ma = ss.missing(h, w), ss.missing(a, w)
                 for k in GROUPS:
                     f['miss_' + k] = mh[k] - ma[k]

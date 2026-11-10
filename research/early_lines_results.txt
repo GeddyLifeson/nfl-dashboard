@@ -1,0 +1,12 @@
+== 9 earliest archived line vs close, 2026 (44 games)
+   earliest: winners 0.773 mse 173.5
+   closing : winners 0.818 mse 151.5
+   mean |move| open->close 1.26
+
+== 6 wind and totals (outdoor games): actual total minus closing total
+   train 2014-24 wind 0-10 mph: 1446 games, actual minus line +0.49 pts, under hit 0.499
+   train 2014-24 wind 10-15 mph: 426 games, actual minus line -1.49 pts, under hit 0.598
+   train 2014-24 wind 15-99 mph: 217 games, actual minus line -1.47 pts, under hit 0.549
+   test 2025-26 wind 0-10 mph: 215 games, actual minus line +1.31 pts, under hit 0.456
+   test 2025-26 wind 10-15 mph: 42 games, actual minus line +0.07 pts, under hit 0.524
+   test 2025-26 wind 15-99 mph: 19 games, actual minus line -1.24 pts, under hit 0.526

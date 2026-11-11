@@ -9954,8 +9954,8 @@
    "away": "MIN",
    "home": "GB",
    "neutral": false,
-   "home_margin": 0.4,
-   "home_win": 0.513,
+   "home_margin": -0.6,
+   "home_win": 0.482,
    "line": 3.5,
    "results_margin": 1.7,
    "lineup": {
@@ -9972,10 +9972,11 @@
      ]
     },
     "MIN": {
-     "points": -1.0,
-     "qb": 0.0,
+     "points": 0.0,
+     "qb": 1.0,
      "injuries": -1.0,
      "notes": [
+      "Kirk Cousins starting instead of the usual QB (+1.0)",
       "Theo Jackson (S, missed last game)",
       "Jauan Jennings (WR, missed last game)",
       "Donovan Jackson (G, missed last game)",
@@ -9992,8 +9993,8 @@
    "away": "MIA",
    "home": "IND",
    "neutral": false,
-   "home_margin": 1.9,
-   "home_win": 0.558,
+   "home_margin": 2.7,
+   "home_win": 0.582,
    "line": 3.5,
    "results_margin": 4.3,
    "lineup": {
@@ -10010,10 +10011,11 @@
      ]
     },
     "MIA": {
-     "points": -0.2,
-     "qb": 0.0,
+     "points": -1.0,
+     "qb": -0.8,
      "injuries": -0.2,
      "notes": [
+      "Kyle McCord starting instead of the usual QB (-0.8)",
       "De'Von Achane (RB, missed last game)",
       "Jarrett Kingston (G, missed last game)"
      ]
@@ -10130,17 +10132,17 @@
    "away": "LAR",
    "home": "ARI",
    "neutral": false,
-   "home_margin": -5.1,
-   "home_win": 0.346,
+   "home_margin": -5.5,
+   "home_win": 0.335,
    "line": -9.5,
    "results_margin": -6.1,
    "lineup": {
     "ARI": {
-     "points": -2.2,
-     "qb": -0.2,
+     "points": -2.6,
+     "qb": -0.7,
      "injuries": -2.0,
      "notes": [
-      "Gardner Minshew II starting instead of the usual QB (-0.2)",
+      "Carson Beck starting instead of the usual QB (-0.7)",
       "Kendrick Bourne (WR, missed last game)",
       "Paris Johnson (OL, missed last game)",
       "Jon Gaines (OL, missed last game)",
@@ -10169,16 +10171,17 @@
    "away": "SEA",
    "home": "LV",
    "neutral": false,
-   "home_margin": -5.0,
-   "home_win": 0.349,
+   "home_margin": -6.5,
+   "home_win": 0.307,
    "line": -6.5,
    "results_margin": -6.2,
    "lineup": {
     "LV": {
-     "points": -0.3,
-     "qb": 0.0,
+     "points": -1.8,
+     "qb": -1.5,
      "injuries": -0.3,
      "notes": [
+      "Fernando Mendoza starting instead of the usual QB (-1.5)",
       "Jackson Powers-Johnson (G, missed last game)",
       "Isaiah Pola-Mao (S, missed last game)"
      ]

@@ -9956,7 +9956,7 @@
    "neutral": false,
    "home_margin": 0.4,
    "home_win": 0.513,
-   "line": 5.5,
+   "line": 3.5,
    "results_margin": 1.7,
    "lineup": {
     "GB": {
@@ -9994,7 +9994,7 @@
    "neutral": false,
    "home_margin": 1.9,
    "home_win": 0.558,
-   "line": 2.5,
+   "line": 3.5,
    "results_margin": 4.3,
    "lineup": {
     "IND": {
@@ -10029,7 +10029,7 @@
    "neutral": false,
    "home_margin": 4.9,
    "home_win": 0.649,
-   "line": 1.5,
+   "line": 2.5,
    "results_margin": 0.7,
    "lineup": {
     "NO": {
@@ -10171,7 +10171,7 @@
    "neutral": false,
    "home_margin": -5.0,
    "home_win": 0.349,
-   "line": -4.5,
+   "line": -6.5,
    "results_margin": -6.2,
    "lineup": {
     "LV": {
@@ -10206,7 +10206,7 @@
    "neutral": false,
    "home_margin": -4.5,
    "home_win": 0.362,
-   "line": -4.5,
+   "line": -3.5,
    "results_margin": -3.6,
    "lineup": {
     "DAL": {
@@ -10274,7 +10274,7 @@
    "neutral": false,
    "home_margin": 3.3,
    "home_win": 0.602,
-   "line": 5.5,
+   "line": 4.5,
    "results_margin": 4.7,
    "lineup": {
     "BAL": {

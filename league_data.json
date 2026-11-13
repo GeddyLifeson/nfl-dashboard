@@ -9831,9 +9831,9 @@
    "away": "NE",
    "home": "DET",
    "neutral": true,
-   "home_margin": -0.5,
-   "home_win": 0.485,
-   "line": 2.5,
+   "home_margin": -0.4,
+   "home_win": 0.488,
+   "line": 3.0,
    "results_margin": 0.9,
    "lineup": {
     "DET": {
@@ -9849,15 +9849,15 @@
      ]
     },
     "NE": {
-     "points": -2.4,
+     "points": -2.5,
      "qb": 0.0,
-     "injuries": -2.4,
+     "injuries": -2.5,
      "notes": [
       "Alijah Vera-Tucker (G, missed last game)",
       "Carlton Davis (CB, Out)",
       "Ben Brown (C, Out)",
       "Romeo Doubs (WR, missed last game)",
-      "TreVeyon Henderson (RB, Out)"
+      "Kevin Byard (S, Questionable)"
      ]
     }
    }

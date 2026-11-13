@@ -1,6 +1,6 @@
 """Build the weekly rankings from the tested model. Writes league_data.json and history/<season>-w<week>.json.
 Run: python fetch.py && python build.py   (python backtest.py first when the settings should be re-tuned)"""
-import datetime, glob, json, os
+import csv, datetime, glob, json, os
 import numpy as np
 from model import Engine, load_games, load_params, predict, win_prob
 from stats import log_tables, players, team_stats
@@ -34,6 +34,33 @@ def lineup_adjustments(season):
         notes += [f"{n} ({pos}, {why})" for n, pos, why, _ in ss.missing_players(team, week)[:5]]
         return dict(points=round(qb_pts + inj_pts, 1), qb=round(qb_pts, 1), injuries=round(inj_pts, 1), notes=notes)
     return adj
+
+
+def sam_model(season, week, games, p):
+    """SAM's multi-factor model (multifactor.py, sam_params.json): team ratings now and a week ago, and a
+    predictor for upcoming games. None when the fitted parameters or the feeds are unavailable."""
+    import multifactor, qb_adjust
+    sp = multifactor.load()
+    if not sp:
+        return None
+    try:
+        e = Engine(games, p)
+        tg, prev_tg, ss = multifactor.team_games(season), multifactor.team_games(season - 1), multifactor.Season(season)
+        ctx = multifactor.Context(season, week + 1, tg, prev_tg, e, p, ss)
+        prev = None   # moved below, once the extra features are loaded
+        info = {r['game_id']: r for r in csv.DictReader(open('data/games.csv'))}
+        qb1 = {t: gid for t, (_, gid, _) in qb_adjust.starters(season).items()}
+        import extras
+        ex, team_now = extras.compute('data/games.csv', first=min(g['season'] for g in games), qb_override=qb1)
+        prev = multifactor.team_ratings(multifactor.Context(season, week, tg, prev_tg, e, p, ss), sp, team_now) if week > 1 else None
+    except Exception as ex:
+        print(f"(SAM model skipped: {ex})")
+        return None
+
+    def pred(g):
+        x, w, f = multifactor.predict_upcoming(ctx, sp, g, info.get(g['id'], {}), qb1.get(g['home']), qb1.get(g['away']), ex.get(g['id']))
+        return x, w, {k: round(float(v), 3) for k, v in f.items()}
+    return dict(ratings=multifactor.team_ratings(ctx, sp, team_now), prev=prev, predict=pred, blend=sp.get('blend'))
 
 
 def short_date(iso):
@@ -81,8 +108,13 @@ def main():
     played = e.played(season)
     week = max(g['week'] for g in played)
     raw = e.ratings(season, 99)
-    rating = p['slope'] * raw
-    prev = order_of(p['slope'] * e.ratings(season, week)) if week > 1 else None
+    score_rating = p['slope'] * raw
+    rating, prev_rating = score_rating, (p['slope'] * e.ratings(season, week) if week > 1 else None)
+    sam = sam_model(season, week, games, p)
+    if sam:
+        rating = np.array([sam['ratings'][t] for t in ABBRS])
+        prev_rating = np.array([sam['prev'][t] for t in ABBRS]) if sam['prev'] else None
+    prev = order_of(prev_rating) if prev_rating is not None else None
     order = order_of(rating)
     st, sos = standings(played, rating)
     gp = {t: st[t]['gp'] for t in ABBRS}
@@ -99,7 +131,7 @@ def main():
         teams.append(dict(
             team=name(t), abbr=display_abbr(t), pos=pos, prev_pos=prev_pos, move=prev_pos - pos,
             record=f"{s['w']}-{s['l']}" + (f"-{s['t']}" if s['t'] else ''), gp=s['gp'],
-            rating=round(float(rating[IDX[t]]), 2), margin=round(s['pts'] / s['gp'], 1),
+            rating=round(float(rating[IDX[t]]), 2), score_rating=round(float(score_rating[IDX[t]]), 2), margin=round(s['pts'] / s['gp'], 1),
             sos=round(sos[t], 1), sos_rank=sos_rank[t],
             off_avg=round(float(np.mean(o)), 1), def_avg=round(float(np.mean(d)), 1),
             stats=stats[t], player=qb[t]))
@@ -111,9 +143,21 @@ def main():
             base = predict(raw, g, p)
             ah, aa = lineup(g['home'], g['week']), lineup(g['away'], g['week'])
             m = base + ah.get('points', 0.0) - aa.get('points', 0.0)
+            win, old_m, factors = win_prob(m, p['sigma']), m, None
+            if sam:
+                try:
+                    m, win, factors = sam['predict'](g)
+                except Exception as ex:
+                    print(f"(SAM model skipped for {g['id']}: {ex})")
+            mkt = None
+            if factors and g['spread'] is not None and sam.get('blend'):
+                bw = sam['blend']
+                bm = bw['weight_on_sam'] * m + (1 - bw['weight_on_sam']) * g['spread']
+                mkt = dict(margin=round(bm, 1), win=round(win_prob(bm, bw['sigma']), 3), weight_on_sam=bw['weight_on_sam'])
             upcoming.append(dict(id=g['id'], week=g['week'], day=g['day'], away=display_abbr(g['away']), home=display_abbr(g['home']),
-                                 neutral=g['neutral'], home_margin=round(m, 1), home_win=round(win_prob(m, p['sigma']), 3),
-                                 line=g['spread'], results_margin=round(base, 1),
+                                 neutral=g['neutral'], home_margin=round(m, 1), home_win=round(win, 3),
+                                 line=g['spread'], results_margin=round(base, 1), lineup_margin=round(old_m, 1),
+                                 model='SAM multi-factor' if factors else 'scores + lineup', factors=factors, sam_market=mkt,
                                  lineup={display_abbr(g['home']): ah, display_abbr(g['away']): aa}))
 
     out = dict(season=season, week=week, through=short_date(max(g['day'] for g in played)),

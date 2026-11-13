@@ -1,0 +1,95 @@
+{
+ "SAM E (current)": {
+  "lam": 100,
+  "games": 408,
+  "winners": 0.6256,
+  "mse": 159.9,
+  "log_loss": 0.6407
+ },
+ "E + QB value (backup swap + level)": {
+  "lam": 300,
+  "games": 408,
+  "winners": 0.6256,
+  "mse": 158.3,
+  "log_loss": 0.6371
+ },
+ "E, QB value replacing old QB gap": {
+  "lam": 300,
+  "games": 408,
+  "winners": 0.6305,
+  "mse": 159.4,
+  "log_loss": 0.6383
+ },
+ "E + weighted EPA rating": {
+  "lam": 1000,
+  "games": 408,
+  "winners": 0.6281,
+  "mse": 161.2,
+  "log_loss": 0.641
+ },
+ "E + win-total prior": {
+  "lam": 1000,
+  "games": 408,
+  "winners": 0.6355,
+  "mse": 160.5,
+  "log_loss": 0.6383
+ },
+ "E + all three nfelo pieces": {
+  "lam": 1000,
+  "games": 408,
+  "winners": 0.6404,
+  "mse": 159.0,
+  "log_loss": 0.6337
+ },
+ "blend": {
+  "weight_on_sam": 0.14,
+  "sam_plus_market": {
+   "games": 408,
+   "winners": 0.665,
+   "mse": 149.2,
+   "log_loss": 0.6153
+  },
+  "close": {
+   "games": 408,
+   "winners": 0.665,
+   "mse": 148.7,
+   "log_loss": 0.6141
+  },
+  "features": [
+   "base",
+   "off_epa",
+   "def_epa",
+   "off_pass_epa",
+   "def_pass_epa",
+   "off_rush_epa",
+   "def_rush_epa",
+   "off_success",
+   "def_success",
+   "st",
+   "to_margin",
+   "qb",
+   "miss_OL",
+   "miss_WR",
+   "miss_TE",
+   "miss_RB",
+   "miss_EDGE",
+   "miss_DL",
+   "miss_LB",
+   "miss_CB",
+   "miss_S",
+   "home",
+   "rest",
+   "bye",
+   "tz_shift",
+   "west_early",
+   "wind_x_pass",
+   "new_coach",
+   "mid_change",
+   "qb538",
+   "qb538_level",
+   "wepa",
+   "wt",
+   "wt_early"
+  ]
+ }
+}

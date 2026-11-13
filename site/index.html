@@ -59,6 +59,54 @@ tr.best td { font-weight: 600; }
 .leg { display: flex; justify-content: space-between; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--line); }
 .leg button { padding: 0 8px; }
 .ticketbar { display: none; }
+/* ---- Player cards and team ratings panel ---- */
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(196px, 1fr)); gap: 14px; }
+.pc { --tier: #8a94a3; --tc1: #333; --tc2: #555; position: relative; display: flex; flex-direction: column; min-height: 300px; padding: 10px 12px 10px 22px;
+  background: linear-gradient(160deg, #1b222c 0%, #10151b 70%); border: 1px solid var(--tier); border-radius: 10px;
+  clip-path: polygon(0 0, calc(100% - 22px) 0, 100% 22px, 100% 100%, 0 100%); box-shadow: inset 0 0 0 1px rgba(255,255,255,.03); overflow: hidden; }
+.pc::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 12px; background: linear-gradient(180deg, var(--tc1), var(--tc2)); }
+.pc::after { content: ''; position: absolute; right: -40px; top: 40px; width: 140px; height: 140px; border-radius: 50%; background: radial-gradient(circle, color-mix(in srgb, var(--tier) 22%, transparent), transparent 70%); pointer-events: none; }
+.pc.t-elite { --tier: #e8b84a; } .pc.t-pro { --tier: #38c6c0; } .pc.t-starter { --tier: #aab4c0; } .pc.t-reserve { --tier: #b07a4f; }
+.pc .top { display: flex; justify-content: space-between; align-items: flex-start; }
+.pc .ovr { font: 700 40px/1 var(--head); color: var(--tier); font-variant-numeric: tabular-nums; }
+.pc .ovr small { display: block; font: 600 11px var(--body); letter-spacing: 1.5px; color: var(--muted); }
+.pc .side { text-align: right; font: 600 12px var(--head); letter-spacing: 1px; color: var(--muted); }
+.pc .side b { display: block; font-size: 18px; color: var(--text); }
+.pc .mono { align-self: center; display: grid; place-items: center; width: 74px; height: 74px; margin: 6px 0 8px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--tc1), var(--tc2)); border: 2px solid var(--tier); font: 700 26px var(--head); color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,.6); }
+.pc .nm { text-align: center; font: 600 15px/1.2 var(--head); letter-spacing: .3px; padding: 4px 0 6px; border-bottom: 1px solid var(--line); margin-bottom: 8px; }
+.pc .nm small { display: block; font: 600 10px var(--body); letter-spacing: 1.5px; color: var(--tier); text-transform: uppercase; margin-top: 2px; }
+.pc .attrs { display: grid; grid-template-columns: 1fr 1fr; gap: 3px 12px; }
+.pc .at { display: flex; justify-content: space-between; align-items: baseline; font-size: 11px; color: var(--muted); letter-spacing: .5px; }
+.pc .at b { font: 700 15px var(--head); font-variant-numeric: tabular-nums; }
+.pc .foot { margin-top: auto; padding-top: 8px; font-size: 11px; color: var(--muted); text-align: center; }
+.r-hi { color: #4cc38a; } .r-mid { color: #e6edf3; } .r-lo { color: #e3a44c; } .r-bad { color: #f07178; }
+.pc.mini { min-height: 0; padding: 8px 10px 8px 18px; clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%); }
+.pc.mini::before { width: 8px; } .pc.mini .ovr { font-size: 28px; } .pc.mini .mono { display: none; } .pc.mini .nm { font-size: 13px; text-align: left; padding: 2px 0 4px; margin-bottom: 4px; }
+.pc.mini .attrs { grid-template-columns: 1fr 1fr; gap: 2px 10px; } .pc.mini .foot { display: none; } .pc.mini .at b { font-size: 13px; }
+.cards.minis { grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 10px; }
+.legend { display: flex; flex-wrap: wrap; gap: 12px; font-size: 12px; color: var(--muted); }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 5px; vertical-align: -1px; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(78px, 1fr)); gap: 6px; margin: 8px 0 16px; }
+.tile { --tc1: #333; display: flex; flex-direction: column; align-items: center; padding: 6px 4px; border-radius: 6px; border: 1px solid var(--line); border-top: 4px solid var(--tc1); background: var(--surface); font: 600 13px var(--head); }
+.tile span { font-size: 18px; } .tile small { font: 600 10px var(--body); color: var(--muted); }
+.tile.on { background: var(--raised); border-color: var(--accent); border-top-color: var(--tc1); }
+.tp { --tc1: #333; --tc2: #555; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: var(--surface); }
+.tp .hdr { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; padding: 16px 20px; background: linear-gradient(110deg, var(--tc1) 0%, var(--tc2) 55%, #10151b 100%); }
+.tp .hdr .mono { display: grid; place-items: center; width: 64px; height: 64px; border-radius: 12px; background: rgba(0,0,0,.35); border: 2px solid rgba(255,255,255,.5); font: 700 22px var(--head); }
+.tp .hdr h3 { margin: 0; font: 700 26px/1.1 var(--head); letter-spacing: .5px; text-shadow: 0 1px 3px rgba(0,0,0,.5); }
+.tp .hdr .sub { font-size: 13px; opacity: .9; text-shadow: 0 1px 2px rgba(0,0,0,.5); }
+.tp .plates { display: flex; gap: 10px; margin-left: auto; }
+.plate { min-width: 74px; text-align: center; padding: 6px 10px; border-radius: 8px; background: rgba(0,0,0,.45); border: 1px solid rgba(255,255,255,.25); }
+.plate b { display: block; font: 700 32px/1 var(--head); font-variant-numeric: tabular-nums; } .plate small { font: 600 10px var(--body); letter-spacing: 1.5px; opacity: .85; }
+.tp .body { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 8px 32px; padding: 16px 20px 18px; }
+.tp h4 { margin: 0 0 6px; font: 600 12px var(--body); letter-spacing: 1.5px; color: var(--muted); text-transform: uppercase; }
+.ab { display: grid; grid-template-columns: 120px 1fr 34px; align-items: center; gap: 10px; padding: 4px 0; font-size: 13px; }
+.ab .track { height: 8px; border-radius: 4px; background: var(--line); overflow: hidden; }
+.ab .track i { display: block; height: 100%; border-radius: 4px; }
+.ab b { text-align: right; font: 700 15px var(--head); font-variant-numeric: tabular-nums; }
+details.more { margin-top: 16px; } details.more summary { cursor: pointer; color: var(--muted); font-weight: 600; }
+@media (max-width: 640px) { .cards { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; } .tp .plates { margin-left: 0; } .ab { grid-template-columns: 100px 1fr 30px; } }
 @media (max-width: 900px) {
   .builder { grid-template-columns: 1fr; } .builder .slip { position: static; }
   .ticketbar { display: flex; justify-content: space-between; gap: 12px; position: fixed; left: 0; right: 0; bottom: 0; padding: 12px 16px;
@@ -79,7 +127,7 @@ tr.best td { font-weight: 600; }
 <nav id="tabs"></nav>
 <main id="view"></main>
 <script>
-const TABS = [['rankings', 'Rankings'], ['teams', 'Teams'], ['games', 'Games'], ['players', 'Player rankings'], ['projections', 'Player projections'], ['fantasy', 'Fantasy'], ['parlay', 'Parlay builder'], ['model', 'Model accuracy']];
+const TABS = [['rankings', 'Rankings'], ['teams', 'Teams'], ['games', 'Games'], ['players', 'Player cards'], ['projections', 'Player projections'], ['fantasy', 'Fantasy'], ['parlay', 'Parlay builder'], ['model', 'Model accuracy']];
 const POS_ORDER = ['QB', 'RB', 'WR', 'TE', 'EDGE', 'DL', 'LB', 'CB', 'S', 'K'];
 const LABEL = {
   cmp: 'Cmp/Att', pass_yds: 'Pass yds', td: 'TD', int: 'INT', epa_play: 'EPA/play', cpoe: 'CPOE', rush_yds: 'Rush yds', car: 'Carries',
@@ -138,7 +186,8 @@ function rankings() {
     { key: 'pos', label: 'Power', num: true, ascFirst: true },
     { key: 'team', label: 'Team', ascFirst: true },
     { key: 'record', label: 'Record', ascFirst: true },
-    { key: 'rating', label: 'Rating', num: true, render: r => signed(r.rating) },
+    { key: 'rating', label: 'SAM rating', num: true, render: r => signed(r.rating) },
+    { key: 'score_rating', label: 'Scores only', num: true, render: r => r.score_rating === undefined ? '' : signed(r.score_rating) },
     { key: 'move', label: 'Move', num: true, render: r => el('td', { class: 'num ' + (r.move > 0 ? 'good' : r.move < 0 ? 'bad' : 'muted') }, r.move > 0 ? '▲' + r.move : r.move < 0 ? '▼' + (-r.move) : '=') },
     { key: 'off_rank', label: 'Offense', num: true, ascFirst: true, render: r => rankCell(r.off_rank) },
     { key: 'off_epa', label: 'Off EPA/play', num: true, render: r => signed(r.off_epa, 3) },
@@ -148,25 +197,132 @@ function rankings() {
     { key: 'sos_rank', label: 'Schedule rank', num: true, ascFirst: true },
   ], D.power, { key: by, asc: true });
   return [el('h2', {}, 'Power rankings'),
-    el('p', { class: 'note' }, 'Rating = points per game better than an average team on a neutral field, from every score this season plus part of last season. Offense and defense rank by EPA per play (expected points added), adjusted for opponents, garbage time left out. Click any column to sort.'),
+    el('p', { class: 'note' }, 'SAM rating = points per game better than an average team on a neutral field, from SAM\'s multi-factor model: this season\'s scores plus opponent-adjusted efficiency per play (EPA and success rate, passing and rushing), special teams, turnover margin and coaching changes, with last season as a starting point. "Scores only" is the old rating from final scores alone. Offense and defense rank by EPA per play (expected points added), adjusted for opponents, garbage time left out. Click any column to sort.'),
     bar, t];
 }
 
+// ---- Card ratings. Every number below is derived from data.json; nothing is hand-entered.
+// Overall (OVR) = blend of the position rating (0-100) and the player's rank in his position group, scaled to 45-99.
+// Attributes = percentile of one stat within the position group, scaled to 40-99.
+const TEAM_COLORS = {
+  ARI: ['#97233F', '#3a0d18'], ATL: ['#A71930', '#1d1d1d'], BAL: ['#241773', '#9E7C0C'], BUF: ['#00338D', '#C60C30'], CAR: ['#0085CA', '#101820'],
+  CHI: ['#C83803', '#0B162A'], CIN: ['#FB4F14', '#101820'], CLE: ['#FF3C00', '#311D00'], DAL: ['#003594', '#869397'], DEN: ['#FB4F14', '#002244'],
+  DET: ['#0076B6', '#B0B7BC'], GB: ['#203731', '#FFB612'], HOU: ['#A71930', '#03202F'], IND: ['#002C5F', '#A2AAAD'], JAX: ['#006778', '#D7A22A'],
+  KC: ['#E31837', '#FFB81C'], LAC: ['#0080C6', '#FFC20E'], LAR: ['#003594', '#FFA300'], LV: ['#A5ACAF', '#101010'], MIA: ['#008E97', '#FC4C02'],
+  MIN: ['#4F2683', '#FFC62F'], NE: ['#002244', '#C60C30'], NO: ['#D3BC8D', '#101820'], NYG: ['#0B2265', '#A71930'], NYJ: ['#125740', '#0d2b21'],
+  PHI: ['#004C54', '#A5ACAD'], PIT: ['#FFB612', '#101820'], SEA: ['#002244', '#69BE28'], SF: ['#AA0000', '#B3995D'], TB: ['#D50A0A', '#34302B'],
+  TEN: ['#4B92DB', '#0C2340'], WAS: ['#5A1414', '#FFB612']
+};
+const teamVars = abbr => { const c = TEAM_COLORS[abbr] || ['#333', '#555']; return '--tc1:' + c[0] + ';--tc2:' + c[1]; };
+const per = (v, g) => g ? v / g : 0;
+const frac = s => { const [a, b] = String(s || '0/0').split('/').map(Number); return b ? a / b : 0; };
+// [label, title, value(row), higherIsBetter]
+const ATTRS = {
+  QB: [['EFF', 'EPA per play', r => r.epa_play], ['ACC', 'Completion % over expected', r => r.cpoe], ['YDS', 'Passing yards per game', r => per(r.pass_yds, r.games)],
+    ['TD', 'Passing TDs per game', r => per(r.td, r.games)], ['SAFE', 'Interceptions per attempt (fewer is better)', r => { const a = +String(r.cmp).split('/')[1] || 1; return -(r.int / a); }],
+    ['RUN', 'Rushing yards per game', r => per(r.rush_yds, r.games)]],
+  RB: [['RUSH', 'Rushing yards per game', r => per(r.rush_yds, r.games)], ['YPC', 'Yards per carry', r => r.ypc], ['WORK', 'Carries per game', r => per(r.car, r.games)],
+    ['REC', 'Receiving yards per game', r => per(r.rec_yds, r.games)], ['CATCH', 'Receptions per game', r => per(r.rec, r.games)], ['TD', 'Touchdowns per game', r => per(r.td, r.games)]],
+  WR: [['YDS', 'Receiving yards per game', r => r.yds_g], ['EFF', 'EPA per target', r => r.epa_tgt], ['HNDS', 'Catch rate (receptions per target)', r => per(r.rec, r.tgt)],
+    ['TGT', 'Targets per game', r => per(r.tgt, r.games)], ['REC', 'Receptions per game', r => per(r.rec, r.games)], ['TD', 'Touchdowns per game', r => per(r.td, r.games)]],
+  EDGE: [['SACK', 'Sacks per game', r => per(r.sacks, r.games)], ['PRES', 'QB hits per game', r => per(r.qb_hits, r.games)], ['TFL', 'Tackles for loss per game', r => per(r.tfl, r.games)],
+    ['TKL', 'Tackles per game', r => per(r.tackles, r.games)], ['STRP', 'Forced fumbles per game', r => per(r.ff, r.games)], ['DISR', 'Sacks + QB hits + TFL per game', r => per(r.sacks + r.qb_hits + r.tfl, r.games)]],
+  LB: [['TKL', 'Tackles per game', r => per(r.tackles, r.games)], ['TFL', 'Tackles for loss per game', r => per(r.tfl, r.games)], ['RUSH', 'Sacks per game', r => per(r.sacks, r.games)],
+    ['COV', 'Passes defended per game', r => per(r.pd, r.games)], ['BALL', 'Interceptions per game', r => per(r.int, r.games)], ['PLAY', 'Tackles + TFL + sacks + PD per game', r => per(r.tackles + r.tfl + r.sacks + r.pd, r.games)]],
+  CB: [['COV', 'Passes defended per game', r => per(r.pd, r.games)], ['BALL', 'Interceptions per game', r => per(r.int, r.games)], ['TKL', 'Tackles per game', r => per(r.tackles, r.games)],
+    ['PLAY', 'Interceptions x3 + passes defended per game', r => per(3 * r.int + r.pd, r.games)], ['TD', 'Defensive touchdowns', r => r.td], ['DUR', 'Games played', r => r.games]],
+  K: [['ACC', 'Field-goal %', r => r.fg_pct], ['VOL', 'Field goals made per game', r => per(+String(r.fg).split('/')[0], r.games)], ['LONG', '50+ yard makes', r => r.fifty_plus],
+    ['XP', 'Extra-point %', r => frac(r.pat)], ['ATT', 'Field-goal attempts per game', r => per(+String(r.fg).split('/')[1], r.games)], ['DUR', 'Games played', r => r.games]]
+};
+ATTRS.TE = ATTRS.WR; ATTRS.DL = ATTRS.EDGE; ATTRS.S = ATTRS.CB;
+const TIERS = [[90, 'elite', 'Elite'], [80, 'pro', 'Pro'], [70, 'starter', 'Starter'], [0, 'reserve', 'Reserve']];
+const tierOf = ovr => TIERS.find(t => ovr >= t[0]);
+const rateCls = v => v >= 85 ? 'r-hi' : v >= 70 ? 'r-mid' : v >= 55 ? 'r-lo' : 'r-bad';
+const initials = n => n.replace(/\b(Jr|Sr|II|III|IV)\.?$/i, '').trim().split(/\s+/).map(w => w[0]).filter(Boolean).slice(0, 2).join('').toUpperCase();
+
+let CARDS = null;   // pos -> [{...row, pos, ovr, attrs: [[label, title, value]]}]
+function buildCards() {
+  CARDS = {};
+  for (const [pos, rows] of Object.entries(D.players || {})) {
+    const defs = ATTRS[pos] || [], n = rows.length;
+    // percentile with ties averaged: share of the group this value beats
+    const scaled = defs.map(([, , f]) => {
+      const vals = rows.map(r => { const v = f(r); return Number.isFinite(v) ? v : 0; });
+      return vals.map(v => {
+        const below = vals.filter(x => x < v).length, same = vals.filter(x => x === v).length;
+        return n > 1 ? Math.round(40 + 59 * (below + (same - 1) / 2) / (n - 1)) : 99;
+      });
+    });
+    CARDS[pos] = rows.map((r, i) => {
+      const pct = n > 1 ? 1 - (r.rank - 1) / (n - 1) : 1;
+      const ovr = Math.round(45 + 54 * (0.5 * r.rating / 100 + 0.5 * pct));
+      return { ...r, pos, ovr, attrs: defs.map(([l, t], j) => [l, t, scaled[j][i]]) };
+    });
+  }
+}
+
+function playerCard(c, mini) {
+  const [, tcls, tname] = tierOf(c.ovr);
+  const full = (D.power.find(t => t.abbr === c.team) || {}).team || c.team;
+  return el('div', { class: 'pc t-' + tcls + (mini ? ' mini' : ''), style: teamVars(c.team), title: c.name + ' · ' + full + ' · ' + c.pos + ' rank #' + c.rank + ' · position rating ' + c.rating },
+    el('div', { class: 'top' }, el('div', { class: 'ovr' }, c.ovr, el('small', {}, 'OVR')), el('div', { class: 'side' }, el('b', {}, c.pos), c.team)),
+    el('div', { class: 'mono' }, initials(c.name)),
+    el('div', { class: 'nm' }, c.name, el('small', {}, tname + ' · #' + c.rank + ' ' + c.pos)),
+    el('div', { class: 'attrs' }, c.attrs.map(([l, t, v]) => el('div', { class: 'at', title: t }, l, el('b', { class: rateCls(v) }, v)))),
+    el('div', { class: 'foot' }, c.games + ' games · rating ' + c.rating + '/100'));
+}
+
+// Team ratings: each stat's league rank (1 = best, already flipped for "fewer is better" stats) scaled to 99 (1st) down to 60 (32nd).
+const rankRating = r => Math.round(99 - (r - 1) * 39 / 31);
+const TEAM_ATTRS = {
+  Offense: [['Passing', ['pass_yds']], ['Rushing', ['rush_yds', 'ypc']], ['Efficiency', ['epa', 'success', 'ypp']], ['Scoring', ['pts', 'redzone']],
+    ['Third down', ['third']], ['Big plays', ['explosive']], ['Protection', ['sacked']], ['Ball security', ['giveaways']]],
+  Defense: [['Pass defense', ['pass_yds_a']], ['Run defense', ['rush_yds_a']], ['Efficiency', ['epa_a', 'success_a', 'ypp_a']], ['Scoring defense', ['pts_a', 'redzone_a']],
+    ['Third down', ['third_a']], ['Big plays allowed', ['explosive_a']], ['Pass rush', ['sacks']], ['Takeaways', ['takeaways']]],
+  Overall: [['Turnover margin', ['to_margin']], ['Discipline', ['pen_yds']], ['Schedule faced', null]]
+};
+function teamRatings(t) {
+  const stats = Object.fromEntries((D.team_stats[t.abbr] || []).map(s => [s.key, s]));
+  const groups = {};
+  for (const [g, list] of Object.entries(TEAM_ATTRS)) groups[g] = list.map(([label, keys]) => {
+    if (!keys) return { label, v: rankRating(t.sos_rank), why: 'Schedule strength rank #' + t.sos_rank };
+    const got = keys.map(k => stats[k]).filter(Boolean);
+    if (!got.length) return null;
+    return { label, v: Math.round(got.reduce((a, s) => a + rankRating(s.rank), 0) / got.length), why: got.map(s => s.label + ' ' + s.value + ' (#' + s.rank + ')').join(' · ') };
+  }).filter(Boolean);
+  return { ovr: rankRating(t.pos), off: rankRating(t.off_rank), def: rankRating(t.def_rank), groups };
+}
+const barColor = v => v >= 90 ? '#4cc38a' : v >= 80 ? '#38c6c0' : v >= 70 ? '#aab4c0' : v >= 65 ? '#e3a44c' : '#f07178';
+
 function teams() {
+  if (!CARDS) buildCards();
   const list = [...D.power].sort((a, b) => a.team.localeCompare(b.team));
   state.team = state.team || list[0].abbr;
   const t = D.power.find(x => x.abbr === state.team);
-  const pick = el('select', { onchange: e => { state.team = e.target.value; render(); } },
-    list.map(x => { const o = el('option', { value: x.abbr }, x.team); if (x.abbr === state.team) o.selected = true; return o; }));
+  const R = teamRatings(t);
+  const tiles = el('div', { class: 'tiles' }, [...D.power].sort((a, b) => a.pos - b.pos).map(x => el('button', {
+    class: 'tile' + (x.abbr === t.abbr ? ' on' : ''), style: teamVars(x.abbr), title: x.team + ' · power #' + x.pos, onclick: () => { state.team = x.abbr; render(); }
+  }, x.abbr, el('span', {}, rankRating(x.pos)), el('small', {}, x.record))));
+  const panel = el('div', { class: 'tp', style: teamVars(t.abbr) },
+    el('div', { class: 'hdr' }, el('div', { class: 'mono' }, t.abbr),
+      el('div', {}, el('h3', {}, t.team), el('div', { class: 'sub' }, t.record + ' · power #' + t.pos + ' · rating ' + signed(t.rating) + ' pts · avg margin ' + signed(t.margin))),
+      el('div', { class: 'plates' }, [['OVR', R.ovr, 'Power rank #' + t.pos], ['OFF', R.off, 'Offense rank #' + t.off_rank + ' (EPA/play ' + signed(t.off_epa, 3) + ')'], ['DEF', R.def, 'Defense rank #' + t.def_rank + ' (EPA/play allowed ' + signed(t.def_epa, 3) + ')']]
+        .map(([l, v, why]) => el('div', { class: 'plate', title: why }, el('b', {}, v), el('small', {}, l))))),
+    el('div', { class: 'body' }, Object.entries(R.groups).map(([g, rows]) => el('div', {}, el('h4', {}, g),
+      rows.map(r => el('div', { class: 'ab', title: r.why }, el('span', {}, r.label), el('span', { class: 'track' }, el('i', { style: 'width:' + r.v + '%;background:' + barColor(r.v) })), el('b', {}, r.v)))))));
+  const roster = POS_ORDER.flatMap(p => (CARDS[p] || []).filter(c => c.team === t.abbr).slice(0, p === 'WR' || p === 'CB' || p === 'EDGE' || p === 'LB' ? 2 : 1));
+  roster.sort((a, b) => b.ovr - a.ovr);
   const g = D.games.find(x => x.home === t.abbr || x.away === t.abbr);
   const stats = D.team_stats[t.abbr] || [];
   const side = s => table([{ key: 'label', label: 'Stat' }, { key: 'value', label: 'Value', num: true }, { key: 'rank', label: 'Rank', num: true, ascFirst: true, render: r => rankCell(r.rank) }], stats.filter(x => x.side === s));
-  const cards = el('div', { class: 'grid' },
-    el('div', { class: 'card' }, el('div', { class: 'muted' }, 'Power rank'), el('div', { class: 'big' }, '#' + t.pos + '  ', el('span', { class: 'muted' }, t.record)),
-      el('div', {}, 'Rating ' + signed(t.rating) + ' · Offense #' + t.off_rank + ' · Defense #' + t.def_rank + ' · Schedule #' + t.sos_rank)),
-    g ? gameCard(g) : el('div', { class: 'card' }, 'No game scheduled in the next week.'));
-  return [el('h2', {}, 'Team'), el('div', { class: 'bar' }, pick), cards,
-    el('div', { class: 'grid' }, el('div', {}, el('h2', {}, 'Offense'), side('O')), el('div', {}, el('h2', {}, 'Defense'), side('D'), el('h2', {}, 'Turnovers'), side('T')))];
+  return [el('h2', {}, 'Team ratings'),
+    el('p', { class: 'note' }, 'Every rating is the team\'s league rank turned into a 60-99 score (1st = 99, 32nd = 60). OVR uses the power ranking, OFF and DEF the opponent-adjusted EPA ranks; each bar averages the ranks of the stats behind it (hover a bar to see them). Tiles are in power order.'),
+    tiles, panel,
+    el('h2', {}, 'Top players'),
+    roster.length ? el('div', { class: 'cards minis' }, roster.map(c => playerCard(c, true))) : el('p', { class: 'muted' }, 'No qualifying players yet.'),
+    el('h2', {}, 'Next game'), g ? gameCard(g) : el('div', { class: 'card' }, 'No game scheduled in the next week.'),
+    el('details', { class: 'more' }, el('summary', {}, 'All 27 team stats with league ranks'),
+      el('div', { class: 'grid' }, el('div', {}, el('h2', {}, 'Offense'), side('O')), el('div', {}, el('h2', {}, 'Defense'), side('D'), el('h2', {}, 'Turnovers'), side('T'))))];
 }
 
 function gameCard(g) {
@@ -185,14 +341,17 @@ function gameCard(g) {
 function games() {
   const weeks = [...new Set(D.games.map(g => g.week))];
   const out = [el('h2', {}, 'Predictions'),
-    el('p', { class: 'note' }, 'Margin and win chance come from the results model plus the lineup correction (starting QB from today\'s depth chart, injuries from the latest report), both tested on seasons the model never saw. Where the model and the market pick different winners, the market has historically been right more often.')];
+    el('p', { class: 'note' }, 'SAM\'s pick comes from its multi-factor model: scores, efficiency per play (including nfelo-style weighted EPA), a 538-style QB value with today\'s starter swapped in, missing starters from the latest injury report, a preseason prior from betting win totals, rest, travel, wind and coaching changes. "SAM + market" mixes SAM with the market line (weight fitted on past seasons) and is shown only as a second number. Fitted on 2014-2024 and tested on 2025-2026 without refitting. "Scores model" is the old pick from final scores plus the QB and injury correction. The market line is shown for comparison; where SAM and the market disagree, the market has been right more often so far.')];
   for (const w of weeks) {
     const rows = D.games.filter(g => g.week === w).map(g => {
       const homeFav = g.home_margin > 0;
       const fav = homeFav ? g.home : g.away;
       const lineFav = g.line === null ? null : (g.line > 0 ? g.home : g.away);
       const adj = Object.entries(g.lineup || {}).filter(([, a]) => a && Math.abs(a.points) >= 0.1).map(([t, a]) => t + ' ' + signed(a.points)).join(', ');
+      const om = g.lineup_margin === undefined ? null : g.lineup_margin;
       return { day: g.day, game: g.away + ' @ ' + g.home, pick: fav, by: Math.abs(g.home_margin), prob: homeFav ? g.home_win : 1 - g.home_win,
+        old: om === null ? '' : (om > 0 ? g.home : g.away) + ' by ' + Math.abs(om).toFixed(1),
+        mkt: g.sam_market ? (g.sam_market.margin > 0 ? g.home : g.away) + ' by ' + Math.abs(g.sam_market.margin).toFixed(1) : '',
         line: g.line === null ? '' : g.home + ' ' + signed(-g.line, 1), disagree: lineFav && lineFav !== fav, adj,
         notes: Object.values(g.lineup || {}).flatMap(a => (a && a.notes) || []).join('; ') };
     });
@@ -200,6 +359,8 @@ function games() {
       { key: 'day', label: 'Date', ascFirst: true }, { key: 'game', label: 'Game', ascFirst: true },
       { key: 'pick', label: 'Pick', render: r => el('td', {}, el('b', {}, r.pick), ' by ' + r.by.toFixed(1)) },
       { key: 'prob', label: 'Win chance', num: true, render: r => pct(r.prob) },
+      { key: 'old', label: 'Scores model', render: r => r.old },
+      { key: 'mkt', label: 'SAM + market', render: r => r.mkt },
       { key: 'line', label: 'Market', render: r => el('td', {}, r.line, r.disagree ? el('span', { class: 'tag warn', title: 'Market picks the other team' }, ' differs') : '') },
       { key: 'adj', label: 'Lineup', title: 'Points from QB changes and injuries' },
       { key: 'notes', label: 'Who is missing', render: r => el('td', { class: 'muted', title: r.notes }, r.notes.length > 90 ? r.notes.slice(0, 90) + '...' : r.notes) },
@@ -216,13 +377,15 @@ function games() {
 }
 
 function players() {
-  const pos = state.pos;
-  const bar = el('div', { class: 'bar' }, POS_ORDER.filter(p => D.players[p]).map(p => el('button', { class: p === pos ? 'on' : '', onclick: () => { state.pos = p; render(); } }, p)));
-  const rows = D.players[pos] || [];
-  const extra = rows.length ? Object.keys(rows[0]).filter(k => !['rank', 'name', 'team', 'games', 'rating'].includes(k)) : [];
-  const cols = [{ key: 'rank', label: 'Rank', num: true, ascFirst: true }, { key: 'name', label: 'Player', ascFirst: true }, { key: 'team', label: 'Team', ascFirst: true },
-    { key: 'rating', label: 'Rating', num: true, render: r => el('td', { class: 'num' }, r.rating, el('span', { class: 'meter' }, el('i', { style: 'width:' + r.rating + '%' }))) },
-    { key: 'games', label: 'Games', num: true }].concat(extra.map(k => ({ key: k, label: LABEL[k] || k, num: true })));
+  if (!CARDS) buildCards();
+  const pos = state.pos, view = state.playerView || 'cards';
+  const bar = el('div', { class: 'bar' }, POS_ORDER.filter(p => D.players[p]).map(p => el('button', { class: p === pos ? 'on' : '', onclick: () => { state.pos = p; state.cardLimit = 24; render(); } }, p)));
+  const teamsList = ['All', ...new Set((D.players[pos] || []).map(r => r.team))].sort();
+  const tools = el('div', { class: 'bar' },
+    [['cards', 'Cards'], ['table', 'Table']].map(([k, l]) => el('button', { class: view === k ? 'on' : '', onclick: () => { state.playerView = k; render(); } }, l)),
+    el('select', { onchange: e => { state.cardTeam = e.target.value; render(); } }, teamsList.map(t => { const o = el('option', { value: t }, t === 'All' ? 'All teams' : t); if (t === (state.cardTeam || 'All')) o.selected = true; return o; })),
+    el('input', { placeholder: 'Search player', value: state.cardSearch || '', oninput: e => { state.cardSearch = e.target.value; clearTimeout(window._c); window._c = setTimeout(render, 250); } }));
+  const match = r => (!state.cardTeam || state.cardTeam === 'All' || r.team === state.cardTeam) && (!state.cardSearch || r.name.toLowerCase().includes(state.cardSearch.toLowerCase()));
   const how = {
     QB: 'EPA per play (passing and rushing) 60%, completion % over expected 20%, total yards per game 20%. Minimum 100 plays.',
     RB: 'EPA per touch 45%, scrimmage yards per game 40%, touchdowns per game 15%. Minimum 40 touches.',
@@ -235,7 +398,24 @@ function players() {
     S: 'Interceptions (x3) and passes defended per game 60%, tackles 40%.',
     K: 'Field-goal % (lightly shrunk for small samples) 60%, field goals per game 20%, 50+ yard makes 20%.'
   }[pos];
-  return [el('h2', {}, 'Player power rankings'), bar, el('p', { class: 'note' }, 'Rating 100 = best at the position this season. ' + how), table(cols, rows)];
+  const head = [el('h2', {}, 'Player cards'), bar, tools];
+  if (view === 'table') {
+    const rows = (D.players[pos] || []).filter(match);
+    const extra = rows.length ? Object.keys(rows[0]).filter(k => !['rank', 'name', 'team', 'games', 'rating'].includes(k)) : [];
+    const cols = [{ key: 'rank', label: 'Rank', num: true, ascFirst: true }, { key: 'name', label: 'Player', ascFirst: true }, { key: 'team', label: 'Team', ascFirst: true },
+      { key: 'rating', label: 'Rating', num: true, render: r => el('td', { class: 'num' }, r.rating, el('span', { class: 'meter' }, el('i', { style: 'width:' + r.rating + '%' }))) },
+      { key: 'games', label: 'Games', num: true }].concat(extra.map(k => ({ key: k, label: LABEL[k] || k, num: true })));
+    return [...head, el('p', { class: 'note' }, 'Rating 100 = best at the position this season. ' + how), table(cols, rows)];
+  }
+  const all = (CARDS[pos] || []).filter(match), limit = state.cardLimit || 24, shown = all.slice(0, limit);
+  const attrHelp = (ATTRS[pos] || []).map(([l, t]) => l + ' = ' + t.toLowerCase()).join(' · ');
+  return [...head,
+    el('p', { class: 'note' }, 'OVR blends the position rating (' + how.replace(/\.$/, '') + ') with the player\'s rank among ' + (D.players[pos] || []).length +
+      ' qualifying ' + pos + 's, scaled to 45-99. Attributes are percentiles within the position (99 = best, 40 = lowest): ' + attrHelp + '.'),
+    el('div', { class: 'legend' }, TIERS.map(([min, k, name]) => el('span', {}, el('i', { style: 'background:' + { elite: '#e8b84a', pro: '#38c6c0', starter: '#aab4c0', reserve: '#b07a4f' }[k] }), name + (min ? ' ' + min + '+' : ' under 70')))),
+    el('div', { class: 'cards', style: 'margin-top:12px' }, shown.map(c => playerCard(c))),
+    all.length > limit ? el('div', { class: 'bar', style: 'margin-top:12px' }, el('button', { onclick: () => { state.cardLimit = limit + 48; render(); } }, 'Show more (' + (all.length - limit) + ' left)')) : '',
+    all.length ? '' : el('p', { class: 'muted' }, 'No players match.')];
 }
 
 function projections() {
@@ -310,7 +490,17 @@ function model() {
       { key: 'mse', label: 'Margin error', num: true }, { key: 'll', label: 'Win-chance error', num: true, render: r => r.ll.toFixed(4) },
       { key: 'ats', label: 'ATS' }, { key: 'ml', label: 'ML bets' }], blendRows),
     el('p', { class: 'note' }, 'Moneyline win chances: ' + (bl.use_ml ? 'in use' : 'tracked only') + ' · Spreads: ' + (bl.use ? 'in use' : 'tracked only, not proven against the spread'))] : [];
-  return [...blendPart, el('h2', {}, 'Game predictions'),
+  const sm = m.sam && m.sam.test ? m.sam : null;
+  const samPart = sm ? [el('h2', {}, 'SAM multi-factor model'),
+    el('p', { class: 'note' }, 'Fitted on ' + sm.trained_on.join('-') + ', then frozen and tested on every ' + sm.tested_on.join('-') + ' game with a closing line, using only information from before each game. Margin error is mean squared error (lower is better); win-chance error is log loss.'),
+    table([{ key: 'k', label: 'Test' }, { key: 'games', label: 'Games', num: true }, { key: 'winners', label: 'Picks winner', num: true, render: r => (r.winners * 100).toFixed(1) + '%' },
+      { key: 'mse', label: 'Margin error', num: true }, { key: 'log_loss', label: 'Win-chance error', num: true, render: r => r.log_loss === undefined ? '' : r.log_loss.toFixed(4) }],
+      [{ k: 'SAM multi-factor (headline)', ...sm.test.sam }, ...(sm.test.scores_only ? [{ k: 'Scores only (old model)', ...sm.test.scores_only }] : []),
+       ...(sm.nfelo && sm.nfelo.nfelo_model ? [{ k: 'nfelo, its own number (benchmark)', ...sm.nfelo.nfelo_model }] : []),
+       ...(sm.test.sam_plus_market ? [{ k: 'SAM + market (second number)', ...sm.test.sam_plus_market }] : []),
+       ...(sm.nfelo && sm.nfelo.nfelo_blend ? [{ k: 'nfelo + market (benchmark)', ...sm.nfelo.nfelo_blend }] : []),
+       { k: 'Closing market line', ...sm.test.closing_line }])] : [];
+  return [...samPart, ...blendPart, el('h2', {}, 'Game predictions'),
     el('p', { class: 'note' }, 'Settings tuned on 2022-2024, then frozen and tested week by week on later seasons, using only games before each prediction. Error is mean squared error of the predicted margin (lower is better).'),
     table([{ key: 'k', label: 'Test' }, { key: 'games', label: 'Games', num: true }, { key: 'model_acc', label: 'Model picks winner', num: true, render: r => pct(r.model_acc) },
       { key: 'home_acc', label: 'Always home team', num: true, render: r => pct(r.home_acc) }, { key: 'line_acc', label: 'Market line', num: true, render: r => pct(r.line_acc) },
@@ -621,6 +811,7 @@ async function load() {
   const r = await fetch('data.json?' + Date.now());
   if (!r.ok) { document.getElementById('meta').textContent = 'No data yet: press Refresh data.'; return; }
   D = await r.json();
+  CARDS = null;
   document.getElementById('meta').textContent = D.season + ' season · games through ' + D.through + ' · updated ' + D.updated;
   if (D.errors && D.errors.length) document.getElementById('status').replaceChildren(el('span', { class: 'err' }, 'Some data failed to update: ' + D.errors.join('; ')));
   render();

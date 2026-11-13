@@ -1,0 +1,7 @@
+SAM all-factor                     {'games': 408, 'winners': 0.6256, 'mse': 159.9, 'mae': 10.15, 'log_loss': 0.6407}
+old scores-only                    {'games': 408, 'winners': 0.6256, 'mse': 165.0, 'mae': 10.16, 'log_loss': 0.6393}
+nfelo model only (pre-market)      {'games': 408, 'winners': 0.6355, 'mse': 154.0, 'mae': 9.85, 'log_loss': 0.6246}
+nfelo market-blended (close)       {'games': 408, 'winners': 0.6502, 'mse': 148.6, 'mae': 9.7, 'log_loss': 0.6177}
+closing line (normal curve)        {'games': 408, 'winners': 0.665, 'mse': 148.7, 'mae': 9.64, 'log_loss': 0.6143}
+2025 games 272 winners: SAM 0.605 nfelo-model 0.609 nfelo-blend 0.638 line 0.653
+2026 games 136 winners: SAM 0.667 nfelo-model 0.689 nfelo-blend 0.674 line 0.689

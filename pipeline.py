@@ -55,7 +55,7 @@ def main():
     power = []
     for t in league['teams']:
         a = t['abbr']
-        power.append(dict(pos=t['pos'], team=t['team'], abbr=a, record=t['record'], rating=t['rating'], move=t['move'],
+        power.append(dict(pos=t['pos'], team=t['team'], abbr=a, record=t['record'], rating=t['rating'], score_rating=t.get('score_rating'), move=t['move'],
                           margin=t['margin'], sos=t['sos'], sos_rank=t['sos_rank'], off_rank=off[a]['rank'],
                           off_epa=off[a]['epa_per_play'], def_rank=de[a]['rank'], def_epa=de[a]['epa_per_play_allowed']))
     # next game per team, and who will not play, for the projections
@@ -89,6 +89,8 @@ def main():
     lw = json.load(open('lineup_weights.json')) if os.path.exists('lineup_weights.json') else {}
     pp = json.load(open('projection_params.json')) if os.path.exists('projection_params.json') else {}
     blend = json.load(open('blend_scorecard.json')) if os.path.exists('blend_scorecard.json') else None   # from SAM's sam_model.py
+    sam = json.load(open('sam_params.json')) if os.path.exists('sam_params.json') else None
+    bench = json.load(open('research/nfelo_bench.json')) if os.path.exists('research/nfelo_bench.json') else {}
     fantasy = {}
 
     def fantasy_step():                               # Sleeper league lineup, bench, waivers (fantasy_league.py)
@@ -102,7 +104,8 @@ def main():
         through=league['through'], power=power, team_stats=stats, games=league['upcoming'], results=recent_results(season),
         quarterbacks=unit['quarterbacks'], players=ranks, projections=proj,
         model=dict(game=params.get('tested', {}), lineup=dict(train=lw.get('train'), test=lw.get('test'), weights=lw.get('weights')),
-                   projections=pp.get('test', {}), blend=blend, pick_record=league.get('pick_record')),
+                   projections=pp.get('test', {}), blend=blend,
+                   sam=dict({k: sam[k] for k in ('trained_on', 'tested_on', 'test')}, nfelo={k: bench[k] for k in ('nfelo_model', 'nfelo_blend') if k in bench}) if sam else None, pick_record=league.get('pick_record')),
         fantasy=fantasy or None,
         errors=errors)
     os.makedirs('site', exist_ok=True)

@@ -1,0 +1,23 @@
+train seasons 2014 - 2024 games 2879
+A current model (scores only)    lam=1     {'games': 408, 'winners': 0.6232, 'mse': 164.7, 'log_loss': 0.6385}
+B scores + efficiency            lam=100   {'games': 408, 'winners': 0.6084, 'mse': 164.8, 'log_loss': 0.6463}
+C + QB and injuries              lam=100   {'games': 408, 'winners': 0.6232, 'mse': 160.4, 'log_loss': 0.6388}
+D + rest, travel, weather        lam=100   {'games': 408, 'winners': 0.6281, 'mse': 160.0, 'log_loss': 0.6388}
+E + coaching changes             lam=100   {'games': 408, 'winners': 0.6256, 'mse': 159.9, 'log_loss': 0.6407}
+F everything except scores       lam=1000  {'games': 408, 'winners': 0.6133, 'mse': 162.3, 'log_loss': 0.6469}
+G scores + QB and injuries       lam=100   {'games': 408, 'winners': 0.6305, 'mse': 160.7, 'log_loss': 0.6318}
+H scores + QB/injuries + rest/travel lam=100   {'games': 408, 'winners': 0.6256, 'mse': 161.0, 'log_loss': 0.6341}
+I compact: scores + net efficiency + lineup + situ + coach lam=100   {'games': 408, 'winners': 0.6305, 'mse': 161.2, 'log_loss': 0.6361}
+closing line                               {'games': 408, 'winners': 0.665, 'mse': 148.7, 'log_loss': 0.6142}
+
+Drop one group from E:
+  without efficiency   {'games': 408, 'winners': 0.6355, 'mse': 161.1, 'log_loss': 0.6368}
+  without lineup       {'games': 408, 'winners': 0.6182, 'mse': 163.8, 'log_loss': 0.6467}
+  without situational  {'games': 408, 'winners': 0.6232, 'mse': 160.3, 'log_loss': 0.6408}
+  without coaching     {'games': 408, 'winners': 0.6281, 'mse': 160.0, 'log_loss': 0.6388}
+2025 A current model (scores only) {'games': 272, 'winners': 0.6125, 'mse': 168.5, 'log_loss': 0.6394}
+2025 E + coaching changes {'games': 272, 'winners': 0.6052, 'mse': 164.4, 'log_loss': 0.6427}
+2025 closing line {'games': 272, 'winners': 0.6531, 'mse': 150.6, 'log_loss': 0.6099}
+2026 A current model (scores only) {'games': 136, 'winners': 0.6444, 'mse': 157.1, 'log_loss': 0.6367}
+2026 E + coaching changes {'games': 136, 'winners': 0.6667, 'mse': 150.8, 'log_loss': 0.6366}
+2026 closing line {'games': 136, 'winners': 0.6889, 'mse': 144.8, 'log_loss': 0.6228}

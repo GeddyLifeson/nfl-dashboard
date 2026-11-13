@@ -1,0 +1,29 @@
+== baseline
+E all factors (current best)                 {'games': 408, 'winners': 0.6256, 'mse': 159.9, 'log_loss': 0.6407}
+
+== 1 QB as starter-vs-backup gap plus starter level
+E + qb_level                                 {'games': 408, 'winners': 0.6305, 'mse': 161.2, 'log_loss': 0.6422}
+
+== 2 team-specific home field (shrunk)
+E + team_hfa                                 {'games': 408, 'winners': 0.6379, 'mse': 160.1, 'log_loss': 0.6411}
+
+== 3 recency weighting of the scores rating
+E with 0.9/week decay                        {'games': 408, 'winners': 0.6256, 'mse': 160.3, 'log_loss': 0.6411}
+E with 0.8/week decay                        {'games': 408, 'winners': 0.6256, 'mse': 160.8, 'log_loss': 0.6418}
+E + both base and 0.9 decay                  {'games': 408, 'winners': 0.6207, 'mse': 160.2, 'log_loss': 0.6402}
+
+== 5 non-QB position values: fitted points per fully missing starter-equivalent
+   {'qb': np.float64(0.36), 'miss_OL': np.float64(-0.5), 'miss_WR': np.float64(-1.56), 'miss_TE': np.float64(0.98), 'miss_RB': np.float64(-1.61), 'miss_EDGE': np.float64(-1.7), 'miss_DL': np.float64(0.53), 'miss_LB': np.float64(-1.31), 'miss_CB': np.float64(-1.14), 'miss_S': np.float64(0.47)}
+
+== 10 rest/travel/coaching combined weight (points, typical game = 1 sd of their combined effect)
+   sd 0.67 max abs 3.04 {'home': np.float64(-0.69), 'rest': np.float64(0.14), 'bye': np.float64(-0.82), 'tz_shift': np.float64(-0.09), 'west_early': np.float64(0.71), 'wind_x_pass': np.float64(0.29), 'new_coach': np.float64(-0.86), 'mid_change': np.float64(-0.25)}
+
+== 7 win chance from projected margin: normal vs empirical margin distribution
+   log loss normal 0.6407 | empirical model residuals 0.6408 | key-number (line residual) shape 0.6401
+   projected margin 2-4: games 97, favorite won 0.577, normal says 0.591, empirical 0.602
+   projected margin 6-8: games 47, favorite won 0.702, normal says 0.701, empirical 0.719
+
+== 8 SAM vs closing line: games where SAM differs from the close by 3+ points (test seasons)
+   gap 1.5+: 235 games, SAM side covered 102-128 (0.443; 52.4% breaks even at -110)
+   gap 3+: 112 games, SAM side covered 54-57 (0.486; 52.4% breaks even at -110)
+   gap 5+: 38 games, SAM side covered 20-17 (0.541; 52.4% breaks even at -110)

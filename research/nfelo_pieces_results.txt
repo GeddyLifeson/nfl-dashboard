@@ -1,0 +1,18 @@
+  pw['value'] = (-2.2 * pw.attempts + 3.7 * pw.completions + pw.passing_yards / 5 + 11.3 * pw.passing_tds - 14.1 * pw.passing_interceptions
+  pw['plays'] = pw.attempts + pw.carries + pw.sacks_suffered
+coverage {'qb538': np.float64(0.978), 'wepa': np.float64(1.0), 'wt': np.float64(0.995)}
+SAM E (current)                          lam=100   {'games': 408, 'winners': 0.6256, 'mse': 159.9, 'log_loss': 0.6407}
+E + QB value (backup swap + level)       lam=300   {'games': 408, 'winners': 0.6256, 'mse': 158.3, 'log_loss': 0.6371}
+E, QB value replacing old QB gap         lam=300   {'games': 408, 'winners': 0.6305, 'mse': 159.4, 'log_loss': 0.6383}
+E + weighted EPA rating                  lam=1000  {'games': 408, 'winners': 0.6281, 'mse': 161.2, 'log_loss': 0.641}
+E + win-total prior                      lam=1000  {'games': 408, 'winners': 0.6355, 'mse': 160.5, 'log_loss': 0.6383}
+E + all three nfelo pieces               lam=1000  {'games': 408, 'winners': 0.6404, 'mse': 159.0, 'log_loss': 0.6337}
+best by log loss: E + all three nfelo pieces
+   weeks 1-6 only, SAM E (current): {'games': 186, 'winners': 0.6141, 'mse': 149.2, 'log_loss': 0.6534}
+   weeks 1-6 only, E + win-total prior: {'games': 186, 'winners': 0.6359, 'mse': 147.7, 'log_loss': 0.6458}
+   weeks 1-6 only, E + all three nfelo pieces: {'games': 186, 'winners': 0.6413, 'mse': 147.5, 'log_loss': 0.6421}
+
+SAM + market: weight on SAM 0.14 (fitted on 2014-24 out-of-fold)
+  SAM alone    {'games': 408, 'winners': 0.6404, 'mse': 159.0, 'log_loss': 0.6337}
+  SAM + market {'games': 408, 'winners': 0.665, 'mse': 149.2, 'log_loss': 0.6153}
+  closing line {'games': 408, 'winners': 0.665, 'mse': 148.7, 'log_loss': 0.6141}

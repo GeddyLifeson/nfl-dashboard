@@ -9831,18 +9831,18 @@
    "away": "NE",
    "home": "DET",
    "neutral": true,
-   "home_margin": -0.4,
-   "home_win": 0.488,
+   "home_margin": -0.5,
+   "home_win": 0.485,
    "line": 2.5,
    "results_margin": 0.9,
    "lineup": {
     "DET": {
-     "points": -3.7,
+     "points": -3.8,
      "qb": 0.0,
-     "injuries": -3.7,
+     "injuries": -3.8,
      "notes": [
+      "D.J. Reed (CB, Out)",
       "Jack Campbell (LB, missed last game)",
-      "D.J. Reed (CB, missed last game)",
       "Christian Mahogany (OL, missed last game)",
       "D.J. Wonnum (DE, missed last game)",
       "Christian Izien (DB, missed last game)"
@@ -10542,22 +10542,22 @@
    "away": "JAX",
    "home": "NYG",
    "neutral": false,
-   "home_margin": -10.3,
-   "home_win": 0.211,
+   "home_margin": -9.8,
+   "home_win": 0.222,
    "line": -6.0,
    "results_margin": -7.7,
    "lineup": {
     "NYG": {
-     "points": -3.0,
+     "points": -2.5,
      "qb": -0.7,
-     "injuries": -2.3,
+     "injuries": -1.8,
      "notes": [
       "J.J. McCarthy starting instead of the usual QB (-0.7)",
       "Tremaine Edmunds (LB, missed last game)",
-      "Cam Skattebo (RB, missed last game)",
-      "Tyler Nubin (S, missed last game)",
       "John Michael Schmitz (C, missed last game)",
-      "Chauncey Golston (DL, missed last game)"
+      "Chauncey Golston (DL, missed last game)",
+      "Colton Hood (CB, missed last game)",
+      "Brian Burns (LB, missed last game)"
      ]
     },
     "JAX": {
@@ -10723,20 +10723,19 @@
    "away": "CIN",
    "home": "WAS",
    "neutral": false,
-   "home_margin": -4.1,
-   "home_win": 0.373,
+   "home_margin": -3.8,
+   "home_win": 0.382,
    "line": -3.5,
    "results_margin": -3.8,
    "lineup": {
     "WAS": {
-     "points": -0.8,
+     "points": -0.5,
      "qb": 0.0,
-     "injuries": -0.8,
+     "injuries": -0.5,
      "notes": [
+      "Lucas Patrick (G, missed last game)",
       "Daron Payne (DT, missed last game)",
       "Javon Kinlaw (DT, missed last game)",
-      "Treylon Burks (WR, missed last game)",
-      "Nick Allegretti (C, missed last game)",
       "Terry McLaurin (WR, missed last game)"
      ]
     },

@@ -1,0 +1,1000 @@
+{
+ "season": 2026,
+ "week": 10,
+ "ranks": {
+  "JAX": 1,
+  "BUF": 2,
+  "SF": 3,
+  "SEA": 4,
+  "LAR": 5,
+  "KC": 6,
+  "CHI": 7,
+  "CIN": 8,
+  "DET": 9,
+  "DEN": 10,
+  "MIN": 11,
+  "HOU": 12,
+  "GB": 13,
+  "NE": 14,
+  "PIT": 15,
+  "TB": 16,
+  "DAL": 17,
+  "NYG": 18,
+  "BAL": 19,
+  "ATL": 20,
+  "CAR": 21,
+  "WAS": 22,
+  "IND": 23,
+  "CLE": 24,
+  "PHI": 25,
+  "NO": 26,
+  "LV": 27,
+  "ARI": 28,
+  "LAC": 29,
+  "NYJ": 30,
+  "MIA": 31,
+  "TEN": 32
+ },
+ "ratings": {
+  "JAX": 7.98,
+  "BUF": 6.0,
+  "SF": 5.03,
+  "SEA": 4.29,
+  "LAR": 3.66,
+  "KC": 3.55,
+  "CHI": 3.38,
+  "CIN": 3.23,
+  "DET": 2.96,
+  "DEN": 2.74,
+  "MIN": 2.64,
+  "HOU": 2.45,
+  "GB": 2.37,
+  "NE": 2.03,
+  "PIT": 1.82,
+  "TB": 1.5,
+  "DAL": -0.6,
+  "NYG": -1.71,
+  "BAL": -2.13,
+  "ATL": -2.28,
+  "CAR": -2.37,
+  "WAS": -2.62,
+  "IND": -2.88,
+  "CLE": -3.64,
+  "PHI": -3.66,
+  "NO": -3.69,
+  "LV": -3.89,
+  "ARI": -4.43,
+  "LAC": -4.83,
+  "NYJ": -5.11,
+  "MIA": -5.16,
+  "TEN": -6.65
+ },
+ "upcoming": [
+  {
+   "id": "2026_10_NE_DET",
+   "week": 10,
+   "day": "2026-11-15",
+   "away": "NE",
+   "home": "DET",
+   "neutral": true,
+   "home_margin": -0.4,
+   "home_win": 0.488,
+   "line": 3.0,
+   "results_margin": 0.9,
+   "lineup": {
+    "DET": {
+     "points": -3.8,
+     "qb": 0.0,
+     "injuries": -3.8,
+     "notes": [
+      "D.J. Reed (CB, Out)",
+      "Jack Campbell (LB, missed last game)",
+      "Christian Mahogany (OL, missed last game)",
+      "D.J. Wonnum (DE, missed last game)",
+      "Christian Izien (DB, missed last game)"
+     ]
+    },
+    "NE": {
+     "points": -2.5,
+     "qb": 0.0,
+     "injuries": -2.5,
+     "notes": [
+      "Alijah Vera-Tucker (G, missed last game)",
+      "Carlton Davis (CB, Out)",
+      "Ben Brown (C, Out)",
+      "Romeo Doubs (WR, missed last game)",
+      "Kevin Byard (S, Questionable)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_10_KC_ATL",
+   "week": 10,
+   "day": "2026-11-15",
+   "away": "KC",
+   "home": "ATL",
+   "neutral": false,
+   "home_margin": -2.0,
+   "home_win": 0.437,
+   "line": -3.0,
+   "results_margin": -3.8,
+   "lineup": {
+    "ATL": {
+     "points": 0.0,
+     "qb": 0.0,
+     "injuries": 0.0,
+     "notes": []
+    },
+    "KC": {
+     "points": -1.8,
+     "qb": 0.0,
+     "injuries": -1.8,
+     "notes": [
+      "Mansoor Delane (CB, missed last game)",
+      "L'Jarius Sneed (CB, missed last game)",
+      "Tyquan Thornton (WR, missed last game)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_10_HOU_CLE",
+   "week": 10,
+   "day": "2026-11-15",
+   "away": "HOU",
+   "home": "CLE",
+   "neutral": false,
+   "home_margin": -3.7,
+   "home_win": 0.387,
+   "line": -4.5,
+   "results_margin": -4.1,
+   "lineup": {
+    "CLE": {
+     "points": 0.2,
+     "qb": 0.0,
+     "injuries": 0.2,
+     "notes": [
+      "Maliek Collins (DT, missed last game)"
+     ]
+    },
+    "HOU": {
+     "points": -0.2,
+     "qb": 0.0,
+     "injuries": -0.2,
+     "notes": [
+      "Reed Blankenship (S, missed last game)",
+      "Wyatt Teller (G, missed last game)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_10_MIN_GB",
+   "week": 10,
+   "day": "2026-11-15",
+   "away": "MIN",
+   "home": "GB",
+   "neutral": false,
+   "home_margin": -0.6,
+   "home_win": 0.482,
+   "line": 3.0,
+   "results_margin": 1.7,
+   "lineup": {
+    "GB": {
+     "points": -2.3,
+     "qb": 0.0,
+     "injuries": -2.3,
+     "notes": [
+      "Sean Rhyan (C, missed last game)",
+      "Zaire Franklin (LB, missed last game)",
+      "Travis Glover (G, missed last game)",
+      "Edgerrin Cooper (LB, missed last game)",
+      "Jacob Monk (C, missed last game)"
+     ]
+    },
+    "MIN": {
+     "points": 0.0,
+     "qb": 1.0,
+     "injuries": -1.0,
+     "notes": [
+      "Kirk Cousins starting instead of the usual QB (+1.0)",
+      "Theo Jackson (S, missed last game)",
+      "Jauan Jennings (WR, missed last game)",
+      "Donovan Jackson (G, missed last game)",
+      "Josh Oliver (TE, missed last game)",
+      "Ryan Van Demark (T, missed last game)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_10_MIA_IND",
+   "week": 10,
+   "day": "2026-11-15",
+   "away": "MIA",
+   "home": "IND",
+   "neutral": false,
+   "home_margin": 2.7,
+   "home_win": 0.583,
+   "line": 3.5,
+   "results_margin": 4.3,
+   "lineup": {
+    "IND": {
+     "points": -2.6,
+     "qb": 0.0,
+     "injuries": -2.6,
+     "notes": [
+      "Akeem Davis-Gaither (LB, missed last game)",
+      "Quenton Nelson (G, missed last game)",
+      "A.J. Haulcy (S, missed last game)",
+      "DeForest Buckner (DT, missed last game)",
+      "Justin Walley (CB, missed last game)"
+     ]
+    },
+    "MIA": {
+     "points": -1.0,
+     "qb": -0.8,
+     "injuries": -0.2,
+     "notes": [
+      "Kyle McCord starting instead of the usual QB (-0.8)",
+      "De'Von Achane (RB, missed last game)",
+      "Jarrett Kingston (G, missed last game)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_10_CAR_NO",
+   "week": 10,
+   "day": "2026-11-15",
+   "away": "CAR",
+   "home": "NO",
+   "neutral": false,
+   "home_margin": 4.9,
+   "home_win": 0.648,
+   "line": 2.5,
+   "results_margin": 0.7,
+   "lineup": {
+    "NO": {
+     "points": -0.5,
+     "qb": 0.0,
+     "injuries": -0.5,
+     "notes": [
+      "Asim Richards (OL, missed last game)",
+      "Travis Etienne (RB, missed last game)"
+     ]
+    },
+    "CAR": {
+     "points": -4.7,
+     "qb": 0.0,
+     "injuries": -4.7,
+     "notes": [
+      "Bobby Okereke (LB, missed last game)",
+      "Will Lee (CB, missed last game)",
+      "Damien Lewis (G, missed last game)",
+      "Akayleb Evans (CB, missed last game)",
+      "Jaelan Phillips (LB, missed last game)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_10_BUF_NYJ",
+   "week": 10,
+   "day": "2026-11-15",
+   "away": "BUF",
+   "home": "NYJ",
+   "neutral": false,
+   "home_margin": -9.3,
+   "home_win": 0.234,
+   "line": -8.5,
+   "results_margin": -9.1,
+   "lineup": {
+    "NYJ": {
+     "points": -1.5,
+     "qb": 0.0,
+     "injuries": -1.5,
+     "notes": [
+      "Garrett Wilson (WR, missed last game)",
+      "Jordan Meredith (OL, missed last game)",
+      "Tim Patrick (WR, missed last game)"
+     ]
+    },
+    "BUF": {
+     "points": -1.3,
+     "qb": 0.0,
+     "injuries": -1.3,
+     "notes": [
+      "Alec Anderson (C, missed last game)",
+      "Dion Dawkins (T, missed last game)",
+      "C.J. Gardner-Johnson (S, missed last game)",
+      "Skyler Bell (WR, missed last game)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_10_JAX_TEN",
+   "week": 10,
+   "day": "2026-11-15",
+   "away": "JAX",
+   "home": "TEN",
+   "neutral": false,
+   "home_margin": -12.9,
+   "home_win": 0.156,
+   "line": -10.5,
+   "results_margin": -12.6,
+   "lineup": {
+    "TEN": {
+     "points": -0.7,
+     "qb": 0.0,
+     "injuries": -0.7,
+     "notes": [
+      "Jeffery Simmons (DT, missed last game)",
+      "Carnell Tate (WR, missed last game)",
+      "Fernando Carmona (G, missed last game)"
+     ]
+    },
+    "JAX": {
+     "points": -0.4,
+     "qb": 0.0,
+     "injuries": -0.4,
+     "notes": [
+      "Anton Harrison (OL, missed last game)",
+      "Eric Murray (S, missed last game)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_10_LA_ARI",
+   "week": 10,
+   "day": "2026-11-15",
+   "away": "LAR",
+   "home": "ARI",
+   "neutral": false,
+   "home_margin": -5.5,
+   "home_win": 0.334,
+   "line": -9.5,
+   "results_margin": -6.1,
+   "lineup": {
+    "ARI": {
+     "points": -2.6,
+     "qb": -0.7,
+     "injuries": -2.0,
+     "notes": [
+      "Carson Beck starting instead of the usual QB (-0.7)",
+      "Kendrick Bourne (WR, missed last game)",
+      "Paris Johnson (OL, missed last game)",
+      "Jon Gaines (OL, missed last game)",
+      "Marvin Harrison Jr. (WR, missed last game)",
+      "Hayden Conner (OL, missed last game)"
+     ]
+    },
+    "LAR": {
+     "points": -3.2,
+     "qb": 0.0,
+     "injuries": -3.2,
+     "notes": [
+      "Jaylen Watson (CB, missed last game)",
+      "Trent McDuffie (CB, missed last game)",
+      "Davante Adams (WR, missed last game)",
+      "Kobie Turner (DE, missed last game)",
+      "David Quessenberry (OL, missed last game)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_10_SEA_LV",
+   "week": 10,
+   "day": "2026-11-15",
+   "away": "SEA",
+   "home": "LV",
+   "neutral": false,
+   "home_margin": -6.5,
+   "home_win": 0.306,
+   "line": -6.5,
+   "results_margin": -6.2,
+   "lineup": {
+    "LV": {
+     "points": -1.8,
+     "qb": -1.5,
+     "injuries": -0.3,
+     "notes": [
+      "Fernando Mendoza starting instead of the usual QB (-1.5)",
+      "Jackson Powers-Johnson (G, missed last game)",
+      "Isaiah Pola-Mao (S, missed last game)"
+     ]
+    },
+    "SEA": {
+     "points": -1.5,
+     "qb": 0.0,
+     "injuries": -1.5,
+     "notes": [
+      "Charles Cross (T, missed last game)",
+      "Leonard Williams (DT, missed last game)",
+      "Uchenna Nwosu (LB, missed last game)",
+      "Rashid Shaheed (WR, missed last game)",
+      "Christian Haynes (G, missed last game)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_10_SF_DAL",
+   "week": 10,
+   "day": "2026-11-15",
+   "away": "SF",
+   "home": "DAL",
+   "neutral": false,
+   "home_margin": -4.5,
+   "home_win": 0.362,
+   "line": -3.5,
+   "results_margin": -3.6,
+   "lineup": {
+    "DAL": {
+     "points": -1.8,
+     "qb": 0.0,
+     "injuries": -1.8,
+     "notes": [
+      "George Pickens (WR, missed last game)",
+      "T.J. Bass (G, missed last game)",
+      "Jalen Thompson (S, missed last game)",
+      "DeMarvion Overshown (LB, missed last game)",
+      "Joey Porter Jr. (CB, missed last game)"
+     ]
+    },
+    "SF": {
+     "points": -0.9,
+     "qb": 0.0,
+     "injuries": -0.9,
+     "notes": [
+      "Mike Evans (WR, missed last game)",
+      "Deebo Samuel (WR, missed last game)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_10_PIT_CIN",
+   "week": 10,
+   "day": "2026-11-15",
+   "away": "PIT",
+   "home": "CIN",
+   "neutral": false,
+   "home_margin": 3.4,
+   "home_win": 0.605,
+   "line": 3.5,
+   "results_margin": 3.4,
+   "lineup": {
+    "CIN": {
+     "points": -0.5,
+     "qb": 0.0,
+     "injuries": -0.5,
+     "notes": [
+      "Jalen Davis (CB, missed last game)",
+      "Andrei Iosivas (WR, missed last game)"
+     ]
+    },
+    "PIT": {
+     "points": -0.5,
+     "qb": 0.0,
+     "injuries": -0.5,
+     "notes": [
+      "Michael Pittman Jr. (WR, missed last game)",
+      "Rayshawn Jenkins (S, missed last game)",
+      "Dylan Cook (T, missed last game)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_10_LAC_BAL",
+   "week": 10,
+   "day": "2026-11-16",
+   "away": "LAC",
+   "home": "BAL",
+   "neutral": false,
+   "home_margin": 3.3,
+   "home_win": 0.602,
+   "line": 4.5,
+   "results_margin": 4.7,
+   "lineup": {
+    "BAL": {
+     "points": -2.6,
+     "qb": -0.2,
+     "injuries": -2.4,
+     "notes": [
+      "Jacoby Brissett starting instead of the usual QB (-0.2)",
+      "Nate Wiggins (CB, missed last game)",
+      "Jaylinn Hawkins (S, missed last game)",
+      "Tavius Robinson (LB, missed last game)",
+      "Emery Jones (G, missed last game)",
+      "Jovaughn Gwyn (OL, missed last game)"
+     ]
+    },
+    "LAC": {
+     "points": -1.2,
+     "qb": 0.0,
+     "injuries": -1.2,
+     "notes": [
+      "Rashawn Slater (T, missed last game)",
+      "Ladd McConkey (WR, missed last game)",
+      "Derwin James (S, missed last game)",
+      "Trevor Penning (OL, missed last game)",
+      "Kayode Awosika (G, missed last game)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_11_IND_HOU",
+   "week": 11,
+   "day": "2026-11-19",
+   "away": "IND",
+   "home": "HOU",
+   "neutral": false,
+   "home_margin": 9.7,
+   "home_win": 0.777,
+   "line": 10.0,
+   "results_margin": 7.3,
+   "lineup": {
+    "HOU": {
+     "points": -0.2,
+     "qb": 0.0,
+     "injuries": -0.2,
+     "notes": [
+      "Reed Blankenship (S, missed last game)",
+      "Wyatt Teller (G, missed last game)"
+     ]
+    },
+    "IND": {
+     "points": -2.6,
+     "qb": 0.0,
+     "injuries": -2.6,
+     "notes": [
+      "Akeem Davis-Gaither (LB, missed last game)",
+      "Quenton Nelson (G, missed last game)",
+      "A.J. Haulcy (S, missed last game)",
+      "DeForest Buckner (DT, missed last game)",
+      "Justin Walley (CB, missed last game)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_11_MIA_BUF",
+   "week": 11,
+   "day": "2026-11-22",
+   "away": "MIA",
+   "home": "BUF",
+   "neutral": false,
+   "home_margin": 12.9,
+   "home_win": 0.843,
+   "line": 16.5,
+   "results_margin": 13.2,
+   "lineup": {
+    "BUF": {
+     "points": -1.3,
+     "qb": 0.0,
+     "injuries": -1.3,
+     "notes": [
+      "Alec Anderson (C, missed last game)",
+      "Dion Dawkins (T, missed last game)",
+      "C.J. Gardner-Johnson (S, missed last game)",
+      "Skyler Bell (WR, missed last game)"
+     ]
+    },
+    "MIA": {
+     "points": -1.0,
+     "qb": -0.8,
+     "injuries": -0.2,
+     "notes": [
+      "Kyle McCord starting instead of the usual QB (-0.8)",
+      "De'Von Achane (RB, missed last game)",
+      "Jarrett Kingston (G, missed last game)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_11_BAL_CAR",
+   "week": 11,
+   "day": "2026-11-22",
+   "away": "BAL",
+   "home": "CAR",
+   "neutral": false,
+   "home_margin": -0.3,
+   "home_win": 0.49,
+   "line": 1.5,
+   "results_margin": 1.8,
+   "lineup": {
+    "CAR": {
+     "points": -4.7,
+     "qb": 0.0,
+     "injuries": -4.7,
+     "notes": [
+      "Bobby Okereke (LB, missed last game)",
+      "Will Lee (CB, missed last game)",
+      "Damien Lewis (G, missed last game)",
+      "Akayleb Evans (CB, missed last game)",
+      "Jaelan Phillips (LB, missed last game)"
+     ]
+    },
+    "BAL": {
+     "points": -2.6,
+     "qb": -0.2,
+     "injuries": -2.4,
+     "notes": [
+      "Jacoby Brissett starting instead of the usual QB (-0.2)",
+      "Nate Wiggins (CB, missed last game)",
+      "Jaylinn Hawkins (S, missed last game)",
+      "Tavius Robinson (LB, missed last game)",
+      "Emery Jones (G, missed last game)",
+      "Jovaughn Gwyn (OL, missed last game)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_11_NO_CHI",
+   "week": 11,
+   "day": "2026-11-22",
+   "away": "NO",
+   "home": "CHI",
+   "neutral": false,
+   "home_margin": 9.5,
+   "home_win": 0.77,
+   "line": 9.5,
+   "results_margin": 9.1,
+   "lineup": {
+    "CHI": {
+     "points": -0.1,
+     "qb": 0.0,
+     "injuries": -0.1,
+     "notes": [
+      "Malik Muhammad (DB, missed last game)",
+      "Cole Kmet (TE, missed last game)",
+      "Dayo Odeyingbo (DL, missed last game)",
+      "Xavier Woods (DB, missed last game)",
+      "Braxton Jones (OL, missed last game)"
+     ]
+    },
+    "NO": {
+     "points": -0.5,
+     "qb": 0.0,
+     "injuries": -0.5,
+     "notes": [
+      "Asim Richards (OL, missed last game)",
+      "Travis Etienne (RB, missed last game)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_11_TEN_DAL",
+   "week": 11,
+   "day": "2026-11-22",
+   "away": "TEN",
+   "home": "DAL",
+   "neutral": false,
+   "home_margin": 7.0,
+   "home_win": 0.707,
+   "line": 7.5,
+   "results_margin": 8.1,
+   "lineup": {
+    "DAL": {
+     "points": -1.8,
+     "qb": 0.0,
+     "injuries": -1.8,
+     "notes": [
+      "George Pickens (WR, missed last game)",
+      "T.J. Bass (G, missed last game)",
+      "Jalen Thompson (S, missed last game)",
+      "DeMarvion Overshown (LB, missed last game)",
+      "Joey Porter Jr. (CB, missed last game)"
+     ]
+    },
+    "TEN": {
+     "points": -0.7,
+     "qb": 0.0,
+     "injuries": -0.7,
+     "notes": [
+      "Jeffery Simmons (DT, missed last game)",
+      "Carnell Tate (WR, missed last game)",
+      "Fernando Carmona (G, missed last game)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_11_TB_DET",
+   "week": 11,
+   "day": "2026-11-22",
+   "away": "TB",
+   "home": "DET",
+   "neutral": false,
+   "home_margin": 0.7,
+   "home_win": 0.521,
+   "line": 3.5,
+   "results_margin": 3.5,
+   "lineup": {
+    "DET": {
+     "points": -3.7,
+     "qb": 0.0,
+     "injuries": -3.7,
+     "notes": [
+      "Jack Campbell (LB, missed last game)",
+      "D.J. Reed (CB, missed last game)",
+      "Christian Mahogany (OL, missed last game)",
+      "D.J. Wonnum (DE, missed last game)",
+      "Christian Izien (DB, missed last game)"
+     ]
+    },
+    "TB": {
+     "points": -0.9,
+     "qb": 0.0,
+     "injuries": -0.9,
+     "notes": [
+      "YaYa Diaby (LB, missed last game)",
+      "Benjamin Morrison (CB, missed last game)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_11_ARI_KC",
+   "week": 11,
+   "day": "2026-11-22",
+   "away": "ARI",
+   "home": "KC",
+   "neutral": false,
+   "home_margin": 10.8,
+   "home_win": 0.8,
+   "line": 14.0,
+   "results_margin": 10.0,
+   "lineup": {
+    "KC": {
+     "points": -1.8,
+     "qb": 0.0,
+     "injuries": -1.8,
+     "notes": [
+      "Mansoor Delane (CB, missed last game)",
+      "L'Jarius Sneed (CB, missed last game)",
+      "Tyquan Thornton (WR, missed last game)"
+     ]
+    },
+    "ARI": {
+     "points": -2.6,
+     "qb": -0.7,
+     "injuries": -2.0,
+     "notes": [
+      "Carson Beck starting instead of the usual QB (-0.7)",
+      "Kendrick Bourne (WR, missed last game)",
+      "Paris Johnson (OL, missed last game)",
+      "Jon Gaines (OL, missed last game)",
+      "Marvin Harrison Jr. (WR, missed last game)",
+      "Hayden Conner (OL, missed last game)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_11_JAX_NYG",
+   "week": 11,
+   "day": "2026-11-22",
+   "away": "JAX",
+   "home": "NYG",
+   "neutral": false,
+   "home_margin": -9.8,
+   "home_win": 0.222,
+   "line": -6.0,
+   "results_margin": -7.7,
+   "lineup": {
+    "NYG": {
+     "points": -2.5,
+     "qb": -0.7,
+     "injuries": -1.8,
+     "notes": [
+      "J.J. McCarthy starting instead of the usual QB (-0.7)",
+      "Tremaine Edmunds (LB, missed last game)",
+      "John Michael Schmitz (C, missed last game)",
+      "Chauncey Golston (DL, missed last game)",
+      "Colton Hood (CB, missed last game)",
+      "Brian Burns (LB, missed last game)"
+     ]
+    },
+    "JAX": {
+     "points": -0.4,
+     "qb": 0.0,
+     "injuries": -0.4,
+     "notes": [
+      "Anton Harrison (OL, missed last game)",
+      "Eric Murray (S, missed last game)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_11_NYJ_LAC",
+   "week": 11,
+   "day": "2026-11-22",
+   "away": "NYJ",
+   "home": "LAC",
+   "neutral": false,
+   "home_margin": 2.6,
+   "home_win": 0.58,
+   "line": 1.5,
+   "results_margin": 2.3,
+   "lineup": {
+    "LAC": {
+     "points": -1.2,
+     "qb": 0.0,
+     "injuries": -1.2,
+     "notes": [
+      "Rashawn Slater (T, missed last game)",
+      "Ladd McConkey (WR, missed last game)",
+      "Derwin James (S, missed last game)",
+      "Trevor Penning (OL, missed last game)",
+      "Kayode Awosika (G, missed last game)"
+     ]
+    },
+    "NYJ": {
+     "points": -1.5,
+     "qb": 0.0,
+     "injuries": -1.5,
+     "notes": [
+      "Garrett Wilson (WR, missed last game)",
+      "Jordan Meredith (OL, missed last game)",
+      "Tim Patrick (WR, missed last game)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_11_LV_DEN",
+   "week": 11,
+   "day": "2026-11-22",
+   "away": "LV",
+   "home": "DEN",
+   "neutral": false,
+   "home_margin": 9.5,
+   "home_win": 0.772,
+   "line": 8.5,
+   "results_margin": 8.6,
+   "lineup": {
+    "DEN": {
+     "points": -0.9,
+     "qb": 0.0,
+     "injuries": -0.9,
+     "notes": [
+      "Brandon Jones (S, missed last game)",
+      "Talanoa Hufanga (S, missed last game)",
+      "Eyioma Uwazurike (DL, missed last game)",
+      "Jonah Elliss (LB, missed last game)",
+      "Kris Abrams-Draine (CB, missed last game)"
+     ]
+    },
+    "LV": {
+     "points": -1.8,
+     "qb": -1.5,
+     "injuries": -0.3,
+     "notes": [
+      "Fernando Mendoza starting instead of the usual QB (-1.5)",
+      "Jackson Powers-Johnson (G, missed last game)",
+      "Isaiah Pola-Mao (S, missed last game)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_11_PIT_PHI",
+   "week": 11,
+   "day": "2026-11-22",
+   "away": "PIT",
+   "home": "PHI",
+   "neutral": false,
+   "home_margin": -7.4,
+   "home_win": 0.282,
+   "line": -4.5,
+   "results_margin": -3.5,
+   "lineup": {
+    "PHI": {
+     "points": -4.4,
+     "qb": -1.8,
+     "injuries": -2.6,
+     "notes": [
+      "Joe Milton III starting instead of the usual QB (-1.8)",
+      "Jihaad Campbell (LB, missed last game)",
+      "Dontayvion Wicks (WR, missed last game)",
+      "Cam Jurgens (C, missed last game)",
+      "DeVonta Smith (WR, missed last game)",
+      "Lane Johnson (T, missed last game)"
+     ]
+    },
+    "PIT": {
+     "points": -0.5,
+     "qb": 0.0,
+     "injuries": -0.5,
+     "notes": [
+      "Michael Pittman Jr. (WR, missed last game)",
+      "Rayshawn Jenkins (S, missed last game)",
+      "Dylan Cook (T, missed last game)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_11_MIN_SF",
+   "week": 11,
+   "day": "2026-11-22",
+   "away": "MIN",
+   "home": "SF",
+   "neutral": true,
+   "home_margin": 1.5,
+   "home_win": 0.546,
+   "line": 3.5,
+   "results_margin": 2.4,
+   "lineup": {
+    "SF": {
+     "points": -0.9,
+     "qb": 0.0,
+     "injuries": -0.9,
+     "notes": [
+      "Mike Evans (WR, missed last game)",
+      "Deebo Samuel (WR, missed last game)"
+     ]
+    },
+    "MIN": {
+     "points": 0.0,
+     "qb": 1.0,
+     "injuries": -1.0,
+     "notes": [
+      "Kirk Cousins starting instead of the usual QB (+1.0)",
+      "Theo Jackson (S, missed last game)",
+      "Jauan Jennings (WR, missed last game)",
+      "Donovan Jackson (G, missed last game)",
+      "Josh Oliver (TE, missed last game)",
+      "Ryan Van Demark (T, missed last game)"
+     ]
+    }
+   }
+  },
+  {
+   "id": "2026_11_CIN_WAS",
+   "week": 11,
+   "day": "2026-11-23",
+   "away": "CIN",
+   "home": "WAS",
+   "neutral": false,
+   "home_margin": -3.8,
+   "home_win": 0.382,
+   "line": -3.5,
+   "results_margin": -3.8,
+   "lineup": {
+    "WAS": {
+     "points": -0.5,
+     "qb": 0.0,
+     "injuries": -0.5,
+     "notes": [
+      "Lucas Patrick (G, missed last game)",
+      "Daron Payne (DT, missed last game)",
+      "Javon Kinlaw (DT, missed last game)",
+      "Terry McLaurin (WR, missed last game)"
+     ]
+    },
+    "CIN": {
+     "points": -0.5,
+     "qb": 0.0,
+     "injuries": -0.5,
+     "notes": [
+      "Jalen Davis (CB, missed last game)",
+      "Andrei Iosivas (WR, missed last game)"
+     ]
+    }
+   }
+  }
+ ]
+}

@@ -91,6 +91,14 @@ def main():
     blend = json.load(open('blend_scorecard.json')) if os.path.exists('blend_scorecard.json') else None   # from SAM's sam_model.py
     sam = json.load(open('sam_params.json')) if os.path.exists('sam_params.json') else None
     bench = json.load(open('research/nfelo_bench.json')) if os.path.exists('research/nfelo_bench.json') else {}
+    fantasy = {}
+
+    def fantasy_step():                               # Sleeper league lineup, bench, waivers (fantasy_league.py)
+        import fantasy_league
+        fantasy.update(fantasy_league.run())
+    err = step('fantasy', fantasy_step)
+    if err:
+        errors.append(err)
     data = dict(
         updated=datetime.datetime.now().strftime('%a %b %d, %I:%M %p'), season=season, week=league['week'],
         through=league['through'], power=power, team_stats=stats, games=league['upcoming'], results=recent_results(season),
@@ -98,6 +106,7 @@ def main():
         model=dict(game=params.get('tested', {}), lineup=dict(train=lw.get('train'), test=lw.get('test'), weights=lw.get('weights')),
                    projections=pp.get('test', {}), blend=blend,
                    sam=dict({k: sam[k] for k in ('trained_on', 'tested_on', 'test')}, nfelo={k: bench[k] for k in ('nfelo_model', 'nfelo_blend') if k in bench}) if sam else None, pick_record=league.get('pick_record')),
+        fantasy=fantasy or None,
         errors=errors)
     os.makedirs('site', exist_ok=True)
     with open('site/data.json.tmp', 'w', encoding='utf-8') as f:

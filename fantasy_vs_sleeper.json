@@ -1,0 +1,214 @@
+{
+ "2025": {
+  "QB": {
+   "SAM": {
+    "n": 542,
+    "mae": 6.161,
+    "mae_8plus": 6.155,
+    "corr": 0.297,
+    "startsit": 0.5937,
+    "pairs": 7888
+   },
+   "Sleeper": {
+    "n": 542,
+    "mae": 6.535,
+    "mae_8plus": 6.547,
+    "corr": 0.304,
+    "startsit": 0.5932,
+    "pairs": 7879
+   },
+   "avg of both": {
+    "n": 542,
+    "mae": 6.125,
+    "mae_8plus": 6.128,
+    "corr": 0.323,
+    "startsit": 0.5986,
+    "pairs": 7888
+   }
+  },
+  "RB": {
+   "SAM": {
+    "n": 1429,
+    "mae": 4.455,
+    "mae_8plus": 6.083,
+    "corr": 0.66,
+    "startsit": 0.6349,
+    "pairs": 11062
+   },
+   "Sleeper": {
+    "n": 1429,
+    "mae": 4.258,
+    "mae_8plus": 6.132,
+    "corr": 0.694,
+    "startsit": 0.6536,
+    "pairs": 11049
+   },
+   "avg of both": {
+    "n": 1429,
+    "mae": 4.27,
+    "mae_8plus": 5.999,
+    "corr": 0.69,
+    "startsit": 0.6495,
+    "pairs": 11062
+   }
+  },
+  "WR": {
+   "SAM": {
+    "n": 2188,
+    "mae": 4.504,
+    "mae_8plus": 5.866,
+    "corr": 0.584,
+    "startsit": 0.5975,
+    "pairs": 24275
+   },
+   "Sleeper": {
+    "n": 2188,
+    "mae": 4.301,
+    "mae_8plus": 5.894,
+    "corr": 0.603,
+    "startsit": 0.6122,
+    "pairs": 24260
+   },
+   "avg of both": {
+    "n": 2188,
+    "mae": 4.325,
+    "mae_8plus": 5.831,
+    "corr": 0.605,
+    "startsit": 0.6107,
+    "pairs": 24275
+   }
+  },
+  "TE": {
+   "SAM": {
+    "n": 1097,
+    "mae": 3.686,
+    "mae_8plus": 5.144,
+    "corr": 0.569,
+    "startsit": 0.5888,
+    "pairs": 3220
+   },
+   "Sleeper": {
+    "n": 1097,
+    "mae": 3.618,
+    "mae_8plus": 5.208,
+    "corr": 0.581,
+    "startsit": 0.6011,
+    "pairs": 3216
+   },
+   "avg of both": {
+    "n": 1097,
+    "mae": 3.554,
+    "mae_8plus": 5.128,
+    "corr": 0.59,
+    "startsit": 0.6037,
+    "pairs": 3220
+   }
+  }
+ },
+ "2026": {
+  "QB": {
+   "SAM": {
+    "n": 272,
+    "mae": 6.13,
+    "mae_8plus": 6.115,
+    "corr": 0.315,
+    "startsit": 0.6201,
+    "pairs": 3896
+   },
+   "Sleeper": {
+    "n": 272,
+    "mae": 6.001,
+    "mae_8plus": 5.962,
+    "corr": 0.347,
+    "startsit": 0.6277,
+    "pairs": 3889
+   },
+   "avg of both": {
+    "n": 272,
+    "mae": 6.005,
+    "mae_8plus": 5.978,
+    "corr": 0.35,
+    "startsit": 0.6301,
+    "pairs": 3896
+   }
+  },
+  "RB": {
+   "SAM": {
+    "n": 707,
+    "mae": 4.372,
+    "mae_8plus": 6.242,
+    "corr": 0.674,
+    "startsit": 0.6376,
+    "pairs": 4967
+   },
+   "Sleeper": {
+    "n": 707,
+    "mae": 4.221,
+    "mae_8plus": 6.125,
+    "corr": 0.703,
+    "startsit": 0.6552,
+    "pairs": 4965
+   },
+   "avg of both": {
+    "n": 707,
+    "mae": 4.201,
+    "mae_8plus": 6.085,
+    "corr": 0.702,
+    "startsit": 0.6523,
+    "pairs": 4967
+   }
+  },
+  "TE": {
+   "SAM": {
+    "n": 598,
+    "mae": 3.878,
+    "mae_8plus": 5.592,
+    "corr": 0.585,
+    "startsit": 0.6156,
+    "pairs": 2045
+   },
+   "Sleeper": {
+    "n": 598,
+    "mae": 3.747,
+    "mae_8plus": 5.655,
+    "corr": 0.595,
+    "startsit": 0.5994,
+    "pairs": 2042
+   },
+   "avg of both": {
+    "n": 598,
+    "mae": 3.746,
+    "mae_8plus": 5.59,
+    "corr": 0.6,
+    "startsit": 0.6054,
+    "pairs": 2045
+   }
+  },
+  "WR": {
+   "SAM": {
+    "n": 1120,
+    "mae": 4.453,
+    "mae_8plus": 6.098,
+    "corr": 0.617,
+    "startsit": 0.6126,
+    "pairs": 11345
+   },
+   "Sleeper": {
+    "n": 1120,
+    "mae": 4.223,
+    "mae_8plus": 6.11,
+    "corr": 0.638,
+    "startsit": 0.6221,
+    "pairs": 11330
+   },
+   "avg of both": {
+    "n": 1120,
+    "mae": 4.28,
+    "mae_8plus": 6.057,
+    "corr": 0.638,
+    "startsit": 0.6249,
+    "pairs": 11345
+   }
+  }
+ }
+}

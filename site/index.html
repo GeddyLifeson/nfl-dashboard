@@ -79,7 +79,7 @@ tr.best td { font-weight: 600; }
 <nav id="tabs"></nav>
 <main id="view"></main>
 <script>
-const TABS = [['rankings', 'Rankings'], ['teams', 'Teams'], ['games', 'Games'], ['players', 'Player rankings'], ['projections', 'Player projections'], ['parlay', 'Parlay builder'], ['model', 'Model accuracy']];
+const TABS = [['rankings', 'Rankings'], ['teams', 'Teams'], ['games', 'Games'], ['players', 'Player rankings'], ['projections', 'Player projections'], ['fantasy', 'Fantasy'], ['parlay', 'Parlay builder'], ['model', 'Model accuracy']];
 const POS_ORDER = ['QB', 'RB', 'WR', 'TE', 'EDGE', 'DL', 'LB', 'CB', 'S', 'K'];
 const LABEL = {
   cmp: 'Cmp/Att', pass_yds: 'Pass yds', td: 'TD', int: 'INT', epa_play: 'EPA/play', cpoe: 'CPOE', rush_yds: 'Rush yds', car: 'Carries',
@@ -89,7 +89,7 @@ const LABEL = {
   rushing_yards: 'Rush yds', rushing_tds: 'Rush TD', receptions: 'Rec', receiving_yards: 'Rec yds', receiving_tds: 'Rec TD'
 };
 let D = null, tab = localStorage.getItem('tab') || 'rankings';
-const state = { rankBy: 'pos', team: null, pos: 'QB', projPos: 'All', projTeam: 'All', projSearch: '' };
+const state = { rankBy: 'pos', team: null, pos: 'QB', projPos: 'All', projTeam: 'All', projSearch: '', fanPos: 'QB' };
 
 function el(tag, props, ...kids) {
   const n = document.createElement(tag);
@@ -255,6 +255,41 @@ function projections() {
   return [el('h2', {}, 'Next-game projections'),
     el('p', { class: 'note' }, 'Recent games weighted most, blended with last season, adjusted for what the opponent allows to the position. Players ruled out or who missed their last game are marked. Only the current starting QB gets a passing projection. Accuracy is on the Model accuracy tab.'),
     bar, table(cols, rows)];
+}
+
+function fantasy() {
+  const F = D.fantasy;
+  if (!F) return [el('h2', {}, 'Fantasy'), el('p', { class: 'note' }, 'No fantasy data yet. It fills in on the next refresh that can reach Sleeper.')];
+  const src = r => el('td', { class: 'num muted' }, (r.sam === null || r.sam === undefined ? '-' : fmt(r.sam)) + ' / ' + (r.sleeper === null || r.sleeper === undefined ? '-' : fmt(r.sleeper)));
+  const who = r => el('td', {}, r.name, r.status ? el('span', { class: 'tag warn' }, ' ' + r.status) : '', r.played ? el('span', { class: 'tag' }, ' played') : '');
+  const starting = new Set(F.changes.start.map(p => p.id));
+  const lineupCols = [{ key: 'slot', label: 'Slot' }, { key: 'name', label: 'Player', render: r => who(r) }, { key: 'pos', label: 'Pos' },
+    { key: 'team', label: 'Team' }, { key: 'opp', label: 'Game' }, { key: 'proj', label: 'Projected', num: true, render: r => el('td', { class: 'num' }, fmt(r.proj)) },
+    { key: 'sam', label: 'SAM / Sleeper', num: true, render: src }];
+  const benchCols = lineupCols.filter(c => c.key !== 'slot');
+  const change = F.changes.start.length
+    ? 'Start ' + F.changes.start.map(p => p.name).join(', ') + '; bench ' + F.changes.bench.map(p => p.name).join(', ') + '.'
+    : 'Your current lineup is already the best one.';
+  const waiverRows = Object.entries(F.waivers).flatMap(([pos, rs]) => rs.map(r => ({ ...r, pos, better: r.proj > (F.worst_on_roster[pos] || 0) })));
+  const waiverCols = [{ key: 'name', label: 'Player', render: r => who(r) }, { key: 'pos', label: 'Pos' }, { key: 'team', label: 'Team' }, { key: 'opp', label: 'Game' },
+    { key: 'proj', label: 'Projected', num: true, render: r => el('td', { class: 'num ' + (r.better ? 'good' : '') }, fmt(r.proj)) },
+    { key: 'sam', label: 'SAM / Sleeper', num: true, render: src },
+    { key: 'trending_adds', label: 'Sleeper adds (48h)', num: true, render: r => el('td', { class: 'num muted' }, r.trending_adds ? r.trending_adds.toLocaleString() : '') }];
+  const pos = F.rankings[state.fanPos] ? state.fanPos : 'QB';
+  const bar = el('div', { class: 'bar' }, Object.keys(F.rankings).map(p => el('button', { class: p === pos ? 'on' : '', onclick: () => { state.fanPos = p; render(); } }, p)));
+  const rankCols = [{ key: 'name', label: 'Player', render: r => el('td', {}, r.name, r.status ? el('span', { class: 'tag warn' }, ' ' + r.status) : '') },
+    { key: 'team', label: 'Team' }, { key: 'opp', label: 'Opponent' }, { key: 'proj', label: 'SAM projection', num: true, render: r => el('td', { class: 'num' }, fmt(r.proj)) }];
+  return [el('h2', {}, 'Fantasy: ' + (F.league || 'Sleeper league') + ', week ' + F.week),
+    el('p', { class: 'note' }, 'Record ' + F.record + ' · ' + F.scoring_note + '. Projected points are the average of SAM and Sleeper\'s own projection; both are shown.' +
+      (F.warning ? ' Note: ' + F.warning + '.' : '')),
+    el('h3', {}, 'Best lineup, projected ' + fmt(F.lineup_total)), el('p', { class: 'note' }, change),
+    table(lineupCols, F.lineup.map(r => ({ ...r, _cls: starting.has(r.id) ? 'best' : '' }))),
+    el('h3', {}, 'Bench'), table(benchCols, F.bench),
+    el('h3', {}, 'Waiver options this week'),
+    el('p', { class: 'note' }, 'Unrostered players with the highest projection at each position. Green means more than your lowest-projected player at that position.'),
+    table(waiverCols, waiverRows),
+    el('h3', {}, 'This week\'s projections'), bar, table(rankCols, F.rankings[pos]),
+    el('p', { class: 'note' }, 'In past seasons (2025 and 2026 so far) SAM beat season averages at every position, and was slightly behind Sleeper\'s projections for RB and WR and about even for QB and TE; the average of the two was about as good as the better one. Kicker scoring is close to random. Past accuracy does not guarantee future results.')];
 }
 
 function model() {
@@ -577,7 +612,7 @@ function slipView(legs) {
 
 function render() {
   document.getElementById('tabs').replaceChildren(...TABS.map(([k, l]) => el('button', { class: tab === k ? 'on' : '', onclick: () => { tab = k; localStorage.setItem('tab', k); render(); } }, l)));
-  const view = { rankings, teams, games, players, projections, parlay, model }[tab] || rankings;
+  const view = { rankings, teams, games, players, projections, fantasy, parlay, model }[tab] || rankings;
   document.getElementById('view').classList.remove('has-bar');
   document.getElementById('view').replaceChildren(...view().flat());
 }

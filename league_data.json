@@ -9865,7 +9865,7 @@
    "neutral": true,
    "home_margin": 0.1,
    "home_win": 0.502,
-   "line": 3.0,
+   "line": 2.5,
    "results_margin": 0.9,
    "lineup_margin": -0.7,
    "model": "SAM multi-factor",
@@ -9906,8 +9906,8 @@
     "wind_x_pass": -0.0
    },
    "sam_market": {
-    "margin": 2.6,
-    "win": 0.579,
+    "margin": 2.2,
+    "win": 0.566,
     "weight_on_sam": 0.14
    },
    "lineup": {
@@ -10191,7 +10191,7 @@
    "home_win": 0.65,
    "line": 4.5,
    "results_margin": 4.3,
-   "lineup_margin": 3.3,
+   "lineup_margin": 3.0,
    "model": "SAM multi-factor",
    "factors": {
     "base": 4.282,
@@ -10236,9 +10236,9 @@
    },
    "lineup": {
     "IND": {
-     "points": -3.5,
+     "points": -3.8,
      "qb": 0.0,
-     "injuries": -3.5,
+     "injuries": -3.8,
      "notes": [
       "Jalen Travis (T, Out)",
       "Akeem Davis-Gaither (LB, Out)",
@@ -10352,7 +10352,7 @@
    "neutral": false,
    "home_margin": -7.2,
    "home_win": 0.291,
-   "line": -7.5,
+   "line": -8.5,
    "results_margin": -9.1,
    "lineup_margin": -8.1,
    "model": "SAM multi-factor",
@@ -10393,8 +10393,8 @@
     "wind_x_pass": -0.0
    },
    "sam_market": {
-    "margin": -7.5,
-    "win": 0.282,
+    "margin": -8.3,
+    "win": 0.26,
     "weight_on_sam": 0.14
    },
    "lineup": {
@@ -10674,7 +10674,7 @@
    "neutral": false,
    "home_margin": -4.2,
    "home_win": 0.372,
-   "line": -3.5,
+   "line": -4.5,
    "results_margin": -3.6,
    "lineup_margin": -4.8,
    "model": "SAM multi-factor",
@@ -10715,8 +10715,8 @@
     "wind_x_pass": -0.0
    },
    "sam_market": {
-    "margin": -3.6,
-    "win": 0.39,
+    "margin": -4.5,
+    "win": 0.365,
     "weight_on_sam": 0.14
    },
    "lineup": {
@@ -10835,7 +10835,7 @@
    "home_win": 0.659,
    "line": 4.5,
    "results_margin": 4.7,
-   "lineup_margin": 3.3,
+   "lineup_margin": 3.1,
    "model": "SAM multi-factor",
    "factors": {
     "base": 4.693,
@@ -10886,22 +10886,22 @@
      "notes": [
       "Jacoby Brissett starting instead of the usual QB (-0.2)",
       "Nate Wiggins (CB, missed last game)",
-      "Jaylinn Hawkins (S, missed last game)",
+      "Jaylinn Hawkins (S, Out)",
       "Tavius Robinson (LB, missed last game)",
       "Emery Jones (G, missed last game)",
       "Jovaughn Gwyn (OL, missed last game)"
      ]
     },
     "LAC": {
-     "points": -1.2,
+     "points": -1.0,
      "qb": 0.0,
-     "injuries": -1.2,
+     "injuries": -1.0,
      "notes": [
       "Rashawn Slater (T, missed last game)",
-      "Ladd McConkey (WR, missed last game)",
       "Derwin James (S, missed last game)",
       "Trevor Penning (OL, missed last game)",
-      "Kayode Awosika (G, missed last game)"
+      "Justin Eboigbe (DL, Questionable)",
+      "Theo Wease (WR, missed last game)"
      ]
     }
    }

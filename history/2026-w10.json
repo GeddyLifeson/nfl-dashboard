@@ -23,11 +23,11 @@
   "CAR": 19,
   "PHI": 20,
   "WAS": 21,
-  "ATL": 22,
-  "IND": 23,
-  "NO": 24,
-  "NYG": 25,
-  "LV": 26,
+  "IND": 22,
+  "NO": 23,
+  "ATL": 24,
+  "LV": 25,
+  "NYG": 26,
   "NYJ": 27,
   "ARI": 28,
   "LAC": 29,
@@ -36,38 +36,38 @@
   "MIA": 32
  },
  "ratings": {
-  "JAX": 6.42,
-  "SF": 6.23,
-  "BUF": 5.09,
-  "CIN": 4.85,
-  "KC": 4.52,
+  "JAX": 6.47,
+  "SF": 6.22,
+  "BUF": 5.2,
+  "CIN": 4.84,
+  "KC": 4.71,
   "LAR": 4.42,
-  "CHI": 3.38,
+  "CHI": 3.37,
   "DET": 3.02,
-  "SEA": 2.46,
+  "SEA": 2.47,
   "NE": 2.32,
-  "GB": 1.8,
-  "HOU": 1.57,
-  "DEN": 1.43,
-  "DAL": 0.81,
-  "PIT": 0.74,
-  "TB": 0.34,
-  "MIN": -0.1,
-  "BAL": -0.46,
-  "CAR": -1.63,
+  "GB": 1.59,
+  "HOU": 1.51,
+  "DEN": 1.45,
+  "DAL": 0.79,
+  "PIT": 0.73,
+  "TB": 0.33,
+  "MIN": 0.11,
+  "BAL": -0.47,
+  "CAR": -1.61,
   "PHI": -2.08,
-  "WAS": -2.08,
-  "ATL": -2.31,
+  "WAS": -2.09,
   "IND": -2.36,
-  "NO": -2.39,
-  "NYG": -3.19,
-  "LV": -3.21,
-  "NYJ": -3.36,
-  "ARI": -4.02,
-  "LAC": -4.67,
-  "CLE": -5.33,
-  "TEN": -5.84,
-  "MIA": -6.39
+  "NO": -2.42,
+  "ATL": -2.5,
+  "LV": -3.19,
+  "NYG": -3.2,
+  "NYJ": -3.45,
+  "ARI": -4.01,
+  "LAC": -4.66,
+  "CLE": -5.27,
+  "TEN": -5.89,
+  "MIA": -6.35
  },
  "upcoming": [
   {
@@ -726,12 +726,12 @@
    "neutral": false,
    "home_margin": -7.1,
    "home_win": 0.292,
-   "line": -9.5,
+   "line": -10.0,
    "results_margin": -6.0,
    "lineup_margin": -6.4,
    "model": "SAM multi-factor",
    "factors": {
-    "base": -6.014,
+    "base": -6.049,
     "off_epa": -0.1,
     "def_epa": 0.099,
     "off_pass_epa": -0.119,
@@ -767,8 +767,8 @@
     "wind_x_pass": -0.0
    },
    "sam_market": {
-    "margin": -9.2,
-    "win": 0.239,
+    "margin": -9.6,
+    "win": 0.229,
     "weight_on_sam": 0.14
    },
    "lineup": {
@@ -813,7 +813,7 @@
    "lineup_margin": -6.4,
    "model": "SAM multi-factor",
    "factors": {
-    "base": -6.175,
+    "base": -6.169,
     "off_epa": -0.01,
     "def_epa": 0.205,
     "off_pass_epa": -0.047,
@@ -886,14 +886,14 @@
    "away": "SF",
    "home": "DAL",
    "neutral": false,
-   "home_margin": -4.2,
+   "home_margin": -4.3,
    "home_win": 0.372,
-   "line": -4.5,
-   "results_margin": -3.6,
-   "lineup_margin": -4.8,
+   "line": -3.5,
+   "results_margin": -3.7,
+   "lineup_margin": -4.9,
    "model": "SAM multi-factor",
    "factors": {
-    "base": -3.618,
+    "base": -3.69,
     "off_epa": -0.071,
     "def_epa": 0.129,
     "off_pass_epa": -0.088,
@@ -929,8 +929,8 @@
     "wind_x_pass": -0.0
    },
    "sam_market": {
-    "margin": -4.5,
-    "win": 0.365,
+    "margin": -3.6,
+    "win": 0.39,
     "weight_on_sam": 0.14
    },
    "lineup": {
@@ -968,13 +968,13 @@
    "home": "CIN",
    "neutral": false,
    "home_margin": 5.8,
-   "home_win": 0.672,
+   "home_win": 0.671,
    "line": 3.5,
-   "results_margin": 3.5,
-   "lineup_margin": 3.5,
+   "results_margin": 3.4,
+   "lineup_margin": 3.4,
    "model": "SAM multi-factor",
    "factors": {
-    "base": 3.476,
+    "base": 3.438,
     "off_epa": 0.115,
     "def_epa": 0.073,
     "off_pass_epa": 0.185,
@@ -1045,14 +1045,14 @@
    "away": "LAC",
    "home": "BAL",
    "neutral": false,
-   "home_margin": 5.4,
+   "home_margin": 5.3,
    "home_win": 0.659,
    "line": 4.5,
-   "results_margin": 4.7,
-   "lineup_margin": 3.1,
+   "results_margin": 4.6,
+   "lineup_margin": 3.0,
    "model": "SAM multi-factor",
    "factors": {
-    "base": 4.697,
+    "base": 4.563,
     "off_epa": 0.188,
     "def_epa": 0.012,
     "off_pass_epa": 0.186,
@@ -1089,7 +1089,7 @@
    },
    "sam_market": {
     "margin": 4.6,
-    "win": 0.64,
+    "win": 0.639,
     "weight_on_sam": 0.14
    },
    "lineup": {
@@ -1127,14 +1127,14 @@
    "away": "IND",
    "home": "HOU",
    "neutral": false,
-   "home_margin": 7.5,
-   "home_win": 0.718,
-   "line": null,
-   "results_margin": 7.3,
-   "lineup_margin": 9.7,
+   "home_margin": 7.4,
+   "home_win": 0.716,
+   "line": 9.5,
+   "results_margin": 7.0,
+   "lineup_margin": 9.4,
    "model": "SAM multi-factor",
    "factors": {
-    "base": 7.333,
+    "base": 6.985,
     "off_epa": 0.095,
     "def_epa": -0.082,
     "off_pass_epa": 0.201,
@@ -1169,7 +1169,11 @@
     "west_early": 0.0,
     "wind_x_pass": 0.0
    },
-   "sam_market": null,
+   "sam_market": {
+    "margin": 9.2,
+    "win": 0.762,
+    "weight_on_sam": 0.14
+   },
    "lineup": {
     "HOU": {
      "points": -0.2,
@@ -1201,14 +1205,14 @@
    "away": "MIA",
    "home": "BUF",
    "neutral": false,
-   "home_margin": 13.4,
-   "home_win": 0.849,
-   "line": null,
-   "results_margin": 13.2,
-   "lineup_margin": 12.9,
+   "home_margin": 13.5,
+   "home_win": 0.85,
+   "line": 16.5,
+   "results_margin": 13.6,
+   "lineup_margin": 13.3,
    "model": "SAM multi-factor",
    "factors": {
-    "base": 13.167,
+    "base": 13.552,
     "off_epa": 0.164,
     "def_epa": -0.103,
     "off_pass_epa": 0.173,
@@ -1243,7 +1247,11 @@
     "west_early": 0.0,
     "wind_x_pass": 0.0
    },
-   "sam_market": null,
+   "sam_market": {
+    "margin": 16.1,
+    "win": 0.893,
+    "weight_on_sam": 0.14
+   },
    "lineup": {
     "BUF": {
      "points": -1.3,
@@ -1275,14 +1283,14 @@
    "away": "BAL",
    "home": "CAR",
    "neutral": false,
-   "home_margin": -1.0,
+   "home_margin": -0.9,
    "home_win": 0.471,
-   "line": null,
-   "results_margin": 1.8,
-   "lineup_margin": -0.3,
+   "line": 1.5,
+   "results_margin": 2.0,
+   "lineup_margin": -0.1,
    "model": "SAM multi-factor",
    "factors": {
-    "base": 1.846,
+    "base": 1.974,
     "off_epa": 0.006,
     "def_epa": 0.052,
     "off_pass_epa": -0.014,
@@ -1317,7 +1325,11 @@
     "west_early": 0.0,
     "wind_x_pass": -0.0
    },
-   "sam_market": null,
+   "sam_market": {
+    "margin": 1.2,
+    "win": 0.536,
+    "weight_on_sam": 0.14
+   },
    "lineup": {
     "CAR": {
      "points": -4.7,
@@ -1355,12 +1367,12 @@
    "neutral": false,
    "home_margin": 8.7,
    "home_win": 0.748,
-   "line": null,
-   "results_margin": 8.9,
-   "lineup_margin": 9.3,
+   "line": 9.5,
+   "results_margin": 9.0,
+   "lineup_margin": 9.4,
    "model": "SAM multi-factor",
    "factors": {
-    "base": 8.915,
+    "base": 9.015,
     "off_epa": 0.112,
     "def_epa": -0.09,
     "off_pass_epa": 0.118,
@@ -1395,7 +1407,11 @@
     "west_early": 0.0,
     "wind_x_pass": 0.0
    },
-   "sam_market": null,
+   "sam_market": {
+    "margin": 9.4,
+    "win": 0.766,
+    "weight_on_sam": 0.14
+   },
    "lineup": {
     "CHI": {
      "points": -0.1,
@@ -1427,14 +1443,14 @@
    "away": "TEN",
    "home": "DAL",
    "neutral": false,
-   "home_margin": 7.8,
-   "home_win": 0.727,
-   "line": null,
-   "results_margin": 8.1,
-   "lineup_margin": 7.0,
+   "home_margin": 7.9,
+   "home_win": 0.728,
+   "line": 7.5,
+   "results_margin": 8.3,
+   "lineup_margin": 7.2,
    "model": "SAM multi-factor",
    "factors": {
-    "base": 8.06,
+    "base": 8.255,
     "off_epa": 0.171,
     "def_epa": 0.022,
     "off_pass_epa": 0.209,
@@ -1469,7 +1485,11 @@
     "west_early": 0.0,
     "wind_x_pass": 0.0
    },
-   "sam_market": null,
+   "sam_market": {
+    "margin": 7.6,
+    "win": 0.72,
+    "weight_on_sam": 0.14
+   },
    "lineup": {
     "DAL": {
      "points": -1.8,
@@ -1504,12 +1524,12 @@
    "neutral": false,
    "home_margin": 2.3,
    "home_win": 0.569,
-   "line": null,
-   "results_margin": 4.8,
-   "lineup_margin": 2.0,
+   "line": 6.0,
+   "results_margin": 4.9,
+   "lineup_margin": 2.1,
    "model": "SAM multi-factor",
    "factors": {
-    "base": 4.826,
+    "base": 4.894,
     "off_epa": 0.114,
     "def_epa": 0.156,
     "off_pass_epa": 0.187,
@@ -1544,7 +1564,11 @@
     "west_early": 0.0,
     "wind_x_pass": 0.0
    },
-   "sam_market": null,
+   "sam_market": {
+    "margin": 5.5,
+    "win": 0.664,
+    "weight_on_sam": 0.14
+   },
    "lineup": {
     "DET": {
      "points": -3.7,
@@ -1576,14 +1600,14 @@
    "away": "ARI",
    "home": "KC",
    "neutral": false,
-   "home_margin": 11.9,
-   "home_win": 0.819,
-   "line": null,
-   "results_margin": 9.9,
-   "lineup_margin": 10.7,
+   "home_margin": 12.0,
+   "home_win": 0.822,
+   "line": 14.5,
+   "results_margin": 10.9,
+   "lineup_margin": 11.7,
    "model": "SAM multi-factor",
    "factors": {
-    "base": 9.897,
+    "base": 10.907,
     "off_epa": 0.116,
     "def_epa": -0.028,
     "off_pass_epa": 0.113,
@@ -1618,7 +1642,11 @@
     "west_early": 0.0,
     "wind_x_pass": 0.0
    },
-   "sam_market": null,
+   "sam_market": {
+    "margin": 14.2,
+    "win": 0.863,
+    "weight_on_sam": 0.14
+   },
    "lineup": {
     "KC": {
      "points": -1.8,
@@ -1653,13 +1681,13 @@
    "home": "NYG",
    "neutral": false,
    "home_margin": -9.3,
-   "home_win": 0.238,
-   "line": null,
-   "results_margin": -7.6,
-   "lineup_margin": -9.7,
+   "home_win": 0.237,
+   "line": -6.5,
+   "results_margin": -7.9,
+   "lineup_margin": -10.0,
    "model": "SAM multi-factor",
    "factors": {
-    "base": -7.597,
+    "base": -7.894,
     "off_epa": -0.124,
     "def_epa": 0.106,
     "off_pass_epa": -0.114,
@@ -1694,7 +1722,11 @@
     "west_early": 0.0,
     "wind_x_pass": -0.0
    },
-   "sam_market": null,
+   "sam_market": {
+    "margin": -6.9,
+    "win": 0.297,
+    "weight_on_sam": 0.14
+   },
    "lineup": {
     "NYG": {
      "points": -2.5,
@@ -1727,14 +1759,14 @@
    "away": "NYJ",
    "home": "LAC",
    "neutral": false,
-   "home_margin": 0.9,
-   "home_win": 0.527,
-   "line": null,
-   "results_margin": 2.3,
-   "lineup_margin": 2.6,
+   "home_margin": 1.0,
+   "home_win": 0.53,
+   "line": 3.0,
+   "results_margin": 2.9,
+   "lineup_margin": 3.2,
    "model": "SAM multi-factor",
    "factors": {
-    "base": 2.278,
+    "base": 2.894,
     "off_epa": -0.141,
     "def_epa": -0.042,
     "off_pass_epa": -0.124,
@@ -1769,7 +1801,11 @@
     "west_early": 0.0,
     "wind_x_pass": -0.0
    },
-   "sam_market": null,
+   "sam_market": {
+    "margin": 2.7,
+    "win": 0.583,
+    "weight_on_sam": 0.14
+   },
    "lineup": {
     "LAC": {
      "points": -1.2,
@@ -1802,14 +1838,14 @@
    "away": "LV",
    "home": "DEN",
    "neutral": false,
-   "home_margin": 8.1,
-   "home_win": 0.734,
-   "line": null,
-   "results_margin": 8.7,
-   "lineup_margin": 9.6,
+   "home_margin": 8.2,
+   "home_win": 0.735,
+   "line": 9.5,
+   "results_margin": 8.8,
+   "lineup_margin": 9.7,
    "model": "SAM multi-factor",
    "factors": {
-    "base": 8.693,
+    "base": 8.772,
     "off_epa": 0.053,
     "def_epa": -0.133,
     "off_pass_epa": 0.021,
@@ -1844,7 +1880,11 @@
     "west_early": 0.0,
     "wind_x_pass": 0.0
    },
-   "sam_market": null,
+   "sam_market": {
+    "margin": 9.3,
+    "win": 0.764,
+    "weight_on_sam": 0.14
+   },
    "lineup": {
     "DEN": {
      "points": -0.9,
@@ -1879,12 +1919,12 @@
    "neutral": false,
    "home_margin": -3.5,
    "home_win": 0.395,
-   "line": null,
+   "line": -4.5,
    "results_margin": -3.4,
    "lineup_margin": -7.3,
    "model": "SAM multi-factor",
    "factors": {
-    "base": -3.414,
+    "base": -3.375,
     "off_epa": -0.101,
     "def_epa": 0.022,
     "off_pass_epa": -0.027,
@@ -1919,7 +1959,11 @@
     "west_early": 0.0,
     "wind_x_pass": -0.0
    },
-   "sam_market": null,
+   "sam_market": {
+    "margin": -4.4,
+    "win": 0.368,
+    "weight_on_sam": 0.14
+   },
    "lineup": {
     "PHI": {
      "points": -4.4,
@@ -1953,14 +1997,14 @@
    "away": "MIN",
    "home": "SF",
    "neutral": true,
-   "home_margin": 6.5,
-   "home_win": 0.691,
-   "line": null,
-   "results_margin": 2.3,
-   "lineup_margin": 1.4,
+   "home_margin": 6.3,
+   "home_win": 0.685,
+   "line": 3.5,
+   "results_margin": 1.1,
+   "lineup_margin": 0.2,
    "model": "SAM multi-factor",
    "factors": {
-    "base": 2.296,
+    "base": 1.098,
     "off_epa": 0.272,
     "def_epa": 0.105,
     "off_pass_epa": 0.305,
@@ -1995,7 +2039,11 @@
     "west_early": 0.0,
     "wind_x_pass": 0.0
    },
-   "sam_market": null,
+   "sam_market": {
+    "margin": 3.9,
+    "win": 0.618,
+    "weight_on_sam": 0.14
+   },
    "lineup": {
     "SF": {
      "points": -0.9,
@@ -2035,7 +2083,7 @@
    "lineup_margin": -3.8,
    "model": "SAM multi-factor",
    "factors": {
-    "base": -3.843,
+    "base": -3.766,
     "off_epa": -0.15,
     "def_epa": -0.017,
     "off_pass_epa": -0.124,

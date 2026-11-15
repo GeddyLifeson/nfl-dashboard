@@ -79,7 +79,7 @@
    "neutral": true,
    "home_margin": 0.1,
    "home_win": 0.502,
-   "line": 2.5,
+   "line": 3.0,
    "results_margin": 0.9,
    "lineup_margin": -0.7,
    "model": "SAM multi-factor",
@@ -120,8 +120,8 @@
     "wind_x_pass": -0.0
    },
    "sam_market": {
-    "margin": 2.2,
-    "win": 0.566,
+    "margin": 2.6,
+    "win": 0.579,
     "weight_on_sam": 0.14
    },
    "lineup": {
@@ -485,7 +485,7 @@
    "neutral": false,
    "home_margin": 3.6,
    "home_win": 0.61,
-   "line": 2.5,
+   "line": 1.5,
    "results_margin": 0.7,
    "lineup_margin": 2.3,
    "model": "SAM multi-factor",
@@ -526,8 +526,8 @@
     "wind_x_pass": -0.0
    },
    "sam_market": {
-    "margin": 2.7,
-    "win": 0.581,
+    "margin": 1.8,
+    "win": 0.555,
     "weight_on_sam": 0.14
    },
    "lineup": {

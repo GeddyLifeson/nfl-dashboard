@@ -76,6 +76,8 @@ tr.best td { font-weight: 600; }
   background: linear-gradient(135deg, var(--tc1), var(--tc2)); border: 2px solid var(--tier); font: 700 26px var(--head); color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,.6); }
 .pc .nm { text-align: center; font: 600 15px/1.2 var(--head); letter-spacing: .3px; padding: 4px 0 6px; border-bottom: 1px solid var(--line); margin-bottom: 8px; }
 .pc .nm small { display: block; font: 600 10px var(--body); letter-spacing: 1.5px; color: var(--tier); text-transform: uppercase; margin-top: 2px; }
+.traits { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px; margin: -2px 0 8px; } .traits.team { justify-content: flex-start; margin: 6px 0 0; }
+.trait { font: 600 10px var(--body); letter-spacing: .5px; text-transform: uppercase; padding: 2px 7px; border-radius: 10px; border: 1px solid rgba(255,255,255,.28); background: rgba(255,255,255,.08); cursor: help; white-space: nowrap; }
 .pc .attrs { display: grid; grid-template-columns: 1fr 1fr; gap: 3px 12px; }
 .pc .at { display: flex; justify-content: space-between; align-items: baseline; font-size: 11px; color: var(--muted); letter-spacing: .5px; }
 .pc .at b { font: 700 15px var(--head); font-variant-numeric: tabular-nums; white-space: nowrap; } .pc .at .rk, .pc .ovr .rk { font-size: 9px; margin-left: 2px; letter-spacing: 0; }
@@ -241,6 +243,63 @@ const tierOf = ovr => TIERS.find(t => ovr >= t[0]);
 const rateCls = v => v >= 85 ? 'r-hi' : v >= 70 ? 'r-mid' : v >= 55 ? 'r-lo' : 'r-bad';
 const initials = n => n.replace(/\b(Jr|Sr|II|III|IV)\.?$/i, '').trim().split(/\s+/).map(w => w[0]).filter(Boolean).slice(0, 2).join('').toUpperCase();
 
+// Play-style traits. Player traits read the card's percentile attributes (99 = best at the position, 40 = lowest),
+// so 85+ is roughly the top quarter. Each card shows at most two, in the order listed.
+const ypr = r => per(r.yds, r.rec);
+const PLAYER_TRAITS = {
+  QB: [['Dual-threat', 'Runs a lot: rushing yards per game in the top ~20% of QBs.', a => a.RUN >= 85],
+    ['Gunslinger', 'Aggressive: many TD passes but also more interceptions than most QBs (TD 75+, SAFE 55 or lower).', a => a.TD >= 75 && a.SAFE <= 55],
+    ['Game manager', 'Safe and steady: protects the ball (SAFE 75+) without piling up yards (YDS 60 or lower).', a => a.SAFE >= 75 && a.YDS <= 60],
+    ['Playmaker', 'Makes plays that move the score: EPA per play in the top ~20% of QBs.', a => a.EFF >= 85],
+    ['Pocket passer', 'Throws for lots of yards (YDS 75+) but rarely runs (RUN 50 or lower).', a => a.YDS >= 75 && a.RUN <= 50],
+    ['Accurate', 'Completes more passes than expected: completion % over expected in the top ~15% (ACC 90+).', a => a.ACC >= 90]],
+  RB: [['Workhorse', 'Carries the load: carries per game in the top ~20% of RBs.', a => a.WORK >= 85],
+    ['Big-play back', 'Breaks long runs: yards per carry in the top ~20% of RBs.', a => a.YPC >= 85],
+    ['Receiving back', 'Used as a pass catcher: receiving yards per game in the top ~20% of RBs.', a => a.REC >= 85],
+    ['Goal-line back', 'Scores often (TD 85+) without big yards per carry (YPC 65 or lower).', a => a.TD >= 85 && a.YPC <= 65]],
+  WR: [['Deep threat', 'Big gains per catch: yards per reception in the top ~25% at the position.', (a, x) => x.ypr >= 0.75],
+    ['Target hog', 'The offense looks his way: targets per game in the top ~15%.', a => a.TGT >= 90],
+    ['Possession receiver', 'Reliable hands on shorter catches: catch rate 80+ and yards per catch in the bottom ~40%.', (a, x) => a.HNDS >= 80 && x.ypr <= 0.4],
+    ['Red-zone threat', 'Finds the end zone: touchdowns per game in the top ~20%.', a => a.TD >= 85],
+    ['Efficient', 'Gains a lot per target: EPA per target in the top ~15%.', a => a.EFF >= 90]],
+  EDGE: [['Pass rusher', 'Gets to the QB: sacks per game in the top ~20% at the position.', a => a.SACK >= 85],
+    ['Run stopper', 'Wins against the run: tackles 75+ and tackles for loss 80+ but sacks under 70.', a => a.TFL >= 80 && a.TKL >= 75 && a.SACK < 70],
+    ['Strip specialist', 'Knocks the ball loose: forced fumbles per game in the top ~15%.', a => a.STRP >= 90],
+    ['Disruptor', 'Lives in the backfield: sacks + QB hits + TFL per game in the top ~15%.', a => a.DISR >= 90]],
+  LB: [['Tackling machine', 'Makes tackles everywhere: tackles per game in the top ~15% of LBs.', a => a.TKL >= 90],
+    ['Blitzer', 'Rushes the QB: sacks per game in the top ~20% of LBs.', a => a.RUSH >= 85],
+    ['Coverage LB', 'Good against the pass: passes defended per game in the top ~20% or interceptions in the top ~15%.', a => a.COV >= 85 || a.BALL >= 90],
+    ['Run stopper', 'Stops runs in the backfield: tackles for loss per game in the top ~20% of LBs.', a => a.TFL >= 85]],
+  CB: [['Ball hawk', 'Takes the ball away: interceptions per game in the top ~20% at the position.', a => a.BALL >= 85],
+    ['Lockdown', 'Breaks up passes: passes defended per game in the top ~20%.', a => a.COV >= 85],
+    ['Run support', 'Comes up to tackle: tackles per game in the top ~20%. (Box score only; no coverage grades.)', a => a.TKL >= 85]],
+  K: [['Big leg', 'Makes long kicks: 50+ yard makes in the top ~20% of kickers.', a => a.LONG >= 85],
+    ['Automatic', 'Rarely misses: field-goal % in the top ~15%.', a => a.ACC >= 90],
+    ['Busy', 'Kicks a lot: field-goal attempts per game in the top ~20%.', a => a.ATT >= 85]]
+};
+PLAYER_TRAITS.TE = PLAYER_TRAITS.WR; PLAYER_TRAITS.DL = PLAYER_TRAITS.EDGE; PLAYER_TRAITS.S = PLAYER_TRAITS.CB.map(t => t[0] === 'Run support' ? ['Box safety', 'Plays near the line and tackles: tackles per game in the top ~20% of safeties.', t[2]] : t);
+// Team traits use league ranks (1 = best, already flipped for fewer-is-better stats), as on the stat table.
+const TEAM_TRAITS = [
+  ['Run-heavy offense', 'Rushing yards rank top 8 while passing yards rank 17th or worse.', s => s.rush_yds <= 8 && s.pass_yds >= 17],
+  ['Pass-heavy offense', 'Passing yards rank top 8 while rushing yards rank 17th or worse.', s => s.pass_yds <= 8 && s.rush_yds >= 17],
+  ['Explosive offense', 'Lots of big plays: explosive-play rate ranks top 6.', s => s.explosive <= 6],
+  ['Methodical offense', 'Moves the ball in small steady gains: success rate top 8 but explosive plays 13th or worse.', s => s.success <= 8 && s.explosive >= 13],
+  ['Third-down offense', 'Keeps drives alive: third-down conversion rank top 5.', s => s.third <= 5],
+  ['Ball-safe', 'Rarely turns it over: giveaways rank top 5 (fewest).', s => s.giveaways <= 5],
+  ['Turnover-prone', 'Gives the ball away a lot: giveaways rank 27th or worse.', s => s.giveaways >= 27],
+  ['Pass-rush defense', 'Gets to the QB: sacks rank top 6.', s => s.sacks <= 6],
+  ['Run wall', 'Hard to run on: rushing yards allowed rank top 5.', s => s.rush_yds_a <= 5],
+  ['Bend-don’t-break', 'Gives up yards but not points: yards allowed 17th or worse, points allowed top 10.', s => s.yds_a >= 17 && s.pts_a <= 10],
+  ['Opportunistic defense', 'Takes the ball away: takeaways rank top 6.', s => s.takeaways <= 6],
+  ['Big-play prone defense', 'Gives up big plays: explosive plays allowed rank 27th or worse.', s => s.explosive_a >= 27],
+  ['Disciplined', 'Few penalty yards: rank top 5.', s => s.pen_yds <= 5],
+  ['Penalty-prone', 'Lots of penalty yards: rank 28th or worse.', s => s.pen_yds >= 28]
+];
+const traitChips = (list, cls) => list.length ? el('div', { class: 'traits' + (cls ? ' ' + cls : '') }, list.map(([n, tip]) => el('span', { class: 'trait', title: tip }, n))) : '';
+function teamTraits(abbr) {
+  const s = Object.fromEntries((D.team_stats[abbr] || []).map(x => [x.key, x.rank]));
+  return TEAM_TRAITS.filter(([, , f]) => { try { return f(s); } catch (e) { return false; } });
+}
 let CARDS = null;   // pos -> [{...row, pos, ovr, attrs: [[label, title, value]]}]
 function buildCards() {
   CARDS = {};
@@ -259,6 +318,11 @@ function buildCards() {
       const ovr = Math.round(45 + 54 * (0.5 * r.rating / 100 + 0.5 * pct));
       return { ...r, pos, ovr, attrs: defs.map(([l, t], j) => [l, t, scaled[j][i], 1 + scaled[j].filter(x => x > scaled[j][i]).length]) };
     });
+    const yv = rows.map(r => ypr(r)), ypct = v => n > 1 ? yv.filter(x => x < v).length / (n - 1) : 1;
+    for (const c of CARDS[pos]) {
+      const a = Object.fromEntries(c.attrs.map(([l, , v]) => [l, v])), x = { ypr: ypct(ypr(c)) };
+      c.traits = (PLAYER_TRAITS[pos] || []).filter(([, , f]) => f(a, x)).slice(0, 2);
+    }
     for (const c of CARDS[pos]) c.ovr_rank = 1 + CARDS[pos].filter(x => x.ovr > c.ovr).length;   // rank at position, ties share
   }
 }
@@ -270,6 +334,7 @@ function playerCard(c, mini) {
     el('div', { class: 'top' }, el('div', { class: 'ovr' }, c.ovr, el('small', {}, 'OVR ', rankTag(c.ovr_rank))), el('div', { class: 'side' }, el('b', {}, c.pos), c.team)),
     el('div', { class: 'mono' }, initials(c.name)),
     el('div', { class: 'nm' }, c.name, el('small', {}, tname + ' · #' + c.rank + ' ' + c.pos)),
+    traitChips(c.traits || []),
     el('div', { class: 'attrs' }, c.attrs.map(([l, t, v, rk]) => el('div', { class: 'at', title: t + ' · #' + rk + ' among ' + c.pos + 's' }, l, el('b', { class: rateCls(v) }, v, rankTag(rk))))),
     el('div', { class: 'foot' }, c.games + ' games · rating ' + c.rating + '/100 ', rankTag(c.rank)));
 }
@@ -320,7 +385,7 @@ function teams() {
   }, x.abbr, el('span', {}, rankRating(x.pos)), el('small', {}, x.record))));
   const panel = el('div', { class: 'tp', style: teamVars(t.abbr) },
     el('div', { class: 'hdr' }, el('div', { class: 'mono' }, t.abbr),
-      el('div', {}, el('h3', {}, t.team), el('div', { class: 'sub' }, t.record + ' · power #' + t.pos + ' · rating ' + signed(t.rating) + ' pts · avg margin ' + signed(t.margin))),
+      el('div', {}, el('h3', {}, t.team), el('div', { class: 'sub' }, t.record + ' · power #' + t.pos + ' · rating ' + signed(t.rating) + ' pts · avg margin ' + signed(t.margin)), traitChips(teamTraits(t.abbr), 'team')),
       el('div', { class: 'plates' }, [['OVR', R.ovr, t.pos, 'Power rank #' + t.pos], ['OFF', R.off, t.off_rank, 'Offense rank #' + t.off_rank + ' (EPA/play ' + signed(t.off_epa, 3) + ')'], ['DEF', R.def, t.def_rank, 'Defense rank #' + t.def_rank + ' (EPA/play allowed ' + signed(t.def_epa, 3) + ')']]
         .map(([l, v, rk, why]) => el('div', { class: 'plate', title: why }, el('b', {}, v), el('small', {}, l), rankTag(rk))))),
     el('div', { class: 'body' }, Object.entries(R.groups).map(([g, rows]) => el('div', {}, el('h4', {}, g),
@@ -331,7 +396,7 @@ function teams() {
   const stats = D.team_stats[t.abbr] || [];
   const side = s => table([{ key: 'label', label: 'Stat' }, { key: 'value', label: 'Value', num: true }, { key: 'rank', label: 'Rank', num: true, ascFirst: true, render: r => rankCell(r.rank) }], stats.filter(x => x.side === s));
   return [el('h2', {}, 'Team ratings'),
-    el('p', { class: 'note' }, 'Every rating is the team\'s league rank turned into a 60-99 score (1st = 99, 32nd = 60). OVR uses the power ranking, OFF and DEF the opponent-adjusted EPA ranks; each bar averages the ranks of the stats behind it (hover a bar to see them). The number in parentheses is the league rank for that rating (1st to 32nd; a bar built from several stats is ranked against the same bar for all 32 teams). Tiles are in power order.'),
+    el('p', { class: 'note' }, 'Every rating is the team\'s league rank turned into a 60-99 score (1st = 99, 32nd = 60). OVR uses the power ranking, OFF and DEF the opponent-adjusted EPA ranks; each bar averages the ranks of the stats behind it (hover a bar to see them). The number in parentheses is the league rank for that rating (1st to 32nd; a bar built from several stats is ranked against the same bar for all 32 teams). Tags under the team name are play styles from the league ranks (hover a tag for its rule). Tiles are in power order.'),
     tiles, panel,
     el('h2', {}, 'Top players'),
     roster.length ? el('div', { class: 'cards minis' }, roster.map(c => playerCard(c, true))) : el('p', { class: 'muted' }, 'No qualifying players yet.'),
@@ -426,7 +491,7 @@ function players() {
   const attrHelp = (ATTRS[pos] || []).map(([l, t]) => l + ' = ' + t.toLowerCase()).join(' · ');
   return [...head,
     el('p', { class: 'note' }, 'OVR blends the position rating (' + how.replace(/\.$/, '') + ') with the player\'s rank among ' + (D.players[pos] || []).length +
-      ' qualifying ' + pos + 's, scaled to 45-99. Attributes are percentiles within the position (99 = best, 40 = lowest): ' + attrHelp + '.'),
+      ' qualifying ' + pos + 's, scaled to 45-99. Attributes are percentiles within the position (99 = best, 40 = lowest): ' + attrHelp + '. Tags under the name are play styles taken from these numbers (up to two per player; hover a tag for its rule): ' + (PLAYER_TRAITS[pos] || []).map(t => t[0]).join(', ') + '.'),
     el('div', { class: 'legend' }, TIERS.map(([min, k, name]) => el('span', {}, el('i', { style: 'background:' + { elite: '#e8b84a', pro: '#38c6c0', starter: '#aab4c0', reserve: '#b07a4f' }[k] }), name + (min ? ' ' + min + '+' : ' under 70')))),
     el('div', { class: 'cards', style: 'margin-top:12px' }, shown.map(c => playerCard(c))),
     all.length > limit ? el('div', { class: 'bar', style: 'margin-top:12px' }, el('button', { onclick: () => { state.cardLimit = limit + 48; render(); } }, 'Show more (' + (all.length - limit) + ' left)')) : '',

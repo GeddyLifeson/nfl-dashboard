@@ -78,7 +78,7 @@ tr.best td { font-weight: 600; }
 .pc .nm small { display: block; font: 600 10px var(--body); letter-spacing: 1.5px; color: var(--tier); text-transform: uppercase; margin-top: 2px; }
 .pc .attrs { display: grid; grid-template-columns: 1fr 1fr; gap: 3px 12px; }
 .pc .at { display: flex; justify-content: space-between; align-items: baseline; font-size: 11px; color: var(--muted); letter-spacing: .5px; }
-.pc .at b { font: 700 15px var(--head); font-variant-numeric: tabular-nums; }
+.pc .at b { font: 700 15px var(--head); font-variant-numeric: tabular-nums; white-space: nowrap; } .pc .at .rk, .pc .ovr .rk { font-size: 9px; margin-left: 2px; letter-spacing: 0; }
 .pc .foot { margin-top: auto; padding-top: 8px; font-size: 11px; color: var(--muted); text-align: center; }
 .r-hi { color: #4cc38a; } .r-mid { color: #e6edf3; } .r-lo { color: #e3a44c; } .r-bad { color: #f07178; }
 .pc.mini { min-height: 0; padding: 8px 10px 8px 18px; clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 0 100%); }
@@ -107,7 +107,7 @@ tr.best td { font-weight: 600; }
 .ab b { text-align: right; font: 700 15px var(--head); font-variant-numeric: tabular-nums; white-space: nowrap; }
 .rk { font: 600 11px var(--body); color: var(--muted, #8b95a3); margin-left: 4px; } .plate .rk { display: block; margin: 3px 0 0; font-size: 10px; color: inherit; opacity: .75; }
 details.more { margin-top: 16px; } details.more summary { cursor: pointer; color: var(--muted); font-weight: 600; }
-@media (max-width: 640px) { .cards { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; } .tp .plates { margin-left: 0; } .ab { grid-template-columns: 96px 1fr 66px; } }
+@media (max-width: 640px) { .cards { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; } .tp .plates { margin-left: 0; } .pc .attrs { grid-template-columns: 1fr; } .ab { grid-template-columns: 96px 1fr 66px; } }
 @media (max-width: 900px) {
   .builder { grid-template-columns: 1fr; } .builder .slip { position: static; }
   .ticketbar { display: flex; justify-content: space-between; gap: 12px; position: fixed; left: 0; right: 0; bottom: 0; padding: 12px 16px;
@@ -257,8 +257,9 @@ function buildCards() {
     CARDS[pos] = rows.map((r, i) => {
       const pct = n > 1 ? 1 - (r.rank - 1) / (n - 1) : 1;
       const ovr = Math.round(45 + 54 * (0.5 * r.rating / 100 + 0.5 * pct));
-      return { ...r, pos, ovr, attrs: defs.map(([l, t], j) => [l, t, scaled[j][i]]) };
+      return { ...r, pos, ovr, attrs: defs.map(([l, t], j) => [l, t, scaled[j][i], 1 + scaled[j].filter(x => x > scaled[j][i]).length]) };
     });
+    for (const c of CARDS[pos]) c.ovr_rank = 1 + CARDS[pos].filter(x => x.ovr > c.ovr).length;   // rank at position, ties share
   }
 }
 
@@ -266,11 +267,11 @@ function playerCard(c, mini) {
   const [, tcls, tname] = tierOf(c.ovr);
   const full = (D.power.find(t => t.abbr === c.team) || {}).team || c.team;
   return el('div', { class: 'pc t-' + tcls + (mini ? ' mini' : ''), style: teamVars(c.team), title: c.name + ' · ' + full + ' · ' + c.pos + ' rank #' + c.rank + ' · position rating ' + c.rating },
-    el('div', { class: 'top' }, el('div', { class: 'ovr' }, c.ovr, el('small', {}, 'OVR')), el('div', { class: 'side' }, el('b', {}, c.pos), c.team)),
+    el('div', { class: 'top' }, el('div', { class: 'ovr' }, c.ovr, el('small', {}, 'OVR ', rankTag(c.ovr_rank))), el('div', { class: 'side' }, el('b', {}, c.pos), c.team)),
     el('div', { class: 'mono' }, initials(c.name)),
     el('div', { class: 'nm' }, c.name, el('small', {}, tname + ' · #' + c.rank + ' ' + c.pos)),
-    el('div', { class: 'attrs' }, c.attrs.map(([l, t, v]) => el('div', { class: 'at', title: t }, l, el('b', { class: rateCls(v) }, v)))),
-    el('div', { class: 'foot' }, c.games + ' games · rating ' + c.rating + '/100'));
+    el('div', { class: 'attrs' }, c.attrs.map(([l, t, v, rk]) => el('div', { class: 'at', title: t + ' · #' + rk + ' among ' + c.pos + 's' }, l, el('b', { class: rateCls(v) }, v, rankTag(rk))))),
+    el('div', { class: 'foot' }, c.games + ' games · rating ' + c.rating + '/100 ', rankTag(c.rank)));
 }
 
 // Team ratings: each stat's league rank (1 = best, already flipped for "fewer is better" stats) scaled to 99 (1st) down to 60 (32nd).

@@ -330,7 +330,7 @@ function teams() {
   const stats = D.team_stats[t.abbr] || [];
   const side = s => table([{ key: 'label', label: 'Stat' }, { key: 'value', label: 'Value', num: true }, { key: 'rank', label: 'Rank', num: true, ascFirst: true, render: r => rankCell(r.rank) }], stats.filter(x => x.side === s));
   return [el('h2', {}, 'Team ratings'),
-    el('p', { class: 'note' }, 'Every rating is the team\'s league rank turned into a 60-99 score (1st = 99, 32nd = 60). OVR uses the power ranking, OFF and DEF the opponent-adjusted EPA ranks; each bar averages the ranks of the stats behind it (hover a bar to see them). The number in parentheses is the team's league rank for that rating (1st to 32nd; for a bar built from several stats, its rank among all 32 teams' bars). Tiles are in power order.'),
+    el('p', { class: 'note' }, 'Every rating is the team\'s league rank turned into a 60-99 score (1st = 99, 32nd = 60). OVR uses the power ranking, OFF and DEF the opponent-adjusted EPA ranks; each bar averages the ranks of the stats behind it (hover a bar to see them). The number in parentheses is the league rank for that rating (1st to 32nd; a bar built from several stats is ranked against the same bar for all 32 teams). Tiles are in power order.'),
     tiles, panel,
     el('h2', {}, 'Top players'),
     roster.length ? el('div', { class: 'cards minis' }, roster.map(c => playerCard(c, true))) : el('p', { class: 'muted' }, 'No qualifying players yet.'),

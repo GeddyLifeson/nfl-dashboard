@@ -1286,7 +1286,7 @@
    "neutral": false,
    "home_margin": 0.0,
    "home_win": 0.501,
-   "line": 2.5,
+   "line": null,
    "results_margin": 1.9,
    "lineup_margin": 1.1,
    "model": "SAM multi-factor",
@@ -1326,11 +1326,7 @@
     "west_early": 0.0,
     "wind_x_pass": -0.0
    },
-   "sam_market": {
-    "margin": 2.2,
-    "win": 0.566,
-    "weight_on_sam": 0.14
-   },
+   "sam_market": null,
    "lineup": {
     "CAR": {
      "points": -3.4,
@@ -1763,7 +1759,7 @@
    "neutral": false,
    "home_margin": -0.1,
    "home_win": 0.497,
-   "line": 3.0,
+   "line": null,
    "results_margin": 2.9,
    "lineup_margin": 1.9,
    "model": "SAM multi-factor",
@@ -1803,11 +1799,7 @@
     "west_early": 0.0,
     "wind_x_pass": -0.0
    },
-   "sam_market": {
-    "margin": 2.6,
-    "win": 0.579,
-    "weight_on_sam": 0.14
-   },
+   "sam_market": null,
    "lineup": {
     "LAC": {
      "points": -1.2,

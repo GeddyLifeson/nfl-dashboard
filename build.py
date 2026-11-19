@@ -63,6 +63,22 @@ def sam_model(season, week, games, p):
     return dict(ratings=multifactor.team_ratings(ctx, sp, team_now), prev=prev, predict=pred, blend=sp.get('blend'))
 
 
+def team_ratings(season, week):
+    """SAM's team ratings (teamrate.py, rating_params.json): no sportsbook input. None if the fit or the feeds are missing."""
+    try:
+        import qb_adjust, teamrate
+        if not teamrate.load():
+            return None
+        try:
+            qb1 = {t: gid for t, (_, gid, _) in qb_adjust.starters(season).items()}
+        except Exception:
+            qb1 = None
+        return teamrate.current(season, week, 'data/games.csv', qb1)
+    except Exception as ex:
+        print(f"(team ratings skipped: {ex})")
+        return None
+
+
 def short_date(iso):
     d = datetime.date.fromisoformat(iso)
     return f"{d:%b} {d.day}"
@@ -111,9 +127,13 @@ def main():
     score_rating = p['slope'] * raw
     rating, prev_rating = score_rating, (p['slope'] * e.ratings(season, week) if week > 1 else None)
     sam = sam_model(season, week, games, p)
-    if sam:
+    if sam:                                          # the game model's own team number, kept only as a fallback
         rating = np.array([sam['ratings'][t] for t in ABBRS])
         prev_rating = np.array([sam['prev'][t] for t in ABBRS]) if sam['prev'] else None
+    tr = team_ratings(season, week)                  # the power rating: built for accuracy, no book numbers
+    if tr:
+        rating = np.array([tr[t]['rating'] for t in ABBRS])
+        prev_rating = np.array([tr[t]['prev'] for t in ABBRS]) if week > 1 and tr[ABBRS[0]]['prev'] is not None else None
     prev = order_of(prev_rating) if prev_rating is not None else None
     order = order_of(rating)
     st, sos = standings(played, rating)
@@ -134,7 +154,9 @@ def main():
             rating=round(float(rating[IDX[t]]), 2), score_rating=round(float(score_rating[IDX[t]]), 2), margin=round(s['pts'] / s['gp'], 1),
             sos=round(sos[t], 1), sos_rank=sos_rank[t],
             off_avg=round(float(np.mean(o)), 1), def_avg=round(float(np.mean(d)), 1),
-            stats=stats[t], player=qb[t]))
+            stats=stats[t], player=qb[t],
+            **(dict(rating_model='SAM team rating', off_pts=round(tr[t]['off'], 2), def_pts=round(tr[t]['def'], 2), parts=tr[t]['parts'],
+                    buckets=tr[t]['buckets'], traits=tr[t]['traits']) if tr else {})))
 
     lineup = lineup_adjustments(season)
     upcoming = []

@@ -1,0 +1,53 @@
+{
+ "QB": [
+  "Playmaker",
+  "Dual-threat",
+  "Gunslinger",
+  "Deep passer",
+  "Pocket passer",
+  "Sack-prone"
+ ],
+ "RB": [
+  "Workhorse",
+  "Receiving back"
+ ],
+ "WR": [
+  "Target hog",
+  "Deep threat",
+  "Possession receiver",
+  "Sure hands"
+ ],
+ "TE": [
+  "Target hog",
+  "Deep threat"
+ ],
+ "EDGE": [
+  "Pass rusher",
+  "Pressure player"
+ ],
+ "DL": [
+  "Pass rusher",
+  "Pressure player",
+  "Run stopper"
+ ],
+ "LB": [
+  "Tackling machine",
+  "Blitzer",
+  "Coverage LB"
+ ],
+ "CB": [
+  "Sticky coverage",
+  "Run support"
+ ],
+ "S": [
+  "Box safety"
+ ],
+ "K": [],
+ "TEAM": [
+  "Pass-first offense",
+  "Run-first offense",
+  "Strong passing game",
+  "Strong run game",
+  "Explosive offense"
+ ]
+}

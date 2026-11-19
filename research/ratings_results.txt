@@ -1,0 +1,41 @@
+6869 regular-season games 2000-2026; train 2000-2024, frozen test (2025, 2026)
+  prior games  6, carry 0.5, weekly decay 0.94: leave-one-season-out error 178.40 (ridge 300)
+  prior games  6, carry 0.5, weekly decay 0.97: leave-one-season-out error 178.34 (ridge 300)
+  prior games  6, carry 0.5, weekly decay 1.0: leave-one-season-out error 178.42 (ridge 300)
+  prior games  6, carry 0.65, weekly decay 0.94: leave-one-season-out error 178.39 (ridge 100)
+  prior games  6, carry 0.65, weekly decay 0.97: leave-one-season-out error 178.31 (ridge 300)
+  prior games  6, carry 0.65, weekly decay 1.0: leave-one-season-out error 178.37 (ridge 300)
+  prior games  9, carry 0.5, weekly decay 0.94: leave-one-season-out error 178.35 (ridge 100)
+  prior games  9, carry 0.5, weekly decay 0.97: leave-one-season-out error 178.28 (ridge 300)
+  prior games  9, carry 0.5, weekly decay 1.0: leave-one-season-out error 178.36 (ridge 300)
+  prior games  9, carry 0.65, weekly decay 0.94: leave-one-season-out error 178.54 (ridge 100)
+  prior games  9, carry 0.65, weekly decay 0.97: leave-one-season-out error 178.44 (ridge 100)
+  prior games  9, carry 0.65, weekly decay 1.0: leave-one-season-out error 178.48 (ridge 300)
+  prior games 12, carry 0.5, weekly decay 0.94: leave-one-season-out error 178.42 (ridge 100)
+  prior games 12, carry 0.5, weekly decay 0.97: leave-one-season-out error 178.35 (ridge 100)
+  prior games 12, carry 0.5, weekly decay 1.0: leave-one-season-out error 178.42 (ridge 300)
+  prior games 12, carry 0.65, weekly decay 0.94: leave-one-season-out error 178.78 (ridge 100)
+  prior games 12, carry 0.65, weekly decay 0.97: leave-one-season-out error 178.67 (ridge 100)
+  prior games 12, carry 0.65, weekly decay 1.0: leave-one-season-out error 178.70 (ridge 100)
+chosen: prior games 9, carry 0.5, decay 0.97, ridge 300
+
+Rating gap + home field only. Lower error is better.
+                                       | 2000-24 out-of-season: games error winners | 2025-26 frozen: games error winners
+SAM rating (new, no book input)        |  6447  178.28  65.3% |  422  160.40  61.9%
+Scores only (old results rating)       |  6447  182.25  64.1% |  422  165.27  62.6%
+new minus scores-only error (95% interval): out-of-season (-3.97, -5.36, -2.63)  frozen test (-4.87, -9.37, -0.18)
+
+Same comparison on 2014-2026, where the old SAM rating can be rebuilt (all refit on 2014-24 the same way):
+New SAM rating                         | 2014-24: 2879 games, error 171.19, winners 65.1% | 2025-26: 422 games, error 160.68, winners 63.1%
+Old SAM rating (with book win totals)  | 2014-24: 2879 games, error 173.68, winners 64.9% | 2025-26: 422 games, error 161.76, winners 61.9%
+Old SAM rating, win totals removed     | 2014-24: 2879 games, error 173.97, winners 64.4% | 2025-26: 422 games, error 161.69, winners 61.2%
+Scores only                            | 2014-24: 2879 games, error 176.33, winners 64.0% | 2025-26: 422 games, error 165.27, winners 62.6%
+new minus old-with-win-totals error (95% interval): 2014-24 (-2.49, -4.28, -0.73)  2025-26 (-1.08, -5.36, 3.41)
+(yardstick only, never used in the fit) closing line 2014-24: error 167.36, winners 66.3%
+
+Rating before week w against average margin from week w to the end of the season (correlation, 1 = perfect):
+  2002-2024: new {5: 0.562, 9: 0.554, 13: 0.556}   scores only {5: 0.537, 9: 0.535, 13: 0.538}
+  2025 (held out): new {5: 0.384, 9: 0.344, 13: 0.38}   scores only {5: 0.461, 9: 0.367, 13: 0.379}
+
+Weights (points of future margin per unit; o_ offense, d_ defense with bigger = better, n_ net):
+  {'o_drop': -0.258, 'd_drop': -0.156, 'o_rush': 0.645, 'd_rush': 0.626, 'o_succ': 0.586, 'd_succ': 0.04, 'o_int': -0.129, 'd_int': 0.135, 'o_pts': 0.15, 'd_pts': 0.461, 'o_cap': 0.607, 'd_cap': 0.607, 'o_st': 0.275, 'n_pen': 0.786, 'qb': 0.658, 'home': 2.266}

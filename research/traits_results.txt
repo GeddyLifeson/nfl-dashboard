@@ -1,0 +1,70 @@
+     tag                      | steadied: tagged repeat chance | raw: tagged repeat chance | kept
+QB   Playmaker                |    67    34%    17% |    58    41% | yes
+QB   Dual-threat              |    55    65%    15% |    61    61% | yes
+QB   Gunslinger               |    31    32%     9% |    32    28% | yes
+QB   Game manager             |    33    18%    12% |    32    16% | NO
+QB   Accurate                 |    67    27%    17% |    60    25% | NO
+QB   Deep passer              |    56    41%    18% |    53    42% | yes
+QB   Pocket passer            |    60    52%    17% |    53    51% | yes
+QB   Sack-prone               |    56    41%    13% |    50    24% | yes
+QB   Ball-safe                |    60    15%    18% |    52    17% | NO
+RB   Workhorse                |   119    63%    23% |   121    61% | yes
+RB   Big-play back            |   108    14%    15% |    97    16% | NO
+RB   Receiving back           |    89    58%    18% |    92    51% | yes
+RB   Efficient                |   104    26%    14% |    89    25% | NO
+RB   Goal-line back           |    36    19%     7% |    45    16% | NO
+WR   Target hog               |   192    61%    22% |   191    61% | yes
+WR   Deep threat              |   139    37%    15% |   130    40% | yes
+WR   Possession receiver      |   135    45%    15% |   127    47% | yes
+WR   YAC threat               |   159    29%    14% |   140    31% | NO
+WR   Red-zone threat          |   156    29%    18% |   161    29% | NO
+WR   Efficient                |   160    19%    16% |   160    19% | NO
+WR   Sure hands               |   153    32%    16% |   138    32% | yes
+TE   Target hog               |    86    70%    24% |    83    72% | yes
+TE   Deep threat              |    67    42%    15% |    67    46% | yes
+TE   Possession receiver      |    50    22%    10% |    50    24% | NO
+TE   YAC threat               |    51    20%    12% |    50    16% | NO
+TE   Red-zone threat          |    75    36%    20% |    66    35% | NO
+TE   Efficient                |    67    25%    15% |    66    24% | NO
+TE   Sure hands               |    73    22%    14% |    62    21% | NO
+EDGE Pass rusher              |   276    45%    17% |   279    40% | yes
+EDGE Pressure player          |   252    49%    17% |   268    44% | yes
+EDGE Run stopper              |   154    24%    10% |   166    23% | NO
+EDGE Backfield disruptor      |   258    30%    15% |   269    28% | NO
+EDGE Strip specialist         |   242    26%    15% |   245    21% | NO
+DL   Pass rusher              |   173    49%    16% |   175    45% | yes
+DL   Pressure player          |   171    49%    16% |   177    44% | yes
+DL   Run stopper              |   131    37%    12% |   126    33% | yes
+DL   Backfield disruptor      |   178    21%    15% |   172    17% | NO
+DL   Strip specialist         |   170    31%    18% |   158    32% | NO
+LB   Tackling machine         |   365    64%    25% |   342    63% | yes
+LB   Run stopper              |   454    64%    33% |   460    63% | NO
+LB   Blitzer                  |   283    38%    17% |   266    34% | yes
+LB   Coverage LB              |   280    37%    18% |   249    34% | yes
+LB   Takeaway artist          |   234    28%    16% |   238    22% | NO
+CB   Sticky coverage          |   328    40%    19% |   324    40% | yes
+CB   Ball hawk                |   282    32%    17% |   299    27% | NO
+CB   Run support              |   297    41%    17% |   308    39% | yes
+CB   Strip specialist         |   276    21%    16% |   304    21% | NO
+S    Sticky coverage          |   166    28%    17% |   159    28% | NO
+S    Ball hawk                |   171    35%    19% |   166    31% | NO
+S    Box safety               |   187    48%    18% |   179    47% | yes
+S    Strip specialist         |   171    29%    18% |   185    25% | NO
+K    Big leg                  |    61     0%     0% |     6     0% | NO
+K    Automatic                |    62    18%    15% |    48    10% | NO
+TEAM Pass-first offense       |    60    45%    15% |                   | yes
+TEAM Run-first offense        |    58    55%    18% |                   | yes
+TEAM Strong passing game      |    57    51%    18% |                   | yes
+TEAM Strong run game          |    58    45%    16% |                   | yes
+TEAM Explosive offense        |    62    40%    17% |                   | yes
+TEAM Methodical offense       |    25    16%     6% |                   | NO
+TEAM Turnover-prone           |    65    25%    16% |                   | NO
+TEAM Pass-rush defense        |    69    14%    15% |                   | NO
+TEAM No-fly zone              |    57    26%    16% |                   | NO
+TEAM Run wall                 |    67    22%    17% |                   | NO
+TEAM Opportunistic defense    |    65    15%    16% |                   | NO
+TEAM Big-play prone defense   |    66    27%    18% |                   | NO
+TEAM Leaky pass defense       |    64    25%    16% |                   | NO
+TEAM Disciplined              |    62    27%    16% |                   | NO
+TEAM Penalty-prone            |    62    23%    16% |                   | NO
+TEAM Strong special teams     |    61    23%    16% |                   | NO

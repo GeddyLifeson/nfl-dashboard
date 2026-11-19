@@ -57,7 +57,15 @@ def main():
         a = t['abbr']
         power.append(dict(pos=t['pos'], team=t['team'], abbr=a, record=t['record'], rating=t['rating'], score_rating=t.get('score_rating'), move=t['move'],
                           margin=t['margin'], sos=t['sos'], sos_rank=t['sos_rank'], off_rank=off[a]['rank'],
-                          off_epa=off[a]['epa_per_play'], def_rank=de[a]['rank'], def_epa=de[a]['epa_per_play_allowed']))
+                          off_epa=off[a]['epa_per_play'], def_rank=de[a]['rank'], def_epa=de[a]['epa_per_play_allowed'],
+                          **{k: t[k] for k in ('off_pts', 'def_pts', 'parts', 'buckets', 'traits') if k in t}))
+    if power and all('off_pts' in p for p in power):          # SAM team ratings: offense and defense ranks and the 60-99 card numbers come from them
+        import teamrate
+        for key, rk in (('off_pts', 'off_rank'), ('def_pts', 'def_rank')):
+            for p in power:
+                p[rk] = 1 + sum(q[key] > p[key] for q in power)
+        for p in power:
+            p['ovr'], p['off_ovr'], p['def_ovr'] = teamrate.ovr(p['rating']), teamrate.ovr(p['off_pts'], 3.0), teamrate.ovr(p['def_pts'], 3.0)
     # next game per team, and who will not play, for the projections
     nxt = {}
     for g in sorted(league['upcoming'], key=lambda g: g['day']):
@@ -81,7 +89,15 @@ def main():
             continue                                  # only the current starting QB gets a passing projection
         p['team'], p['opp'] = display_abbr(p['team']), display_abbr(p['opp'])
         proj.append(p)
-    ranks = players.rankings(season)
+    ranks = None
+    try:                                              # SAM player ratings (playerrate.py); the old position scores are the fallback
+        import playerrate
+        if playerrate.load():
+            ranks = playerrate.rankings(season)
+    except Exception as e:
+        errors.append(f"player ratings: {e}")
+    if not ranks:
+        ranks = players.rankings(season)
     for rows in ranks.values():
         for r in rows:
             r['team'] = display_abbr(r['team'])
@@ -91,6 +107,10 @@ def main():
     blend = json.load(open('blend_scorecard.json')) if os.path.exists('blend_scorecard.json') else None   # from SAM's sam_model.py
     sam = json.load(open('sam_params.json')) if os.path.exists('sam_params.json') else None
     bench = json.load(open('research/nfelo_bench.json')) if os.path.exists('research/nfelo_bench.json') else {}
+    tr_p = json.load(open('rating_params.json')) if os.path.exists('rating_params.json') else None
+    pl_p = json.load(open('player_params.json')) if os.path.exists('player_params.json') else None
+    ratings_info = dict(team={k: tr_p[k] for k in ('trained_on', 'tested_on', 'test', 'book_inputs')} if tr_p else None,
+                        players={k: pl_p[k] for k in ('trained_on', 'tested_on', 'test')} if pl_p else None)
     fantasy = {}
 
     def fantasy_step():                               # Sleeper league lineup, bench, waivers (fantasy_league.py)
@@ -105,7 +125,7 @@ def main():
         quarterbacks=unit['quarterbacks'], players=ranks, projections=proj,
         model=dict(game=params.get('tested', {}), lineup=dict(train=lw.get('train'), test=lw.get('test'), weights=lw.get('weights')),
                    projections=pp.get('test', {}), blend=blend,
-                   sam=dict({k: sam[k] for k in ('trained_on', 'tested_on', 'test')}, nfelo={k: bench[k] for k in ('nfelo_model', 'nfelo_blend') if k in bench}) if sam else None, pick_record=league.get('pick_record')),
+                   sam=dict({k: sam[k] for k in ('trained_on', 'tested_on', 'test')}, nfelo={k: bench[k] for k in ('nfelo_model', 'nfelo_blend') if k in bench}) if sam else None, pick_record=league.get('pick_record'), ratings=ratings_info),
         fantasy=fantasy or None,
         errors=errors)
     os.makedirs('site', exist_ok=True)

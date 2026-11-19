@@ -130,13 +130,13 @@ details.more { margin-top: 16px; } details.more summary { cursor: pointer; color
 <nav id="tabs"></nav>
 <main id="view"></main>
 <script>
-const TABS = [['rankings', 'Rankings'], ['teams', 'Teams'], ['games', 'Games'], ['players', 'Player cards'], ['projections', 'Player projections'], ['fantasy', 'Fantasy'], ['parlay', 'Parlay builder'], ['model', 'Model accuracy']];
+const TABS = [['rankings', 'Rankings'], ['teams', 'Teams'], ['games', 'Games'], ['players', 'Player cards'], ['projections', 'Player projections'], ['alltime', 'All-time'], ['fantasy', 'Fantasy'], ['parlay', 'Parlay builder'], ['model', 'Model accuracy']];
 const POS_ORDER = ['QB', 'RB', 'WR', 'TE', 'EDGE', 'DL', 'LB', 'CB', 'S', 'K'];
 const LABEL = {
   cmp: 'Cmp/Att', pass_yds: 'Pass yds', td: 'TD', int: 'INT', epa_play: 'EPA/play', cpoe: 'CPOE', rush_yds: 'Rush yds', car: 'Carries',
   ypc: 'Yds/carry', rec: 'Rec', rec_yds: 'Rec yds', tgt: 'Targets', yds: 'Yards', yds_g: 'Yds/game', epa_tgt: 'EPA/target',
   sacks: 'Sacks', qb_hits: 'QB hits', tfl: 'TFL', ff: 'FF', tackles: 'Tackles', pd: 'PD', fg: 'FG', fg_pct: 'FG%', long: 'Long',
-  fifty_plus: '50+', pat: 'PAT', passing_yards: 'Pass yds', passing_tds: 'Pass TD', passing_interceptions: 'INT',
+  fifty_plus: '50+', pat: 'PAT', adot: 'Target depth', stops: 'Stops', fg_over_exp: 'FG over expected', fifty_att: '50+ attempts', pat_over_exp: 'PAT over expected', passing_yards: 'Pass yds', passing_tds: 'Pass TD', passing_interceptions: 'INT',
   rushing_yards: 'Rush yds', rushing_tds: 'Rush TD', receptions: 'Rec', receiving_yards: 'Rec yds', receiving_tds: 'Rec TD'
 };
 let D = null, tab = localStorage.getItem('tab') || 'rankings';
@@ -190,6 +190,8 @@ function rankings() {
     { key: 'team', label: 'Team', ascFirst: true },
     { key: 'record', label: 'Record', ascFirst: true },
     { key: 'rating', label: 'SAM rating', num: true, render: r => signed(r.rating) },
+    ...(D.power[0] && D.power[0].parts ? [{ key: 'off_pts', label: 'Offense pts', num: true, render: r => signed(r.off_pts) }, { key: 'def_pts', label: 'Defense pts', num: true, render: r => signed(r.def_pts) },
+      { key: 'qb_pts', label: 'of which QB', num: true, render: r => signed(r.parts.Quarterback) }, { key: 'st_pts', label: 'Special teams', num: true, render: r => signed(r.parts['Special teams']) }] : []),
     { key: 'score_rating', label: 'Scores only', num: true, render: r => r.score_rating === undefined ? '' : signed(r.score_rating) },
     { key: 'move', label: 'Move', num: true, render: r => el('td', { class: 'num ' + (r.move > 0 ? 'good' : r.move < 0 ? 'bad' : 'muted') }, r.move > 0 ? '▲' + r.move : r.move < 0 ? '▼' + (-r.move) : '=') },
     { key: 'off_rank', label: 'Offense', num: true, ascFirst: true, render: r => rankCell(r.off_rank) },
@@ -200,7 +202,7 @@ function rankings() {
     { key: 'sos_rank', label: 'Schedule rank', num: true, ascFirst: true },
   ], D.power, { key: by, asc: true });
   return [el('h2', {}, 'Power rankings'),
-    el('p', { class: 'note' }, 'SAM rating = points per game better than an average team on a neutral field, from SAM\'s multi-factor model: this season\'s scores plus opponent-adjusted efficiency per play (EPA and success rate, passing and rushing), special teams, turnover margin and coaching changes, with last season as a starting point. "Scores only" is the old rating from final scores alone. Offense and defense rank by EPA per play (expected points added), adjusted for opponents, garbage time left out. Click any column to sort.'),
+    el('p', { class: 'note' }, D.power[0] && D.power[0].parts ? 'SAM rating = points per game better than an average team on a neutral field. It is built only from what happens on the field, with no sportsbook number anywhere in it: every play since 1999 is sorted into buckets (dropbacks, runs, interceptions, penalties, kicks, punts, returns) plus the scores, each adjusted for the opponents faced and weighted toward recent games, with half of last season as the starting point. The weight on each bucket is how well it predicted FUTURE margins in past seasons, so lucky things count for little. Offense pts includes the current starting quarterback ("of which QB" shows his share, against an average starter); Defense pts is points saved. Offense, defense, special teams and penalties add up to the rating. "Scores only" is the old rating from final scores alone. Ranks for offense and defense come from these point values. Click any column to sort.' : 'SAM rating = points per game better than an average team on a neutral field. Click any column to sort.'),
     bar, t];
 }
 
@@ -297,6 +299,8 @@ const TEAM_TRAITS = [
 ];
 const traitChips = (list, cls) => list.length ? el('div', { class: 'traits' + (cls ? ' ' + cls : '') }, list.map(([n, tip]) => el('span', { class: 'trait', title: tip }, n))) : '';
 function teamTraits(abbr) {
+  const pw = D.power.find(x => x.abbr === abbr);
+  if (pw && pw.traits) return pw.traits;            // tested tags from the team ratings (traits.py)
   const s = Object.fromEntries((D.team_stats[abbr] || []).map(x => [x.key, x.rank]));
   return TEAM_TRAITS.filter(([, , f]) => { try { return f(s); } catch (e) { return false; } });
 }
@@ -313,6 +317,11 @@ function buildCards() {
         return n > 1 ? Math.round(40 + 59 * (below + (same - 1) / 2) / (n - 1)) : 99;
       });
     });
+    if (rows.length && rows[0].attrs) {             // SAM player ratings: overall, attributes and tags are computed with the data (playerrate.py)
+      CARDS[pos] = rows.map(r => ({ ...r, pos, attrs: r.attrs.map(([l, t, v], j) => [l, t, v, 1 + rows.filter(x => x.attrs[j][2] > v).length]) }));
+      for (const c of CARDS[pos]) c.ovr_rank = 1 + CARDS[pos].filter(x => x.ovr > c.ovr).length;
+      continue;
+    }
     CARDS[pos] = rows.map((r, i) => {
       const pct = n > 1 ? 1 - (r.rank - 1) / (n - 1) : 1;
       const ovr = Math.round(45 + 54 * (0.5 * r.rating / 100 + 0.5 * pct));
@@ -330,13 +339,13 @@ function buildCards() {
 function playerCard(c, mini) {
   const [, tcls, tname] = tierOf(c.ovr);
   const full = (D.power.find(t => t.abbr === c.team) || {}).team || c.team;
-  return el('div', { class: 'pc t-' + tcls + (mini ? ' mini' : ''), style: teamVars(c.team), title: c.name + ' · ' + full + ' · ' + c.pos + ' rank #' + c.rank + ' · position rating ' + c.rating },
+  return el('div', { class: 'pc t-' + tcls + (mini ? ' mini' : ''), style: teamVars(c.team), title: c.name + ' · ' + full + ' · ' + c.pos + ' rank #' + c.rank + (c.value !== undefined ? ' · ' + signed(c.value, 2) + ' pts per game vs a replacement-level ' + c.pos : ' · position rating ' + c.rating) },
     el('div', { class: 'top' }, el('div', { class: 'ovr' }, c.ovr, el('small', {}, 'OVR ', rankTag(c.ovr_rank))), el('div', { class: 'side' }, el('b', {}, c.pos), c.team)),
     el('div', { class: 'mono' }, initials(c.name)),
     el('div', { class: 'nm' }, c.name, el('small', {}, tname + ' · #' + c.rank + ' ' + c.pos)),
     traitChips(c.traits || []),
     el('div', { class: 'attrs' }, c.attrs.map(([l, t, v, rk]) => el('div', { class: 'at', title: t + ' · #' + rk + ' among ' + c.pos + 's' }, l, el('b', { class: rateCls(v) }, v, rankTag(rk))))),
-    el('div', { class: 'foot' }, c.games + ' games · rating ' + c.rating + '/100 ', rankTag(c.rank)));
+    el('div', { class: 'foot' }, c.games + ' games · ' + (c.value !== undefined ? signed(c.value, 2) + ' pts/game ' : 'rating ' + c.rating + '/100 '), rankTag(c.rank)));
 }
 
 // Team ratings: each stat's league rank (1 = best, already flipped for "fewer is better" stats) scaled to 99 (1st) down to 60 (32nd).
@@ -357,7 +366,7 @@ function teamRatings(t) {
     if (!got.length) return null;
     return { label, v: Math.round(got.reduce((a, s) => a + rankRating(s.rank), 0) / got.length), why: got.map(s => s.label + ' ' + s.value + ' (#' + s.rank + ')').join(' · ') };
   }).filter(Boolean);
-  return { ovr: rankRating(t.pos), off: rankRating(t.off_rank), def: rankRating(t.def_rank), groups };
+  return { ovr: t.ovr || rankRating(t.pos), off: t.off_ovr || rankRating(t.off_rank), def: t.def_ovr || rankRating(t.def_rank), groups };
 }
 const ordinal = n => n + ((n % 100 >= 11 && n % 100 <= 13) ? 'th' : ({ 1: 'st', 2: 'nd', 3: 'rd' }[n % 10] || 'th'));
 const rankTag = n => el('span', { class: 'rk' }, '(' + ordinal(n) + ')');
@@ -382,12 +391,13 @@ function teams() {
   const R = teamRatings(t), BR = barRanks()[t.abbr];
   const tiles = el('div', { class: 'tiles' }, [...D.power].sort((a, b) => a.pos - b.pos).map(x => el('button', {
     class: 'tile' + (x.abbr === t.abbr ? ' on' : ''), style: teamVars(x.abbr), title: x.team + ' · power #' + x.pos, onclick: () => { state.team = x.abbr; render(); }
-  }, x.abbr, el('span', {}, rankRating(x.pos)), el('small', {}, x.record))));
+  }, x.abbr, el('span', {}, x.ovr || rankRating(x.pos)), el('small', {}, x.record))));
   const panel = el('div', { class: 'tp', style: teamVars(t.abbr) },
     el('div', { class: 'hdr' }, el('div', { class: 'mono' }, t.abbr),
       el('div', {}, el('h3', {}, t.team), el('div', { class: 'sub' }, t.record + ' · power #' + t.pos + ' · rating ' + signed(t.rating) + ' pts · avg margin ' + signed(t.margin)), traitChips(teamTraits(t.abbr), 'team')),
-      el('div', { class: 'plates' }, [['OVR', R.ovr, t.pos, 'Power rank #' + t.pos], ['OFF', R.off, t.off_rank, 'Offense rank #' + t.off_rank + ' (EPA/play ' + signed(t.off_epa, 3) + ')'], ['DEF', R.def, t.def_rank, 'Defense rank #' + t.def_rank + ' (EPA/play allowed ' + signed(t.def_epa, 3) + ')']]
+      el('div', { class: 'plates' }, [['OVR', R.ovr, t.pos, 'Power rank #' + t.pos + ' · ' + signed(t.rating) + ' pts vs an average team'], ['OFF', R.off, t.off_rank, 'Offense rank #' + t.off_rank + (t.off_pts !== undefined ? ' · ' + signed(t.off_pts) + ' pts per game, QB included' : '') + ' (EPA/play ' + signed(t.off_epa, 3) + ')'], ['DEF', R.def, t.def_rank, 'Defense rank #' + t.def_rank + (t.def_pts !== undefined ? ' · ' + signed(t.def_pts) + ' pts per game saved' : '') + ' (EPA/play allowed ' + signed(t.def_epa, 3) + ')']]
         .map(([l, v, rk, why]) => el('div', { class: 'plate', title: why }, el('b', {}, v), el('small', {}, l), rankTag(rk))))),
+    t.parts ? el('p', { class: 'note', style: 'margin:8px 14px 0' }, 'Where the ' + signed(t.rating) + ' comes from (points per game vs an average team): ' + Object.entries(t.parts).map(([k, v]) => k + ' ' + signed(v)).join(' · ')) : '',
     el('div', { class: 'body' }, Object.entries(R.groups).map(([g, rows]) => el('div', {}, el('h4', {}, g),
       rows.map(r => el('div', { class: 'ab', title: r.why }, el('span', {}, r.label), el('span', { class: 'track' }, el('i', { style: 'width:' + r.v + '%;background:' + barColor(r.v) })), el('b', {}, r.v, BR[g + '|' + r.label] ? rankTag(BR[g + '|' + r.label]) : '')))))));
   const roster = POS_ORDER.flatMap(p => (CARDS[p] || []).filter(c => c.team === t.abbr).slice(0, p === 'WR' || p === 'CB' || p === 'EDGE' || p === 'LB' ? 2 : 1));
@@ -396,7 +406,7 @@ function teams() {
   const stats = D.team_stats[t.abbr] || [];
   const side = s => table([{ key: 'label', label: 'Stat' }, { key: 'value', label: 'Value', num: true }, { key: 'rank', label: 'Rank', num: true, ascFirst: true, render: r => rankCell(r.rank) }], stats.filter(x => x.side === s));
   return [el('h2', {}, 'Team ratings'),
-    el('p', { class: 'note' }, 'Every rating is the team\'s league rank turned into a 60-99 score (1st = 99, 32nd = 60). OVR uses the power ranking, OFF and DEF the opponent-adjusted EPA ranks; each bar averages the ranks of the stats behind it (hover a bar to see them). The number in parentheses is the league rank for that rating (1st to 32nd; a bar built from several stats is ranked against the same bar for all 32 teams). Tags under the team name are play styles from the league ranks (hover a tag for its rule). Tiles are in power order.'),
+    el('p', { class: 'note' }, (t.ovr ? 'OVR, OFF and DEF come from SAM\'s team rating in points, not from rank: an average team is 78, and each point per game is worth 2.2 on OVR and 3 on OFF and DEF, so gaps between teams show (60-99). OFF includes the current starting quarterback. The line under the name shows the parts that add up to the rating. ' : 'OVR, OFF and DEF are league ranks turned into a 60-99 score. ') + 'Each bar below is a raw stat\'s league rank turned into a 60-99 score (1st = 99, 32nd = 60) and is there for context; hover a bar to see the stats behind it. The number in parentheses is the league rank. Tags under the team name are play styles that were tested on past seasons and kept only if teams that earned them through week 8 kept showing them afterwards (hover a tag for its rule). Tiles are in power order.'),
     tiles, panel,
     el('h2', {}, 'Top players'),
     roster.length ? el('div', { class: 'cards minis' }, roster.map(c => playerCard(c, true))) : el('p', { class: 'muted' }, 'No qualifying players yet.'),
@@ -479,23 +489,78 @@ function players() {
     K: 'Field-goal % (lightly shrunk for small samples) 60%, field goals per game 20%, 50+ yard makes 20%.'
   }[pos];
   const head = [el('h2', {}, 'Player cards'), bar, tools];
+  const isNew = !!((D.players[pos] || [])[0] || {}).attrs;
+  const newHow = 'Pts/game = SAM\'s estimate of the expected points this player adds per game over a replacement-level ' + pos + ' (' + ({
+    QB: 'efficiency per play from the mix of stats that best predicted the rest of past seasons, times a normal workload; minimum 100 plays',
+    RB: 'fitted efficiency per carry or target above a bench back, times his carries and targets per game; minimum 40',
+    WR: 'fitted efficiency per target above a bench receiver, times his targets per game; minimum 20 targets',
+    TE: 'fitted efficiency per target above a bench tight end, times his targets per game; minimum 15 targets',
+    K: 'field goals and extra points made above expected for their distance, over the last three seasons'
+  }[pos] || 'each sack, QB hit, tackle for loss, stop, pass broken up, interception and forced fumble counted at its measured point value, against the average ' + pos + '. Box score only: public data has no coverage or blocking grades') +
+    '). Every stat is pulled toward the position average until there is enough of it to trust, and last season counts at a discount where testing showed it helps. Rating 100 = best at the position.';
   if (view === 'table') {
     const rows = (D.players[pos] || []).filter(match);
-    const extra = rows.length ? Object.keys(rows[0]).filter(k => !['rank', 'name', 'team', 'games', 'rating'].includes(k)) : [];
+    const extra = rows.length ? Object.keys(rows[0]).filter(k => !['rank', 'name', 'team', 'games', 'rating', 'id', 'ovr', 'value', 'attrs', 'traits'].includes(k)) : [];
     const cols = [{ key: 'rank', label: 'Rank', num: true, ascFirst: true }, { key: 'name', label: 'Player', ascFirst: true }, { key: 'team', label: 'Team', ascFirst: true },
       { key: 'rating', label: 'Rating', num: true, render: r => el('td', { class: 'num' }, r.rating, el('span', { class: 'meter' }, el('i', { style: 'width:' + r.rating + '%' }))) },
+      ...(isNew ? [{ key: 'ovr', label: 'OVR', num: true }, { key: 'value', label: 'Pts/game', num: true, render: r => signed(r.value, 2) }] : []),
       { key: 'games', label: 'Games', num: true }].concat(extra.map(k => ({ key: k, label: LABEL[k] || k, num: true })));
-    return [...head, el('p', { class: 'note' }, 'Rating 100 = best at the position this season. ' + how), table(cols, rows)];
+    return [...head, el('p', { class: 'note' }, isNew ? newHow : 'Rating 100 = best at the position this season. ' + how), table(cols, rows)];
   }
   const all = (CARDS[pos] || []).filter(match), limit = state.cardLimit || 24, shown = all.slice(0, limit);
   const attrHelp = (ATTRS[pos] || []).map(([l, t]) => l + ' = ' + t.toLowerCase()).join(' · ');
   return [...head,
-    el('p', { class: 'note' }, 'OVR blends the position rating (' + how.replace(/\.$/, '') + ') with the player\'s rank among ' + (D.players[pos] || []).length +
+    el('p', { class: 'note' }, isNew ? 'OVR puts pts/game on a 45-99 scale: the average qualifying ' + pos + ' is 72 and one standard deviation is 9, so gaps between players show. ' + newHow + ' Attributes (40-99, average 70) are single stats steadied the same way: ' + ((D.players[pos][0] || {}).attrs || []).map(([l, t]) => l + ' = ' + t.toLowerCase()).join(' · ') + '. Tags under the name are play styles; a tag is shown only if, in 2014-2025, players who earned it through week 8 kept showing it the rest of the season (up to two per player; hover a tag for its rule).' :
+      'OVR blends the position rating (' + how.replace(/\.$/, '') + ') with the player\'s rank among ' + (D.players[pos] || []).length +
       ' qualifying ' + pos + 's, scaled to 45-99. Attributes are percentiles within the position (99 = best, 40 = lowest): ' + attrHelp + '. Tags under the name are play styles taken from these numbers (up to two per player; hover a tag for its rule): ' + (PLAYER_TRAITS[pos] || []).map(t => t[0]).join(', ') + '.'),
     el('div', { class: 'legend' }, TIERS.map(([min, k, name]) => el('span', {}, el('i', { style: 'background:' + { elite: '#e8b84a', pro: '#38c6c0', starter: '#aab4c0', reserve: '#b07a4f' }[k] }), name + (min ? ' ' + min + '+' : ' under 70')))),
     el('div', { class: 'cards', style: 'margin-top:12px' }, shown.map(c => playerCard(c))),
     all.length > limit ? el('div', { class: 'bar', style: 'margin-top:12px' }, el('button', { onclick: () => { state.cardLimit = limit + 48; render(); } }, 'Show more (' + (all.length - limit) + ' left)')) : '',
     all.length ? '' : el('p', { class: 'muted' }, 'No players match.')];
+}
+
+// ---- All-time lists since 1999 (alltime.json, built by alltime.py from the same ratings).
+let AT = null, atLoading = false;
+function alltime() {
+  if (!AT) {
+    if (!atLoading) { atLoading = true; fetch('alltime.json?' + Date.now()).then(r => r.ok ? r.json() : null).then(j => { AT = j || { missing: true }; atLoading = false; if (tab === 'alltime') render(); }).catch(() => { AT = { missing: true }; atLoading = false; if (tab === 'alltime') render(); }); }
+    return [el('h2', {}, 'All-time'), el('p', { class: 'muted' }, 'Loading...')];
+  }
+  if (AT.missing) return [el('h2', {}, 'All-time'), el('p', { class: 'muted' }, 'The all-time file is not available. Run python alltime.py.')];
+  const v = state.atView || 'teams', pos = state.atPos || 'QB', lim = state.atLimit || 50;
+  const bar = el('div', { class: 'bar' }, [['teams', 'Team seasons'], ['franchises', 'Franchises'], ['pseasons', 'Player seasons'], ['careers', 'Careers']].map(([k, l]) =>
+    el('button', { class: v === k ? 'on' : '', onclick: () => { state.atView = k; state.atLimit = 50; render(); } }, l)));
+  const posBar = el('div', { class: 'bar' }, POS_ORDER.filter(p => AT.player_seasons[p]).map(p => el('button', { class: p === pos ? 'on' : '', onclick: () => { state.atPos = p; state.atLimit = 50; render(); } }, p)));
+  const q = (state.atSearch || '').toLowerCase();
+  const search = el('div', { class: 'bar' }, el('input', { placeholder: 'Search team, player or year', value: state.atSearch || '', oninput: e => { state.atSearch = e.target.value; clearTimeout(window._a); window._a = setTimeout(render, 250); } }));
+  const hit = r => !q || [r.team, r.abbr, r.name, r.season, r.teams, r.years].some(x => x !== undefined && String(x).toLowerCase().includes(q));
+  const more = n => n > lim ? el('div', { class: 'bar', style: 'margin-top:12px' }, el('button', { onclick: () => { state.atLimit = lim + 100; render(); } }, 'Show more (' + (n - lim) + ' left)')) : '';
+  const span = AT.first + '-' + AT.last;
+  let body;
+  if (v === 'teams') {
+    const rows = AT.team_seasons.filter(hit);
+    body = [el('p', { class: 'note' }, 'Every team season ' + span + ' (' + AT.team_seasons.length + ' of them), ranked by SAM\'s team rating from that season\'s games alone: points per game better than an average team that year, regular season only, with no carry-over from the year before. Offense includes the quarterback. The current season is included and marked in progress. Play-by-play data starts in 1999, so earlier teams are not here.'),
+      table([{ key: 'rank', label: '#', num: true, ascFirst: true }, { key: 'season', label: 'Season', num: true }, { key: 'team', label: 'Team', ascFirst: true, render: r => r.team + (r.complete ? '' : ' (in progress)') }, { key: 'record', label: 'Record' },
+        { key: 'rating', label: 'SAM rating', num: true, render: r => signed(r.rating) }, { key: 'off', label: 'Offense pts', num: true, render: r => signed(r.off) }, { key: 'def', label: 'Defense pts', num: true, render: r => signed(r.def) },
+        { key: 'st', label: 'Special teams', num: true, render: r => signed(r.st) }, { key: 'margin', label: 'Avg margin', num: true, render: r => signed(r.margin) }], rows.slice(0, lim)), more(rows.length)];
+  } else if (v === 'franchises') {
+    body = [el('p', { class: 'note' }, 'Each franchise\'s average SAM rating over its completed seasons ' + span + ', with its best and worst season.'),
+      table([{ key: 'rank', label: '#', num: true, ascFirst: true }, { key: 'team', label: 'Franchise', ascFirst: true }, { key: 'seasons', label: 'Seasons', num: true }, { key: 'avg', label: 'Average rating', num: true, render: r => signed(r.avg, 2) },
+        { key: 'best', label: 'Best season' }, { key: 'worst', label: 'Worst season' }], AT.franchises.filter(hit))];
+  } else if (v === 'pseasons') {
+    const rows = (AT.player_seasons[pos] || []).filter(hit);
+    const extra = rows.length ? Object.keys(rows[0]).filter(k => !['rank', 'season', 'name', 'team', 'games', 'ovr', 'z', 'value'].includes(k)) : [];
+    body = [posBar, el('p', { class: 'note' }, 'The 150 best ' + pos + ' seasons ' + span + ' (10+ games). Each season is rated from that year alone and compared with the other qualifying ' + pos + 's that same year, so pass-heavy recent seasons do not swamp older ones. "Vs peers" is how many standard deviations above the average qualifier he was; OVR is the same number on the card scale and tops out at 99. Regular season only.'),
+      table([{ key: 'rank', label: '#', num: true, ascFirst: true }, { key: 'season', label: 'Season', num: true }, { key: 'name', label: 'Player', ascFirst: true }, { key: 'team', label: 'Team', ascFirst: true }, { key: 'ovr', label: 'OVR', num: true },
+        { key: 'z', label: 'Vs peers', num: true, render: r => signed(r.z, 2) }, { key: 'value', label: 'Pts/game', num: true, render: r => signed(r.value, 2) }, { key: 'games', label: 'Games', num: true }]
+        .concat(extra.map(k => ({ key: k, label: LABEL[k] || k, num: true }))), rows.slice(0, lim)), more(rows.length)];
+  } else {
+    const rows = (AT.player_careers[pos] || []).filter(hit);
+    body = [posBar, el('p', { class: 'note' }, 'The 100 biggest ' + pos + ' careers ' + span + '. Career value adds up, season by season, the points a player was worth above a replacement-level regular (the 20th-percentile qualifier that year) times his games. Careers that began before 1999 are only counted from 1999 on, and active players are still adding to theirs. Regular season only.'),
+      table([{ key: 'rank', label: '#', num: true, ascFirst: true }, { key: 'name', label: 'Player', ascFirst: true }, { key: 'teams', label: 'Teams' }, { key: 'years', label: 'Years' }, { key: 'seasons', label: 'Rated seasons', num: true },
+        { key: 'games', label: 'Games', num: true }, { key: 'total', label: 'Career value (pts)', num: true }, { key: 'peak', label: 'Peak OVR', num: true }, { key: 'peak_season', label: 'Peak year', num: true }], rows.slice(0, lim)), more(rows.length)];
+  }
+  return [el('h2', {}, 'All-time (' + span + ')'), bar, search, ...body];
 }
 
 function projections() {
@@ -571,7 +636,7 @@ function model() {
       { key: 'ats', label: 'ATS' }, { key: 'ml', label: 'ML bets' }], blendRows),
     el('p', { class: 'note' }, 'Moneyline win chances: ' + (bl.use_ml ? 'in use' : 'tracked only') + ' · Spreads: ' + (bl.use ? 'in use' : 'tracked only, not proven against the spread'))] : [];
   const sm = m.sam && m.sam.test ? m.sam : null;
-  const samPart = sm ? [el('h2', {}, 'SAM multi-factor model'),
+  const samPart = sm ? [el('h2', {}, 'Game picks: SAM multi-factor model'),
     el('p', { class: 'note' }, 'Fitted on ' + sm.trained_on.join('-') + ', then frozen and tested on every ' + sm.tested_on.join('-') + ' game with a closing line, using only information from before each game. Margin error is mean squared error (lower is better); win-chance error is log loss.'),
     table([{ key: 'k', label: 'Test' }, { key: 'games', label: 'Games', num: true }, { key: 'winners', label: 'Picks winner', num: true, render: r => (r.winners * 100).toFixed(1) + '%' },
       { key: 'mse', label: 'Margin error', num: true }, { key: 'log_loss', label: 'Win-chance error', num: true, render: r => r.log_loss === undefined ? '' : r.log_loss.toFixed(4) }],
@@ -580,7 +645,18 @@ function model() {
        ...(sm.test.sam_plus_market ? [{ k: 'SAM + market (second number)', ...sm.test.sam_plus_market }] : []),
        ...(sm.nfelo && sm.nfelo.nfelo_blend ? [{ k: 'nfelo + market (benchmark)', ...sm.nfelo.nfelo_blend }] : []),
        { k: 'Closing market line', ...sm.test.closing_line }])] : [];
-  return [...samPart, ...blendPart, el('h2', {}, 'Game predictions'),
+  const rt = m.ratings || {};
+  const teamRows = rt.team ? Object.entries(rt.team.test).flatMap(([k, v]) => [{ k: k + ' · ' + rt.team.trained_on.join('-') + ', each season predicted from the others', ...v.cv }, { k: k + ' · ' + rt.team.tested_on.join('-') + ' frozen test', ...v.test }]) : [];
+  const plRows = rt.players ? Object.entries(rt.players.test).map(([k, v]) => ({ k, ...v })) : [];
+  const ratingPart = rt.team ? [el('h2', {}, 'Team ratings (power rankings)'),
+    el('p', { class: 'note' }, 'How well the rating gap alone (plus home field) predicted games it never saw. No sportsbook number is used in the rating: book inputs = ' + rt.team.book_inputs + '. Margin error is mean squared error (lower is better).'),
+    table([{ key: 'k', label: 'Rating' }, { key: 'n', label: 'Games', num: true }, { key: 'winners', label: 'Picks winner', num: true, render: r => (r.winners * 100).toFixed(1) + '%' }, { key: 'mse', label: 'Margin error', num: true },
+      { key: 'log_loss', label: 'Win-chance error', num: true, render: r => r.log_loss.toFixed(4) }], teamRows),
+    plRows.length ? el('h2', {}, 'Player ratings') : '',
+    plRows.length ? el('p', { class: 'note' }, 'Players were rated after week 8 of ' + rt.players.tested_on.join(', ') + ' (seasons not used to build the ratings), then compared with what they did from week 9 on. The number is a rank correlation: 1 means the rating had players in exactly the right order, 0 means it told you nothing. "Old" is the previous position score put through the same test. Kicker accuracy barely carries over from one half-season to the next, so neither rating predicts it.') : '',
+    plRows.length ? table([{ key: 'k', label: 'Position and what happened next' }, { key: 'players', label: 'Players', num: true }, { key: 'new', label: 'New rating', num: true, render: r => r.new.toFixed(3) }, { key: 'old', label: 'Old rating', num: true, render: r => r.old.toFixed(3) },
+      { key: 'better', label: 'Better?', render: r => el('td', { class: r.new > r.old ? 'good' : 'bad' }, r.new > r.old ? 'Yes' : 'No') }], plRows) : ''] : [];
+  return [...ratingPart, ...samPart, ...blendPart, el('h2', {}, 'Game predictions'),
     el('p', { class: 'note' }, 'Settings tuned on 2022-2024, then frozen and tested week by week on later seasons, using only games before each prediction. Error is mean squared error of the predicted margin (lower is better).'),
     table([{ key: 'k', label: 'Test' }, { key: 'games', label: 'Games', num: true }, { key: 'model_acc', label: 'Model picks winner', num: true, render: r => pct(r.model_acc) },
       { key: 'home_acc', label: 'Always home team', num: true, render: r => pct(r.home_acc) }, { key: 'line_acc', label: 'Market line', num: true, render: r => pct(r.line_acc) },
@@ -882,7 +958,7 @@ function slipView(legs) {
 
 function render() {
   document.getElementById('tabs').replaceChildren(...TABS.map(([k, l]) => el('button', { class: tab === k ? 'on' : '', onclick: () => { tab = k; localStorage.setItem('tab', k); render(); } }, l)));
-  const view = { rankings, teams, games, players, projections, fantasy, parlay, model }[tab] || rankings;
+  const view = { rankings, teams, games, players, projections, alltime, fantasy, parlay, model }[tab] || rankings;
   document.getElementById('view').classList.remove('has-bar');
   document.getElementById('view').replaceChildren(...view().flat());
 }

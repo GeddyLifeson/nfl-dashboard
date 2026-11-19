@@ -32,6 +32,8 @@ python backtest.py          # re-tune the game model (params.json)
 python lineup_backtest.py   # re-fit the QB and injury correction (lineup_weights.json)
 python players.py           # re-tune player projections (projection_params.json)
 python test_model.py        # model checks
+python test_ratings.py      # team rating, player rating, tag and all-time checks
+python teamrate.py fit      # refit the team rating (rating_params.json); playerrate.py fit, research/traits_eval.py, alltime.py likewise
 python gen_md.py head       # markdown overview; python tiktok.py makes the 1080x1920 image
 ```
 
@@ -39,7 +41,18 @@ Downloads are cached in `cache/` (finished seasons once, the current season ever
 
 ## How the rating works
 
-A team's rating is how many points per game better it is than an average team on a neutral field. It comes from every score this season, adjusted for the opponent and for home field (2 points; none at neutral sites such as London), with each team starting from 60% of last season's final rating. That head start counts as 8 games, so it fades as the season goes on. The gap between two ratings, plus home field, is the predicted margin.
+The power rating (`teamrate.py`) is points per game better than an average team on a neutral field, built only
+from what happens on the field: no sportsbook number is used anywhere in it. Every play since 1999 is sorted
+into buckets (dropbacks, runs, interceptions, penalties, kicks, punts, returns) plus the scores; each bucket is
+adjusted for opponents, weighted toward recent games and started from half of last season; and each bucket's
+weight is how well it predicted future margins in past seasons. The current starting quarterback's value is
+added. Offense, Defense, Special teams, Penalties and Quarterback add up to the rating. How it was tested, and
+the results against the previous rating, are in `research/RATINGS.md`.
+
+Player ratings (`playerrate.py`), play-style tags (`traits.py`) and the All-time tab (`alltime.py`,
+`site/alltime.json`) come from the same work and are described there too. `python test_ratings.py` checks them.
+
+The game picks below are a separate model (`multifactor.py`) and were not changed.
 
 Predictions also adjust for the current lineup (`build.py` -> `lineup_adjustments`, features in `lineup.py`):
 the starting quarterback from today's nflverse depth chart (`qb_adjust.py`) and missing players from the injury

@@ -1,0 +1,53 @@
+Repeatability (units before a player's own number gets half the weight; split-half correlation in brackets)
+  QB: epa 340 plays [0.46], cpoe 351 cpoe_n [0.42], ypa 352 attempts [0.42], sack 260 dropbacks [0.51], int 851 attempts [0.23], td 419 attempts [0.38], fd 298 plays [0.49], rush 1 games [0.85]
+  RB: epa 312 opps [0.27], ypc 316 carries [0.24], fd 161 opps [0.41], ypt 237 targets [0.10], td 304 opps [0.27], expl 307 carries [0.24], tshare 1 games [0.87]
+  WR: epa 203 targets [0.20], ypt 190 targets [0.22], catch 75 targets [0.41], fd 155 targets [0.25], td 268 targets [0.16], adot 25 air_tgt [0.68], tshare 1 games [0.93], yac 63 receptions [0.34]
+  TE: epa 176 targets [0.18], ypt 138 targets [0.22], catch 135 targets [0.22], fd 142 targets [0.21], td 210 targets [0.15], adot 31 air_tgt [0.55], tshare 1 games [0.90], yac 54 receptions [0.33]
+  EDGE: sack 11 games [0.41], hit 8 games [0.49], tfl 10 games [0.43], stop 7 games [0.51], ff 21 games [0.26], pd 15 games [0.34], int 294 games [0.02]
+  DL: sack 11 games [0.40], hit 7 games [0.52], tfl 9 games [0.43], stop 6 games [0.53], ff 72 games [0.09], pd 16 games [0.30], int 223 games [0.03]
+  LB: sack 16 games [0.31], hit 17 games [0.30], tfl 7 games [0.52], stop 2 games [0.75], ff 72 games [0.09], pd 15 games [0.33], int 37 games [0.16]
+  CB: pd 11 games [0.39], int 26 games [0.21], stop 6 games [0.56], tfl 16 games [0.31], ff 39 games [0.15], sack 39 games [0.15], hit 24 games [0.23]
+  S: pd 22 games [0.26], int 32 games [0.19], stop 6 games [0.57], tfl 12 games [0.39], ff 40 games [0.16], sack 40 games [0.16], hit 23 games [0.25]
+  K: fgoe 822 fg_att [0.02], xpoe 226 xp_att [0.09]
+
+How much should last season count? 1 - correlation between the rating's main number after weeks 4, 8, 12 and the rest of the season (lower is better):
+  QB: {0.0: 0.5376, 0.3: 0.4885, 0.5: 0.4903, 0.7: 0.4981, 1.0: 0.511} -> last-season weight 0.3
+  RB: {0.0: 0.7595, 0.3: 0.7008, 0.5: 0.6937, 0.7: 0.6945, 1.0: 0.7} -> last-season weight 0.5
+  WR: {0.0: 0.7803, 0.3: 0.9135, 0.5: 0.9537, 0.7: 0.9723, 1.0: 0.9869} -> last-season weight 0.0
+  TE: {0.0: 0.7883, 0.3: 0.8152, 0.5: 0.8549, 0.7: 0.8765, 1.0: 0.8949} -> last-season weight 0.0
+  EDGE: {0.0: 0.4614, 0.3: 0.4046, 0.5: 0.401, 0.7: 0.404, 1.0: 0.4113} -> last-season weight 0.5
+  DL: {0.0: 0.4963, 0.3: 0.4491, 0.5: 0.45, 0.7: 0.4564, 1.0: 0.4672} -> last-season weight 0.3
+  LB: {0.0: 0.3213, 0.3: 0.2943, 0.5: 0.3017, 0.7: 0.3113, 1.0: 0.3246} -> last-season weight 0.3
+  CB: {0.0: 0.5327, 0.3: 0.489, 0.5: 0.4886, 0.7: 0.4938, 1.0: 0.5037} -> last-season weight 0.5
+  S: {0.0: 0.5747, 0.3: 0.515, 0.5: 0.5097, 0.7: 0.5122, 1.0: 0.5198} -> last-season weight 0.5
+  K: {(1.0, 0.7): 0.9001, (1.0, 0.0): 0.9177, 0.5: 0.9322, 0.0: 0.9794} -> last-season weight (1.0, 0.7)
+  QB: bench level -0.177, league 0.062; rest-of-season efficiency, share of variation explained out of fold: fitted mix 22.2%, efficiency stat alone 23.8% (in sample); weights {'epa': 0.0213, 'cpoe': 0.0096, 'ypa': 0.0115, 'sack': -0.0014, 'int': -0.0034, 'td': 0.0092, 'fd': 0.016, 'rush': 0.0046}
+  RB: bench level -0.076, league -0.040; rest-of-season efficiency, share of variation explained out of fold: fitted mix 8.6%, efficiency stat alone 9.1% (in sample); weights {'epa': 0.0234, 'ypc': 0.004, 'fd': 0.0095, 'ypt': -0.0028, 'td': -0.0012, 'expl': -0.0032, 'tshare': 0.0009}
+  WR: bench level 0.027, league 0.220; rest-of-season efficiency, share of variation explained out of fold: fitted mix 4.2%, efficiency stat alone 4.1% (in sample); weights {'epa': 0.015, 'ypt': 0.0124, 'catch': 0.0176, 'fd': 0.0077, 'td': 0.0143, 'adot': 0.0095, 'tshare': 0.0033, 'yac': 0.0018}
+  TE: bench level 0.071, league 0.201; rest-of-season efficiency, share of variation explained out of fold: fitted mix 6.2%, efficiency stat alone 6.2% (in sample); weights {'epa': 0.0544, 'ypt': -0.0569, 'catch': 0.0285, 'fd': 0.0237, 'td': -0.0067, 'adot': 0.0461, 'tshare': 0.0046, 'yac': 0.0386}
+
+Held-out test, 2023-2025: rated after week 8, compared with what the player did from week 9 on.
+Rank correlation with the future number (1 = the rating put players in exactly the right order).
+      future yardstick                             players    new    old
+QB    EPA per play                                      82  0.463  0.462
+RB    EPA per game (rush + receiving)                  167  0.101  0.104
+RB    yards from scrimmage per game                    167  0.520  0.439
+RB    EPA per carry or target                          153  0.159  0.147
+WR    receiving EPA per game                           262  0.413  0.385
+WR    receiving yards per game                         262  0.665  0.609
+WR    EPA per target                                   229  0.140  0.149
+TE    receiving EPA per game                           107  0.342  0.307
+TE    receiving yards per game                         107  0.557  0.567
+EDGE  points of plays made per game                    285  0.624  0.571
+EDGE  sacks per game                                   285  0.517  0.536
+DL    points of plays made per game                    295  0.620  0.432
+DL    sacks per game                                   295  0.343  0.374
+LB    points of plays made per game                    368  0.782  0.767
+LB    stops per game                                   368  0.763  0.744
+CB    points of plays made per game                    415  0.593  0.448
+CB    passes defended + INT per game                   415  0.424  0.456
+S     points of plays made per game                    284  0.511  0.458
+S     passes defended + INT per game                   284  0.355  0.401
+K     field goals above expected per attempt            85  0.038  0.117
+K     field-goal %                                      85  0.058  0.055
+new rating ahead on 13 of 21 yardsticks

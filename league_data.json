@@ -91,7 +91,7 @@
    "rating": 8.65,
    "score_rating": 6.69,
    "margin": 9.8,
-   "sos": -0.5,
+   "sos": -0.4,
    "sos_rank": 19,
    "off_avg": 9.9,
    "def_avg": 24.5,
@@ -392,7 +392,7 @@
     "Defense": 1.65,
     "Special teams": 0.32,
     "Penalties": 0.25,
-    "Quarterback": 2.48
+    "Quarterback": 2.49
    },
    "buckets": {
     "o_drop": 2.19,
@@ -423,7 +423,7 @@
    "move": -1,
    "record": "7-2",
    "gp": 9,
-   "rating": 8.22,
+   "rating": 8.23,
    "score_rating": 8.17,
    "margin": 13.9,
    "sos": -0.9,
@@ -1725,7 +1725,7 @@
     "hon": 6
    },
    "rating_model": "SAM team rating",
-   "off_pts": 4.42,
+   "off_pts": 4.43,
    "def_pts": 2.92,
    "parts": {
     "Offense": 2.19,
@@ -2094,8 +2094,8 @@
    "team": "Detroit Lions",
    "abbr": "DET",
    "pos": 7,
-   "prev_pos": 9,
-   "move": 2,
+   "prev_pos": 8,
+   "move": 1,
    "record": "7-2",
    "gp": 9,
    "rating": 4.72,
@@ -3052,7 +3052,7 @@
     "hon": 3
    },
    "rating_model": "SAM team rating",
-   "off_pts": 0.31,
+   "off_pts": 0.32,
    "def_pts": 3.21,
    "parts": {
     "Offense": -0.12,
@@ -3403,11 +3403,11 @@
    "team": "Pittsburgh Steelers",
    "abbr": "PIT",
    "pos": 11,
-   "prev_pos": 8,
-   "move": -3,
+   "prev_pos": 9,
+   "move": -2,
    "record": "6-3",
    "gp": 9,
-   "rating": 2.33,
+   "rating": 2.29,
    "score_rating": 0.79,
    "margin": 1.8,
    "sos": -0.2,
@@ -3704,14 +3704,14 @@
     "hon": 6
    },
    "rating_model": "SAM team rating",
-   "off_pts": 0.82,
+   "off_pts": 0.77,
    "def_pts": 1.26,
    "parts": {
     "Offense": 1.42,
     "Defense": 1.26,
     "Special teams": 0.24,
     "Penalties": 0.01,
-    "Quarterback": -0.61
+    "Quarterback": -0.65
    },
    "buckets": {
     "o_drop": -2.71,
@@ -4069,7 +4069,7 @@
    "move": -3,
    "record": "5-5",
    "gp": 10,
-   "rating": 1.54,
+   "rating": 1.55,
    "score_rating": 0.67,
    "margin": -2.1,
    "sos": 1.2,
@@ -4373,7 +4373,7 @@
     "Defense": 0.38,
     "Special teams": -0.14,
     "Penalties": -0.1,
-    "Quarterback": 1.45
+    "Quarterback": 1.46
    },
    "buckets": {
     "o_drop": 2.64,
@@ -4400,7 +4400,7 @@
    "move": -1,
    "record": "3-6",
    "gp": 9,
-   "rating": 1.48,
+   "rating": 1.49,
    "score_rating": 2.13,
    "margin": 1.6,
    "sos": 0.0,
@@ -4704,7 +4704,7 @@
     "Defense": 0.76,
     "Special teams": 0.1,
     "Penalties": 0.52,
-    "Quarterback": 1.37
+    "Quarterback": 1.38
    },
    "buckets": {
     "o_drop": 0.76,
@@ -6348,7 +6348,7 @@
     "Defense": -0.98,
     "Special teams": 0.0,
     "Penalties": -0.39,
-    "Quarterback": -0.84
+    "Quarterback": -0.83
    },
    "buckets": {
     "o_drop": -0.4,
@@ -6696,11 +6696,11 @@
    "move": -2,
    "record": "3-7",
    "gp": 10,
-   "rating": -3.36,
+   "rating": -3.35,
    "score_rating": -3.35,
    "margin": -5.7,
    "sos": 2.2,
-   "sos_rank": 2,
+   "sos_rank": 3,
    "off_avg": 16.9,
    "def_avg": 19.0,
    "stats": [
@@ -6993,7 +6993,7 @@
     "hon": 9
    },
    "rating_model": "SAM team rating",
-   "off_pts": -1.53,
+   "off_pts": -1.52,
    "def_pts": -1.74,
    "parts": {
     "Offense": -0.47,
@@ -7027,7 +7027,7 @@
    "move": 1,
    "record": "3-7",
    "gp": 10,
-   "rating": -3.38,
+   "rating": -3.37,
    "score_rating": -2.98,
    "margin": -6.3,
    "sos": 0.5,
@@ -8314,7 +8314,7 @@
     "Defense": -1.16,
     "Special teams": -0.03,
     "Penalties": -0.06,
-    "Quarterback": -1.7
+    "Quarterback": -1.69
    },
    "buckets": {
     "o_drop": -2.86,
@@ -8988,7 +8988,7 @@
    "move": 0,
    "record": "1-8",
    "gp": 9,
-   "rating": -5.65,
+   "rating": -5.64,
    "score_rating": -6.92,
    "margin": -8.0,
    "sos": -0.9,
@@ -9314,7 +9314,7 @@
    "move": 2,
    "record": "1-8",
    "gp": 9,
-   "rating": -6.12,
+   "rating": -6.11,
    "score_rating": -4.29,
    "margin": -10.6,
    "sos": 1.4,
@@ -9645,11 +9645,11 @@
    "move": -1,
    "record": "3-7",
    "gp": 10,
-   "rating": -6.24,
+   "rating": -6.23,
    "score_rating": -5.42,
    "margin": -10.5,
    "sos": 2.2,
-   "sos_rank": 3,
+   "sos_rank": 2,
    "off_avg": 17.4,
    "def_avg": 20.2,
    "stats": [
@@ -9949,7 +9949,7 @@
     "Defense": -2.49,
     "Special teams": -0.04,
     "Penalties": 0.48,
-    "Quarterback": -2.8
+    "Quarterback": -2.79
    },
    "buckets": {
     "o_drop": -1.96,
@@ -10599,7 +10599,7 @@
     "hon": 2
    },
    "rating_model": "SAM team rating",
-   "off_pts": -4.55,
+   "off_pts": -4.54,
    "def_pts": -2.61,
    "parts": {
     "Offense": -2.3,
@@ -10649,8 +10649,8 @@
     "to_margin": 1.644,
     "new_coach": 0.0,
     "mid_change": 0.0,
-    "qb538": -0.189,
-    "qb538_level": 5.238,
+    "qb538": -0.188,
+    "qb538_level": 5.239,
     "wepa": 4.356,
     "wt": 1.117,
     "wt_early": 0.0,
@@ -10730,8 +10730,8 @@
     "to_margin": 0.444,
     "new_coach": 0.0,
     "mid_change": 0.0,
-    "qb538": 0.861,
-    "qb538_level": 7.392,
+    "qb538": 0.862,
+    "qb538_level": 7.393,
     "wepa": 9.875,
     "wt": 3.825,
     "wt_early": 0.0,
@@ -10789,7 +10789,7 @@
    "neutral": false,
    "home_margin": -0.9,
    "home_win": 0.473,
-   "line": 2.5,
+   "line": 3.0,
    "results_margin": 2.3,
    "lineup_margin": 0.1,
    "model": "SAM multi-factor",
@@ -10830,8 +10830,8 @@
     "wind_x_pass": -0.0
    },
    "sam_market": {
-    "margin": 2.0,
-    "win": 0.562,
+    "margin": 2.5,
+    "win": 0.575,
     "weight_on_sam": 0.14
    },
    "lineup": {
@@ -10966,8 +10966,8 @@
     "to_margin": -0.189,
     "new_coach": -1.0,
     "mid_change": 0.0,
-    "qb538": 0.728,
-    "qb538_level": 3.743,
+    "qb538": 0.734,
+    "qb538_level": 3.749,
     "wepa": 4.584,
     "wt": 1.653,
     "wt_early": 0.0,
@@ -11027,7 +11027,7 @@
    "neutral": false,
    "home_margin": 4.0,
    "home_win": 0.621,
-   "line": 6.5,
+   "line": 6.0,
    "results_margin": 4.9,
    "lineup_margin": 3.5,
    "model": "SAM multi-factor",
@@ -11045,7 +11045,7 @@
     "to_margin": -0.333,
     "new_coach": 0.0,
     "mid_change": 0.0,
-    "qb538": -0.889,
+    "qb538": -0.89,
     "qb538_level": 3.71,
     "wepa": 2.483,
     "wt": 1.17,
@@ -11068,8 +11068,8 @@
     "wind_x_pass": 0.0
    },
    "sam_market": {
-    "margin": 6.2,
-    "win": 0.683,
+    "margin": 5.7,
+    "win": 0.671,
     "weight_on_sam": 0.14
    },
    "lineup": {
@@ -11123,8 +11123,8 @@
     "to_margin": 1.189,
     "new_coach": -1.0,
     "mid_change": 0.0,
-    "qb538": 10.805,
-    "qb538_level": 15.338,
+    "qb538": 10.806,
+    "qb538_level": 15.336,
     "wepa": 8.19,
     "wt": 3.739,
     "wt_early": 0.0,
@@ -11204,8 +11204,8 @@
     "to_margin": -1.0,
     "new_coach": 1.0,
     "mid_change": 0.0,
-    "qb538": -0.851,
-    "qb538_level": -5.53,
+    "qb538": -0.85,
+    "qb538_level": -5.528,
     "wepa": -8.059,
     "wt": -0.612,
     "wt_early": -0.0,
@@ -11283,8 +11283,8 @@
     "to_margin": -0.656,
     "new_coach": 0.0,
     "mid_change": 0.0,
-    "qb538": -0.742,
-    "qb538_level": -0.547,
+    "qb538": -0.74,
+    "qb538_level": -0.549,
     "wepa": 2.596,
     "wt": 2.252,
     "wt_early": 0.0,
@@ -11361,8 +11361,8 @@
     "to_margin": 0.478,
     "new_coach": -1.0,
     "mid_change": 0.0,
-    "qb538": 2.763,
-    "qb538_level": 4.243,
+    "qb538": 2.767,
+    "qb538_level": 4.244,
     "wepa": 2.468,
     "wt": 1.743,
     "wt_early": 0.0,
@@ -11441,8 +11441,8 @@
     "to_margin": -1.0,
     "new_coach": -1.0,
     "mid_change": 0.0,
-    "qb538": 6.234,
-    "qb538_level": 4.759,
+    "qb538": 6.235,
+    "qb538_level": 4.76,
     "wepa": -2.759,
     "wt": 1.087,
     "wt_early": 0.0,
@@ -11521,8 +11521,8 @@
     "to_margin": -0.333,
     "new_coach": 0.0,
     "mid_change": 0.0,
-    "qb538": -4.594,
-    "qb538_level": 2.846,
+    "qb538": -4.592,
+    "qb538_level": 2.848,
     "wepa": 0.721,
     "wt": 0.598,
     "wt_early": 0.0,
@@ -11581,7 +11581,7 @@
    "neutral": false,
    "home_margin": -5.6,
    "home_win": 0.334,
-   "line": -6.5,
+   "line": -6.0,
    "results_margin": -4.6,
    "lineup_margin": -4.6,
    "model": "SAM multi-factor",
@@ -11599,8 +11599,8 @@
     "to_margin": 0.333,
     "new_coach": 0.0,
     "mid_change": 0.0,
-    "qb538": 0.302,
-    "qb538_level": -4.849,
+    "qb538": 0.303,
+    "qb538_level": -4.847,
     "wepa": -6.735,
     "wt": -1.627,
     "wt_early": -0.0,
@@ -11622,8 +11622,8 @@
     "wind_x_pass": -0.0
    },
    "sam_market": {
-    "margin": -6.4,
-    "win": 0.311,
+    "margin": -5.9,
+    "win": 0.323,
     "weight_on_sam": 0.14
    },
    "lineup": {

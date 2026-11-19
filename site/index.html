@@ -221,7 +221,7 @@ const per = (v, g) => g ? v / g : 0;
 const frac = s => { const [a, b] = String(s || '0/0').split('/').map(Number); return b ? a / b : 0; };
 // [label, title, value(row), higherIsBetter]
 const ATTRS = {
-  QB: [['EFF', 'EPA per play', r => r.epa_play], ['ACC', 'Completion % over expected', r => r.cpoe], ['YDS', 'Passing yards per game', r => per(r.pass_yds, r.games)],
+  QB: [['EFF', 'EPA per play', r => r.epa_play], ['ACC', 'Completion percentage', r => { const [c, a] = String(r.cmp).split('/').map(Number); return a ? c / a : 0; }], ['YDS', 'Passing yards per game', r => per(r.pass_yds, r.games)],
     ['TD', 'Passing TDs per game', r => per(r.td, r.games)], ['SAFE', 'Interceptions per attempt (fewer is better)', r => { const a = +String(r.cmp).split('/')[1] || 1; return -(r.int / a); }],
     ['RUN', 'Rushing yards per game', r => per(r.rush_yds, r.games)]],
   RB: [['RUSH', 'Rushing yards per game', r => per(r.rush_yds, r.games)], ['YPC', 'Yards per carry', r => r.ypc], ['WORK', 'Carries per game', r => per(r.car, r.games)],
@@ -252,7 +252,7 @@ const PLAYER_TRAITS = {
     ['Game manager', 'Safe and steady: protects the ball (SAFE 75+) without piling up yards (YDS 60 or lower).', a => a.SAFE >= 75 && a.YDS <= 60],
     ['Playmaker', 'Makes plays that move the score: EPA per play in the top ~20% of QBs.', a => a.EFF >= 85],
     ['Pocket passer', 'Throws for lots of yards (YDS 75+) but rarely runs (RUN 50 or lower).', a => a.YDS >= 75 && a.RUN <= 50],
-    ['Accurate', 'Completes more passes than expected: completion % over expected in the top ~15% (ACC 90+).', a => a.ACC >= 90]],
+    ['Accurate', 'Completes a high share of passes: completion percentage in the top ~15% of QBs (ACC 90+).', a => a.ACC >= 90]],
   RB: [['Workhorse', 'Carries the load: carries per game in the top ~20% of RBs.', a => a.WORK >= 85],
     ['Big-play back', 'Breaks long runs: yards per carry in the top ~20% of RBs.', a => a.YPC >= 85],
     ['Receiving back', 'Used as a pass catcher: receiving yards per game in the top ~20% of RBs.', a => a.REC >= 85],

@@ -23,9 +23,9 @@
   "BAL": 19,
   "CAR": 20,
   "ATL": 21,
-  "NO": 22,
-  "NYG": 23,
-  "IND": 24,
+  "IND": 22,
+  "NO": 23,
+  "NYG": 24,
   "CLE": 25,
   "PHI": 26,
   "NYJ": 27,
@@ -36,38 +36,38 @@
   "LV": 32
  },
  "ratings": {
-  "BUF": 8.65,
-  "JAX": 8.16,
-  "CIN": 8.07,
-  "SF": 7.18,
-  "KC": 6.79,
-  "LAR": 6.65,
-  "DET": 4.67,
-  "CHI": 4.14,
-  "HOU": 2.98,
-  "DEN": 2.57,
-  "MIN": 2.55,
-  "SEA": 2.19,
-  "PIT": 2.19,
-  "NE": 1.56,
-  "GB": 1.08,
-  "TB": 0.75,
-  "DAL": -0.22,
-  "WAS": -2.03,
-  "BAL": -2.49,
-  "CAR": -2.77,
-  "ATL": -3.36,
-  "NO": -3.59,
-  "NYG": -4.15,
-  "IND": -4.49,
-  "CLE": -4.95,
-  "PHI": -5.3,
-  "NYJ": -5.53,
-  "TEN": -5.64,
-  "LAC": -5.97,
-  "ARI": -6.2,
-  "MIA": -6.54,
-  "LV": -6.94
+  "BUF": 8.62,
+  "JAX": 8.13,
+  "CIN": 8.04,
+  "SF": 7.15,
+  "KC": 6.76,
+  "LAR": 6.62,
+  "DET": 4.64,
+  "CHI": 4.12,
+  "HOU": 2.95,
+  "DEN": 2.54,
+  "MIN": 2.52,
+  "SEA": 2.16,
+  "PIT": 2.16,
+  "NE": 1.53,
+  "GB": 1.05,
+  "TB": 0.73,
+  "DAL": -0.25,
+  "WAS": -2.06,
+  "BAL": -2.52,
+  "CAR": -2.8,
+  "ATL": -3.39,
+  "IND": -3.61,
+  "NO": -3.62,
+  "NYG": -4.18,
+  "CLE": -4.98,
+  "PHI": -5.33,
+  "NYJ": -5.56,
+  "TEN": -5.67,
+  "LAC": -5.99,
+  "ARI": -6.23,
+  "MIA": -6.57,
+  "LV": -6.97
  },
  "upcoming": [
   {
@@ -81,7 +81,7 @@
    "home_win": 0.877,
    "line": 16.5,
    "results_margin": 13.7,
-   "lineup_margin": 16.3,
+   "lineup_margin": 13.7,
    "model": "SAM multi-factor",
    "factors": {
     "base": 13.666,
@@ -126,22 +126,27 @@
    },
    "lineup": {
     "BUF": {
-     "points": -0.0,
+     "points": -2.2,
      "qb": 0.0,
-     "injuries": -0.0,
+     "injuries": -2.2,
      "notes": [
-      "C.J. Gardner-Johnson (S, missed last game)"
+      "Christian Benford (CB, Out)",
+      "Dorian Williams (LB, Out)",
+      "C.J. Gardner-Johnson (S, missed last game)",
+      "Dalton Kincaid (TE, Doubtful)",
+      "Damar Hamlin (S, Questionable)"
      ]
     },
     "MIA": {
-     "points": -2.6,
+     "points": -2.2,
      "qb": -1.5,
-     "injuries": -1.0,
+     "injuries": -0.7,
      "notes": [
       "Kyle McCord starting instead of the usual QB (-1.5)",
-      "Aaron Brewer (C, missed last game)",
+      "Dante Trader (S, Doubtful)",
       "Zach Sieler (DL, missed last game)",
       "Chris Bell (WR, missed last game)",
+      "Aaron Brewer (C, Questionable)",
       "De'Von Achane (RB, missed last game)"
      ]
     }
@@ -158,7 +163,7 @@
    "home_win": 0.473,
    "line": 3.0,
    "results_margin": 2.4,
-   "lineup_margin": 0.2,
+   "lineup_margin": 1.5,
    "model": "SAM multi-factor",
    "factors": {
     "base": 2.364,
@@ -203,27 +208,28 @@
    },
    "lineup": {
     "CAR": {
-     "points": -3.4,
+     "points": -3.2,
      "qb": 0.0,
-     "injuries": -3.4,
+     "injuries": -3.2,
      "notes": [
-      "Bobby Okereke (LB, missed last game)",
+      "Bobby Okereke (LB, Out)",
       "Will Lee (CB, missed last game)",
       "Akayleb Evans (CB, missed last game)",
       "Jaycee Horn (CB, missed last game)",
-      "Michael Jackson (CB, missed last game)"
+      "Tommy Tremble (TE, Questionable)"
      ]
     },
     "BAL": {
-     "points": -1.2,
+     "points": -2.3,
      "qb": -0.2,
-     "injuries": -1.0,
+     "injuries": -2.1,
      "notes": [
       "Jacoby Brissett starting instead of the usual QB (-0.2)",
-      "Jaylinn Hawkins (S, missed last game)",
+      "Marlon Humphrey (CB, Out)",
+      "Nnamdi Madubuike (DL, Out)",
+      "Jaylinn Hawkins (S, Out)",
       "Tavius Robinson (LB, missed last game)",
-      "Emery Jones (G, missed last game)",
-      "Jovaughn Gwyn (OL, missed last game)"
+      "Emery Jones (G, missed last game)"
      ]
     }
    }
@@ -239,7 +245,7 @@
    "home_win": 0.76,
    "line": 11.5,
    "results_margin": 9.1,
-   "lineup_margin": 10.1,
+   "lineup_margin": 11.8,
    "model": "SAM multi-factor",
    "factors": {
     "base": 9.099,
@@ -292,16 +298,19 @@
       "Cole Kmet (TE, missed last game)",
       "Dayo Odeyingbo (DL, missed last game)",
       "Xavier Woods (DB, missed last game)",
-      "Braxton Jones (OL, missed last game)"
+      "Kyler Gordon (DB, Out)"
      ]
     },
     "NO": {
-     "points": -1.1,
+     "points": -2.8,
      "qb": 0.0,
-     "injuries": -1.1,
+     "injuries": -2.8,
      "notes": [
-      "Taliese Fuaga (T, missed last game)",
-      "Erik McCoy (C, missed last game)"
+      "Justin Reid (S, Out)",
+      "Taliese Fuaga (T, Out)",
+      "Erik McCoy (C, Out)",
+      "Asim Richards (OL, Out)",
+      "Martin Emerson (CB, Out)"
      ]
     }
    }
@@ -315,9 +324,9 @@
    "neutral": false,
    "home_margin": 10.4,
    "home_win": 0.789,
-   "line": 8.5,
+   "line": 7.5,
    "results_margin": 8.0,
-   "lineup_margin": 11.2,
+   "lineup_margin": 7.4,
    "model": "SAM multi-factor",
    "factors": {
     "base": 8.023,
@@ -356,31 +365,33 @@
     "wind_x_pass": 0.0
    },
    "sam_market": {
-    "margin": 8.8,
-    "win": 0.751,
+    "margin": 7.9,
+    "win": 0.73,
     "weight_on_sam": 0.14
    },
    "lineup": {
     "DAL": {
-     "points": -0.8,
+     "points": -3.4,
      "qb": 0.0,
-     "injuries": -0.8,
+     "injuries": -3.4,
      "notes": [
+      "Tyler Booker (G, Out)",
+      "DaRon Bland (CB, Out)",
       "Donovan Ezeiruaku (LB, missed last game)",
-      "Jake Ferguson (TE, missed last game)",
-      "Jalen Thompson (S, missed last game)"
+      "Jake Ferguson (TE, Out)",
+      "Jonathan Mingo (WR, Out)"
      ]
     },
     "TEN": {
-     "points": -4.0,
+     "points": -2.8,
      "qb": 0.0,
-     "injuries": -4.0,
+     "injuries": -2.8,
      "notes": [
-      "Anthony Hill (LB, missed last game)",
       "Peter Skoronski (G, missed last game)",
       "Amani Hooker (S, missed last game)",
       "Jeffery Simmons (DT, missed last game)",
-      "Cody Barton (LB, missed last game)"
+      "Cody Barton (LB, missed last game)",
+      "Marcus Harris (CB, missed last game)"
      ]
     }
    }
@@ -394,9 +405,9 @@
    "neutral": false,
    "home_margin": 4.0,
    "home_win": 0.621,
-   "line": 5.5,
+   "line": 4.5,
    "results_margin": 4.9,
-   "lineup_margin": 3.5,
+   "lineup_margin": 3.7,
    "model": "SAM multi-factor",
    "factors": {
     "base": 4.85,
@@ -435,30 +446,31 @@
     "wind_x_pass": 0.0
    },
    "sam_market": {
-    "margin": 5.3,
-    "win": 0.659,
+    "margin": 4.4,
+    "win": 0.634,
     "weight_on_sam": 0.14
    },
    "lineup": {
     "DET": {
-     "points": -2.3,
+     "points": -1.7,
      "qb": 0.0,
-     "injuries": -2.3,
+     "injuries": -1.7,
      "notes": [
       "Jack Campbell (LB, missed last game)",
-      "D.J. Reed (CB, missed last game)",
       "Ben Bartch (OL, missed last game)",
-      "Avonte Maddox (DB, missed last game)",
-      "Cade Mays (C, missed last game)"
+      "D.J. Reed (CB, Questionable)",
+      "Cade Mays (C, Out)",
+      "Avonte Maddox (DB, missed last game)"
      ]
     },
     "TB": {
-     "points": -0.9,
+     "points": -0.5,
      "qb": 0.0,
-     "injuries": -0.9,
+     "injuries": -0.5,
      "notes": [
-      "YaYa Diaby (LB, missed last game)",
-      "Benjamin Morrison (CB, missed last game)"
+      "Antoine Winfield Jr. (S, Out)",
+      "Benjamin Morrison (CB, missed last game)",
+      "YaYa Diaby (LB, Questionable)"
      ]
     }
    }
@@ -472,9 +484,9 @@
    "neutral": false,
    "home_margin": 14.9,
    "home_win": 0.875,
-   "line": 16.5,
+   "line": 15.5,
    "results_margin": 12.0,
-   "lineup_margin": 14.1,
+   "lineup_margin": 13.5,
    "model": "SAM multi-factor",
    "factors": {
     "base": 11.96,
@@ -513,24 +525,25 @@
     "wind_x_pass": 0.0
    },
    "sam_market": {
-    "margin": 16.3,
-    "win": 0.896,
+    "margin": 15.4,
+    "win": 0.884,
     "weight_on_sam": 0.14
    },
    "lineup": {
     "KC": {
-     "points": -1.6,
+     "points": -2.3,
      "qb": 0.0,
-     "injuries": -1.6,
+     "injuries": -2.3,
      "notes": [
-      "Jaylon Moore (OL, missed last game)",
-      "Kenneth Walker III (RB, missed last game)",
+      "Trey Smith (G, Out)",
+      "Jaylon Moore (OL, Out)",
+      "Kenneth Walker III (RB, Out)",
       "L'Jarius Sneed (CB, missed last game)",
       "Tyquan Thornton (WR, missed last game)"
      ]
     },
     "ARI": {
-     "points": -3.7,
+     "points": -3.8,
      "qb": -1.5,
      "injuries": -2.2,
      "notes": [
@@ -538,7 +551,7 @@
       "Hjalte Froholdt (OL, missed last game)",
       "Kendrick Bourne (WR, missed last game)",
       "Paris Johnson (OL, missed last game)",
-      "Jon Gaines (OL, missed last game)",
+      "Jon Gaines (OL, Out)",
       "Marvin Harrison Jr. (WR, missed last game)"
      ]
     }
@@ -555,7 +568,7 @@
    "home_win": 0.243,
    "line": -6.0,
    "results_margin": -7.9,
-   "lineup_margin": -10.2,
+   "lineup_margin": -9.5,
    "model": "SAM multi-factor",
    "factors": {
     "base": -7.877,
@@ -613,12 +626,15 @@
      ]
     },
     "JAX": {
-     "points": -0.4,
+     "points": -1.1,
      "qb": 0.0,
-     "injuries": -0.4,
+     "injuries": -1.1,
      "notes": [
+      "Robert Hainsey (OL, Out)",
       "Anton Harrison (OL, missed last game)",
-      "Eric Murray (S, missed last game)"
+      "Eric Murray (S, missed last game)",
+      "Matt Dickerson (DT, Questionable)",
+      "Danny Striggow (DE, Questionable)"
      ]
     }
    }
@@ -634,7 +650,7 @@
    "home_win": 0.525,
    "line": 3.0,
    "results_margin": 3.4,
-   "lineup_margin": 2.5,
+   "lineup_margin": 2.1,
    "model": "SAM multi-factor",
    "factors": {
     "base": 3.388,
@@ -679,24 +695,27 @@
    },
    "lineup": {
     "LAC": {
-     "points": -1.1,
+     "points": -2.7,
      "qb": 0.0,
-     "injuries": -1.1,
+     "injuries": -2.7,
      "notes": [
+      "Daiyan Henley (LB, Out)",
       "Rashawn Slater (T, missed last game)",
-      "Ladd McConkey (WR, missed last game)",
       "Derwin James (S, missed last game)",
-      "Alex Harkey (G, missed last game)",
-      "Trevor Penning (OL, missed last game)"
+      "Tarheeb Still (CB, Questionable)",
+      "Alex Harkey (G, missed last game)"
      ]
     },
     "NYJ": {
-     "points": -0.2,
+     "points": -1.4,
      "qb": 0.0,
-     "injuries": -0.2,
+     "injuries": -1.4,
      "notes": [
+      "Isaiah Williams (WR, Out)",
       "Jarvis Brownlee (DB, missed last game)",
-      "Tim Patrick (WR, missed last game)"
+      "Omar Cooper (WR, Out)",
+      "Tim Patrick (WR, missed last game)",
+      "Harrison Phillips (DL, Questionable)"
      ]
     }
    }
@@ -712,7 +731,7 @@
    "home_win": 0.744,
    "line": 10.5,
    "results_margin": 8.8,
-   "lineup_margin": 10.2,
+   "lineup_margin": 10.0,
    "model": "SAM multi-factor",
    "factors": {
     "base": 8.821,
@@ -761,21 +780,23 @@
      "qb": 0.0,
      "injuries": -0.9,
      "notes": [
-      "Brandon Jones (S, missed last game)",
       "Talanoa Hufanga (S, missed last game)",
       "Eyioma Uwazurike (DL, missed last game)",
       "Jonah Elliss (LB, missed last game)",
-      "Kris Abrams-Draine (CB, missed last game)"
+      "Kris Abrams-Draine (CB, missed last game)",
+      "Brandon Jones (S, Questionable)"
      ]
     },
     "LV": {
-     "points": -2.3,
+     "points": -2.1,
      "qb": -1.8,
-     "injuries": -0.5,
+     "injuries": -0.3,
      "notes": [
       "Fernando Mendoza starting instead of the usual QB (-1.8)",
+      "Tonka Hemingway (DT, Out)",
       "Jackson Powers-Johnson (G, missed last game)",
       "Caleb Rogers (G, missed last game)",
+      "Brock Bowers (TE, Questionable)",
       "Isaiah Pola-Mao (S, missed last game)"
      ]
     }
@@ -792,7 +813,7 @@
    "home_win": 0.431,
    "line": -3.5,
    "results_margin": -2.4,
-   "lineup_margin": -6.3,
+   "lineup_margin": -7.2,
    "model": "SAM multi-factor",
    "factors": {
     "base": -2.367,
@@ -837,26 +858,28 @@
    },
    "lineup": {
     "PHI": {
-     "points": -4.4,
+     "points": -5.7,
      "qb": -1.7,
-     "injuries": -2.6,
+     "injuries": -4.0,
      "notes": [
       "Joe Milton III starting instead of the usual QB (-1.7)",
+      "Zack Baun (LB, Out)",
       "Jihaad Campbell (LB, missed last game)",
-      "Dontayvion Wicks (WR, missed last game)",
+      "Dontayvion Wicks (WR, Out)",
       "Cam Jurgens (C, missed last game)",
-      "DeVonta Smith (WR, missed last game)",
-      "Lane Johnson (T, missed last game)"
+      "DeVonta Smith (WR, missed last game)"
      ]
     },
     "PIT": {
-     "points": -0.5,
+     "points": -0.9,
      "qb": 0.0,
-     "injuries": -0.5,
+     "injuries": -0.9,
      "notes": [
-      "Michael Pittman Jr. (WR, missed last game)",
+      "Patrick Queen (LB, Questionable)",
       "Rayshawn Jenkins (S, missed last game)",
-      "Dylan Cook (T, missed last game)"
+      "Dylan Cook (T, missed last game)",
+      "Nick Herbig (LB, Questionable)",
+      "Roman Wilson (WR, Questionable)"
      ]
     }
    }
@@ -870,9 +893,9 @@
    "neutral": true,
    "home_margin": 7.4,
    "home_win": 0.715,
-   "line": 3.0,
+   "line": 3.5,
    "results_margin": 1.3,
-   "lineup_margin": 2.6,
+   "lineup_margin": 2.8,
    "model": "SAM multi-factor",
    "factors": {
     "base": 1.29,
@@ -911,27 +934,31 @@
     "wind_x_pass": 0.0
    },
    "sam_market": {
-    "margin": 3.6,
-    "win": 0.61,
+    "margin": 4.0,
+    "win": 0.623,
     "weight_on_sam": 0.14
    },
    "lineup": {
     "SF": {
-     "points": -0.4,
+     "points": -0.6,
      "qb": 0.0,
-     "injuries": -0.4,
+     "injuries": -0.6,
      "notes": [
-      "Mike Evans (WR, missed last game)"
+      "Dre Greenlaw (LB, Questionable)",
+      "Upton Stout (CB, Questionable)",
+      "Mike Evans (WR, Questionable)",
+      "Khalid Kareem (DL, Questionable)",
+      "CJ West (DL, Questionable)"
      ]
     },
     "MIN": {
-     "points": -1.7,
+     "points": -2.1,
      "qb": 0.9,
-     "injuries": -2.6,
+     "injuries": -3.0,
      "notes": [
       "Kirk Cousins starting instead of the usual QB (+0.9)",
       "Blake Cashman (LB, missed last game)",
-      "Jordan Addison (WR, missed last game)",
+      "Jordan Addison (WR, Out)",
       "T.J. Hockenson (TE, missed last game)",
       "Tyrion Ingram-Dawkins (DL, missed last game)",
       "Jauan Jennings (WR, missed last game)"
@@ -1025,7 +1052,7 @@
    "neutral": false,
    "home_margin": 4.6,
    "home_win": 0.639,
-   "line": 3.5,
+   "line": 3.0,
    "results_margin": 5.7,
    "lineup_margin": 4.7,
    "model": "SAM multi-factor",
@@ -1066,8 +1093,8 @@
     "wind_x_pass": -0.0
    },
    "sam_market": {
-    "margin": 3.7,
-    "win": 0.611,
+    "margin": 3.2,
+    "win": 0.599,
     "weight_on_sam": 0.14
    },
    "lineup": {
@@ -1343,7 +1370,7 @@
    "neutral": false,
    "home_margin": -0.0,
    "home_win": 0.499,
-   "line": -1.5,
+   "line": -2.5,
    "results_margin": -0.2,
    "lineup_margin": 0.2,
    "model": "SAM multi-factor",
@@ -1384,8 +1411,8 @@
     "wind_x_pass": -0.0
    },
    "sam_market": {
-    "margin": -1.3,
-    "win": 0.46,
+    "margin": -2.2,
+    "win": 0.434,
     "weight_on_sam": 0.14
    },
    "lineup": {
@@ -1577,10 +1604,10 @@
    "home": "IND",
    "neutral": false,
    "home_margin": -0.1,
-   "home_win": 0.497,
+   "home_win": 0.498,
    "line": -6.5,
    "results_margin": -0.0,
-   "lineup_margin": -3.0,
+   "lineup_margin": -4.3,
    "model": "SAM multi-factor",
    "factors": {
     "base": -0.039,
@@ -1596,13 +1623,13 @@
     "to_margin": -1.091,
     "new_coach": -1.0,
     "mid_change": 0.0,
-    "qb538": 0.924,
-    "qb538_level": -0.91,
+    "qb538": 3.378,
+    "qb538_level": 1.544,
     "wepa": -0.807,
     "wt": 0.06,
     "wt_early": 0.0,
     "home": 1.0,
-    "qb": 2.801,
+    "qb": -1.336,
     "miss_OL": 1.677,
     "miss_WR": 0.973,
     "miss_TE": 0.0,
@@ -1620,15 +1647,16 @@
    },
    "sam_market": {
     "margin": -5.6,
-    "win": 0.332,
+    "win": 0.333,
     "weight_on_sam": 0.14
    },
    "lineup": {
     "IND": {
-     "points": -5.7,
-     "qb": 0.0,
+     "points": -7.0,
+     "qb": -1.3,
      "injuries": -5.7,
      "notes": [
+      "Anthony Richardson Sr. starting instead of the usual QB (-1.3)",
       "Bernhard Raimann (T, missed last game)",
       "Charvarius Ward (CB, missed last game)",
       "Jalen Travis (T, missed last game)",

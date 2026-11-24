@@ -27,7 +27,22 @@ def test_beats_home_team_on_2025():
     assert s['n'] > 250 and s['acc'] > home + 0.03, (s, home)
 
 
+def test_strength_of_wins():
+    from build import strength_of_wins
+    from teams import ABBRS
+    r = np.zeros(len(ABBRS)); r[IDX['KC']] = 8; r[IDX['MIA']] = -8
+    played = [game('KC', 'BUF', -3, neutral=True), game('MIA', 'DEN', -3, neutral=True), game('NYJ', 'DAL', 0, neutral=True),
+              game('SF', 'SEA', 7), game('SF', 'LAC', -7)]
+    s = strength_of_wins(played, r, hfa=2, sigma=13)
+    assert s['BUF']['score'] > s['DEN']['score'] > 0, 'beating a good team is worth more than beating a bad one'
+    assert s['KC']['score'] == -0.5 and s['MIA']['score'] == -0.5, 'an even game on a neutral field is a coin flip for an average team'
+    assert s['NYJ']['score'] == 0 and s['DAL']['score'] == 0, 'a tie in an even game is worth nothing either way'
+    assert s['LAC']['score'] > 0.5 > 1 - win_prob(2, 13), 'a road win is worth more than the same win at home'
+    assert s['BUF']['best'][0] == 'KC' and s['SF']['worst'][0] == 'LAC'
+
+
 if __name__ == '__main__':
     test_rate()
+    test_strength_of_wins()
     test_beats_home_team_on_2025()
     print('ok')

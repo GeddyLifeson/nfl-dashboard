@@ -13,7 +13,8 @@ http://127.0.0.1:8030 with a Refresh button. Data older than 6 hours refreshes w
 ## What it shows
 
 - **Rankings:** power rating (points better than an average team), plus offense and defense ranks by
-  opponent-adjusted EPA per play. Sort by any column.
+  opponent-adjusted EPA per play. Strength of wins is how many more games a team has won than an average
+  team would have against the same opponents in the same stadiums. Sort by any column.
 - **Teams:** 27 offense, defense and turnover stats from play-by-play, each with its league rank, and the next game.
 - **Games:** next week's picks with win chance, the market line, and who is missing; last week's picks graded.
 - **Player rankings:** QB, RB, WR, TE, EDGE, DL, LB, CB, S and K, rated 0-100 within each position.

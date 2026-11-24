@@ -98,6 +98,27 @@ def standings(played, rating):
     return out, {t: float(np.mean(opp[t])) for t in ABBRS}
 
 
+def strength_of_wins(played, rating, hfa, sigma):
+    """Wins above an average team: for every game, the result (1 win, 0.5 tie, 0 loss) minus the chance a
+    league-average team wins that same game (same opponent, same site), summed over the season. Beating a
+    good team adds a lot, losing to a bad one costs a lot. Opponents are judged by their current rating
+    (points), not their record. Returns {team: dict(score, best, worst)}; best and worst are
+    (opponent, value) for the most valuable result and the most costly one."""
+    avg = float(np.mean(rating))
+    out = {t: dict(score=0.0, best=None, worst=None) for t in ABBRS}
+    for g in played:
+        h = 0.0 if g['neutral'] else hfa
+        for team, other, m, site in ((g['home'], g['away'], g['margin'], h), (g['away'], g['home'], -g['margin'], -h)):
+            v = (1.0 if m > 0 else 0.5 if m == 0 else 0.0) - win_prob(avg - rating[IDX[other]] + site, sigma)
+            s = out[team]
+            s['score'] += v
+            if s['best'] is None or v > s['best'][1]:
+                s['best'] = (other, v)
+            if s['worst'] is None or v < s['worst'][1]:
+                s['worst'] = (other, v)
+    return out
+
+
 def order_of(rating):
     return sorted(ABBRS, key=lambda t: (-rating[IDX[t]], t))
 
@@ -141,6 +162,9 @@ def main():
     log_tables(gp)
     stats, qb = team_stats(gp), players()
     sos_rank = {t: i for i, t in enumerate(sorted(ABBRS, key=lambda t: -sos[t]), 1)}
+    sow = strength_of_wins(played, rating, p['hfa'], p['sigma'])
+    sow_rank = {t: i for i, t in enumerate(sorted(ABBRS, key=lambda t: (-sow[t]['score'], t)), 1)}
+    game_note = lambda x: None if x is None else dict(opp=display_abbr(x[0]), value=round(x[1], 2))
 
     teams = []
     for pos, t in enumerate(order, 1):
@@ -153,6 +177,7 @@ def main():
             record=f"{s['w']}-{s['l']}" + (f"-{s['t']}" if s['t'] else ''), gp=s['gp'],
             rating=round(float(rating[IDX[t]]), 2), score_rating=round(float(score_rating[IDX[t]]), 2), margin=round(s['pts'] / s['gp'], 1),
             sos=round(sos[t], 1), sos_rank=sos_rank[t],
+            sow=round(sow[t]['score'], 2), sow_rank=sow_rank[t], sow_best=game_note(sow[t]['best']), sow_worst=game_note(sow[t]['worst']),
             off_avg=round(float(np.mean(o)), 1), def_avg=round(float(np.mean(d)), 1),
             stats=stats[t], player=qb[t],
             **(dict(rating_model='SAM team rating', off_pts=round(tr[t]['off'], 2), def_pts=round(tr[t]['def'], 2), parts=tr[t]['parts'],

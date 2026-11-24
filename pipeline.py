@@ -58,7 +58,7 @@ def main():
         power.append(dict(pos=t['pos'], team=t['team'], abbr=a, record=t['record'], rating=t['rating'], score_rating=t.get('score_rating'), move=t['move'],
                           margin=t['margin'], sos=t['sos'], sos_rank=t['sos_rank'], off_rank=off[a]['rank'],
                           off_epa=off[a]['epa_per_play'], def_rank=de[a]['rank'], def_epa=de[a]['epa_per_play_allowed'],
-                          **{k: t[k] for k in ('off_pts', 'def_pts', 'parts', 'buckets', 'traits') if k in t}))
+                          **{k: t[k] for k in ('sow', 'sow_rank', 'sow_best', 'sow_worst', 'off_pts', 'def_pts', 'parts', 'buckets', 'traits') if k in t}))
     if power and all('off_pts' in p for p in power):          # SAM team ratings: offense and defense ranks and the 60-99 card numbers come from them
         import teamrate
         for key, rk in (('off_pts', 'off_rank'), ('def_pts', 'def_rank')):

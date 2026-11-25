@@ -2109,7 +2109,7 @@
    "neutral": false,
    "home_margin": 5.7,
    "home_win": 0.668,
-   "line": 3.0,
+   "line": 2.5,
    "results_margin": 4.1,
    "lineup_margin": 3.8,
    "model": "SAM multi-factor",
@@ -2150,8 +2150,8 @@
     "wind_x_pass": 0.0
    },
    "sam_market": {
-    "margin": 3.4,
-    "win": 0.603,
+    "margin": 2.9,
+    "win": 0.59,
     "weight_on_sam": 0.14
    },
    "lineup": {

@@ -15,8 +15,8 @@
   "SEA": 11,
   "MIN": 12,
   "DAL": 13,
-  "PIT": 14,
-  "GB": 15,
+  "GB": 14,
+  "PIT": 15,
   "TB": 16,
   "WAS": 17,
   "BAL": 18,
@@ -36,38 +36,38 @@
   "LV": 32
  },
  "ratings": {
-  "SF": 8.95,
-  "BUF": 8.36,
-  "KC": 7.76,
-  "JAX": 7.28,
-  "LAR": 7.07,
-  "CIN": 7.01,
-  "DET": 5.55,
-  "CHI": 3.99,
-  "HOU": 2.97,
-  "DEN": 2.66,
-  "SEA": 2.56,
-  "MIN": 2.01,
-  "DAL": 1.53,
-  "PIT": 1.48,
-  "GB": 1.14,
-  "TB": 0.19,
-  "WAS": -0.87,
-  "BAL": -2.16,
-  "CAR": -2.4,
-  "NE": -3.26,
-  "ATL": -3.35,
-  "NYG": -3.43,
-  "NO": -3.65,
-  "IND": -3.75,
-  "NYJ": -4.68,
-  "CLE": -4.97,
-  "LAC": -5.32,
-  "PHI": -5.4,
-  "TEN": -6.18,
-  "ARI": -6.83,
-  "MIA": -6.96,
-  "LV": -7.31
+  "SF": 8.98,
+  "BUF": 8.39,
+  "KC": 7.79,
+  "JAX": 7.31,
+  "LAR": 7.1,
+  "CIN": 7.04,
+  "DET": 5.59,
+  "CHI": 4.02,
+  "HOU": 3.0,
+  "DEN": 2.69,
+  "SEA": 2.59,
+  "MIN": 2.04,
+  "DAL": 1.56,
+  "GB": 1.17,
+  "PIT": 0.53,
+  "TB": 0.22,
+  "WAS": -0.84,
+  "BAL": -2.13,
+  "CAR": -2.37,
+  "NE": -3.23,
+  "ATL": -3.32,
+  "NYG": -3.4,
+  "NO": -3.62,
+  "IND": -3.71,
+  "NYJ": -4.65,
+  "CLE": -4.94,
+  "LAC": -5.29,
+  "PHI": -5.37,
+  "TEN": -6.15,
+  "ARI": -6.8,
+  "MIA": -6.93,
+  "LV": -7.28
  },
  "upcoming": [
   {
@@ -1054,11 +1054,11 @@
    "away": "GB",
    "home": "LAR",
    "neutral": false,
-   "home_margin": 5.0,
-   "home_win": 0.651,
+   "home_margin": 4.2,
+   "home_win": 0.627,
    "line": 2.5,
    "results_margin": 5.9,
-   "lineup_margin": 4.9,
+   "lineup_margin": 3.5,
    "model": "SAM multi-factor",
    "factors": {
     "base": 5.89,
@@ -1081,13 +1081,13 @@
     "wt_early": 0.0,
     "home": 1.0,
     "qb": 0.0,
-    "miss_OL": -0.49,
-    "miss_WR": 0.948,
-    "miss_TE": 0.0,
-    "miss_RB": 0.0,
+    "miss_OL": 0.775,
+    "miss_WR": 0.853,
+    "miss_TE": 0.135,
+    "miss_RB": -0.034,
     "miss_EDGE": 0.328,
     "miss_DL": 0.0,
-    "miss_LB": -0.831,
+    "miss_LB": -0.445,
     "miss_CB": 0.529,
     "miss_S": 0.0,
     "rest": 0.0,
@@ -1097,33 +1097,33 @@
     "wind_x_pass": 0.0
    },
    "sam_market": {
-    "margin": 2.9,
-    "win": 0.587,
+    "margin": 2.7,
+    "win": 0.584,
     "weight_on_sam": 0.14
    },
    "lineup": {
     "LAR": {
-     "points": -3.1,
+     "points": -3.9,
      "qb": 0.0,
-     "injuries": -3.1,
+     "injuries": -3.9,
      "notes": [
-      "Steve Avila (OL, missed last game)",
+      "Coleman Shelton (OL, Out)",
+      "Steve Avila (OL, Out)",
       "Puka Nacua (WR, missed last game)",
       "Jaylen Watson (CB, missed last game)",
-      "Davante Adams (WR, missed last game)",
-      "Kobie Turner (DE, missed last game)"
+      "Davante Adams (WR, missed last game)"
      ]
     },
     "GB": {
-     "points": -2.1,
+     "points": -1.5,
      "qb": 0.0,
-     "injuries": -2.1,
+     "injuries": -1.5,
      "notes": [
-      "Sean Rhyan (C, missed last game)",
-      "Zaire Franklin (LB, missed last game)",
       "Edgerrin Cooper (LB, missed last game)",
       "Jacob Monk (C, missed last game)",
-      "Aaron Banks (G, missed last game)"
+      "Aaron Banks (G, missed last game)",
+      "Sean Rhyan (C, Questionable)",
+      "Zaire Franklin (LB, Questionable)"
      ]
     }
    }
@@ -1137,7 +1137,7 @@
    "neutral": false,
    "home_margin": 0.4,
    "home_win": 0.512,
-   "line": -2.5,
+   "line": -1.5,
    "results_margin": 3.3,
    "lineup_margin": 0.2,
    "model": "SAM multi-factor",
@@ -1178,8 +1178,8 @@
     "wind_x_pass": 0.0
    },
    "sam_market": {
-    "margin": -2.1,
-    "win": 0.436,
+    "margin": -1.2,
+    "win": 0.462,
     "weight_on_sam": 0.14
    },
    "lineup": {
@@ -1378,11 +1378,11 @@
    "away": "DEN",
    "home": "PIT",
    "neutral": false,
-   "home_margin": -1.3,
-   "home_win": 0.461,
-   "line": -3.0,
+   "home_margin": -1.7,
+   "home_win": 0.448,
+   "line": -3.5,
    "results_margin": -0.9,
-   "lineup_margin": -1.7,
+   "lineup_margin": -2.5,
    "model": "SAM multi-factor",
    "factors": {
     "base": -0.916,
@@ -1398,13 +1398,13 @@
     "to_margin": -0.3,
     "new_coach": 1.0,
     "mid_change": 0.0,
-    "qb538": 0.099,
-    "qb538_level": -1.166,
+    "qb538": 0.186,
+    "qb538_level": -1.08,
     "wepa": -2.87,
     "wt": -0.608,
     "wt_early": -0.0,
     "home": 1.0,
-    "qb": 0.0,
+    "qb": -2.603,
     "miss_OL": 0.927,
     "miss_WR": 0.21,
     "miss_TE": 0.0,
@@ -1421,16 +1421,17 @@
     "wind_x_pass": -0.0
    },
    "sam_market": {
-    "margin": -2.8,
-    "win": 0.416,
+    "margin": -3.2,
+    "win": 0.401,
     "weight_on_sam": 0.14
    },
    "lineup": {
     "PIT": {
-     "points": -1.6,
-     "qb": 0.0,
+     "points": -2.4,
+     "qb": -0.8,
      "injuries": -1.6,
      "notes": [
+      "Mason Rudolph starting instead of the usual QB (-0.8)",
       "Mason McCormick (G, missed last game)",
       "Nick Herbig (LB, missed last game)",
       "Michael Pittman Jr. (WR, missed last game)",
@@ -1539,7 +1540,7 @@
    "neutral": false,
    "home_margin": 3.1,
    "home_win": 0.593,
-   "line": 6.5,
+   "line": 7.0,
    "results_margin": 7.5,
    "lineup_margin": 7.4,
    "model": "SAM multi-factor",
@@ -1580,8 +1581,8 @@
     "wind_x_pass": 0.0
    },
    "sam_market": {
-    "margin": 6.0,
-    "win": 0.679,
+    "margin": 6.5,
+    "win": 0.691,
     "weight_on_sam": 0.14
    },
    "lineup": {
@@ -2027,7 +2028,7 @@
    "neutral": false,
    "home_margin": -6.7,
    "home_win": 0.302,
-   "line": -7.5,
+   "line": -7.0,
    "results_margin": -2.0,
    "lineup_margin": -5.2,
    "model": "SAM multi-factor",
@@ -2068,8 +2069,8 @@
     "wind_x_pass": -0.0
    },
    "sam_market": {
-    "margin": -7.4,
-    "win": 0.284,
+    "margin": -7.0,
+    "win": 0.295,
     "weight_on_sam": 0.14
    },
    "lineup": {

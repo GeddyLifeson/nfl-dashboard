@@ -88,12 +88,12 @@
    "move": 1,
    "record": "9-1",
    "gp": 10,
-   "rating": 8.95,
+   "rating": 8.98,
    "score_rating": 6.44,
    "margin": 11.0,
    "sos": -0.9,
    "sos_rank": 23,
-   "sow": 3.63,
+   "sow": 3.64,
    "sow_rank": 2,
    "sow_best": {
     "opp": "LAR",
@@ -395,14 +395,14 @@
     "hon": 13
    },
    "rating_model": "SAM team rating",
-   "off_pts": 6.69,
+   "off_pts": 6.73,
    "def_pts": 1.92,
    "parts": {
     "Offense": 3.62,
     "Defense": 1.92,
     "Special teams": 0.36,
     "Penalties": -0.02,
-    "Quarterback": 3.07
+    "Quarterback": 3.1
    },
    "buckets": {
     "o_drop": 5.15,
@@ -437,12 +437,12 @@
    "move": -1,
    "record": "9-1",
    "gp": 10,
-   "rating": 8.36,
+   "rating": 8.39,
    "score_rating": 6.84,
    "margin": 10.5,
    "sos": -1.2,
    "sos_rank": 25,
-   "sow": 3.64,
+   "sow": 3.65,
    "sow_rank": 1,
    "sow_best": {
     "opp": "LAR",
@@ -744,14 +744,14 @@
     "hon": 9
    },
    "rating_model": "SAM team rating",
-   "off_pts": 5.91,
+   "off_pts": 5.94,
    "def_pts": 1.94,
    "parts": {
     "Offense": 3.82,
     "Defense": 1.94,
     "Special teams": 0.27,
     "Penalties": 0.24,
-    "Quarterback": 2.09
+    "Quarterback": 2.12
    },
    "buckets": {
     "o_drop": 2.22,
@@ -782,12 +782,12 @@
    "move": 2,
    "record": "8-2",
    "gp": 10,
-   "rating": 7.76,
+   "rating": 7.79,
    "score_rating": 5.38,
    "margin": 10.8,
    "sos": -3.0,
    "sos_rank": 32,
-   "sow": 2.1,
+   "sow": 2.11,
    "sow_rank": 7,
    "sow_best": {
     "opp": "DEN",
@@ -1089,14 +1089,14 @@
     "hon": 6
    },
    "rating_model": "SAM team rating",
-   "off_pts": 4.83,
+   "off_pts": 4.87,
    "def_pts": 3.46,
    "parts": {
     "Offense": 2.32,
     "Defense": 3.46,
     "Special teams": -0.14,
     "Penalties": -0.4,
-    "Quarterback": 2.51
+    "Quarterback": 2.54
    },
    "buckets": {
     "o_drop": 1.74,
@@ -1127,12 +1127,12 @@
    "move": -1,
    "record": "7-3",
    "gp": 10,
-   "rating": 7.28,
+   "rating": 7.31,
    "score_rating": 7.45,
    "margin": 12.0,
-   "sos": -1.7,
+   "sos": -1.6,
    "sos_rank": 30,
-   "sow": 1.61,
+   "sow": 1.62,
    "sow_rank": 9,
    "sow_best": {
     "opp": "CIN",
@@ -1434,14 +1434,14 @@
     "hon": 5
    },
    "rating_model": "SAM team rating",
-   "off_pts": 3.52,
+   "off_pts": 3.55,
    "def_pts": 3.68,
    "parts": {
     "Offense": 2.02,
     "Defense": 3.68,
     "Special teams": 0.43,
     "Penalties": -0.35,
-    "Quarterback": 1.5
+    "Quarterback": 1.53
    },
    "buckets": {
     "o_drop": 2.22,
@@ -1463,12 +1463,12 @@
    "move": 1,
    "record": "6-4",
    "gp": 10,
-   "rating": 7.07,
+   "rating": 7.1,
    "score_rating": 4.97,
    "margin": 6.1,
    "sos": -1.6,
    "sos_rank": 28,
-   "sow": 0.58,
+   "sow": 0.59,
    "sow_rank": 15,
    "sow_best": {
     "opp": "WAS",
@@ -1770,14 +1770,14 @@
     "hon": 10
    },
    "rating_model": "SAM team rating",
-   "off_pts": 4.55,
+   "off_pts": 4.58,
    "def_pts": 2.83,
    "parts": {
     "Offense": 3.41,
     "Defense": 2.83,
     "Special teams": -0.15,
     "Penalties": -0.16,
-    "Quarterback": 1.15
+    "Quarterback": 1.18
    },
    "buckets": {
     "o_drop": 2.6,
@@ -1812,12 +1812,12 @@
    "move": -2,
    "record": "7-3",
    "gp": 10,
-   "rating": 7.01,
+   "rating": 7.04,
    "score_rating": 3.54,
    "margin": 8.3,
-   "sos": -0.6,
-   "sos_rank": 20,
-   "sow": 1.88,
+   "sos": -0.8,
+   "sos_rank": 22,
+   "sow": 1.83,
    "sow_rank": 8,
    "sow_best": {
     "opp": "HOU",
@@ -2119,14 +2119,14 @@
     "hon": 5
    },
    "rating_model": "SAM team rating",
-   "off_pts": 6.05,
+   "off_pts": 6.08,
    "def_pts": 0.72,
    "parts": {
     "Offense": 2.0,
     "Defense": 0.72,
     "Special teams": 0.18,
     "Penalties": 0.06,
-    "Quarterback": 4.05
+    "Quarterback": 4.08
    },
    "buckets": {
     "o_drop": 4.18,
@@ -2157,12 +2157,12 @@
    "move": 0,
    "record": "8-2",
    "gp": 10,
-   "rating": 5.55,
+   "rating": 5.59,
    "score_rating": 4.43,
    "margin": 6.8,
    "sos": -1.6,
    "sos_rank": 29,
-   "sow": 2.43,
+   "sow": 2.44,
    "sow_rank": 5,
    "sow_best": {
     "opp": "MIN",
@@ -2464,14 +2464,14 @@
     "hon": 13
    },
    "rating_model": "SAM team rating",
-   "off_pts": 4.22,
+   "off_pts": 4.25,
    "def_pts": 1.42,
    "parts": {
     "Offense": 2.61,
     "Defense": 1.42,
     "Special teams": -0.0,
     "Penalties": -0.08,
-    "Quarterback": 1.61
+    "Quarterback": 1.64
    },
    "buckets": {
     "o_drop": 2.04,
@@ -2493,12 +2493,12 @@
    "move": 0,
    "record": "8-2",
    "gp": 10,
-   "rating": 3.99,
+   "rating": 4.02,
    "score_rating": 3.09,
    "margin": 6.5,
    "sos": -1.7,
    "sos_rank": 31,
-   "sow": 2.38,
+   "sow": 2.39,
    "sow_rank": 6,
    "sow_best": {
     "opp": "SEA",
@@ -2800,14 +2800,14 @@
     "hon": 10
    },
    "rating_model": "SAM team rating",
-   "off_pts": 2.94,
+   "off_pts": 2.98,
    "def_pts": 1.11,
    "parts": {
     "Offense": 1.73,
     "Defense": 1.11,
     "Special teams": -0.01,
     "Penalties": -0.05,
-    "Quarterback": 1.21
+    "Quarterback": 1.24
    },
    "buckets": {
     "o_drop": 1.61,
@@ -2830,16 +2830,16 @@
    "team": "Houston Texans",
    "abbr": "HOU",
    "pos": 9,
-   "prev_pos": 13,
-   "move": 4,
+   "prev_pos": 12,
+   "move": 3,
    "record": "4-6",
    "gp": 10,
-   "rating": 2.97,
+   "rating": 3.0,
    "score_rating": 2.9,
    "margin": 3.7,
    "sos": -0.3,
    "sos_rank": 14,
-   "sow": -1.17,
+   "sow": -1.16,
    "sow_rank": 21,
    "sow_best": {
     "opp": "JAX",
@@ -3141,14 +3141,14 @@
     "hon": 16
    },
    "rating_model": "SAM team rating",
-   "off_pts": 0.72,
+   "off_pts": 0.75,
    "def_pts": 1.65,
    "parts": {
     "Offense": -0.89,
     "Defense": 1.65,
     "Special teams": 0.05,
     "Penalties": 0.55,
-    "Quarterback": 1.61
+    "Quarterback": 1.64
    },
    "buckets": {
     "o_drop": 0.86,
@@ -3166,16 +3166,16 @@
    "team": "Denver Broncos",
    "abbr": "DEN",
    "pos": 10,
-   "prev_pos": 12,
-   "move": 2,
+   "prev_pos": 11,
+   "move": 1,
    "record": "8-2",
    "gp": 10,
-   "rating": 2.66,
+   "rating": 2.69,
    "score_rating": 3.3,
    "margin": 2.6,
    "sos": 2.0,
    "sos_rank": 4,
-   "sow": 3.56,
+   "sow": 3.57,
    "sow_rank": 3,
    "sow_best": {
     "opp": "KC",
@@ -3477,14 +3477,14 @@
     "hon": 23
    },
    "rating_model": "SAM team rating",
-   "off_pts": 0.82,
+   "off_pts": 0.85,
    "def_pts": 1.81,
    "parts": {
     "Offense": 0.44,
     "Defense": 1.81,
     "Special teams": -0.04,
     "Penalties": 0.06,
-    "Quarterback": 0.39
+    "Quarterback": 0.42
    },
    "buckets": {
     "o_drop": -0.1,
@@ -3506,12 +3506,12 @@
    "move": -1,
    "record": "6-4",
    "gp": 10,
-   "rating": 2.56,
+   "rating": 2.59,
    "score_rating": 4.38,
    "margin": 4.8,
    "sos": -0.7,
-   "sos_rank": 22,
-   "sow": 0.68,
+   "sos_rank": 20,
+   "sow": 0.69,
    "sow_rank": 13,
    "sow_best": {
     "opp": "KC",
@@ -3813,14 +3813,14 @@
     "hon": 15
    },
    "rating_model": "SAM team rating",
-   "off_pts": -0.53,
+   "off_pts": -0.5,
    "def_pts": 2.98,
    "parts": {
     "Offense": 0.27,
     "Defense": 2.98,
     "Special teams": 0.06,
     "Penalties": 0.06,
-    "Quarterback": -0.8
+    "Quarterback": -0.77
    },
    "buckets": {
     "o_drop": 1.79,
@@ -3842,7 +3842,7 @@
    "move": -3,
    "record": "7-3",
    "gp": 10,
-   "rating": 2.01,
+   "rating": 2.04,
    "score_rating": 2.55,
    "margin": 2.5,
    "sos": 1.5,
@@ -4149,14 +4149,14 @@
     "hon": 3
    },
    "rating_model": "SAM team rating",
-   "off_pts": 0.2,
+   "off_pts": 0.23,
    "def_pts": 2.56,
    "parts": {
     "Offense": -0.13,
     "Defense": 2.56,
     "Special teams": -0.08,
     "Penalties": -0.67,
-    "Quarterback": 0.33
+    "Quarterback": 0.36
    },
    "buckets": {
     "o_drop": -2.09,
@@ -4178,12 +4178,12 @@
    "move": 3,
    "record": "5-6",
    "gp": 11,
-   "rating": 1.53,
+   "rating": 1.56,
    "score_rating": -0.15,
    "margin": 2.3,
    "sos": -1.4,
    "sos_rank": 26,
-   "sow": -0.95,
+   "sow": -0.94,
    "sow_rank": 19,
    "sow_best": {
     "opp": "HOU",
@@ -4485,14 +4485,14 @@
     "hon": 10
    },
    "rating_model": "SAM team rating",
-   "off_pts": 3.63,
+   "off_pts": 3.66,
    "def_pts": -2.8,
    "parts": {
     "Offense": 1.31,
     "Defense": -2.8,
     "Special teams": -0.09,
     "Penalties": 0.79,
-    "Quarterback": 2.31
+    "Quarterback": 2.34
    },
    "buckets": {
     "o_drop": 2.25,
@@ -4507,360 +4507,19 @@
    "traits": []
   },
   {
-   "team": "Pittsburgh Steelers",
-   "abbr": "PIT",
-   "pos": 14,
-   "prev_pos": 11,
-   "move": -3,
-   "record": "6-4",
-   "gp": 10,
-   "rating": 1.48,
-   "score_rating": 0.38,
-   "margin": 1.3,
-   "sos": -1.5,
-   "sos_rank": 27,
-   "sow": 0.59,
-   "sow_rank": 14,
-   "sow_best": {
-    "opp": "CIN",
-    "value": 0.65
-   },
-   "sow_worst": {
-    "opp": "PHI",
-    "value": -0.6
-   },
-   "off_avg": 17.9,
-   "def_avg": 10.1,
-   "stats": [
-    {
-     "slug": "points-per-game",
-     "label": "Points per game",
-     "side": "O",
-     "unit": "",
-     "value": "22.8",
-     "rank": 18,
-     "behind": true
-    },
-    {
-     "slug": "yards-per-game",
-     "label": "Yards per game",
-     "side": "O",
-     "unit": "",
-     "value": "320.5",
-     "rank": 21,
-     "behind": true
-    },
-    {
-     "slug": "points-per-play",
-     "label": "Points per play",
-     "side": "O",
-     "unit": "",
-     "value": "0.356",
-     "rank": 17,
-     "behind": true
-    },
-    {
-     "slug": "touchdowns-per-game",
-     "label": "Touchdowns per game",
-     "side": "O",
-     "unit": "",
-     "value": "2.0",
-     "rank": 18,
-     "behind": true
-    },
-    {
-     "slug": "rush-attempts-per-game",
-     "label": "Rushes per game",
-     "side": "O",
-     "unit": "",
-     "value": "21.7",
-     "rank": 30,
-     "behind": true
-    },
-    {
-     "slug": "rush-yards-per-game",
-     "label": "Rush yards per game",
-     "side": "O",
-     "unit": "",
-     "value": "99.2",
-     "rank": 20,
-     "behind": true
-    },
-    {
-     "slug": "rush-touchdowns-per-game",
-     "label": "Rush TDs per game",
-     "side": "O",
-     "unit": "",
-     "value": "0.2",
-     "rank": 32,
-     "behind": true
-    },
-    {
-     "slug": "pass-attempts-per-game",
-     "label": "Pass attempts per game",
-     "side": "O",
-     "unit": "",
-     "value": "39.2",
-     "rank": 4,
-     "behind": true
-    },
-    {
-     "slug": "net-pass-yards-per-game",
-     "label": "Net pass yards per game",
-     "side": "O",
-     "unit": "",
-     "value": "221.3",
-     "rank": 18,
-     "behind": true
-    },
-    {
-     "slug": "third-down-pct",
-     "label": "3rd-down conversion %",
-     "side": "O",
-     "unit": "%",
-     "value": "32.9",
-     "rank": 28,
-     "behind": true
-    },
-    {
-     "slug": "fourth-down-pct",
-     "label": "4th-down conversion %",
-     "side": "O",
-     "unit": "%",
-     "value": "50.0",
-     "rank": 15,
-     "behind": true
-    },
-    {
-     "slug": "first-downs-per-game",
-     "label": "First downs per game",
-     "side": "O",
-     "unit": "",
-     "value": "19.2",
-     "rank": 20,
-     "behind": true
-    },
-    {
-     "slug": "giveaways-per-game",
-     "label": "Giveaways per game",
-     "side": "O",
-     "unit": "",
-     "value": "1.2",
-     "rank": 14,
-     "behind": true
-    },
-    {
-     "slug": "penalties-per-game",
-     "label": "Penalties per game",
-     "side": "O",
-     "unit": "",
-     "value": "6.0",
-     "rank": 4,
-     "behind": true
-    },
-    {
-     "slug": "penalty-yards-per-game",
-     "label": "Penalty yards per game",
-     "side": "O",
-     "unit": "",
-     "value": "51.7",
-     "rank": 9,
-     "behind": true
-    },
-    {
-     "slug": "opp-points-per-game",
-     "label": "Points allowed per game",
-     "side": "D",
-     "unit": "",
-     "value": "21.3",
-     "rank": 12,
-     "behind": true
-    },
-    {
-     "slug": "opp-yards-per-game",
-     "label": "Yards allowed per game",
-     "side": "D",
-     "unit": "",
-     "value": "307.5",
-     "rank": 9,
-     "behind": true
-    },
-    {
-     "slug": "opp-points-per-play",
-     "label": "Points allowed per play",
-     "side": "D",
-     "unit": "",
-     "value": "0.359",
-     "rank": 15,
-     "behind": true
-    },
-    {
-     "slug": "opp-touchdowns-per-game",
-     "label": "TDs allowed per game",
-     "side": "D",
-     "unit": "",
-     "value": "1.7",
-     "rank": 5,
-     "behind": true
-    },
-    {
-     "slug": "opp-rush-attempts-per-game",
-     "label": "Opponent rushes per game",
-     "side": "D",
-     "unit": "",
-     "value": "25.5",
-     "rank": 11,
-     "behind": true
-    },
-    {
-     "slug": "opp-rush-yards-per-game",
-     "label": "Rush yards allowed per game",
-     "side": "D",
-     "unit": "",
-     "value": "103.2",
-     "rank": 14,
-     "behind": true
-    },
-    {
-     "slug": "opp-rush-touchdowns-per-game",
-     "label": "Rush TDs allowed per game",
-     "side": "D",
-     "unit": "",
-     "value": "0.7",
-     "rank": 6,
-     "behind": true
-    },
-    {
-     "slug": "opp-pass-attempts-per-game",
-     "label": "Opponent pass attempts per game",
-     "side": "D",
-     "unit": "",
-     "value": "31.6",
-     "rank": 12,
-     "behind": true
-    },
-    {
-     "slug": "opp-net-pass-yards-per-game",
-     "label": "Net pass yards allowed per game",
-     "side": "D",
-     "unit": "",
-     "value": "204.3",
-     "rank": 8,
-     "behind": true
-    },
-    {
-     "slug": "opp-third-down-pct",
-     "label": "Opponent 3rd-down %",
-     "side": "D",
-     "unit": "%",
-     "value": "32.5",
-     "rank": 6,
-     "behind": true
-    },
-    {
-     "slug": "opp-fourth-down-pct",
-     "label": "Opponent 4th-down %",
-     "side": "D",
-     "unit": "%",
-     "value": "66.7",
-     "rank": 24,
-     "behind": true
-    },
-    {
-     "slug": "opp-first-downs-per-game",
-     "label": "First downs allowed per game",
-     "side": "D",
-     "unit": "",
-     "value": "18.0",
-     "rank": 6,
-     "behind": true
-    },
-    {
-     "slug": "takeaways-per-game",
-     "label": "Takeaways per game",
-     "side": "D",
-     "unit": "",
-     "value": "1.7",
-     "rank": 5,
-     "behind": true
-    },
-    {
-     "slug": "sacks-per-game",
-     "label": "Sacks per game (defense)",
-     "side": "D",
-     "unit": "",
-     "value": "2.2",
-     "rank": 12,
-     "behind": true
-    },
-    {
-     "slug": "takeaway-interceptions-per-game",
-     "label": "Interceptions per game",
-     "side": "D",
-     "unit": "",
-     "value": "1.0",
-     "rank": 6,
-     "behind": true
-    },
-    {
-     "slug": "turnover-margin-per-game",
-     "label": "Turnover margin per game",
-     "side": "T",
-     "unit": "",
-     "value": "0.5",
-     "rank": 10,
-     "behind": true
-    }
-   ],
-   "player": {
-    "qb1": "Aaron Rodgers",
-    "qb1rate": 88.0,
-    "qb1ypa": 6.4,
-    "qbrate": 88.0,
-    "qbsack": 7.5,
-    "hon": 6
-   },
-   "rating_model": "SAM team rating",
-   "off_pts": 0.41,
-   "def_pts": 0.96,
-   "parts": {
-    "Offense": 0.81,
-    "Defense": 0.96,
-    "Special teams": 0.15,
-    "Penalties": -0.04,
-    "Quarterback": -0.41
-   },
-   "buckets": {
-    "o_drop": -2.94,
-    "o_rush": 1.03,
-    "d_drop": -0.32,
-    "d_rush": 0.29,
-    "o_st": 0.55,
-    "n_pen": -0.05,
-    "o_int": 0.66,
-    "d_int": 0.14
-   },
-   "traits": [
-    [
-     "Strong run game",
-     "Runs produce far more than average, after adjusting for the defenses faced."
-    ]
-   ]
-  },
-  {
    "team": "Green Bay Packers",
    "abbr": "GB",
-   "pos": 15,
+   "pos": 14,
    "prev_pos": 14,
-   "move": -1,
+   "move": 0,
    "record": "6-4",
    "gp": 10,
-   "rating": 1.14,
+   "rating": 1.17,
    "score_rating": 1.08,
    "margin": 0.5,
    "sos": 0.2,
    "sos_rank": 13,
-   "sow": 1.04,
+   "sow": 1.05,
    "sow_rank": 11,
    "sow_best": {
     "opp": "TB",
@@ -5162,14 +4821,14 @@
     "hon": 9
    },
    "rating_model": "SAM team rating",
-   "off_pts": 0.35,
+   "off_pts": 0.38,
    "def_pts": 0.65,
    "parts": {
     "Offense": -0.92,
     "Defense": 0.65,
     "Special teams": -0.13,
     "Penalties": 0.26,
-    "Quarterback": 1.27
+    "Quarterback": 1.3
    },
    "buckets": {
     "o_drop": 1.93,
@@ -5193,6 +4852,347 @@
    ]
   },
   {
+   "team": "Pittsburgh Steelers",
+   "abbr": "PIT",
+   "pos": 15,
+   "prev_pos": 13,
+   "move": -2,
+   "record": "6-4",
+   "gp": 10,
+   "rating": 0.53,
+   "score_rating": 0.38,
+   "margin": 1.3,
+   "sos": -1.5,
+   "sos_rank": 27,
+   "sow": 0.6,
+   "sow_rank": 14,
+   "sow_best": {
+    "opp": "CIN",
+    "value": 0.65
+   },
+   "sow_worst": {
+    "opp": "PHI",
+    "value": -0.6
+   },
+   "off_avg": 17.9,
+   "def_avg": 10.1,
+   "stats": [
+    {
+     "slug": "points-per-game",
+     "label": "Points per game",
+     "side": "O",
+     "unit": "",
+     "value": "22.8",
+     "rank": 18,
+     "behind": true
+    },
+    {
+     "slug": "yards-per-game",
+     "label": "Yards per game",
+     "side": "O",
+     "unit": "",
+     "value": "320.5",
+     "rank": 21,
+     "behind": true
+    },
+    {
+     "slug": "points-per-play",
+     "label": "Points per play",
+     "side": "O",
+     "unit": "",
+     "value": "0.356",
+     "rank": 17,
+     "behind": true
+    },
+    {
+     "slug": "touchdowns-per-game",
+     "label": "Touchdowns per game",
+     "side": "O",
+     "unit": "",
+     "value": "2.0",
+     "rank": 18,
+     "behind": true
+    },
+    {
+     "slug": "rush-attempts-per-game",
+     "label": "Rushes per game",
+     "side": "O",
+     "unit": "",
+     "value": "21.7",
+     "rank": 30,
+     "behind": true
+    },
+    {
+     "slug": "rush-yards-per-game",
+     "label": "Rush yards per game",
+     "side": "O",
+     "unit": "",
+     "value": "99.2",
+     "rank": 20,
+     "behind": true
+    },
+    {
+     "slug": "rush-touchdowns-per-game",
+     "label": "Rush TDs per game",
+     "side": "O",
+     "unit": "",
+     "value": "0.2",
+     "rank": 32,
+     "behind": true
+    },
+    {
+     "slug": "pass-attempts-per-game",
+     "label": "Pass attempts per game",
+     "side": "O",
+     "unit": "",
+     "value": "39.2",
+     "rank": 4,
+     "behind": true
+    },
+    {
+     "slug": "net-pass-yards-per-game",
+     "label": "Net pass yards per game",
+     "side": "O",
+     "unit": "",
+     "value": "221.3",
+     "rank": 18,
+     "behind": true
+    },
+    {
+     "slug": "third-down-pct",
+     "label": "3rd-down conversion %",
+     "side": "O",
+     "unit": "%",
+     "value": "32.9",
+     "rank": 28,
+     "behind": true
+    },
+    {
+     "slug": "fourth-down-pct",
+     "label": "4th-down conversion %",
+     "side": "O",
+     "unit": "%",
+     "value": "50.0",
+     "rank": 15,
+     "behind": true
+    },
+    {
+     "slug": "first-downs-per-game",
+     "label": "First downs per game",
+     "side": "O",
+     "unit": "",
+     "value": "19.2",
+     "rank": 20,
+     "behind": true
+    },
+    {
+     "slug": "giveaways-per-game",
+     "label": "Giveaways per game",
+     "side": "O",
+     "unit": "",
+     "value": "1.2",
+     "rank": 14,
+     "behind": true
+    },
+    {
+     "slug": "penalties-per-game",
+     "label": "Penalties per game",
+     "side": "O",
+     "unit": "",
+     "value": "6.0",
+     "rank": 4,
+     "behind": true
+    },
+    {
+     "slug": "penalty-yards-per-game",
+     "label": "Penalty yards per game",
+     "side": "O",
+     "unit": "",
+     "value": "51.7",
+     "rank": 9,
+     "behind": true
+    },
+    {
+     "slug": "opp-points-per-game",
+     "label": "Points allowed per game",
+     "side": "D",
+     "unit": "",
+     "value": "21.3",
+     "rank": 12,
+     "behind": true
+    },
+    {
+     "slug": "opp-yards-per-game",
+     "label": "Yards allowed per game",
+     "side": "D",
+     "unit": "",
+     "value": "307.5",
+     "rank": 9,
+     "behind": true
+    },
+    {
+     "slug": "opp-points-per-play",
+     "label": "Points allowed per play",
+     "side": "D",
+     "unit": "",
+     "value": "0.359",
+     "rank": 15,
+     "behind": true
+    },
+    {
+     "slug": "opp-touchdowns-per-game",
+     "label": "TDs allowed per game",
+     "side": "D",
+     "unit": "",
+     "value": "1.7",
+     "rank": 5,
+     "behind": true
+    },
+    {
+     "slug": "opp-rush-attempts-per-game",
+     "label": "Opponent rushes per game",
+     "side": "D",
+     "unit": "",
+     "value": "25.5",
+     "rank": 11,
+     "behind": true
+    },
+    {
+     "slug": "opp-rush-yards-per-game",
+     "label": "Rush yards allowed per game",
+     "side": "D",
+     "unit": "",
+     "value": "103.2",
+     "rank": 14,
+     "behind": true
+    },
+    {
+     "slug": "opp-rush-touchdowns-per-game",
+     "label": "Rush TDs allowed per game",
+     "side": "D",
+     "unit": "",
+     "value": "0.7",
+     "rank": 6,
+     "behind": true
+    },
+    {
+     "slug": "opp-pass-attempts-per-game",
+     "label": "Opponent pass attempts per game",
+     "side": "D",
+     "unit": "",
+     "value": "31.6",
+     "rank": 12,
+     "behind": true
+    },
+    {
+     "slug": "opp-net-pass-yards-per-game",
+     "label": "Net pass yards allowed per game",
+     "side": "D",
+     "unit": "",
+     "value": "204.3",
+     "rank": 8,
+     "behind": true
+    },
+    {
+     "slug": "opp-third-down-pct",
+     "label": "Opponent 3rd-down %",
+     "side": "D",
+     "unit": "%",
+     "value": "32.5",
+     "rank": 6,
+     "behind": true
+    },
+    {
+     "slug": "opp-fourth-down-pct",
+     "label": "Opponent 4th-down %",
+     "side": "D",
+     "unit": "%",
+     "value": "66.7",
+     "rank": 24,
+     "behind": true
+    },
+    {
+     "slug": "opp-first-downs-per-game",
+     "label": "First downs allowed per game",
+     "side": "D",
+     "unit": "",
+     "value": "18.0",
+     "rank": 6,
+     "behind": true
+    },
+    {
+     "slug": "takeaways-per-game",
+     "label": "Takeaways per game",
+     "side": "D",
+     "unit": "",
+     "value": "1.7",
+     "rank": 5,
+     "behind": true
+    },
+    {
+     "slug": "sacks-per-game",
+     "label": "Sacks per game (defense)",
+     "side": "D",
+     "unit": "",
+     "value": "2.2",
+     "rank": 12,
+     "behind": true
+    },
+    {
+     "slug": "takeaway-interceptions-per-game",
+     "label": "Interceptions per game",
+     "side": "D",
+     "unit": "",
+     "value": "1.0",
+     "rank": 6,
+     "behind": true
+    },
+    {
+     "slug": "turnover-margin-per-game",
+     "label": "Turnover margin per game",
+     "side": "T",
+     "unit": "",
+     "value": "0.5",
+     "rank": 10,
+     "behind": true
+    }
+   ],
+   "player": {
+    "qb1": "Aaron Rodgers",
+    "qb1rate": 88.0,
+    "qb1ypa": 6.4,
+    "qbrate": 88.0,
+    "qbsack": 7.5,
+    "hon": 6
+   },
+   "rating_model": "SAM team rating",
+   "off_pts": -0.55,
+   "def_pts": 0.96,
+   "parts": {
+    "Offense": 0.81,
+    "Defense": 0.96,
+    "Special teams": 0.15,
+    "Penalties": -0.04,
+    "Quarterback": -1.36
+   },
+   "buckets": {
+    "o_drop": -2.94,
+    "o_rush": 1.03,
+    "d_drop": -0.32,
+    "d_rush": 0.29,
+    "o_st": 0.55,
+    "n_pen": -0.05,
+    "o_int": 0.66,
+    "d_int": 0.14
+   },
+   "traits": [
+    [
+     "Strong run game",
+     "Runs produce far more than average, after adjusting for the defenses faced."
+    ]
+   ]
+  },
+  {
    "team": "Tampa Bay Buccaneers",
    "abbr": "TB",
    "pos": 16,
@@ -5200,13 +5200,13 @@
    "move": -1,
    "record": "3-7",
    "gp": 10,
-   "rating": 0.19,
+   "rating": 0.22,
    "score_rating": 1.04,
    "margin": 1.4,
-   "sos": 1.2,
+   "sos": 1.1,
    "sos_rank": 7,
-   "sow": -1.65,
-   "sow_rank": 24,
+   "sow": -1.68,
+   "sow_rank": 25,
    "sow_best": {
     "opp": "DAL",
     "value": 0.61
@@ -5507,14 +5507,14 @@
     "hon": 3
    },
    "rating_model": "SAM team rating",
-   "off_pts": -0.74,
+   "off_pts": -0.7,
    "def_pts": 1.33,
    "parts": {
     "Offense": 0.24,
     "Defense": 1.33,
     "Special teams": 0.05,
     "Penalties": -0.45,
-    "Quarterback": -0.98
+    "Quarterback": -0.95
    },
    "buckets": {
     "o_drop": -1.65,
@@ -5541,12 +5541,12 @@
    "move": 0,
    "record": "4-5-1",
    "gp": 10,
-   "rating": -0.87,
+   "rating": -0.84,
    "score_rating": -2.02,
    "margin": -2.5,
    "sos": 0.6,
    "sos_rank": 12,
-   "sow": -0.41,
+   "sow": -0.4,
    "sow_rank": 18,
    "sow_best": {
     "opp": "CIN",
@@ -5554,7 +5554,7 @@
    },
    "sow_worst": {
     "opp": "IND",
-    "value": -0.62
+    "value": -0.61
    },
    "off_avg": 15.5,
    "def_avg": 21.7,
@@ -5848,14 +5848,14 @@
     "hon": 3
    },
    "rating_model": "SAM team rating",
-   "off_pts": -0.0,
+   "off_pts": 0.03,
    "def_pts": -0.75,
    "parts": {
     "Offense": -1.01,
     "Defense": -0.75,
     "Special teams": 0.02,
     "Penalties": -0.14,
-    "Quarterback": 1.01
+    "Quarterback": 1.04
    },
    "buckets": {
     "o_drop": -0.72,
@@ -5882,13 +5882,13 @@
    "move": 0,
    "record": "4-7",
    "gp": 11,
-   "rating": -2.16,
+   "rating": -2.13,
    "score_rating": -2.63,
    "margin": -4.7,
    "sos": -0.5,
    "sos_rank": 15,
    "sow": -1.67,
-   "sow_rank": 25,
+   "sow_rank": 24,
    "sow_best": {
     "opp": "DAL",
     "value": 0.55
@@ -6189,14 +6189,14 @@
     "hon": 12
    },
    "rating_model": "SAM team rating",
-   "off_pts": -0.6,
+   "off_pts": -0.56,
    "def_pts": -1.41,
    "parts": {
     "Offense": 0.05,
     "Defense": -1.41,
     "Special teams": 0.1,
     "Penalties": -0.26,
-    "Quarterback": -0.65
+    "Quarterback": -0.62
    },
    "buckets": {
     "o_drop": -0.43,
@@ -6218,11 +6218,11 @@
    "move": 0,
    "record": "5-5",
    "gp": 10,
-   "rating": -2.4,
+   "rating": -2.37,
    "score_rating": -2.22,
    "margin": -1.5,
    "sos": -0.6,
-   "sos_rank": 19,
+   "sos_rank": 18,
    "sow": -0.18,
    "sow_rank": 17,
    "sow_best": {
@@ -6525,14 +6525,14 @@
     "hon": 5
    },
    "rating_model": "SAM team rating",
-   "off_pts": -1.01,
+   "off_pts": -0.98,
    "def_pts": -1.45,
    "parts": {
     "Offense": -0.5,
     "Defense": -1.45,
     "Special teams": -0.03,
     "Penalties": 0.09,
-    "Quarterback": -0.5
+    "Quarterback": -0.47
    },
    "buckets": {
     "o_drop": -0.02,
@@ -6554,12 +6554,12 @@
    "move": 2,
    "record": "5-5",
    "gp": 10,
-   "rating": -3.26,
+   "rating": -3.23,
    "score_rating": 0.61,
    "margin": -2.1,
    "sos": 1.1,
    "sos_rank": 8,
-   "sow": 0.38,
+   "sow": 0.36,
    "sow_rank": 16,
    "sow_best": {
     "opp": "BUF",
@@ -6861,14 +6861,14 @@
     "hon": 6
    },
    "rating_model": "SAM team rating",
-   "off_pts": -3.37,
+   "off_pts": -3.34,
    "def_pts": 0.39,
    "parts": {
     "Offense": -0.16,
     "Defense": 0.39,
     "Special teams": -0.16,
     "Penalties": -0.11,
-    "Quarterback": -3.21
+    "Quarterback": -3.18
    },
    "buckets": {
     "o_drop": 2.67,
@@ -6895,12 +6895,12 @@
    "move": 0,
    "record": "3-7",
    "gp": 10,
-   "rating": -3.35,
+   "rating": -3.32,
    "score_rating": -3.32,
    "margin": -5.7,
    "sos": 2.2,
    "sos_rank": 2,
-   "sow": -1.39,
+   "sow": -1.41,
    "sow_rank": 23,
    "sow_best": {
     "opp": "SF",
@@ -7202,14 +7202,14 @@
     "hon": 9
    },
    "rating_model": "SAM team rating",
-   "off_pts": -1.4,
+   "off_pts": -1.37,
    "def_pts": -1.77,
    "parts": {
     "Offense": -0.48,
     "Defense": -1.77,
     "Special teams": -0.23,
     "Penalties": 0.05,
-    "Quarterback": -0.92
+    "Quarterback": -0.89
    },
    "buckets": {
     "o_drop": -1.93,
@@ -7236,7 +7236,7 @@
    "move": 2,
    "record": "6-3-1",
    "gp": 10,
-   "rating": -3.43,
+   "rating": -3.4,
    "score_rating": -0.97,
    "margin": 1.2,
    "sos": -0.5,
@@ -7543,14 +7543,14 @@
     "hon": 3
    },
    "rating_model": "SAM team rating",
-   "off_pts": -3.06,
+   "off_pts": -3.03,
    "def_pts": -0.39,
    "parts": {
     "Offense": -1.04,
     "Defense": -0.39,
     "Special teams": -0.11,
     "Penalties": 0.13,
-    "Quarterback": -2.02
+    "Quarterback": -1.99
    },
    "buckets": {
     "o_drop": -0.61,
@@ -7572,12 +7572,12 @@
    "move": 0,
    "record": "3-7",
    "gp": 10,
-   "rating": -3.65,
+   "rating": -3.62,
    "score_rating": -3.89,
    "margin": -4.2,
    "sos": -1.1,
    "sos_rank": 24,
-   "sow": -2.37,
+   "sow": -2.39,
    "sow_rank": 28,
    "sow_best": {
     "opp": "BAL",
@@ -7879,14 +7879,14 @@
     "hon": 4
    },
    "rating_model": "SAM team rating",
-   "off_pts": -1.91,
+   "off_pts": -1.88,
    "def_pts": -1.68,
    "parts": {
     "Offense": -2.21,
     "Defense": -1.68,
     "Special teams": -0.51,
     "Penalties": 0.45,
-    "Quarterback": 0.29
+    "Quarterback": 0.33
    },
    "buckets": {
     "o_drop": 0.04,
@@ -7908,12 +7908,12 @@
    "move": -4,
    "record": "3-8",
    "gp": 11,
-   "rating": -3.75,
+   "rating": -3.71,
    "score_rating": -3.81,
    "margin": -7.8,
-   "sos": 0.9,
+   "sos": 0.8,
    "sos_rank": 10,
-   "sow": -2.21,
+   "sow": -2.23,
    "sow_rank": 27,
    "sow_best": {
     "opp": "HOU",
@@ -8215,14 +8215,14 @@
     "hon": 7
    },
    "rating_model": "SAM team rating",
-   "off_pts": -1.17,
+   "off_pts": -1.14,
    "def_pts": -2.39,
    "parts": {
     "Offense": 0.2,
     "Defense": -2.39,
     "Special teams": 0.06,
     "Penalties": -0.25,
-    "Quarterback": -1.37
+    "Quarterback": -1.34
    },
    "buckets": {
     "o_drop": -2.91,
@@ -8249,12 +8249,12 @@
    "move": 0,
    "record": "3-8",
    "gp": 11,
-   "rating": -4.68,
+   "rating": -4.65,
    "score_rating": -5.32,
    "margin": -5.2,
-   "sos": -0.7,
-   "sos_rank": 21,
-   "sow": -2.66,
+   "sos": -0.6,
+   "sos_rank": 19,
+   "sow": -2.65,
    "sow_rank": 29,
    "sow_best": {
     "opp": "LAC",
@@ -8556,14 +8556,14 @@
     "hon": 3
    },
    "rating_model": "SAM team rating",
-   "off_pts": -1.97,
+   "off_pts": -1.94,
    "def_pts": -3.17,
    "parts": {
     "Offense": -1.3,
     "Defense": -3.17,
     "Special teams": 0.27,
     "Penalties": 0.19,
-    "Quarterback": -0.67
+    "Quarterback": -0.64
    },
    "buckets": {
     "o_drop": -1.63,
@@ -8585,12 +8585,12 @@
    "move": 0,
    "record": "6-4",
    "gp": 10,
-   "rating": -4.97,
+   "rating": -4.94,
    "score_rating": -3.53,
    "margin": -3.2,
-   "sos": -0.6,
-   "sos_rank": 18,
-   "sow": 0.93,
+   "sos": -0.7,
+   "sos_rank": 21,
+   "sow": 0.88,
    "sow_rank": 12,
    "sow_best": {
     "opp": "TB",
@@ -8892,14 +8892,14 @@
     "hon": 6
    },
    "rating_model": "SAM team rating",
-   "off_pts": -3.75,
+   "off_pts": -3.72,
    "def_pts": -1.03,
    "parts": {
     "Offense": -2.2,
     "Defense": -1.03,
     "Special teams": -0.1,
     "Penalties": -0.08,
-    "Quarterback": -1.56
+    "Quarterback": -1.53
    },
    "buckets": {
     "o_drop": -2.86,
@@ -8921,12 +8921,12 @@
    "move": 2,
    "record": "1-9",
    "gp": 10,
-   "rating": -5.32,
+   "rating": -5.29,
    "score_rating": -4.54,
    "margin": -9.8,
-   "sos": 1.0,
+   "sos": 1.1,
    "sos_rank": 9,
-   "sow": -3.71,
+   "sow": -3.7,
    "sow_rank": 31,
    "sow_best": {
     "opp": "BAL",
@@ -9228,14 +9228,14 @@
     "hon": 6
    },
    "rating_model": "SAM team rating",
-   "off_pts": -3.35,
+   "off_pts": -3.32,
    "def_pts": -1.71,
    "parts": {
     "Offense": -1.8,
     "Defense": -1.71,
     "Special teams": -0.04,
     "Penalties": -0.22,
-    "Quarterback": -1.55
+    "Quarterback": -1.52
    },
    "buckets": {
     "o_drop": -2.49,
@@ -9262,16 +9262,16 @@
    "move": 0,
    "record": "3-7",
    "gp": 10,
-   "rating": -5.4,
+   "rating": -5.37,
    "score_rating": -3.27,
    "margin": -7.0,
-   "sos": 0.8,
+   "sos": 0.7,
    "sos_rank": 11,
-   "sow": -1.96,
+   "sow": -1.98,
    "sow_rank": 26,
    "sow_best": {
     "opp": "PIT",
-    "value": 0.48
+    "value": 0.45
    },
    "sow_worst": {
     "opp": "NYG",
@@ -9569,14 +9569,14 @@
     "hon": 11
    },
    "rating_model": "SAM team rating",
-   "off_pts": -5.22,
+   "off_pts": -5.19,
    "def_pts": -0.22,
    "parts": {
     "Offense": -2.88,
     "Defense": -0.22,
     "Special teams": -0.06,
     "Penalties": 0.1,
-    "Quarterback": -2.34
+    "Quarterback": -2.31
    },
    "buckets": {
     "o_drop": -3.33,
@@ -9598,12 +9598,12 @@
    "move": -2,
    "record": "1-9",
    "gp": 10,
-   "rating": -6.18,
+   "rating": -6.15,
    "score_rating": -7.61,
    "margin": -9.3,
-   "sos": -0.6,
+   "sos": -0.5,
    "sos_rank": 17,
-   "sow": -4.17,
+   "sow": -4.16,
    "sow_rank": 32,
    "sow_best": {
     "opp": "IND",
@@ -9905,14 +9905,14 @@
     "hon": 8
    },
    "rating_model": "SAM team rating",
-   "off_pts": -2.76,
+   "off_pts": -2.73,
    "def_pts": -3.53,
    "parts": {
     "Offense": -2.41,
     "Defense": -3.53,
     "Special teams": -0.09,
     "Penalties": 0.19,
-    "Quarterback": -0.35
+    "Quarterback": -0.32
    },
    "buckets": {
     "o_drop": -2.7,
@@ -9934,12 +9934,12 @@
    "move": 0,
    "record": "3-8",
    "gp": 11,
-   "rating": -6.83,
+   "rating": -6.8,
    "score_rating": -5.99,
    "margin": -12.0,
    "sos": 3.4,
    "sos_rank": 1,
-   "sow": -1.26,
+   "sow": -1.25,
    "sow_rank": 22,
    "sow_best": {
     "opp": "LAR",
@@ -10241,14 +10241,14 @@
     "hon": 4
    },
    "rating_model": "SAM team rating",
-   "off_pts": -4.51,
+   "off_pts": -4.48,
    "def_pts": -2.62,
    "parts": {
     "Offense": -1.85,
     "Defense": -2.62,
     "Special teams": -0.02,
     "Penalties": 0.32,
-    "Quarterback": -2.66
+    "Quarterback": -2.63
    },
    "buckets": {
     "o_drop": -1.88,
@@ -10270,7 +10270,7 @@
    "move": 1,
    "record": "1-9",
    "gp": 10,
-   "rating": -6.96,
+   "rating": -6.93,
    "score_rating": -5.08,
    "margin": -9.3,
    "sos": 2.1,
@@ -10577,14 +10577,14 @@
     "hon": 7
    },
    "rating_model": "SAM team rating",
-   "off_pts": -5.31,
+   "off_pts": -5.28,
    "def_pts": -1.39,
    "parts": {
     "Offense": -2.83,
     "Defense": -1.39,
     "Special teams": -0.07,
     "Penalties": -0.2,
-    "Quarterback": -2.47
+    "Quarterback": -2.44
    },
    "buckets": {
     "o_drop": -2.72,
@@ -10611,12 +10611,12 @@
    "move": -1,
    "record": "4-7",
    "gp": 11,
-   "rating": -7.31,
+   "rating": -7.28,
    "score_rating": -4.03,
    "margin": -4.7,
-   "sos": 1.2,
+   "sos": 1.3,
    "sos_rank": 6,
-   "sow": -1.05,
+   "sow": -1.04,
    "sow_rank": 20,
    "sow_best": {
     "opp": "NO",
@@ -10918,14 +10918,14 @@
     "hon": 2
    },
    "rating_model": "SAM team rating",
-   "off_pts": -4.2,
+   "off_pts": -4.17,
    "def_pts": -3.11,
    "parts": {
     "Offense": -2.24,
     "Defense": -3.11,
     "Special teams": 0.06,
     "Penalties": -0.06,
-    "Quarterback": -1.96
+    "Quarterback": -1.93
    },
    "buckets": {
     "o_drop": -0.43,
@@ -10948,11 +10948,11 @@
    "away": "GB",
    "home": "LAR",
    "neutral": false,
-   "home_margin": 5.0,
-   "home_win": 0.651,
+   "home_margin": 4.2,
+   "home_win": 0.627,
    "line": 2.5,
    "results_margin": 5.9,
-   "lineup_margin": 4.9,
+   "lineup_margin": 3.5,
    "model": "SAM multi-factor",
    "factors": {
     "base": 5.89,
@@ -10975,13 +10975,13 @@
     "wt_early": 0.0,
     "home": 1.0,
     "qb": 0.0,
-    "miss_OL": -0.49,
-    "miss_WR": 0.948,
-    "miss_TE": 0.0,
-    "miss_RB": 0.0,
+    "miss_OL": 0.775,
+    "miss_WR": 0.853,
+    "miss_TE": 0.135,
+    "miss_RB": -0.034,
     "miss_EDGE": 0.328,
     "miss_DL": 0.0,
-    "miss_LB": -0.831,
+    "miss_LB": -0.445,
     "miss_CB": 0.529,
     "miss_S": 0.0,
     "rest": 0.0,
@@ -10991,33 +10991,33 @@
     "wind_x_pass": 0.0
    },
    "sam_market": {
-    "margin": 2.9,
-    "win": 0.587,
+    "margin": 2.7,
+    "win": 0.584,
     "weight_on_sam": 0.14
    },
    "lineup": {
     "LAR": {
-     "points": -3.1,
+     "points": -3.9,
      "qb": 0.0,
-     "injuries": -3.1,
+     "injuries": -3.9,
      "notes": [
-      "Steve Avila (OL, missed last game)",
+      "Coleman Shelton (OL, Out)",
+      "Steve Avila (OL, Out)",
       "Puka Nacua (WR, missed last game)",
       "Jaylen Watson (CB, missed last game)",
-      "Davante Adams (WR, missed last game)",
-      "Kobie Turner (DE, missed last game)"
+      "Davante Adams (WR, missed last game)"
      ]
     },
     "GB": {
-     "points": -2.1,
+     "points": -1.5,
      "qb": 0.0,
-     "injuries": -2.1,
+     "injuries": -1.5,
      "notes": [
-      "Sean Rhyan (C, missed last game)",
-      "Zaire Franklin (LB, missed last game)",
       "Edgerrin Cooper (LB, missed last game)",
       "Jacob Monk (C, missed last game)",
-      "Aaron Banks (G, missed last game)"
+      "Aaron Banks (G, missed last game)",
+      "Sean Rhyan (C, Questionable)",
+      "Zaire Franklin (LB, Questionable)"
      ]
     }
    }
@@ -11031,7 +11031,7 @@
    "neutral": false,
    "home_margin": 0.4,
    "home_win": 0.512,
-   "line": -2.5,
+   "line": -1.5,
    "results_margin": 3.3,
    "lineup_margin": 0.2,
    "model": "SAM multi-factor",
@@ -11072,8 +11072,8 @@
     "wind_x_pass": 0.0
    },
    "sam_market": {
-    "margin": -2.1,
-    "win": 0.436,
+    "margin": -1.2,
+    "win": 0.462,
     "weight_on_sam": 0.14
    },
    "lineup": {
@@ -11272,11 +11272,11 @@
    "away": "DEN",
    "home": "PIT",
    "neutral": false,
-   "home_margin": -1.3,
-   "home_win": 0.461,
-   "line": -3.0,
+   "home_margin": -1.7,
+   "home_win": 0.448,
+   "line": -3.5,
    "results_margin": -0.9,
-   "lineup_margin": -1.7,
+   "lineup_margin": -2.5,
    "model": "SAM multi-factor",
    "factors": {
     "base": -0.916,
@@ -11292,13 +11292,13 @@
     "to_margin": -0.3,
     "new_coach": 1.0,
     "mid_change": 0.0,
-    "qb538": 0.099,
-    "qb538_level": -1.166,
+    "qb538": 0.186,
+    "qb538_level": -1.08,
     "wepa": -2.87,
     "wt": -0.608,
     "wt_early": -0.0,
     "home": 1.0,
-    "qb": 0.0,
+    "qb": -2.603,
     "miss_OL": 0.927,
     "miss_WR": 0.21,
     "miss_TE": 0.0,
@@ -11315,16 +11315,17 @@
     "wind_x_pass": -0.0
    },
    "sam_market": {
-    "margin": -2.8,
-    "win": 0.416,
+    "margin": -3.2,
+    "win": 0.401,
     "weight_on_sam": 0.14
    },
    "lineup": {
     "PIT": {
-     "points": -1.6,
-     "qb": 0.0,
+     "points": -2.4,
+     "qb": -0.8,
      "injuries": -1.6,
      "notes": [
+      "Mason Rudolph starting instead of the usual QB (-0.8)",
       "Mason McCormick (G, missed last game)",
       "Nick Herbig (LB, missed last game)",
       "Michael Pittman Jr. (WR, missed last game)",
@@ -11433,7 +11434,7 @@
    "neutral": false,
    "home_margin": 3.1,
    "home_win": 0.593,
-   "line": 6.5,
+   "line": 7.0,
    "results_margin": 7.5,
    "lineup_margin": 7.4,
    "model": "SAM multi-factor",
@@ -11474,8 +11475,8 @@
     "wind_x_pass": 0.0
    },
    "sam_market": {
-    "margin": 6.0,
-    "win": 0.679,
+    "margin": 6.5,
+    "win": 0.691,
     "weight_on_sam": 0.14
    },
    "lineup": {
@@ -11921,7 +11922,7 @@
    "neutral": false,
    "home_margin": -6.7,
    "home_win": 0.302,
-   "line": -7.5,
+   "line": -7.0,
    "results_margin": -2.0,
    "lineup_margin": -5.2,
    "model": "SAM multi-factor",
@@ -11962,8 +11963,8 @@
     "wind_x_pass": -0.0
    },
    "sam_market": {
-    "margin": -7.4,
-    "win": 0.284,
+    "margin": -7.0,
+    "win": 0.295,
     "weight_on_sam": 0.14
    },
    "lineup": {

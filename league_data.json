@@ -11215,7 +11215,7 @@
    "neutral": false,
    "home_margin": -1.7,
    "home_win": 0.448,
-   "line": -3.5,
+   "line": -4.5,
    "results_margin": -0.9,
    "lineup_margin": -2.1,
    "model": "SAM multi-factor",
@@ -11256,8 +11256,8 @@
     "wind_x_pass": -0.0
    },
    "sam_market": {
-    "margin": -3.2,
-    "win": 0.401,
+    "margin": -4.1,
+    "win": 0.375,
     "weight_on_sam": 0.14
    },
    "lineup": {
@@ -11782,7 +11782,7 @@
    "neutral": false,
    "home_margin": 0.6,
    "home_win": 0.518,
-   "line": -1.5,
+   "line": -2.5,
    "results_margin": -3.1,
    "lineup_margin": -0.7,
    "model": "SAM multi-factor",
@@ -11823,8 +11823,8 @@
     "wind_x_pass": -0.0
    },
    "sam_market": {
-    "margin": -1.2,
-    "win": 0.463,
+    "margin": -2.1,
+    "win": 0.436,
     "weight_on_sam": 0.14
    },
    "lineup": {
@@ -11864,7 +11864,7 @@
    "neutral": false,
    "home_margin": -6.7,
    "home_win": 0.302,
-   "line": -7.0,
+   "line": -6.5,
    "results_margin": -1.9,
    "lineup_margin": -5.1,
    "model": "SAM multi-factor",
@@ -11905,8 +11905,8 @@
     "wind_x_pass": -0.0
    },
    "sam_market": {
-    "margin": -7.0,
-    "win": 0.295,
+    "margin": -6.5,
+    "win": 0.307,
     "weight_on_sam": 0.14
    },
    "lineup": {
@@ -11945,7 +11945,7 @@
    "neutral": false,
    "home_margin": 5.7,
    "home_win": 0.668,
-   "line": 2.5,
+   "line": 3.0,
    "results_margin": 4.1,
    "lineup_margin": 3.8,
    "model": "SAM multi-factor",
@@ -11986,8 +11986,8 @@
     "wind_x_pass": 0.0
    },
    "sam_market": {
-    "margin": 2.9,
-    "win": 0.59,
+    "margin": 3.4,
+    "win": 0.603,
     "weight_on_sam": 0.14
    },
    "lineup": {
@@ -12174,11 +12174,11 @@
    "away": "KC",
    "home": "LAR",
    "neutral": false,
-   "home_margin": 0.7,
-   "home_win": 0.522,
+   "home_margin": 1.0,
+   "home_win": 0.531,
    "line": 1.5,
    "results_margin": 1.9,
-   "lineup_margin": 0.7,
+   "lineup_margin": 0.8,
    "model": "SAM multi-factor",
    "factors": {
     "base": 1.947,
@@ -12201,14 +12201,14 @@
     "wt_early": 0.0,
     "home": 1.0,
     "qb": 0.0,
-    "miss_OL": -0.546,
-    "miss_WR": 0.735,
+    "miss_OL": 0.141,
+    "miss_WR": 0.649,
     "miss_TE": 0.0,
     "miss_RB": -0.533,
-    "miss_EDGE": 0.328,
+    "miss_EDGE": 0.0,
     "miss_DL": 0.0,
     "miss_LB": 0.0,
-    "miss_CB": 0.185,
+    "miss_CB": 0.137,
     "miss_S": 0.0,
     "rest": 1.0,
     "bye": 0.0,
@@ -12218,20 +12218,20 @@
    },
    "sam_market": {
     "margin": 1.4,
-    "win": 0.543,
+    "win": 0.544,
     "weight_on_sam": 0.14
    },
    "lineup": {
     "LAR": {
-     "points": -3.1,
+     "points": -3.0,
      "qb": 0.0,
-     "injuries": -3.1,
+     "injuries": -3.0,
      "notes": [
+      "Coleman Shelton (OL, missed last game)",
       "Steve Avila (OL, missed last game)",
       "Puka Nacua (WR, missed last game)",
       "Jaylen Watson (CB, missed last game)",
-      "Davante Adams (WR, missed last game)",
-      "Kobie Turner (DE, missed last game)"
+      "Davante Adams (WR, missed last game)"
      ]
     },
     "KC": {
@@ -12257,7 +12257,7 @@
    "neutral": false,
    "home_margin": -3.8,
    "home_win": 0.387,
-   "line": -3.5,
+   "line": null,
    "results_margin": -5.8,
    "lineup_margin": -4.0,
    "model": "SAM multi-factor",
@@ -12297,11 +12297,7 @@
     "west_early": 0.0,
     "wind_x_pass": -0.0
    },
-   "sam_market": {
-    "margin": -3.5,
-    "win": 0.392,
-    "weight_on_sam": 0.14
-   },
+   "sam_market": null,
    "lineup": {
     "ATL": {
      "points": -1.3,
@@ -12336,7 +12332,7 @@
    "neutral": false,
    "home_margin": 0.6,
    "home_win": 0.519,
-   "line": 3.0,
+   "line": null,
    "results_margin": -2.4,
    "lineup_margin": -0.6,
    "model": "SAM multi-factor",
@@ -12376,11 +12372,7 @@
     "west_early": 0.0,
     "wind_x_pass": -0.0
    },
-   "sam_market": {
-    "margin": 2.7,
-    "win": 0.582,
-    "weight_on_sam": 0.14
-   },
+   "sam_market": null,
    "lineup": {
     "CHI": {
      "points": -0.0,
@@ -12490,11 +12482,11 @@
    "away": "GB",
    "home": "NO",
    "neutral": false,
-   "home_margin": -2.1,
-   "home_win": 0.435,
+   "home_margin": -2.2,
+   "home_win": 0.431,
    "line": -4.5,
    "results_margin": -2.6,
-   "lineup_margin": -3.6,
+   "lineup_margin": -3.8,
    "model": "SAM multi-factor",
    "factors": {
     "base": -2.604,
@@ -12517,13 +12509,13 @@
     "wt_early": -0.0,
     "home": 1.0,
     "qb": 0.0,
-    "miss_OL": 0.975,
+    "miss_OL": 1.026,
     "miss_WR": 0.0,
     "miss_TE": 0.0,
     "miss_RB": 0.0,
     "miss_EDGE": 0.0,
     "miss_DL": 0.0,
-    "miss_LB": -0.228,
+    "miss_LB": -0.152,
     "miss_CB": 0.333,
     "miss_S": 0.728,
     "rest": -4.0,
@@ -12534,7 +12526,7 @@
    },
    "sam_market": {
     "margin": -4.2,
-    "win": 0.374,
+    "win": 0.373,
     "weight_on_sam": 0.14
    },
    "lineup": {
@@ -12551,15 +12543,15 @@
      ]
     },
     "GB": {
-     "points": -2.1,
+     "points": -1.9,
      "qb": 0.0,
-     "injuries": -2.1,
+     "injuries": -1.9,
      "notes": [
-      "Sean Rhyan (C, missed last game)",
       "Zaire Franklin (LB, missed last game)",
+      "Travis Glover (G, missed last game)",
+      "John Williams (G, missed last game)",
       "Edgerrin Cooper (LB, missed last game)",
-      "Jacob Monk (C, missed last game)",
-      "Aaron Banks (G, missed last game)"
+      "Jacob Monk (C, missed last game)"
      ]
     }
    }
